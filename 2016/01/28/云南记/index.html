@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0597.JPG">
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0598.JPG">
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0599.JPG">
-<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta property="og:updated_time" content="2016-05-17T13:10:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="云南记">
 <meta name="twitter:description" content="前言：很久就一直想去云南一场说走就走的旅行会一直更新途中的新鲜事情
@@ -327,25 +327,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/旅游/" itemprop="url" rel="index">
-                    <span itemprop="name">旅游</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;2,296</span>
 
@@ -363,15 +344,6 @@
           
 
           
-          
-             <span id="/2016/01/28/云南记/" class="leancloud_visitors" data-flag-title="云南记">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -420,7 +392,7 @@
 <p>大理三分之一住着 <strong> 白族 </strong>，白族男的称为 <code>阿鹏</code>，女的称呼 <code>金花</code>；<br>比较有名的茶是 <code>普洱茶</code> ，<code>春夏秋冬</code>,当地比较有名的表演属 <code>三道茶</code>；</p>
 <p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0597.JPG" alt="洱海鸽子"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0598.JPG" alt="大理古镇"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0599.JPG" alt="情人沙滩"></p>
 <h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>此次旅游很完美，遇到一些走心的驴友一起疯狂一起嗨，去了摩梭族藏族白族体验了当地的民族文化。 之前打算玩半个月，后来水土不服实在有点吃不消了就玩了八天。<br>回来飞机路上还遇到一个云南做生意的朋友，感觉挺投缘聊的不错，下飞机还送了几包云南我不知道的特色小吃。</p>
-<p>下次再来，想去看看希望小学的学生~ </p>
+<p>下次再来，想去看看希望小学的学生~</p>
 
       
     </div>
@@ -901,99 +873,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

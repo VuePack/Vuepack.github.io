@@ -62,7 +62,7 @@
 <meta name="description" content="正行走在VueJS和Node路上的小前端">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Leon's Daily">
-<meta property="og:url" content="https://github.com/Vuepack/categories/JavaScript/index.html">
+<meta property="og:url" content="https://github.com/Vuepack/archives/2016/05/index.html">
 <meta property="og:site_name" content="Leon's Daily">
 <meta property="og:description" content="正行走在VueJS和Node路上的小前端">
 <meta name="twitter:card" content="summary">
@@ -85,7 +85,7 @@
   };
 </script>
 
-  <title> 分类: JavaScript | Leon's Daily </title>
+  <title> 归档 | Leon's Daily </title>
   <script src="https://cdn.bootcss.com/vue/1.0.14/vue.min.js"></script>
 </head>
 
@@ -113,7 +113,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -232,14 +232,31 @@
             
 
   <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        JavaScript
-        <small>分类</small>
-      </h2>
-    </div>
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 24 篇日志。 继续努力。
+    </span>
 
     
+
+      
+      
+      
+
+      
+        
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+        </div>
+      
+      
+
       
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -247,37 +264,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/01/08/JS控制cookie，选中复选框下次不再提醒/" itemprop="url">
+            <a class="post-title-link" href="/2016/05/01/webpack学习和踩坑/" itemprop="url">
               
-                <span itemprop="name">JS控制cookie，选中复选框下次不再提醒</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-01-08T22:27:15+08:00"
-              content="2016-01-08 22:27:15" >
-          01-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/11/24/日期正则表达式验证/" itemprop="url">
-              
-                <span itemprop="name">日期正则表达式验证</span>
+                <span itemprop="name">webpack学习和踩坑</span>
               
             </a>
         
@@ -285,9 +274,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2015-11-24T17:25:03+08:00"
-              content="2015-11-24 17:25:03" >
-          11-24
+              datetime="2016-05-01T16:15:36+08:00"
+              content="2016-05-01 16:15:36" >
+          05-01
         </time>
       </div>
 
@@ -295,63 +284,9 @@
   </article>
 
 
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/11/07/JavaScript秘密花园摘要/" itemprop="url">
-              
-                <span itemprop="name">JavaScript秘密花园摘要</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-11-07T15:53:32+08:00"
-              content="2015-11-07 15:53:32" >
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
 
     
-      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/10/25/new-Date-格式问题/" itemprop="url">
-              
-                <span itemprop="name">new Date()格式问题</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-10-25T22:50:30+08:00"
-              content="2015-10-25 22:50:30" >
-          10-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
   </section>
 
   
@@ -552,6 +487,12 @@
 
 
   
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
+
 
   
 
@@ -595,99 +536,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

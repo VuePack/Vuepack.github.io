@@ -65,7 +65,7 @@
 <meta property="og:url" content="https://github.com/Vuepack/2015/10/25/JS判断是否在微信浏览器打开/index.html">
 <meta property="og:site_name" content="Leon's Daily">
 <meta property="og:description" content="最近做了挺多针对微信浏览器的H5页面开发。总结下：思路：获取当前浏览器ua，再做判断">
-<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta property="og:updated_time" content="2016-05-17T13:11:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用JS判断是否在微信浏览器打开">
 <meta name="twitter:description" content="最近做了挺多针对微信浏览器的H5页面开发。总结下：思路：获取当前浏览器ua，再做判断">
@@ -275,25 +275,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/微信开发/" itemprop="url" rel="index">
-                    <span itemprop="name">微信开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,144</span>
 
@@ -311,15 +292,6 @@
           
 
           
-          
-             <span id="/2015/10/25/JS判断是否在微信浏览器打开/" class="leancloud_visitors" data-flag-title="用JS判断是否在微信浏览器打开">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -815,99 +787,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

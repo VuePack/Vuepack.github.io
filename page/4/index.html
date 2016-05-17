@@ -238,11 +238,6 @@
 
     
     
-      
-      
-
-      
-    
 
     
       
@@ -290,27 +285,8 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/微信开发/" itemprop="url" rel="index">
-                    <span itemprop="name">微信开发</span>
-                  </a>
-                </span>
 
-                
-                
-
-              
-            </span>
-          
-
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,055</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,056</span>
 
           
             
@@ -327,15 +303,6 @@
 
           
           
-             <span id="/2015/10/26/微信公共号呼起微信授权页面/" class="leancloud_visitors" data-flag-title="微信公共号呼起微信授权页面">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
 
 
         </div>
@@ -351,8 +318,8 @@
       
         
           
-            <p>1.写一个<code>type</code>属性为<code>hidden</code>的<strong>input</strong>，value值为要传入的url<br>2.把<strong>ur</strong>l用<code>urlEncode</code>编码转换，因为当字符串数据以<strong>url</strong>的形式传递给web服务器时,字符串中是不允许出现空格和特殊字符的<br>3.编写识别浏览器<code>ua</code>识别函数，判断当前浏览器<code>ua</code>是否为微信，是则打开微信网页授权回调域名 </p>
-<p>注意遇到问题：            </p>
+            <p>1.写一个<code>type</code>属性为<code>hidden</code>的<strong>input</strong>，value值为要传入的url<br>2.把<strong>ur</strong>l用<code>urlEncode</code>编码转换，因为当字符串数据以<strong>url</strong>的形式传递给web服务器时,字符串中是不允许出现空格和特殊字符的<br>3.编写识别浏览器<code>ua</code>识别函数，判断当前浏览器<code>ua</code>是否为微信，是则打开微信网页授权回调域名</p>
+<p>注意遇到问题：</p>
 <ol>
 <li>Scope参数错误或没有Scope权限：订阅号没有权限，账号没有认证。<br>其次需要在微信公共号后台OAuth2.0网页授权配置授权回调页面域名，<br>这边需要注意一点！scope位置必须是往后的，正确的配置如下：</li>
 </ol>
@@ -424,25 +391,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;867</span>
 
@@ -461,15 +409,6 @@
 
           
           
-             <span id="/2015/10/25/new-Date-格式问题/" class="leancloud_visitors" data-flag-title="new Date()格式问题">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
 
 
         </div>
@@ -485,7 +424,7 @@
       
         
           <p>最近遇到一个问题，查不到原因。卡在那里，所幸在<code>stackoverflow</code>找到了答案；<br>后端提供的接口，json其中一条格式是这样的 <code>&quot;start_date&quot;: &quot;2015-10-10 19:11&quot;</code></p>
-<p>而然我从发送请求拉取json数据的时候，前台有这么一个事件是通过new Date()填充数据。<br>格式如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scheduler.addEvent(&#123; </span><br><span class="line">    start_date: <span class="keyword">new</span> <span class="built_in">Date</span>(dataList.events[i].start_date), <span class="comment">//事件开始时间</span></span><br><span class="line">    end_date: <span class="keyword">new</span> <span class="built_in">Date</span>(allDayEndDate),<span class="comment">//事件结束时间</span></span><br><span class="line">    text: dataList.events[i].title, <span class="comment">//日历事件主题内容</span></span><br><span class="line">    eid: dataList.events[i].eid, <span class="comment">//eid</span></span><br><span class="line">    start_time:dataList.events[i].day_num <span class="comment">//事件开始时间</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>而然我从发送请求拉取json数据的时候，前台有这么一个事件是通过new Date()填充数据。<br>格式如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scheduler.addEvent(&#123;</span><br><span class="line">    start_date: <span class="keyword">new</span> <span class="built_in">Date</span>(dataList.events[i].start_date), <span class="comment">//事件开始时间</span></span><br><span class="line">    end_date: <span class="keyword">new</span> <span class="built_in">Date</span>(allDayEndDate),<span class="comment">//事件结束时间</span></span><br><span class="line">    text: dataList.events[i].title, <span class="comment">//日历事件主题内容</span></span><br><span class="line">    eid: dataList.events[i].eid, <span class="comment">//eid</span></span><br><span class="line">    start_time:dataList.events[i].day_num <span class="comment">//事件开始时间</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>这边的<code>start_date</code> 和 <code>end_date</code>的格式都是 <strong>2015-10-10 19:11</strong><br>没错，写完在我的chrome上数据显示正常。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/10/25/new-Date-格式问题/" rel="contents">
@@ -555,25 +494,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/微信开发/" itemprop="url" rel="index">
-                    <span itemprop="name">微信开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,144</span>
 
@@ -591,15 +511,6 @@
           
 
           
-          
-             <span id="/2015/10/25/JS判断是否在微信浏览器打开/" class="leancloud_visitors" data-flag-title="用JS判断是否在微信浏览器打开">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -684,25 +595,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/微信开发/" itemprop="url" rel="index">
-                    <span itemprop="name">微信开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,317</span>
 
@@ -720,15 +612,6 @@
           
 
           
-          
-             <span id="/2015/10/23/安卓非微信浏览器呼出高德地图App/" class="leancloud_visitors" data-flag-title="安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -820,25 +703,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端规范/" itemprop="url" rel="index">
-                    <span itemprop="name">前端规范</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,274</span>
 
@@ -856,15 +720,6 @@
           
 
           
-          
-             <span id="/2015/10/22/前端规范/" class="leancloud_visitors" data-flag-title="前端规范">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -887,7 +742,7 @@
 （2）.大小(width, height, padding, margin)
 （3）.文字系列(font, line-height, letter-spacing, color, text-align等)
 （4）.背景(background, border等)
-（5）.其他(animation, transition等) 
+（5）.其他(animation, transition等)
 </code></pre>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/10/22/前端规范/" rel="contents">
@@ -957,25 +812,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/心情语录/" itemprop="url" rel="index">
-                    <span itemprop="name">心情语录</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;457</span>
 
@@ -993,15 +829,6 @@
           
 
           
-          
-             <span id="/2015/10/22/第一篇文章/" class="leancloud_visitors" data-flag-title="第一篇文章">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -1289,99 +1116,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

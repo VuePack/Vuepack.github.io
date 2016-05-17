@@ -69,7 +69,7 @@
 <meta property="og:description" content="开发背景：1.移动端Html5页面开发2.适配不同分辨率的手机3.适配不同屏幕尺寸的手机
 开发工具1.Sublime编辑器:页面开发2.BrowserSync终端:监测文件,搭建本地服务器,多终端页面实时刷新（告别F5手党哈哈哈~~）3.LiveStyle:配合chrome，进行面板调试css,实时缓存css文件
 进入主题先说下一些基本的概念，普及下">
-<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta property="og:updated_time" content="2016-05-17T13:11:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端H5页面多终端适配解决方案">
 <meta name="twitter:description" content="开发背景：1.移动端Html5页面开发2.适配不同分辨率的手机3.适配不同屏幕尺寸的手机
@@ -281,25 +281,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/移动端开发/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,791</span>
 
@@ -317,15 +298,6 @@
           
 
           
-          
-             <span id="/2015/11/02/移动端H5页面多终端适配解决方案/" class="leancloud_visitors" data-flag-title="移动端H5页面多终端适配解决方案">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -359,7 +331,7 @@
 </ul>
 </blockquote>
 <p>直接设置<code>viewport</code>为320px的1.3倍，将页面放大1.3倍<br>目前大部分页面都是以320px为基准的布局，而iphone6的宽度比是375/320 = 1.171875，iphone6+则是 414/320 = 1.29375<br>那么以1.29倍也就约等于1.3了。</p>
-<h3 id="2-iPhone6-的CSS-media-query"><a href="#2-iPhone6-的CSS-media-query" class="headerlink" title="2.iPhone6+ 的CSS media query"></a>2.iPhone6+ 的CSS media query</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*320px布局*/</span></span><br><span class="line"><span class="selector-tag">html</span>&#123;<span class="attribute">font-size</span>: <span class="number">100px</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;<span class="attribute">font-size</span>: <span class="number">0.14rem</span> <span class="comment">/*实际相当于14px*/</span>&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/* iphone 6 */</span></span><br><span class="line">@<span class="keyword">media</span> (min-device-width : <span class="number">375px</span>) and (max-device-width : <span class="number">667px</span>) and (-webkit-min-device-pixel-ratio : <span class="number">2</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span>&#123;<span class="attribute">font-size</span>: <span class="number">117.1875px</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iphone6 plus */</span></span><br><span class="line">@<span class="keyword">media</span> (min-device-width : <span class="number">414px</span>) and (max-device-width : <span class="number">736px</span>) and (-webkit-min-device-pixel-ratio : <span class="number">3</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span>&#123;<span class="attribute">font-size</span>: <span class="number">129.375px</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-iPhone6-的CSS-media-query"><a href="#2-iPhone6-的CSS-media-query" class="headerlink" title="2.iPhone6+ 的CSS media query"></a>2.iPhone6+ 的CSS media query</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*320px布局*/</span></span><br><span class="line"><span class="selector-tag">html</span>&#123;<span class="attribute">font-size</span>: <span class="number">100px</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;<span class="attribute">font-size</span>: <span class="number">0.14rem</span> <span class="comment">/*实际相当于14px*/</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* iphone 6 */</span></span><br><span class="line">@<span class="keyword">media</span> (min-device-width : <span class="number">375px</span>) and (max-device-width : <span class="number">667px</span>) and (-webkit-min-device-pixel-ratio : <span class="number">2</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span>&#123;<span class="attribute">font-size</span>: <span class="number">117.1875px</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* iphone6 plus */</span></span><br><span class="line">@<span class="keyword">media</span> (min-device-width : <span class="number">414px</span>) and (max-device-width : <span class="number">736px</span>) and (-webkit-min-device-pixel-ratio : <span class="number">3</span>)&#123;</span><br><span class="line">    <span class="selector-tag">html</span>&#123;<span class="attribute">font-size</span>: <span class="number">129.375px</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>不过用媒体查询的方式好像不是很精确。具体看下面js的方案</p>
 <h3 id="3-JS去动态计算根元素的font-size"><a href="#3-JS去动态计算根元素的font-size" class="headerlink" title="3.JS去动态计算根元素的font-size"></a>3.JS去动态计算根元素的font-size</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">doc, win</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> docEl = doc.documentElement,</span><br><span class="line">    resizeEvt = <span class="string">'orientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>,</span><br><span class="line">    recalc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> clientWidth = docEl.clientWidth;</span><br><span class="line">      <span class="keyword">if</span> (!clientWidth) <span class="keyword">return</span>;</span><br><span class="line">      docEl.style.fontSize = <span class="number">20</span> * (clientWidth / <span class="number">320</span>) + <span class="string">'px'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!doc.addEventListener) <span class="keyword">return</span>;</span><br><span class="line">  win.addEventListener(resizeEvt, recalc, <span class="literal">false</span>);</span><br><span class="line">  doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, recalc, <span class="literal">false</span>);</span><br><span class="line">&#125;)(<span class="built_in">document</span>, <span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
 <p>页面初始化的时候计算font-size，然后再绑定resize事件。这种效果就和百分比布局一样了。</p>
@@ -847,99 +819,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

@@ -68,7 +68,7 @@
 <meta property="og:description" content="babel编译Babel 是一个 JavaScript 的编译工具，它可以把一种形式的 JavaScript 转换成另一种形式的 JavaScript 。比如它可以把 es6 的 JavaScript 编译成现在主要浏览器使用的 es5 的 JavaScript 。这样我们就可以从现在开始，使用 es6 提供的一些新功能去创建应用了，然后用 babel 把它变成 es5 的样子。
 另外 Babel">
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/es5.png">
-<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta property="og:updated_time" content="2016-05-17T13:10:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端工具">
 <meta name="twitter:description" content="babel编译Babel 是一个 JavaScript 的编译工具，它可以把一种形式的 JavaScript 转换成另一种形式的 JavaScript 。比如它可以把 es6 的 JavaScript 编译成现在主要浏览器使用的 es5 的 JavaScript 。这样我们就可以从现在开始，使用 es6 提供的一些新功能去创建应用了，然后用 babel 把它变成 es5 的样子。
@@ -280,25 +280,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端工具/" itemprop="url" rel="index">
-                    <span itemprop="name">前端工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,004</span>
 
@@ -316,15 +297,6 @@
           
 
           
-          
-             <span id="/2015/12/06/前端工具/" class="leancloud_visitors" data-flag-title="前端工具">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -344,7 +316,7 @@
 <p>有些其它的前端工具里面也会用到 <code>babel</code> 这个工具 .. 比如 <strong>jspm ，webpack </strong>等等 .. 在使用这些工具的时候，你可能不需要单独去安装配置 <code>babel</code> ..</p>
 <p>注意我这边安装时是最新的<strong>babel6</strong>,新版的<strong>babel6</strong>跟以前不一样，<strong>babel6</strong>拆分成两个包：<code>babel-cli</code>和<code>babel-core</code>;<br>具体安装编译步骤：<br><a id="more"></a></p>
 <ul>
-<li><p>1.安装babel命令行工具： </p>
+<li><p>1.安装babel命令行工具：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g babel@<span class="number">5</span><span class="comment">//这边注意我安装是babel5不是babel6版本</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>2.在项目文件下创建依赖配置文件：</p>
@@ -849,99 +821,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

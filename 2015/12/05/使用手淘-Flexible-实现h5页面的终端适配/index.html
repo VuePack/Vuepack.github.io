@@ -72,7 +72,7 @@
 <meta property="og:image" content="https://camo.githubusercontent.com/8e69ed933a0eff873d4a2b3667461d1e3ec2d790/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d362e6a7067">
 <meta property="og:image" content="https://camo.githubusercontent.com/7bc50fa37be4ada5d263152a107125a216a6936c/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f63737372656d2e676966">
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2.gif">
-<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta property="og:updated_time" content="2016-05-17T13:10:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用手淘[Flexible]实现h5页面的终端适配">
 <meta name="twitter:description" content="双11已过，手淘前端团队大漠老湿分享的一个基于手淘html5终端适配的移动端解决方案；之前买过大漠老湿写的书图解CSS3，写的很用心，很棒 😄
@@ -302,15 +302,6 @@
 
           
           
-             <span id="/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/" class="leancloud_visitors" data-flag-title="使用手淘[Flexible]实现h5页面的终端适配">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
 
 
         </div>
@@ -345,7 +336,7 @@
 <h4 id="2-4设备像素比-device-pixel-ratio"><a href="#2-4设备像素比-device-pixel-ratio" class="headerlink" title="2.4设备像素比(device pixel ratio)"></a>2.4设备像素比(device pixel ratio)</h4><p>设备像素比简称为dpr，其定义了物理像素和设备独立像素的对应关系。它的值可以按下面的公式计算得到：</p>
 <pre><code>设备像素比 ＝ 物理像素 / 设备独立像素
 </code></pre><p>在JavaScript中，可以通过<code>window.devicePixelRatio</code>获取到当前设备的<strong>dpr</strong>。而在CSS中，可以通过<code>-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio</code>和 <code>-webkit-max-device-pixel-ratio</code>进行媒体查询，对不同<strong>dpr</strong>的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。</p>
-<p>部分代码逻辑：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!dpr &amp;&amp; !scale) &#123;</span><br><span class="line">    <span class="keyword">var</span> isAndroid = win.navigator.appVersion.match(<span class="regexp">/android/gi</span>);</span><br><span class="line">    <span class="keyword">var</span> isIPhone = win.navigator.appVersion.match(<span class="regexp">/iphone/gi</span>);</span><br><span class="line">    <span class="keyword">var</span> devicePixelRatio = win.devicePixelRatio;</span><br><span class="line">    <span class="keyword">if</span> (isIPhone) &#123;</span><br><span class="line">        <span class="comment">// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案</span></span><br><span class="line">        <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">3</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">3</span>)) &#123;                </span><br><span class="line">            dpr = <span class="number">3</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">2</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">2</span>))&#123;</span><br><span class="line">            dpr = <span class="number">2</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dpr = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 其他设备下，仍旧使用1倍的方案</span></span><br><span class="line">        dpr = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    scale = <span class="number">1</span> / dpr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>部分代码逻辑：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!dpr &amp;&amp; !scale) &#123;</span><br><span class="line">    <span class="keyword">var</span> isAndroid = win.navigator.appVersion.match(<span class="regexp">/android/gi</span>);</span><br><span class="line">    <span class="keyword">var</span> isIPhone = win.navigator.appVersion.match(<span class="regexp">/iphone/gi</span>);</span><br><span class="line">    <span class="keyword">var</span> devicePixelRatio = win.devicePixelRatio;</span><br><span class="line">    <span class="keyword">if</span> (isIPhone) &#123;</span><br><span class="line">        <span class="comment">// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案</span></span><br><span class="line">        <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">3</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">3</span>)) &#123;</span><br><span class="line">            dpr = <span class="number">3</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">2</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">2</span>))&#123;</span><br><span class="line">            dpr = <span class="number">2</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            dpr = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 其他设备下，仍旧使用1倍的方案</span></span><br><span class="line">        dpr = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    scale = <span class="number">1</span> / dpr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="3-flexible的原理"><a href="#3-flexible的原理" class="headerlink" title="3.flexible的原理"></a>3.flexible的原理</h3><p>flexible实际上就是能过JS来动态改写meta标签，代码类似这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> metaEl = doc.createElement(<span class="string">'meta'</span>);</span><br><span class="line"><span class="keyword">var</span> scale = isRetina ? <span class="number">0.5</span>:<span class="number">1</span>;</span><br><span class="line">metaEl.setAttribute(<span class="string">'name'</span>, <span class="string">'viewport'</span>);</span><br><span class="line">metaEl.setAttribute(<span class="string">'content'</span>, <span class="string">'initial-scale='</span> + scale + <span class="string">', maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale + <span class="string">', user-scalable=no'</span>);</span><br><span class="line"><span class="keyword">if</span> (docEl.firstElementChild) &#123;</span><br><span class="line">    <span class="built_in">document</span>.documentElement.firstElementChild.appendChild(metaEl);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> wrap = doc.createElement(<span class="string">'div'</span>);</span><br><span class="line">    wrap.appendChild(metaEl);</span><br><span class="line">    documen.write(wrap.innerHTML);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>原理流程：</strong></p>
 <ul>
@@ -356,7 +347,7 @@
 <h3 id="4-把视觉稿中的px转换成rem"><a href="#4-把视觉稿中的px转换成rem" class="headerlink" title="4.把视觉稿中的px转换成rem"></a>4.把视觉稿中的px转换成rem</h3><p><code>CSSREM</code>是一个CSS的px值转rem值的Sublime Text3自动完成插件<br><img src="https://camo.githubusercontent.com/7bc50fa37be4ada5d263152a107125a216a6936c/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f63737372656d2e676966" alt="cssrem"></p>
 <h3 id="5-文本字号不建议使用rem"><a href="#5-文本字号不建议使用rem" class="headerlink" title="5.文本字号不建议使用rem"></a>5.文本字号不建议使用rem</h3><p>前面大家都见证了如何使用rem来完成H5适配。那么文本又将如何处理适配。是不是也通过rem来做自动适配。</p>
 <p>显然，我们在iPhone3G和iPhone4的Retina屏下面，希望看到的文本字号是相同的。也就是说，我们不希望文本在Retina屏幕下变小，另外，我们希望在大屏手机上看到更多文本，以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是16px和24px，所以我们不希望出现13px和15px这样的奇葩尺寸。</p>
-<p>如此一来，就决定了在制作H5的页面中，rem并不适合用到段落文本上。所以在Flexible整个适配方案中，考虑文本还是使用px作为单位。只不过使用[data-dpr]属性来区分不同dpr下的文本字号大小。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 1rem; </span><br><span class="line">    height: 0.4rem;</span><br><span class="line">    font-size: 12px; // 默认写上dpr为1的fontSize</span><br><span class="line">&#125;</span><br><span class="line">[data-dpr="2"] div &#123;</span><br><span class="line">    font-size: 24px;</span><br><span class="line">&#125;</span><br><span class="line">[data-dpr="3"] div &#123;</span><br><span class="line">    font-size: 36px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如此一来，就决定了在制作H5的页面中，rem并不适合用到段落文本上。所以在Flexible整个适配方案中，考虑文本还是使用px作为单位。只不过使用[data-dpr]属性来区分不同dpr下的文本字号大小。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 1rem;</span><br><span class="line">    height: 0.4rem;</span><br><span class="line">    font-size: 12px; // 默认写上dpr为1的fontSize</span><br><span class="line">&#125;</span><br><span class="line">[data-dpr="2"] div &#123;</span><br><span class="line">    font-size: 24px;</span><br><span class="line">&#125;</span><br><span class="line">[data-dpr="3"] div &#123;</span><br><span class="line">    font-size: 36px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>最终适配的效果图：<br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2.gif" alt="gif"></p>
 
       
@@ -838,99 +829,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

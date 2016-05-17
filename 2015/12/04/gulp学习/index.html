@@ -72,7 +72,7 @@
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/gulp3.jpeg">
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/gulp4.jpeg">
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/gulp5.jpeg">
-<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta property="og:updated_time" content="2016-05-17T13:11:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gulp学习">
 <meta name="twitter:description" content="Gulp 是一款基于任务的设计模式的自动化工具，通过插件的配合解决全套前端解决方案，如静态页面压缩、图片压缩、JS合并、SASS同步编译并压缩CSS、服务器控制客户端同步刷新。
@@ -284,25 +284,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端工具/" itemprop="url" rel="index">
-                    <span itemprop="name">前端工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;5,593</span>
 
@@ -320,15 +301,6 @@
           
 
           
-          
-             <span id="/2015/12/04/gulp学习/" class="leancloud_visitors" data-flag-title="Gulp学习">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -396,13 +368,13 @@
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="3-1编译-Sass-gulp-sass"><a href="#3-1编译-Sass-gulp-sass" class="headerlink" title="3.1编译 Sass:gulp-sass"></a>3.1编译 Sass:gulp-sass</h3><p>用<code>npm</code>安装<code>gulp-sass</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gulp-sass --save-dev</span><br></pre></td></tr></table></figure></p>
 <p>安装好后会发现<code>node_modules</code>文件下有会多出个<strong>gulp-sass</strong>文件，<code>package.json</code>配置文件添加了一条sass的信息:<code>&quot;gulp-sass&quot;: &quot;^2.1.0&quot;</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);<span class="comment">//把`gulp-sass`模块引进来</span></span><br><span class="line">gulp.task(<span class="string">'build-sass'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//编译sass</span></span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'skin/sass/**/*.scss'</span>).pipe(sass())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'skin/css'</span>))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'watch'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//定义一个实时检测sass的事件,已有改动就编译sass</span></span><br><span class="line">    gulp.watch(<span class="string">'skin/sass/**/*.scss'</span>,[<span class="string">'build-sass'</span>])</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="3-2-搭建本地服务器-gulp-connect"><a href="#3-2-搭建本地服务器-gulp-connect" class="headerlink" title="3.2 搭建本地服务器 gulp-connect"></a>3.2 搭建本地服务器 gulp-connect</h3><p>用<code>npm</code>安装<code>gulp-connect</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-connect --save-dev </span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个搭建本地服务器的组件</span></span><br><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>);</span><br><span class="line">gulp.task(<span class="string">'server'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        root:<span class="string">'demo'</span><span class="comment">//定义一个目录</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-3-合并文件-gulp-concat"><a href="#3-3-合并文件-gulp-concat" class="headerlink" title="3.3 合并文件 gulp-concat"></a>3.3 合并文件 gulp-concat</h3><p>用<code>npm</code>安装<code>gulp-concat</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-concat --save-dev </span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个合并js文件的组件</span></span><br><span class="line"><span class="keyword">var</span> concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);</span><br><span class="line">gulp.task(<span class="string">'merge'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'lib/jquery-1.11.1.min.js'</span>,<span class="string">'lib/swiper.min.js'</span>])</span><br><span class="line">    .pipe(concat(<span class="string">'min.js'</span>))<span class="comment">//合并并重命名文件</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-4-最小化js文件-gulp-uplify"><a href="#3-4-最小化js文件-gulp-uplify" class="headerlink" title="3.4 最小化js文件 gulp-uplify"></a>3.4 最小化js文件 gulp-uplify</h3><p>用<code>npm</code>安装<code>gulp-uplify</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-uplify --save-dev </span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个压缩最小化js文件的组件</span></span><br><span class="line"><span class="keyword">var</span> uplify = <span class="built_in">require</span>(<span class="string">'gulp-uplify'</span>);</span><br><span class="line">gulp.task(<span class="string">'minjs'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'lib/jquery-1.11.1.min.js'</span>,<span class="string">'lib/swiper.min.js'</span>])</span><br><span class="line">    .pipe(concat(<span class="string">'min.js'</span>))<span class="comment">//重命名文件</span></span><br><span class="line">    .pipe(uglify())<span class="comment">//压缩js</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-5-重命名文件：gulp-rename"><a href="#3-5-重命名文件：gulp-rename" class="headerlink" title="3.5 重命名文件：gulp-rename"></a>3.5 重命名文件：gulp-rename</h3><p>用<code>npm</code>安装<code>gulp-rename</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-rename --save-dev </span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个重命名文件的组件</span></span><br><span class="line"><span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);</span><br><span class="line">gulp.task(<span class="string">'rename'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'lib/jquery-1.11.1.js'</span>,<span class="string">'lib/swiper.js'</span>])</span><br><span class="line">    .pipe(concat(<span class="string">'jq.js'</span>))<span class="comment">//合并无压缩的重命名文件</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">    .pipe(uglify())<span class="comment">//压缩</span></span><br><span class="line">    .pipe(rename(<span class="string">'jq.min.js'</span>))<span class="comment">//压缩后的js并重命名</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-6-最小化-css-文件：gulp-minify-css"><a href="#3-6-最小化-css-文件：gulp-minify-css" class="headerlink" title="3.6 最小化 css 文件：gulp-minify-css"></a>3.6 最小化 css 文件：gulp-minify-css</h3><p>用<code>npm</code>安装<code>gulp-minify-css</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-minify-css --save-dev </span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个压缩最小化css文件的组件</span></span><br><span class="line"><span class="keyword">var</span> minifyCss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>);</span><br><span class="line">gulp.task(<span class="string">'mincss'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'skin/index.css'</span>)</span><br><span class="line">    .pipe(minifyCss())<span class="comment">//压缩css</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-7-最小化图像：gulp-imagemin"><a href="#3-7-最小化图像：gulp-imagemin" class="headerlink" title="3.7 最小化图像：gulp-imagemin"></a>3.7 最小化图像：gulp-imagemin</h3><p>用<code>npm</code>安装<code>gulp-imagemin</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-imagemin --save-dev </span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个压缩最小化图片的组件</span></span><br><span class="line"><span class="keyword">var</span> imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>);</span><br><span class="line">gulp.task(<span class="string">'minimg'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'images/**/*.png'</span>)</span><br><span class="line">    .pipe(imagemin())<span class="comment">//压缩图片</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'images'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-8-自动兼容处理浏览器前缀：gulp-autoprefixer"><a href="#3-8-自动兼容处理浏览器前缀：gulp-autoprefixer" class="headerlink" title="3.8 自动兼容处理浏览器前缀：gulp-autoprefixer"></a>3.8 自动兼容处理浏览器前缀：gulp-autoprefixer</h3><p>用<code>npm</code>安装<code>gulp-autoprefixer</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-autoprefixer --save-dev </span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个自动兼容处理浏览器前缀的组件</span></span><br><span class="line"><span class="keyword">var</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>);</span><br><span class="line">gulp.task(<span class="string">'autocss'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'time-line/skin/modules/model-detail.css'</span>)</span><br><span class="line">    .pipe(autoprefixer(&#123;</span><br><span class="line">        browsers: [<span class="string">'Firefox &gt;= 20'</span>,<span class="string">'&gt; 5%'</span>,<span class="string">'last 2 versions'</span>],</span><br><span class="line">        cascade: <span class="literal">false</span>, <span class="comment">//是否美化属性值 默认：true 像这样：</span></span><br><span class="line">        <span class="comment">//-webkit-transform: rotate(45deg);</span></span><br><span class="line">        <span class="comment">//        transform: rotate(45deg);</span></span><br><span class="line">        remove:<span class="literal">true</span> <span class="comment">//是否去掉不必要的前缀 默认：true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'time-line/css'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-2-搭建本地服务器-gulp-connect"><a href="#3-2-搭建本地服务器-gulp-connect" class="headerlink" title="3.2 搭建本地服务器 gulp-connect"></a>3.2 搭建本地服务器 gulp-connect</h3><p>用<code>npm</code>安装<code>gulp-connect</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-connect --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个搭建本地服务器的组件</span></span><br><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>);</span><br><span class="line">gulp.task(<span class="string">'server'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        root:<span class="string">'demo'</span><span class="comment">//定义一个目录</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3-合并文件-gulp-concat"><a href="#3-3-合并文件-gulp-concat" class="headerlink" title="3.3 合并文件 gulp-concat"></a>3.3 合并文件 gulp-concat</h3><p>用<code>npm</code>安装<code>gulp-concat</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-concat --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个合并js文件的组件</span></span><br><span class="line"><span class="keyword">var</span> concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);</span><br><span class="line">gulp.task(<span class="string">'merge'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'lib/jquery-1.11.1.min.js'</span>,<span class="string">'lib/swiper.min.js'</span>])</span><br><span class="line">    .pipe(concat(<span class="string">'min.js'</span>))<span class="comment">//合并并重命名文件</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-4-最小化js文件-gulp-uplify"><a href="#3-4-最小化js文件-gulp-uplify" class="headerlink" title="3.4 最小化js文件 gulp-uplify"></a>3.4 最小化js文件 gulp-uplify</h3><p>用<code>npm</code>安装<code>gulp-uplify</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-uplify --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个压缩最小化js文件的组件</span></span><br><span class="line"><span class="keyword">var</span> uplify = <span class="built_in">require</span>(<span class="string">'gulp-uplify'</span>);</span><br><span class="line">gulp.task(<span class="string">'minjs'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'lib/jquery-1.11.1.min.js'</span>,<span class="string">'lib/swiper.min.js'</span>])</span><br><span class="line">    .pipe(concat(<span class="string">'min.js'</span>))<span class="comment">//重命名文件</span></span><br><span class="line">    .pipe(uglify())<span class="comment">//压缩js</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-5-重命名文件：gulp-rename"><a href="#3-5-重命名文件：gulp-rename" class="headerlink" title="3.5 重命名文件：gulp-rename"></a>3.5 重命名文件：gulp-rename</h3><p>用<code>npm</code>安装<code>gulp-rename</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-rename --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个重命名文件的组件</span></span><br><span class="line"><span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);</span><br><span class="line">gulp.task(<span class="string">'rename'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'lib/jquery-1.11.1.js'</span>,<span class="string">'lib/swiper.js'</span>])</span><br><span class="line">    .pipe(concat(<span class="string">'jq.js'</span>))<span class="comment">//合并无压缩的重命名文件</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">    .pipe(uglify())<span class="comment">//压缩</span></span><br><span class="line">    .pipe(rename(<span class="string">'jq.min.js'</span>))<span class="comment">//压缩后的js并重命名</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-6-最小化-css-文件：gulp-minify-css"><a href="#3-6-最小化-css-文件：gulp-minify-css" class="headerlink" title="3.6 最小化 css 文件：gulp-minify-css"></a>3.6 最小化 css 文件：gulp-minify-css</h3><p>用<code>npm</code>安装<code>gulp-minify-css</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-minify-css --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个压缩最小化css文件的组件</span></span><br><span class="line"><span class="keyword">var</span> minifyCss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>);</span><br><span class="line">gulp.task(<span class="string">'mincss'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'skin/index.css'</span>)</span><br><span class="line">    .pipe(minifyCss())<span class="comment">//压缩css</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'lib'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-7-最小化图像：gulp-imagemin"><a href="#3-7-最小化图像：gulp-imagemin" class="headerlink" title="3.7 最小化图像：gulp-imagemin"></a>3.7 最小化图像：gulp-imagemin</h3><p>用<code>npm</code>安装<code>gulp-imagemin</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-imagemin --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个压缩最小化图片的组件</span></span><br><span class="line"><span class="keyword">var</span> imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>);</span><br><span class="line">gulp.task(<span class="string">'minimg'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'images/**/*.png'</span>)</span><br><span class="line">    .pipe(imagemin())<span class="comment">//压缩图片</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'images'</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-8-自动兼容处理浏览器前缀：gulp-autoprefixer"><a href="#3-8-自动兼容处理浏览器前缀：gulp-autoprefixer" class="headerlink" title="3.8 自动兼容处理浏览器前缀：gulp-autoprefixer"></a>3.8 自动兼容处理浏览器前缀：gulp-autoprefixer</h3><p>用<code>npm</code>安装<code>gulp-autoprefixer</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//终端命令</span></span><br><span class="line">npm install gulp-autoprefixer --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置一个自动兼容处理浏览器前缀的组件</span></span><br><span class="line"><span class="keyword">var</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>);</span><br><span class="line">gulp.task(<span class="string">'autocss'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'time-line/skin/modules/model-detail.css'</span>)</span><br><span class="line">    .pipe(autoprefixer(&#123;</span><br><span class="line">        browsers: [<span class="string">'Firefox &gt;= 20'</span>,<span class="string">'&gt; 5%'</span>,<span class="string">'last 2 versions'</span>],</span><br><span class="line">        cascade: <span class="literal">false</span>, <span class="comment">//是否美化属性值 默认：true 像这样：</span></span><br><span class="line">        <span class="comment">//-webkit-transform: rotate(45deg);</span></span><br><span class="line">        <span class="comment">//        transform: rotate(45deg);</span></span><br><span class="line">        remove:<span class="literal">true</span> <span class="comment">//是否去掉不必要的前缀 默认：true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'time-line/css'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -883,99 +855,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

@@ -65,13 +65,13 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
  是因为我们没有设置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack学习和踩坑">
-<meta property="og:url" content="https://github.com/Vuepack/2016/04/28/webpack学习和踩坑/index.html">
+<meta property="og:url" content="https://github.com/Vuepack/2016/05/01/webpack学习和踩坑/index.html">
 <meta property="og:site_name" content="Leon's Daily">
 <meta property="og:description" content="迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。
 webpack报错（环境变量）123module.js:340throw err;canot find module &apos;webpack/lib/node/NodeTemplatePlugin&apos;
 没有找到这个模块？，cd ls顺着路径去下面找，该依赖模块安装了。Google了下，路径设置的问题。具体解决方案。
  是因为我们没有设置">
-<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta property="og:updated_time" content="2016-05-17T13:22:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack学习和踩坑">
 <meta name="twitter:description" content="迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。
@@ -277,8 +277,8 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-28T16:15:36+08:00" content="2016-04-28 16:15:36">
-              2016-04-28 16:15:36
+            <time itemprop="dateCreated" datetime="2016-05-01T16:15:36+08:00" content="2016-05-01 16:15:36">
+              2016-05-01 16:15:36
             </time>
           </span>
 
@@ -291,8 +291,8 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/28/webpack学习和踩坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/28/webpack学习和踩坑/" itemprop="commentsCount"></span>
+                <a href="/2016/05/01/webpack学习和踩坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/01/webpack学习和踩坑/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -301,15 +301,6 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
           
 
           
-          
-             <span id="/2016/04/28/webpack学习和踩坑/" class="leancloud_visitors" data-flag-title="webpack学习和踩坑">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -378,8 +369,8 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/28/webpack学习和踩坑/"
-           data-title="webpack学习和踩坑" data-url="https://github.com/Vuepack/2016/04/28/webpack学习和踩坑/">
+      <div class="ds-thread" data-thread-key="2016/05/01/webpack学习和踩坑/"
+           data-title="webpack学习和踩坑" data-url="https://github.com/Vuepack/2016/05/01/webpack学习和踩坑/">
       </div>
     
   </div>
@@ -803,99 +794,6 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>

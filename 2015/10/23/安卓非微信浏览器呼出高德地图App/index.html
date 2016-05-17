@@ -75,7 +75,7 @@
 
 是的话调用web版高德地图  (注意：这边调用高德地图参数先是维度再是经度 坑~~)
 不是的话呼起高德地图App (这边我是创建iframe的方式把App打开协议服务地址赋值给src，通过ifr">
-<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta property="og:updated_time" content="2016-05-17T13:10:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案">
 <meta name="twitter:description" content="大家都知道微信屏蔽了呼起App，除非App应用在腾讯的应用宝上架跳转貌似可以呼起，不过没尝试。不过此方案劳身费神，所以否决
@@ -290,25 +290,6 @@
 
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/微信开发/" itemprop="url" rel="index">
-                    <span itemprop="name">微信开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,317</span>
 
@@ -326,15 +307,6 @@
           
 
           
-          
-             <span id="/2015/10/23/安卓非微信浏览器呼出高德地图App/" class="leancloud_visitors" data-flag-title="安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
           
 
 
@@ -361,14 +333,14 @@
 <h3 id="JS代码："><a href="#JS代码：" class="headerlink" title="JS代码："></a>JS代码：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 高德地图地址位置名称 */</span></span><br><span class="line"><span class="keyword">var</span> oAddressName = $(<span class="string">".ico_address"</span>).next(<span class="string">"span"</span>).html();</span><br><span class="line"><span class="comment">/* 字符串坐标 */</span></span><br><span class="line"><span class="keyword">var</span> strsCoord = $(<span class="string">'#coordInate'</span>).attr(<span class="string">'value'</span>);</span><br><span class="line"><span class="comment">//分割字符串坐标</span></span><br><span class="line"><span class="keyword">var</span> arrCoord = strsCoord.split(<span class="string">","</span>);</span><br><span class="line"><span class="comment">//分割后完整的坐标地址</span></span><br><span class="line"><span class="keyword">var</span> coord = arrCoord[<span class="number">1</span>] + <span class="string">","</span> +arrCoord[<span class="number">0</span>];</span><br><span class="line"><span class="comment">//纬度，经度</span></span><br><span class="line"><span class="keyword">var</span> mapUrl = <span class="string">'http://m.amap.com/?mk='</span> + coord + <span class="string">','</span> + oAddressName;</span><br><span class="line"><span class="comment">//高德地图呼出协议地址</span></span><br><span class="line"><span class="keyword">var</span> iosMap = <span class="string">'iosamap://viewMap?sourceApplication=applicationName&amp;poiname='</span>+oAddressName+<span class="string">'&amp;lat='</span>+arrCoord[<span class="number">1</span>]+<span class="string">'&amp;lon='</span>+arrCoord[<span class="number">0</span>]+<span class="string">'&amp;dev=1'</span>;</span><br><span class="line"><span class="comment">//呼出地图</span></span><br><span class="line">$(<span class="string">"#oPenMap"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span> (ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">'micromessenger'</span>) &#123;</span><br><span class="line">        <span class="built_in">window</span>.open(mapUrl);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fnApp(iosMap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnApp</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为</span></span><br><span class="line">    <span class="comment">// 否则打开a标签的href链接</span></span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line">    ifr.src = url; <span class="comment">//APP对应的打开协议服务地址</span></span><br><span class="line">    ifr.style.display = <span class="string">'none'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(ifr);</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.body.removeChild(ifr);</span><br><span class="line">    &#125; , <span class="number">5000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="方案1缺陷："><a href="#方案1缺陷：" class="headerlink" title="方案1缺陷："></a>方案1缺陷：</h3><p>这边a标签的链接是Appstore的链接，大家都知道Appstore也是款app，所以它也是以a链接的方式唤起的app，如果你填写的是一个url【例如:<a href="http://www.baidu.com/down.html】你会发现当呼起的高德地图App的时候同时你填写的url也同时执行跳转了】为什么呢?" target="_blank" rel="external">http://www.baidu.com/down.html】你会发现当呼起的高德地图App的时候同时你填写的url也同时执行跳转了】为什么呢?</a></p>
 <p> <strong> Because: </strong> 因为a标签的默认行为你没有阻止，这个时候就需要你个条件判断是否已经打开app，如果打开，用event.preventDefault()阻止a标签默认行为，所以接下来继续受虐 又有了解决方案2 - -</p>
-<h2 id="解决方案2："><a href="#解决方案2：" class="headerlink" title="解决方案2："></a>解决方案2：</h2><p> 同样是微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器， </p>
+<h2 id="解决方案2："><a href="#解决方案2：" class="headerlink" title="解决方案2："></a>解决方案2：</h2><p> 同样是微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器，</p>
 <ol>
 <li>是的话调用web版高德地图（<strong>注意：这边调用高德地图参数先是维度再是经度 坑~~</strong>）</li>
 <li>不是的话呼起高德地图App（<strong>这边同样是创建iframe的方式把App打开协议服务地址赋值给src，通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，这边我是通过判断JS setTimeout 和Data.now()函数 来比较呼出app的时间戳 和正常app呼出app的时间戳时间</strong>）</li>
 </ol>
 <h3 id="html代码：一个a链接-href为高德appstore下载链接-1"><a href="#html代码：一个a链接-href为高德appstore下载链接-1" class="headerlink" title="html代码：一个a链接 href为高德appstore下载链接"></a>html代码：一个a链接 href为高德appstore下载链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"oPenMap"</span> <span class="attr">class</span>=<span class="string">"location"</span> <span class="attr">href</span>=<span class="string">"https://itunes.apple.com/app/id461703208?spm=0.0.0.0.6cS3kh&amp;ls=1&amp;mt=8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="JS代码：-1"><a href="#JS代码：-1" class="headerlink" title="JS代码："></a>JS代码：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 高德地图地址位置名称 */</span></span><br><span class="line"><span class="keyword">var</span> oAddressName = $(<span class="string">".ico_address"</span>).next(<span class="string">"span"</span>).html();</span><br><span class="line"><span class="comment">/* 字符串坐标 */</span></span><br><span class="line"><span class="keyword">var</span> strsCoord = $(<span class="string">'#coordInate'</span>).attr(<span class="string">'value'</span>);</span><br><span class="line"><span class="comment">//分割字符串坐标</span></span><br><span class="line"><span class="keyword">var</span> arrCoord = strsCoord.split(<span class="string">","</span>);</span><br><span class="line"><span class="comment">//分割后完整的坐标地址</span></span><br><span class="line"><span class="keyword">var</span> coord = arrCoord[<span class="number">1</span>] + <span class="string">","</span> +arrCoord[<span class="number">0</span>];</span><br><span class="line"><span class="comment">//纬度，经度</span></span><br><span class="line"><span class="keyword">var</span> mapUrl = <span class="string">'http://m.amap.com/?mk='</span> + coord + <span class="string">','</span> + oAddressName;</span><br><span class="line"><span class="comment">//高德地图呼出协议地址</span></span><br><span class="line"><span class="keyword">var</span> iosMap = <span class="string">'iosamap://viewMap?sourceApplication=applicationName&amp;poiname='</span>+oAddressName+<span class="string">'&amp;lat='</span>+arrCoord[<span class="number">1</span>]+<span class="string">'&amp;lon='</span>+arrCoord[<span class="number">0</span>]+<span class="string">'&amp;dev=1'</span>;</span><br><span class="line"><span class="comment">//呼出地图</span></span><br><span class="line">$(<span class="string">"#oPenMap"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span> (ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">'micromessenger'</span>) &#123;</span><br><span class="line">        <span class="built_in">window</span>.location.href = mapUrl;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fnApp(iosMap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">        </span><br><span class="line"><span class="comment">//判断是否安装高德地图方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnApp</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//淘宝执行的阀值是600，高德地图大概调整到800ms</span></span><br><span class="line">    <span class="keyword">var</span> timeout, defaulExeTime = <span class="number">800</span>,</span><br><span class="line">        hasApp = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">//850ms后判断是否安装app</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hasApp) &#123;</span><br><span class="line">            <span class="comment">// alert('安装了app');</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//否则跳转到网页端地图url</span></span><br><span class="line">            <span class="built_in">window</span>.location.href = mapUrl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.body.removeChild(ifr);</span><br><span class="line">    &#125;, <span class="number">850</span>)</span><br><span class="line">    <span class="comment">//点击地图按钮时的时间戳</span></span><br><span class="line">    <span class="keyword">var</span> t1 = <span class="built_in">Date</span>.now();</span><br><span class="line">    <span class="comment">//通过创建iframe的方式试图打开APP，如果能正常打开，会直接切换到APP</span></span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">    ifr.setAttribute(<span class="string">'src'</span>, url);</span><br><span class="line">    ifr.setAttribute(<span class="string">'style'</span>, <span class="string">'display:none'</span>);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(ifr);</span><br><span class="line">    <span class="comment">//800ms后主动执行倒计时</span></span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//高德app大概呼出的时间戳</span></span><br><span class="line">        <span class="keyword">var</span> t2 = <span class="built_in">Date</span>.now();</span><br><span class="line">        <span class="comment">//app呼出时间戳减去点击地图按钮时间戳，如果小于800那就是没安装app</span></span><br><span class="line">        <span class="keyword">if</span> (!t1 || t2 - t1 &lt; defaulExeTime + <span class="number">100</span>) &#123;</span><br><span class="line">            hasApp = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, defaulExeTime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方案2小缺陷："><a href="#方案2小缺陷：" class="headerlink" title="方案2小缺陷："></a>方案2小缺陷：</h3><p>此方案虽然完美的实现了所有可以实现的功能。其实还有一个不足之处，就是非微信浏览器都是用setTimeOut() 和 时间戳的方法 都是用800ms的时间来判断是否能呼出app，所以0.8秒等待的时候还有点小遗憾的 ~~ 暂时还没想到更好的方法。还有一个不知道为什么Safari浏览器不能呼起不知道为什么~ </p>
+<h3 id="JS代码：-1"><a href="#JS代码：-1" class="headerlink" title="JS代码："></a>JS代码：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 高德地图地址位置名称 */</span></span><br><span class="line"><span class="keyword">var</span> oAddressName = $(<span class="string">".ico_address"</span>).next(<span class="string">"span"</span>).html();</span><br><span class="line"><span class="comment">/* 字符串坐标 */</span></span><br><span class="line"><span class="keyword">var</span> strsCoord = $(<span class="string">'#coordInate'</span>).attr(<span class="string">'value'</span>);</span><br><span class="line"><span class="comment">//分割字符串坐标</span></span><br><span class="line"><span class="keyword">var</span> arrCoord = strsCoord.split(<span class="string">","</span>);</span><br><span class="line"><span class="comment">//分割后完整的坐标地址</span></span><br><span class="line"><span class="keyword">var</span> coord = arrCoord[<span class="number">1</span>] + <span class="string">","</span> +arrCoord[<span class="number">0</span>];</span><br><span class="line"><span class="comment">//纬度，经度</span></span><br><span class="line"><span class="keyword">var</span> mapUrl = <span class="string">'http://m.amap.com/?mk='</span> + coord + <span class="string">','</span> + oAddressName;</span><br><span class="line"><span class="comment">//高德地图呼出协议地址</span></span><br><span class="line"><span class="keyword">var</span> iosMap = <span class="string">'iosamap://viewMap?sourceApplication=applicationName&amp;poiname='</span>+oAddressName+<span class="string">'&amp;lat='</span>+arrCoord[<span class="number">1</span>]+<span class="string">'&amp;lon='</span>+arrCoord[<span class="number">0</span>]+<span class="string">'&amp;dev=1'</span>;</span><br><span class="line"><span class="comment">//呼出地图</span></span><br><span class="line">$(<span class="string">"#oPenMap"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span> (ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">'micromessenger'</span>) &#123;</span><br><span class="line">        <span class="built_in">window</span>.location.href = mapUrl;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fnApp(iosMap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否安装高德地图方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnApp</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//淘宝执行的阀值是600，高德地图大概调整到800ms</span></span><br><span class="line">    <span class="keyword">var</span> timeout, defaulExeTime = <span class="number">800</span>,</span><br><span class="line">        hasApp = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">//850ms后判断是否安装app</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hasApp) &#123;</span><br><span class="line">            <span class="comment">// alert('安装了app');</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//否则跳转到网页端地图url</span></span><br><span class="line">            <span class="built_in">window</span>.location.href = mapUrl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.body.removeChild(ifr);</span><br><span class="line">    &#125;, <span class="number">850</span>)</span><br><span class="line">    <span class="comment">//点击地图按钮时的时间戳</span></span><br><span class="line">    <span class="keyword">var</span> t1 = <span class="built_in">Date</span>.now();</span><br><span class="line">    <span class="comment">//通过创建iframe的方式试图打开APP，如果能正常打开，会直接切换到APP</span></span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">    ifr.setAttribute(<span class="string">'src'</span>, url);</span><br><span class="line">    ifr.setAttribute(<span class="string">'style'</span>, <span class="string">'display:none'</span>);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(ifr);</span><br><span class="line">    <span class="comment">//800ms后主动执行倒计时</span></span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//高德app大概呼出的时间戳</span></span><br><span class="line">        <span class="keyword">var</span> t2 = <span class="built_in">Date</span>.now();</span><br><span class="line">        <span class="comment">//app呼出时间戳减去点击地图按钮时间戳，如果小于800那就是没安装app</span></span><br><span class="line">        <span class="keyword">if</span> (!t1 || t2 - t1 &lt; defaulExeTime + <span class="number">100</span>) &#123;</span><br><span class="line">            hasApp = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, defaulExeTime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方案2小缺陷："><a href="#方案2小缺陷：" class="headerlink" title="方案2小缺陷："></a>方案2小缺陷：</h3><p>此方案虽然完美的实现了所有可以实现的功能。其实还有一个不足之处，就是非微信浏览器都是用setTimeOut() 和 时间戳的方法 都是用800ms的时间来判断是否能呼出app，所以0.8秒等待的时候还有点小遗憾的 ~~ 暂时还没想到更好的方法。还有一个不知道为什么Safari浏览器不能呼起不知道为什么~</p>
 
       
     </div>
@@ -849,99 +821,6 @@
 
   
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
 </body>
 </html>
