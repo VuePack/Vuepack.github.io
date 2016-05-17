@@ -1,0 +1,1024 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Leon's Daily" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://7xnjvz.com1.z0.glb.clouddn.com/favicon.ico?v=6.0.0" />
+
+
+
+
+
+
+<meta name="description" content="1.对象—————
+对象使用和属性JavaScript 中所有变量都可以当作对象使用，除了两个例外 null 和 undefined。
+null表示”没有对象”，即该处不应该有值:(1）作为函数的参数，表示该函数的参数不是对象。(2）作为对象原型链的终点。
+undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义:(1）变量被声明了，但没有赋值时，就等于undefined。(2) 调">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript秘密花园摘要">
+<meta property="og:url" content="https://github.com/Vuepack/2015/11/07/JavaScript秘密花园摘要/index.html">
+<meta property="og:site_name" content="Leon's Daily">
+<meta property="og:description" content="1.对象—————
+对象使用和属性JavaScript 中所有变量都可以当作对象使用，除了两个例外 null 和 undefined。
+null表示”没有对象”，即该处不应该有值:(1）作为函数的参数，表示该函数的参数不是对象。(2）作为对象原型链的终点。
+undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义:(1）变量被声明了，但没有赋值时，就等于undefined。(2) 调">
+<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript秘密花园摘要">
+<meta name="twitter:description" content="1.对象—————
+对象使用和属性JavaScript 中所有变量都可以当作对象使用，除了两个例外 null 和 undefined。
+null表示”没有对象”，即该处不应该有值:(1）作为函数的参数，表示该函数的参数不是对象。(2）作为对象原型链的终点。
+undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义:(1）变量被声明了，但没有赋值时，就等于undefined。(2) 调">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Admin'
+    }
+  };
+</script>
+
+  <title> JavaScript秘密花园摘要 | Leon's Daily </title>
+  <script src="https://cdn.bootcss.com/vue/1.0.14/vue.min.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?cb66b58ccd5ccc5bdf2d673b7b299c15";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Leon's Daily</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">to be a better me</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oobsx4abf7ttxGH71eMT','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript秘密花园摘要
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-07T15:53:32+08:00" content="2015-11-07 15:53:32">
+              2015-11-07 15:53:32
+            </time>
+          </span>
+
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;7,141</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/07/JavaScript秘密花园摘要/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/07/JavaScript秘密花园摘要/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/11/07/JavaScript秘密花园摘要/" class="leancloud_visitors" data-flag-title="JavaScript秘密花园摘要">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-对象"><a href="#1-对象" class="headerlink" title="1.对象"></a>1.对象</h2><p>—————</p>
+<h3 id="对象使用和属性"><a href="#对象使用和属性" class="headerlink" title="对象使用和属性"></a>对象使用和属性</h3><p>JavaScript 中所有变量都可以当作对象使用，除了两个例外 <code>null</code> 和 <code>undefined</code>。</p>
+<p>null表示”没有对象”，即该处不应该有值:<br>(1）作为函数的参数，表示该函数的参数不是对象。<br>(2）作为对象原型链的终点。</p>
+<p>undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义:<br>(1）变量被声明了，但没有赋值时，就等于undefined。<br>(2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。<br>(3）对象没有赋值的属性，该属性的值为undefined。<br>(4）函数没有返回值时，默认返回undefined。</p>
+<p>字面值对象展示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span>.toString(); <span class="comment">// 'false'</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].toString(); <span class="comment">// '1,2,3'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Foo.bar = <span class="number">1</span>;</span><br><span class="line">Foo.bar; <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<blockquote>
+<p>一个常见的误解是数字的<strong>字面值</strong>（literal）不能当作对象使用。这是因为 JavaScript 解析器的一个错误， 它试图将点操作符解析为浮点数字面值的一部分。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.</span>toString(); <span class="comment">// 出错：SyntaxError</span></span><br></pre></td></tr></table></figure>
+<p>有很多变通方法可以让数字的字面值看起来像对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2.</span>.toString(); <span class="comment">// 第二个点号可以正常解析 结果为2</span></span><br><span class="line"><span class="number">2</span> .toString(); <span class="comment">// 注意点号前面的空格 结果为2</span></span><br><span class="line">(<span class="number">2</span>).toString(); <span class="comment">// 2先被计算 结果为2</span></span><br></pre></td></tr></table></figure>
+<h4 id="对象作为数据类型"><a href="#对象作为数据类型" class="headerlink" title="对象作为数据类型"></a>对象作为数据类型</h4><p>JavaScript 的对象可以作为哈希表使用，主要用来保存命名的键与值的对应关系。</p>
+<p>使用对象的字面语法 <strong>{}</strong> 可以创建一个简单对象。这个新创建的对象从 <strong>Object.prototype</strong> <code>继承</code>下面，没有任何<code>自定义属性</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;&#125;; <span class="comment">// 定义了一个空对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一个新对象，拥有一个值为24的自定义属性'age'</span></span><br><span class="line"><span class="keyword">var</span> kevinli = &#123;age: <span class="number">24</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h4><p>有两种方式来访问对象的属性，点操作符或者中括号操作符。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var kevinli = &#123;</span><br><span class="line">    age:'24',</span><br><span class="line">    1234:'5678',</span><br><span class="line">    sex :'男'//这边注意sex后面有个空格</span><br><span class="line">&#125;</span><br><span class="line">kevinli.age;// 24</span><br><span class="line">kevinli['age'];//24</span><br><span class="line"></span><br><span class="line">var get = 'age';</span><br><span class="line">kevinli[get];// 24</span><br><span class="line"></span><br><span class="line">kevinli.1234; // SyntaxError </span><br><span class="line">kevinli['1234'];//5678</span><br><span class="line"></span><br><span class="line">kevinli.sex ;/这里就不能访问了</span><br><span class="line">kevinli['sex '];//男</span><br></pre></td></tr></table></figure>
+<p>总结：两种语法是等价的，但是中括号操作符在下面两种情况下依然有效</p>
+<ul>
+<li>动态设置属性</li>
+<li>属性名不是一个有效的变量名（译者注：比如属性名中包含空格，或者属性名是 JS 的关键词）</li>
+</ul>
+<h4 id="删除属性"><a href="#删除属性" class="headerlink" title="删除属性"></a>删除属性</h4><p>删除属性的唯一方法是使用 <code>delete</code> 操作符；设置属性为 <code>undefined</code> 或者 <code>null</code> 并不能真正的删除属性， 而仅仅是移除了属性和值的关联。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    kevinli: <span class="number">1</span>,</span><br><span class="line">    tom: <span class="number">2</span>,</span><br><span class="line">    sum: <span class="number">3</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">obj.kevinli = <span class="literal">undefined</span>;</span><br><span class="line">obj.tom = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">delete</span> obj.sum;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="keyword">if</span> (obj.hasOwnProperty(i)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i, <span class="string">''</span> + obj[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的输出结果有 <strong>kevinli=undefined</strong> 和 <strong>tom=null</strong> - 只有 <strong>sum</strong> 被真正的删除了，所以从输出结果中消失。</p>
+<h4 id="属性名的语法"><a href="#属性名的语法" class="headerlink" title="属性名的语法"></a>属性名的语法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = &#123;</span><br><span class="line">    <span class="string">'case'</span>: <span class="string">'这边的属性名是用引号引起来的'</span>,</span><br><span class="line">    <span class="keyword">delete</span>: <span class="string">'这边会报错,javascript解析错误，用了js自身的关键字'</span> 出错：<span class="built_in">SyntaxError</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>原因:</p>
+<blockquote>
+<p>对象的属性名可以使用字符串或者普通字符声明。但是由于 <strong>JavaScript 解析器</strong>的另一个错误设计， 上面的第二种声明方式在 <code>ECMAScript 5</code> 之前会抛出 <strong>SyntaxError </strong>的错误。</p>
+<p>这个错误的原因是 <code>delete</code> 是 <strong>JavaScript</strong> 语言的一个关键词；因此为了在更低版本的 JavaScript 引擎下也能正常运行， 必须使用字符串字面值声明方式。</p>
+</blockquote>
+<hr>
+<h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><p>JavaScript 不包含传统的类继承模型，而是使用 <code>prototype</code> 原型模型。</p>
+<p>虽然这经常被当作是 JavaScript 的缺点被提及，其实基于原型的继承模型比传统的类继承还要强大。 实现传统的类继承模型是很简单，但是实现 JavaScript 中的原型继承则要困难的多。 (It is for example fairly trivial to build a classic model on top of it, while the other way around is a far more difficult task.)</p>
+<p>由于 JavaScript 是唯一一个被广泛使用的基于原型继承的语言，所以理解两种继承模式的差异是需要一定时间的。<br>第一个不同之处在于 JavaScript 使用原型链的继承方式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">user</span>(<span class="params"></span>)</span>&#123;<span class="comment">//定义了一个user构造函数（也可以理解为类）</span></span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">24</span>;</span><br><span class="line">&#125;</span><br><span class="line">user.prototype = &#123;<span class="comment">//给这个构造函数添加原型公共属性，不属于某个类的实例，而是直接属于某个类</span></span><br><span class="line">    method: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">kevinli</span>(<span class="params"></span>)</span>&#123;&#125;<span class="comment">//新建一个需要继承原型的构造函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置kevinli的prototype属性指向user的实例对象</span></span><br><span class="line">kevinli.prototype = <span class="keyword">new</span> user();<span class="comment">//user是实例对象</span></span><br><span class="line">kevinli.prototype.sex = <span class="string">'男'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> kevinli();<span class="comment">//创建kevinli的一个新实例</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//原型链</span></span><br><span class="line">tom &gt; [kevinli的实例]</span><br><span class="line">    kevinli.prototype &gt; [user的实例]</span><br><span class="line">    &#123; sex: <span class="string">'男'</span> &#125;</span><br><span class="line">    user.prototype</span><br><span class="line">        &#123; method: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125; &#125;</span><br><span class="line">        object.prototype</span><br><span class="line">            &#123;toString: ... <span class="comment">/* etc. */</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意: 简单的使用 <code>kevinli.prototype = user.prototype</code>将会导致两个对象共享相同的原型。 因此，改变任意一个对象的原型都会影响到另一个对象的原型，在大多数情况下这不是希望的结果。</p>
+<p>注意: 不要使用 <code>kevinli.prototype = user</code>，因为这不会执行 <code>user</code> 的原型，而是指向函数 <code>user</code>。 因此原型链将会回溯到 <code>Function.prototype</code> 而不是 <code>user.prototype</code>，因此 <code>method</code> 将不会在 <code>kevinli</code> 的原型链上。</p>
+</blockquote>
+<p>上面的例子中，<code>tom</code> 对象从 <code>kevinli.prototype</code> 和 <code>user.prototype</code> 继承下来；因此， 它能访问 <code>user</code> 的原型方法 <code>method</code>。同时，它也能够访问那个定义在原型上的 <code>user</code> 实例属性 <code>age</code>。 需要注意的是 <code>new kevinli()</code> 不会创造出一个新的 <code>user</code> 实例，而是 重复使用它原型上的那个实例；因此，所有的 <code>kevinli</code> 实例都会共享相同的 <code>age</code> 属性。</p>
+<h4 id="属性查找"><a href="#属性查找" class="headerlink" title="属性查找"></a>属性查找</h4><p>当查找一个对象的属性时，JavaScript 会向上遍历原型链，直到找到给定名称的属性为止。</p>
+<p>到查找到达原型链的顶部 - 也就是 <code>Object.prototype</code> - 但是仍然没有找到指定的属性，就会返回 <strong>undefined</strong>。</p>
+<h4 id="原型属性"><a href="#原型属性" class="headerlink" title="原型属性"></a>原型属性</h4><p>当原型属性用来创建原型链时，可以把任何类型的值赋给它（prototype）。 然而将原子类型赋给 prototype 的操作将会被忽略<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">kevinli</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">kevinli.prototype = <span class="number">1</span>; <span class="comment">// 无效</span></span><br></pre></td></tr></table></figure></p>
+<p>而将对象赋值给 prototype，正如上面的例子所示，将会动态的创建原型链。</p>
+<h4 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h4><p>如果一个属性在原型链的上端，则对于查找时间将带来不利影响。特别的，试图获取一个不存在的属性将会遍历整个原型链</p>
+<p>并且，当使用 <code>for in</code> 循环遍历对象的属性时，原型链上的所有属性都将被访问。</p>
+<h4 id="扩展内置类型的原型"><a href="#扩展内置类型的原型" class="headerlink" title="扩展内置类型的原型"></a>扩展内置类型的原型</h4><p>一个错误特性被经常使用，那就是扩展 Object.prototype 或者其他内置类型的原型对象。</p>
+<p>这种技术被称之为 <strong>monkey patching</strong> 并且会破坏封装。虽然它被广泛的应用到一些 JavaScript 类库中比如 <strong>Prototype</strong>, 但是我仍然不认为为内置类型添加一些非标准的函数是个好主意。</p>
+<p>扩展内置类型的唯一理由是为了和新的 JavaScript 保持一致，比如 <code>Array.forEach</code>。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>在写复杂的 JavaScript 应用之前，充分理解原型链继承的工作方式是每个 JavaScript 程序员必修的功课。 要提防原型链过长带来的性能问题，并知道如何通过缩短原型链来提高性能。 更进一步，绝对不要扩展内置类型的原型，除非是为了和新的 JavaScript 引擎兼容。</p>
+<hr>
+<h3 id="hasOwnProperty-函数"><a href="#hasOwnProperty-函数" class="headerlink" title="hasOwnProperty 函数"></a><code>hasOwnProperty</code> 函数</h3><p>为了判断一个对象是否包含自定义属性而不是<strong>原型链</strong>上的属性， 我们需要使用继承自 <code>Object.prototype</code> 的 <code>hasOwnProperty</code> 方法。</p>
+<p><code>hasOwnProperty</code> 是 JavaScript 中唯一一个处理属性但是不查找原型链的函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改Object.prototype</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.bar = <span class="number">1</span>; </span><br><span class="line"><span class="keyword">var</span> kevinli = &#123;name: <span class="literal">undefined</span>&#125;;</span><br><span class="line"></span><br><span class="line">kevinli.bar; <span class="comment">// 1 任何对象都继承于最高级别的object对象</span></span><br><span class="line"><span class="string">'bar'</span> <span class="keyword">in</span> kevinli; <span class="comment">// true  “ in ”操作符用来判断某个属性属于某个对象，可以是对象的直接属性，</span></span><br><span class="line"><span class="comment">// 也可以是通过prototype继承的属性</span></span><br><span class="line"></span><br><span class="line">kevinli.hasOwnProperty(<span class="string">'bar'</span>); <span class="comment">// false hasOwnProperty不包含原型链的属性 所以返回flase</span></span><br><span class="line">kevinli.hasOwnProperty(<span class="string">'name'</span>); <span class="comment">// true  这是kevinli的自定义属性</span></span><br></pre></td></tr></table></figure></p>
+<p>只有 <code>hasOwnProperty</code> 可以给出正确和期望的结果，这在遍历对象的属性时会很有用。 没有其它方法可以用来排除原型链上的属性，而不是定义在对象自身上的属性。</p>
+<h4 id="hasOwnProperty-作为属性"><a href="#hasOwnProperty-作为属性" class="headerlink" title="hasOwnProperty 作为属性"></a><code>hasOwnProperty</code> 作为属性</h4><p>JavaScript 不会保护 <code>hasOwnProperty</code> 被非法占用，因此如果一个对象碰巧存在这个属性， 就需要使用外部的 <code>hasOwnProperty</code> 函数来获取正确的结果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> kevinli = &#123;</span><br><span class="line">    hasOwnProperty = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    age : <span class="string">'24'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">kevinli.hasOwnProperty(<span class="string">'age'</span>);<span class="comment">// 总是返回 false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用其它对象的 hasOwnProperty，并将其上下文设置为foo</span></span><br><span class="line">(&#123;&#125;).hasOwnProperty.call(kevinli, <span class="string">'age'</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>当检查对象上某个属性是否存在时，<code>hasOwnProperty</code> 是唯一可用的方法。 同时在使用 <strong>for in loop</strong> 遍历对象时，推荐总是使用 <code>hasOwnProperty</code> 方法， 这将会避免原型对象扩展带来的干扰。</p>
+<hr>
+<h3 id="for-in-循环"><a href="#for-in-循环" class="headerlink" title="for in 循环"></a><code>for in</code> 循环</h3><p>和 <code>in</code> 操作符一样，<code>for in</code> 循环同样在查找对象属性时遍历原型链上的所有属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 修改 Object.prototype</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.age = <span class="number">24</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> kevinli = &#123;sex: <span class="string">'男'</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> kevinli) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// 输出kevinli的两个属性：age 和 sex</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意: <code>for in</code> 循环不会遍历那些 <code>enumerable</code> 设置为 <code>false</code> 的属性；比如数组的 <code>length</code> 属性。</p>
+</blockquote>
+<p>由于不可能改变 <code>for in</code> 自身的行为，因此有必要过滤出那些不希望出现在循环体中的属性， 这可以通过 <code>Object.prototype</code> 原型上的 <code>hasOwnProperty</code> 函数来完成。</p>
+<h4 id="使用-hasOwnProperty-过滤"><a href="#使用-hasOwnProperty-过滤" class="headerlink" title="使用 hasOwnProperty 过滤"></a>使用 <code>hasOwnProperty</code> 过滤</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.age = <span class="number">24</span>;</span><br><span class="line"><span class="keyword">var</span> kevinli = &#123;sex: <span class="string">'男'</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> kevinli)&#123;</span><br><span class="line">    <span class="keyword">if</span>(kevini.hasOwnProperty(i))&#123;<span class="comment">//过滤掉object原型链的属性</span></span><br><span class="line">        <span class="built_in">console</span>.log(i) <span class="comment">//sex</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意: 由于 <code>for in</code> 总是要遍历整个原型链，因此如果一个对象的继承层次太深的话会影响性能。</p>
+</blockquote>
+<p>这个版本的代码是唯一正确的写法。由于我们使用了 <code>hasOwnProperty</code>，所以这次只输出 <code>sex</code>。 如果不使用 <code>hasOwnProperty</code>，则这段代码在原生对象原型（比如 <code>Object.prototype</code>）被扩展时可能会出错。</p>
+<p>一个广泛使用的类库 <strong>Prototype</strong> 就扩展了原生的 JavaScript 对象。 因此，当这个类库被包含在页面中时，不使用 <code>hasOwnProperty</code> 过滤的 <code>for in</code> 循环难免会出问题。</p>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><p>推荐总是使用 <code>hasOwnProperty</code>。不要对代码运行的环境做任何假设，不要假设原生对象是否已经被扩展了。</p>
+<hr>
+<h2 id="2-函数"><a href="#2-函数" class="headerlink" title="2.函数"></a>2.函数</h2><p>—————</p>
+<h3 id="函数声明与表达式"><a href="#函数声明与表达式" class="headerlink" title="函数声明与表达式"></a>函数声明与表达式</h3><p>函数是JavaScript中的一等对象，这意味着可以把函数像其它值一样传递。 一个常见的用法是把匿名函数作为回调函数传递到异步函数中</p>
+<h4 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">userName</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的方法会在执行前被 <strong>解析(hoisted)</strong>，因此它存在于当前上下文的任意一个地方， 即使在函数定义体的上面被调用也是对的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userName();<span class="comment">// 正常运行，因为userName在代码运行前已经被创建</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">userName</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="函数赋值表达式"><a href="#函数赋值表达式" class="headerlink" title="函数赋值表达式"></a>函数赋值表达式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>这个例子把一个匿名的函数赋值给变量 ‘userName’;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">userName; <span class="comment">// 'undefined'</span></span><br><span class="line">userName(); <span class="comment">// 出错：TypeError</span></span><br><span class="line"><span class="keyword">var</span> userName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>程序执行顺序是从上往下执行的。<br>由于 <code>var</code> 定义了一个声明语句，对变量 <code>userName</code> 的解析是在代码运行之前，因此 <code>userName</code> 变量在代码运行时已经被定义过了。</p>
+<p>但是由于赋值语句只在运行时执行，因此在相应代码执行之前， <code>userName</code> 的值缺省为 <code>undefined</code>。</p>
+<h4 id="命名函数的赋值表达式"><a href="#命名函数的赋值表达式" class="headerlink" title="命名函数的赋值表达式"></a>命名函数的赋值表达式</h4><p>另外一个特殊的情况是将命名函数赋值给一个变量。<br>var kevinli = function userName() {<br>    userName(); // 正常运行<br>}<br>userName(); // 出错：ReferenceError</p>
+<p><code>userName</code> 函数声明外是不可见的，这是因为我们已经把函数赋值给了 foo； 然而在 <code>userName</code> 内部依然可见。这是由于 JavaScript 的 <strong>命名处理</strong> 所致， 函数名在函数内总是可见的。</p>
+<hr>
+<h3 id="this-的工作原理"><a href="#this-的工作原理" class="headerlink" title="this 的工作原理"></a><code>this</code> 的工作原理</h3><p>JavaScript 有一套完全不同于其它语言的对 <code>this</code> 的处理机制。 在五种不同的情况下 ，<code>this</code> 指向的各不相同。</p>
+<h4 id="全局范围内"><a href="#全局范围内" class="headerlink" title="全局范围内"></a>全局范围内</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>;</span><br></pre></td></tr></table></figure>
+<p>当在全部范围内使用 <code>this</code>，它将会指向全局对象。</p>
+<blockquote>
+<p>注意：浏览器中运行的 JavaScript 脚本，这个全局对象是 <code>window</code>。</p>
+</blockquote>
+<h4 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userName();</span><br></pre></td></tr></table></figure>
+<p>这里 <code>this</code> 也会指向全局对象。</p>
+<h4 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kevinli.userName();</span><br></pre></td></tr></table></figure>
+<p>这个例子中，<code>this</code> 指向 <code>kevinli</code> 对象。</p>
+<blockquote>
+<p>ES5 注意: 在严格模式下（strict mode），不存在全局变量。 这种情况下 this 将会是 <strong>undefined</strong>。</p>
+</blockquote>
+<h4 id="调用构造函数"><a href="#调用构造函数" class="headerlink" title="调用构造函数"></a>调用构造函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> userName();</span><br></pre></td></tr></table></figure>
+<p>如果函数倾向于和 <code>new</code> 关键词一块使用，则我们称这个函数是 <strong>构造函数</strong>。 在函数内部，<code>this</code> 指向新创建的对象。</p>
+<h4 id="显式的设置-this"><a href="#显式的设置-this" class="headerlink" title="显式的设置 this"></a>显式的设置 <code>this</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">userName</span>(<span class="params">a,b,c</span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> kevinli = &#123;&#125;;</span><br><span class="line">userName.apply(kevinli,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);<span class="comment">// 数组将会被扩展，如下所示</span></span><br><span class="line">userName.call(kevinli,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);<span class="comment">// 传递到userName的参数是：a = 1, b = 2, c = 3</span></span><br></pre></td></tr></table></figure>
+<p>当使用 <code>Function.prototype</code> 上的 <code>call</code> 或者 <code>apply</code> 方法时，函数内的 <code>this</code> 将会被 显式设置为函数调用的第一个参数。</p>
+<p>因此函数调用的规则在上例中已经不适用了，在<code>userName</code> 函数内 <code>this</code> 被设置成了 <code>kevinli</code>。</p>
+<h4 id="常见误解"><a href="#常见误解" class="headerlink" title="常见误解"></a>常见误解</h4><p>尽管大部分的情况都说的过去，不过第一个规则（译者注：这里指的应该是第二个规则，也就是直接调用函数时，<code>this</code> 指向全局对象） 被认为是JavaScript语言另一个错误设计的地方，因为它从来就没有实际的用途。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">kevinli.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// this 将会被设置为全局对象（译者注：浏览器环境中也就是 window 对象）</span></span><br><span class="line">    &#125;</span><br><span class="line">    test();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个常见的误解是 <code>test</code> 中的 <code>this</code> 将会指向 <code>kevinli</code> 对象，实际上不是这样子的。</p>
+<p>为了在 <code>test</code> 中获取对 <code>kevinli</code> 对象的引用，我们需要在 method 函数内部创建一个局部变量指向 <code>kevinli</code> 对象。</p>
+<p>kevinli.</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/02/移动端H5页面多终端适配解决方案/" rel="next" title="移动端H5页面多终端适配解决方案">
+                <i class="fa fa-chevron-left"></i> 移动端H5页面多终端适配解决方案
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/24/日期正则表达式验证/" rel="prev" title="日期正则表达式验证">
+                日期正则表达式验证 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/11/07/JavaScript秘密花园摘要/"
+           data-title="JavaScript秘密花园摘要" data-url="https://github.com/Vuepack/2015/11/07/JavaScript秘密花园摘要/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xnjvz.com1.z0.glb.clouddn.com/avatar.png"
+               alt="里昂" />
+          <div class="circle"></div>
+          <p class="site-author-name" itemprop="name">里昂</p>
+          <p class="site-description motion-element" itemprop="description">正行走在VueJS和Node路上的小前端</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">37.4k</span>
+              <span class="site-state-item-name">字数</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vuepack" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/Vuepack" target="_blank">
+                  
+                    <i class="fa fa-link"></i> 知乎
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/vuepack" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="MailTo:vuepack@gmail.com" target="_blank">
+                  
+                    <i class="fa fa-envelope"></i> Mail
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://humicai.cn/" target="_blank">轻微生活</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://liangdongpo.com/" target="_blank">梁东坡</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-对象"><span class="nav-number">1.</span> <span class="nav-text">1.对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象使用和属性"><span class="nav-number">1.1.</span> <span class="nav-text">对象使用和属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对象作为数据类型"><span class="nav-number">1.1.1.</span> <span class="nav-text">对象作为数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问属性"><span class="nav-number">1.1.2.</span> <span class="nav-text">访问属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除属性"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性名的语法"><span class="nav-number">1.1.4.</span> <span class="nav-text">属性名的语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型"><span class="nav-number">1.2.</span> <span class="nav-text">原型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性查找"><span class="nav-number">1.2.1.</span> <span class="nav-text">属性查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型属性"><span class="nav-number">1.2.2.</span> <span class="nav-text">原型属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性能"><span class="nav-number">1.2.3.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展内置类型的原型"><span class="nav-number">1.2.4.</span> <span class="nav-text">扩展内置类型的原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.2.5.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hasOwnProperty-函数"><span class="nav-number">1.3.</span> <span class="nav-text">hasOwnProperty 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hasOwnProperty-作为属性"><span class="nav-number">1.3.1.</span> <span class="nav-text">hasOwnProperty 作为属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">1.3.2.</span> <span class="nav-text">结论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-in-循环"><span class="nav-number">1.4.</span> <span class="nav-text">for in 循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-hasOwnProperty-过滤"><span class="nav-number">1.4.1.</span> <span class="nav-text">使用 hasOwnProperty 过滤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结-1"><span class="nav-number">1.4.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-函数"><span class="nav-number">2.</span> <span class="nav-text">2.函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数声明与表达式"><span class="nav-number">2.1.</span> <span class="nav-text">函数声明与表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数声明"><span class="nav-number">2.1.1.</span> <span class="nav-text">函数声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数赋值表达式"><span class="nav-number">2.1.2.</span> <span class="nav-text">函数赋值表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命名函数的赋值表达式"><span class="nav-number">2.1.3.</span> <span class="nav-text">命名函数的赋值表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this-的工作原理"><span class="nav-number">2.2.</span> <span class="nav-text">this 的工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局范围内"><span class="nav-number">2.2.1.</span> <span class="nav-text">全局范围内</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数调用"><span class="nav-number">2.2.2.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法调用"><span class="nav-number">2.2.3.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调用构造函数"><span class="nav-number">2.2.4.</span> <span class="nav-text">调用构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显式的设置-this"><span class="nav-number">2.2.5.</span> <span class="nav-text">显式的设置 this</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见误解"><span class="nav-number">2.2.6.</span> <span class="nav-text">常见误解</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">里昂</span>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"vuepack"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+</body>
+</html>

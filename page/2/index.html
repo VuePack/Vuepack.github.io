@@ -1,0 +1,1368 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端,HTML5,CSS3,jQuery,JavaScript,react,vueJs" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Leon's Daily" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://7xnjvz.com1.z0.glb.clouddn.com/favicon.ico?v=6.0.0" />
+
+
+
+
+
+
+<meta name="description" content="正行走在VueJS和Node路上的小前端">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Leon's Daily">
+<meta property="og:url" content="https://github.com/Vuepack/page/2/index.html">
+<meta property="og:site_name" content="Leon's Daily">
+<meta property="og:description" content="正行走在VueJS和Node路上的小前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leon's Daily">
+<meta name="twitter:description" content="正行走在VueJS和Node路上的小前端">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Admin'
+    }
+  };
+</script>
+
+  <title> Leon's Daily </title>
+  <script src="https://cdn.bootcss.com/vue/1.0.14/vue.min.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?cb66b58ccd5ccc5bdf2d673b7b299c15";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Leon's Daily</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">to be a better me</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oobsx4abf7ttxGH71eMT','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+
+    
+
+    
+    
+      
+      
+
+      
+    
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/07/git-速查表/" itemprop="url">
+                  Git 速查表
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-07T20:56:29+08:00" content="2016-01-07 20:56:29">
+              2016-01-07 20:56:29
+            </time>
+          </span>
+
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;46</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/07/git-速查表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/git-速查表/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/01/07/git-速查表/" class="leancloud_visitors" data-flag-title="Git 速查表">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>记性不好，微博上看到不错的一张<code>Git</code>速查表图片。<br>忘记，有空翻翻。 </p>
+<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/Git.jpg" class="full-image"></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/30/凯锅2015年终总结/" itemprop="url">
+                  凯锅2015年终总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-30T20:00:22+08:00" content="2015-12-30 20:00:22">
+              2015-12-30 20:00:22
+            </time>
+          </span>
+
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/心情语录/" itemprop="url" rel="index">
+                    <span itemprop="name">心情语录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,127</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/30/凯锅2015年终总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/凯锅2015年终总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/30/凯锅2015年终总结/" class="leancloud_visitors" data-flag-title="凯锅2015年终总结">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>真快，再过1天，就是2016年了，过完年凯锅就24岁了，又老了😶。。<br>2015年，这一年还是过的挺丰富的，但也过的很慵懒。</p>
+<h4 id="回顾下2014年给2015年的计划："><a href="#回顾下2014年给2015年的计划：" class="headerlink" title="回顾下2014年给2015年的计划："></a>回顾下2014年给2015年的计划：</h4><ul>
+<li>1.看完《Javascript高级程序设计》等一堆书</li>
+<li>2.一场云南的旅游</li>
+<li>3.坚持锻炼</li>
+<li>4.驾照考出</li>
+</ul>
+<h4 id="再来看看2015做的"><a href="#再来看看2015做的" class="headerlink" title="再来看看2015做的"></a>再来看看2015做的</h4><ul>
+<li><p>1.《JavaScript高级程序设计》啃了一半，书很经典，啃不下去了。<br>看了《JavaScript秘密花园》，嗯嗯 真的很不错，个个经典核心知识都概要了。<br>把之前未看完的《JavaScript DOM编程艺术》看完了。<br>还看了阮一峰老师陆陆续续写的稿书《JavaScript 标准参考教程（alpha）》10% ，说到这书（未出，在他博客上看的），貌似是唯一一本有动力看下去的，讲的很通俗易懂，超棒的说，出了一定买。阮一峰老师是上海财经大学大学教师， - -。人家专业竟然不是计算机，博客包含读书、版权制度、经济学、英语、历史、IT技术。<br>其实我想说凯锅虽然是计算机专业，可是我从小到大文科比较好， - -理科烂 。。。😄</p>
+</li>
+<li><p>2.说到旅行，一直想去，本来国庆节想去的，家里各种事，又没去成。（未完成：不过延迟到2016年2月不算遗憾  嘿嘿）</p>
+</li>
+<li><p>3.坚持锻炼，身为有点处女座的白羊座，暴躁又从充满激情，非常喜欢出汗的感觉，夏天达到了，冬天不方面也懒了，陆陆续续吧。不幸的是，最近颈椎很不舒服。听小志同学说，年轻人不要久坐。直到一天，终于那种感觉。。。 </p>
+</li>
+<li><p>4.4月份报的名，貌似6月份科目二一次性通过，后来就一直没去。。 （未完成）</p>
+</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/30/凯锅2015年终总结/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/30/强大的zsh/" itemprop="url">
+                  强大的zsh
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-30T18:19:18+08:00" content="2015-12-30 18:19:18">
+              2015-12-30 18:19:18
+            </time>
+          </span>
+
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/终端/" itemprop="url" rel="index">
+                    <span itemprop="name">终端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;702</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/30/强大的zsh/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/强大的zsh/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/30/强大的zsh/" class="leancloud_visitors" data-flag-title="强大的zsh">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装<code>oh-my-zsh</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+<p>用命令检查Mac 检查系统支持哪些终端<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells</span><br><span class="line"></span><br><span class="line">&lt;!-- 显示结果： --&gt;</span><br><span class="line">/bin/bash</span><br><span class="line">/bin/csh</span><br><span class="line">/bin/ksh</span><br><span class="line">/bin/sh</span><br><span class="line">/bin/tcsh</span><br><span class="line">/bin/zsh</span><br></pre></td></tr></table></figure></p>
+<h3 id="mac中zsh命令-用sublime打开指定文件"><a href="#mac中zsh命令-用sublime打开指定文件" class="headerlink" title="mac中zsh命令,用sublime打开指定文件"></a>mac中<code>zsh</code>命令,用sublime打开指定文件</h3><p><code>zsh</code>配置清单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> subl=<span class="string">"'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"</span></span><br><span class="line"><span class="built_in">alias</span> nano=<span class="string">"subl"</span></span><br><span class="line"><span class="built_in">export</span> EDITOR=<span class="string">"subl"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> markdown=subl //指定markdown格式</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> md=subl //在命令行直接输入后缀为md的文件名，会在sublime text中打开</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> <span class="built_in">log</span>=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> txt=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> gz=<span class="string">'tar -xzvf'</span> //表示自动解压后缀为 gz 的压缩包</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> tgz=<span class="string">'tar -xzvf'</span>//表示自动解压后缀为 tgz 的压缩包</span><br></pre></td></tr></table></figure></p>
+<h3 id="自带插件快捷键"><a href="#自带插件快捷键" class="headerlink" title="自带插件快捷键"></a>自带插件快捷键</h3><p><code>d</code>,按下<code>d</code>命令会显示最近的历史记录<br><code>zsh_stats</code>,按下<code>zsh_stats</code>会显示你的使用频率前 20 的命令</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/25/flex新旧混合写法兼容安卓微信x5内核/" itemprop="url">
+                  flex新旧混合写法兼容安卓微信x5内核
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-25T09:53:27+08:00" content="2015-12-25 09:53:27">
+              2015-12-25 09:53:27
+            </time>
+          </span>
+
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/微信开发/" itemprop="url" rel="index">
+                    <span itemprop="name">微信开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;842</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/25/flex新旧混合写法兼容安卓微信x5内核/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/25/flex新旧混合写法兼容安卓微信x5内核/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/25/flex新旧混合写法兼容安卓微信x5内核/" class="leancloud_visitors" data-flag-title="flex新旧混合写法兼容安卓微信x5内核">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>众所周知，微信安卓内置浏览器，是腾讯自主研发的x5内核浏览器，其实就是qq浏览器。。。但坑爹的迟迟对<code>CSS3</code>属性兼容性很差，只支持部分css3写法，。目前只支持对<strong>旧版本</strong>的<code>flex</code>；<code>安卓2.3</code>以上的自带的浏览器，都支持<strong>新版</strong>的<code>flex</code>。<br>对于强迫症的我，既想写<strong>新版</strong> <code>flex</code>，又想<strong>旧版</strong>。那就flex新旧混合写法；</p>
+<p>兼容写法：<br>定义父级容器的 <strong> display</strong> 属性：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box; <span class="comment">/* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */</span></span><br><span class="line">    <span class="attribute">display</span>: -moz-box; <span class="comment">/* 老版本语法: Firefox (buggy) */</span></span><br><span class="line">    <span class="attribute">display</span>: -ms-flexbox; <span class="comment">/* 混合版本语法: IE 10 */</span></span><br><span class="line">    <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* 新版本语法: Chrome 21+ */</span></span><br><span class="line">    <span class="attribute">display</span>: flex; <span class="comment">/* 新版本语法: Opera 12.1, Firefox 22+ */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>   由于旧版语法并没有列入W3C标准，所以这里不用写 <strong>display:box</strong> </p>
+<p>以上是手动写，比较麻烦，有木有自动化的呢？</p>
+<p>咣咣咣，当然有，用<code>gulp</code>配合 <code>autoprefixer</code> 自动兼容处理浏览器前缀，妈妈再也不用担心各种奇葩不兼容问题啦~~</p>
+<p>部分<code>gulp</code>配置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);<span class="comment">//引入gulp</span></span><br><span class="line"><span class="keyword">var</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>);<span class="comment">//自动兼容处理浏览器前缀</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//css3混合添加前缀</span></span><br><span class="line">gulp.task(<span class="string">'autocss'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'time-line/skin/modules/model-detail.css'</span>)</span><br><span class="line">    .pipe(autoprefixer(&#123;</span><br><span class="line">        browsers: [<span class="string">'Firefox &gt;= 20'</span>,<span class="string">'&gt; 5%'</span>,<span class="string">'last 2 versions'</span>],</span><br><span class="line">        cascade: <span class="literal">false</span>, <span class="comment">//是否美化属性值 默认：true 像这样：</span></span><br><span class="line">        <span class="comment">//-webkit-transform: rotate(45deg);</span></span><br><span class="line">        <span class="comment">//        transform: rotate(45deg);</span></span><br><span class="line">        remove:<span class="literal">true</span> <span class="comment">//是否去掉不必要的前缀 默认：true</span></span><br><span class="line">    &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'time-line/css'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/06/前端工具/" itemprop="url">
+                  前端工具
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-06T15:40:09+08:00" content="2015-12-06 15:40:09">
+              2015-12-06 15:40:09
+            </time>
+          </span>
+
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端工具/" itemprop="url" rel="index">
+                    <span itemprop="name">前端工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,004</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/06/前端工具/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/06/前端工具/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/06/前端工具/" class="leancloud_visitors" data-flag-title="前端工具">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="babel编译"><a href="#babel编译" class="headerlink" title="babel编译"></a>babel编译</h2><p><code>Babel</code> 是一个 JavaScript 的编译工具，它可以把一种形式的 JavaScript 转换成另一种形式的 JavaScript 。比如它可以把 <code>es6</code> 的 JavaScript 编译成现在主要浏览器使用的 <code>es5</code> 的 JavaScript 。这样我们就可以从现在开始，使用 es6 提供的一些新功能去创建应用了，然后用 <code>babel</code> 把它变成 <code>es5</code> 的样子。</p>
+<p>另外 <code>Babel</code> 还支持 <strong>JSX .. React</strong> 的团队决定使用 <code>Babel</code> 替代自己的 <strong>JSX</strong> 编译工具。</p>
+<p>有些其它的前端工具里面也会用到 <code>babel</code> 这个工具 .. 比如 <strong>jspm ，webpack </strong>等等 .. 在使用这些工具的时候，你可能不需要单独去安装配置 <code>babel</code> ..</p>
+<p>注意我这边安装时是最新的<strong>babel6</strong>,新版的<strong>babel6</strong>跟以前不一样，<strong>babel6</strong>拆分成两个包：<code>babel-cli</code>和<code>babel-core</code>;<br>具体安装编译步骤：<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/06/前端工具/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/" itemprop="url">
+                  使用手淘[Flexible]实现h5页面的终端适配
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-05T21:41:28+08:00" content="2015-12-05 21:41:28">
+              2015-12-05 21:41:28
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;2,413</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/" class="leancloud_visitors" data-flag-title="使用手淘[Flexible]实现h5页面的终端适配">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>双11已过，手淘前端团队大漠老湿分享的一个基于手淘html5终端适配的移动端解决方案；<br>之前买过大漠老湿写的书<code>图解CSS3</code>，写的很用心，很棒 😄</p>
+<p>喜欢移动端，是因为可以大胆的尝试一些新的写法，搭配各种不一样的框架，不用在考虑为向下兼容ie8啊 为了这些操蛋的写多余的代码，而一直用不到一些便捷新奇的方法属性，但是坑是挺多的。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xnjvz.com1.z0.glb.clouddn.com/avatar.png"
+               alt="里昂" />
+          <div class="circle"></div>
+          <p class="site-author-name" itemprop="name">里昂</p>
+          <p class="site-description motion-element" itemprop="description">正行走在VueJS和Node路上的小前端</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">37.4k</span>
+              <span class="site-state-item-name">字数</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vuepack" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/Vuepack" target="_blank">
+                  
+                    <i class="fa fa-link"></i> 知乎
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/vuepack" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="MailTo:vuepack@gmail.com" target="_blank">
+                  
+                    <i class="fa fa-envelope"></i> Mail
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://humicai.cn/" target="_blank">轻微生活</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://liangdongpo.com/" target="_blank">梁东坡</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">里昂</span>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"vuepack"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+</body>
+</html>

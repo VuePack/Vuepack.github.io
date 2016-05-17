@@ -1,0 +1,947 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,微信开发," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Leon's Daily" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://7xnjvz.com1.z0.glb.clouddn.com/favicon.ico?v=6.0.0" />
+
+
+
+
+
+
+<meta name="description" content="大家都知道微信屏蔽了呼起App，除非App应用在腾讯的应用宝上架跳转貌似可以呼起，不过没尝试。不过此方案劳身费神，所以否决
+
+解决方案1：微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器
+
+是的话调用web版高德地图  (注意：这边调用高德地图参数先是维度再是经度 坑~~)
+不是的话呼起高德地图App (这边我是创建iframe的方式把App打开协议服务地址赋值给src，通过ifr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案">
+<meta property="og:url" content="https://github.com/Vuepack/2015/10/23/安卓非微信浏览器呼出高德地图App/index.html">
+<meta property="og:site_name" content="Leon's Daily">
+<meta property="og:description" content="大家都知道微信屏蔽了呼起App，除非App应用在腾讯的应用宝上架跳转貌似可以呼起，不过没尝试。不过此方案劳身费神，所以否决
+
+解决方案1：微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器
+
+是的话调用web版高德地图  (注意：这边调用高德地图参数先是维度再是经度 坑~~)
+不是的话呼起高德地图App (这边我是创建iframe的方式把App打开协议服务地址赋值给src，通过ifr">
+<meta property="og:updated_time" content="2016-05-17T12:07:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案">
+<meta name="twitter:description" content="大家都知道微信屏蔽了呼起App，除非App应用在腾讯的应用宝上架跳转貌似可以呼起，不过没尝试。不过此方案劳身费神，所以否决
+
+解决方案1：微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器
+
+是的话调用web版高德地图  (注意：这边调用高德地图参数先是维度再是经度 坑~~)
+不是的话呼起高德地图App (这边我是创建iframe的方式把App打开协议服务地址赋值给src，通过ifr">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Admin'
+    }
+  };
+</script>
+
+  <title> 安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案 | Leon's Daily </title>
+  <script src="https://cdn.bootcss.com/vue/1.0.14/vue.min.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?cb66b58ccd5ccc5bdf2d673b7b299c15";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Leon's Daily</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">to be a better me</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oobsx4abf7ttxGH71eMT','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-23T12:44:42+08:00" content="2015-10-23 12:44:42">
+              2015-10-23 12:44:42
+            </time>
+          </span>
+
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/微信开发/" itemprop="url" rel="index">
+                    <span itemprop="name">微信开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,317</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/23/安卓非微信浏览器呼出高德地图App/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/23/安卓非微信浏览器呼出高德地图App/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/10/23/安卓非微信浏览器呼出高德地图App/" class="leancloud_visitors" data-flag-title="安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>大家都知道微信屏蔽了呼起App，除非App应用在腾讯的应用宝上架跳转貌似可以呼起，不过没尝试。<br>不过此方案劳身费神，所以否决</p>
+<hr>
+<h2 id="解决方案1："><a href="#解决方案1：" class="headerlink" title="解决方案1："></a>解决方案1：</h2><p>微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器</p>
+<ol>
+<li>是的话调用web版高德地图  (<strong>注意：这边调用高德地图参数先是维度再是经度 坑~~</strong>)</li>
+<li>不是的话呼起高德地图App (<strong>这边我是创建iframe的方式把App打开协议服务地址赋值给src，通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为</strong>) 【这边a标签链接是Appstore下载高德地图的链接】</li>
+</ol>
+<h3 id="html代码：一个a链接-href为高德appstore下载链接"><a href="#html代码：一个a链接-href为高德appstore下载链接" class="headerlink" title="html代码：一个a链接 href为高德appstore下载链接"></a>html代码：一个a链接 href为高德appstore下载链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"oPenMap"</span> <span class="attr">class</span>=<span class="string">"location"</span> <span class="attr">href</span>=<span class="string">"https://itunes.apple.com/app/id461703208?spm=0.0.0.0.6cS3kh&amp;ls=1&amp;mt=8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="JS代码："><a href="#JS代码：" class="headerlink" title="JS代码："></a>JS代码：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 高德地图地址位置名称 */</span></span><br><span class="line"><span class="keyword">var</span> oAddressName = $(<span class="string">".ico_address"</span>).next(<span class="string">"span"</span>).html();</span><br><span class="line"><span class="comment">/* 字符串坐标 */</span></span><br><span class="line"><span class="keyword">var</span> strsCoord = $(<span class="string">'#coordInate'</span>).attr(<span class="string">'value'</span>);</span><br><span class="line"><span class="comment">//分割字符串坐标</span></span><br><span class="line"><span class="keyword">var</span> arrCoord = strsCoord.split(<span class="string">","</span>);</span><br><span class="line"><span class="comment">//分割后完整的坐标地址</span></span><br><span class="line"><span class="keyword">var</span> coord = arrCoord[<span class="number">1</span>] + <span class="string">","</span> +arrCoord[<span class="number">0</span>];</span><br><span class="line"><span class="comment">//纬度，经度</span></span><br><span class="line"><span class="keyword">var</span> mapUrl = <span class="string">'http://m.amap.com/?mk='</span> + coord + <span class="string">','</span> + oAddressName;</span><br><span class="line"><span class="comment">//高德地图呼出协议地址</span></span><br><span class="line"><span class="keyword">var</span> iosMap = <span class="string">'iosamap://viewMap?sourceApplication=applicationName&amp;poiname='</span>+oAddressName+<span class="string">'&amp;lat='</span>+arrCoord[<span class="number">1</span>]+<span class="string">'&amp;lon='</span>+arrCoord[<span class="number">0</span>]+<span class="string">'&amp;dev=1'</span>;</span><br><span class="line"><span class="comment">//呼出地图</span></span><br><span class="line">$(<span class="string">"#oPenMap"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span> (ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">'micromessenger'</span>) &#123;</span><br><span class="line">        <span class="built_in">window</span>.open(mapUrl);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fnApp(iosMap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnApp</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为</span></span><br><span class="line">    <span class="comment">// 否则打开a标签的href链接</span></span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line">    ifr.src = url; <span class="comment">//APP对应的打开协议服务地址</span></span><br><span class="line">    ifr.style.display = <span class="string">'none'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(ifr);</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.body.removeChild(ifr);</span><br><span class="line">    &#125; , <span class="number">5000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方案1缺陷："><a href="#方案1缺陷：" class="headerlink" title="方案1缺陷："></a>方案1缺陷：</h3><p>这边a标签的链接是Appstore的链接，大家都知道Appstore也是款app，所以它也是以a链接的方式唤起的app，如果你填写的是一个url【例如:<a href="http://www.baidu.com/down.html】你会发现当呼起的高德地图App的时候同时你填写的url也同时执行跳转了】为什么呢?" target="_blank" rel="external">http://www.baidu.com/down.html】你会发现当呼起的高德地图App的时候同时你填写的url也同时执行跳转了】为什么呢?</a></p>
+<p> <strong> Because: </strong> 因为a标签的默认行为你没有阻止，这个时候就需要你个条件判断是否已经打开app，如果打开，用event.preventDefault()阻止a标签默认行为，所以接下来继续受虐 又有了解决方案2 - -</p>
+<h2 id="解决方案2："><a href="#解决方案2：" class="headerlink" title="解决方案2："></a>解决方案2：</h2><p> 同样是微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器， </p>
+<ol>
+<li>是的话调用web版高德地图（<strong>注意：这边调用高德地图参数先是维度再是经度 坑~~</strong>）</li>
+<li>不是的话呼起高德地图App（<strong>这边同样是创建iframe的方式把App打开协议服务地址赋值给src，通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，这边我是通过判断JS setTimeout 和Data.now()函数 来比较呼出app的时间戳 和正常app呼出app的时间戳时间</strong>）</li>
+</ol>
+<h3 id="html代码：一个a链接-href为高德appstore下载链接-1"><a href="#html代码：一个a链接-href为高德appstore下载链接-1" class="headerlink" title="html代码：一个a链接 href为高德appstore下载链接"></a>html代码：一个a链接 href为高德appstore下载链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"oPenMap"</span> <span class="attr">class</span>=<span class="string">"location"</span> <span class="attr">href</span>=<span class="string">"https://itunes.apple.com/app/id461703208?spm=0.0.0.0.6cS3kh&amp;ls=1&amp;mt=8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="JS代码：-1"><a href="#JS代码：-1" class="headerlink" title="JS代码："></a>JS代码：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 高德地图地址位置名称 */</span></span><br><span class="line"><span class="keyword">var</span> oAddressName = $(<span class="string">".ico_address"</span>).next(<span class="string">"span"</span>).html();</span><br><span class="line"><span class="comment">/* 字符串坐标 */</span></span><br><span class="line"><span class="keyword">var</span> strsCoord = $(<span class="string">'#coordInate'</span>).attr(<span class="string">'value'</span>);</span><br><span class="line"><span class="comment">//分割字符串坐标</span></span><br><span class="line"><span class="keyword">var</span> arrCoord = strsCoord.split(<span class="string">","</span>);</span><br><span class="line"><span class="comment">//分割后完整的坐标地址</span></span><br><span class="line"><span class="keyword">var</span> coord = arrCoord[<span class="number">1</span>] + <span class="string">","</span> +arrCoord[<span class="number">0</span>];</span><br><span class="line"><span class="comment">//纬度，经度</span></span><br><span class="line"><span class="keyword">var</span> mapUrl = <span class="string">'http://m.amap.com/?mk='</span> + coord + <span class="string">','</span> + oAddressName;</span><br><span class="line"><span class="comment">//高德地图呼出协议地址</span></span><br><span class="line"><span class="keyword">var</span> iosMap = <span class="string">'iosamap://viewMap?sourceApplication=applicationName&amp;poiname='</span>+oAddressName+<span class="string">'&amp;lat='</span>+arrCoord[<span class="number">1</span>]+<span class="string">'&amp;lon='</span>+arrCoord[<span class="number">0</span>]+<span class="string">'&amp;dev=1'</span>;</span><br><span class="line"><span class="comment">//呼出地图</span></span><br><span class="line">$(<span class="string">"#oPenMap"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span> (ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">'micromessenger'</span>) &#123;</span><br><span class="line">        <span class="built_in">window</span>.location.href = mapUrl;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fnApp(iosMap);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">        </span><br><span class="line"><span class="comment">//判断是否安装高德地图方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fnApp</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//淘宝执行的阀值是600，高德地图大概调整到800ms</span></span><br><span class="line">    <span class="keyword">var</span> timeout, defaulExeTime = <span class="number">800</span>,</span><br><span class="line">        hasApp = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">//850ms后判断是否安装app</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hasApp) &#123;</span><br><span class="line">            <span class="comment">// alert('安装了app');</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//否则跳转到网页端地图url</span></span><br><span class="line">            <span class="built_in">window</span>.location.href = mapUrl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.body.removeChild(ifr);</span><br><span class="line">    &#125;, <span class="number">850</span>)</span><br><span class="line">    <span class="comment">//点击地图按钮时的时间戳</span></span><br><span class="line">    <span class="keyword">var</span> t1 = <span class="built_in">Date</span>.now();</span><br><span class="line">    <span class="comment">//通过创建iframe的方式试图打开APP，如果能正常打开，会直接切换到APP</span></span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">    ifr.setAttribute(<span class="string">'src'</span>, url);</span><br><span class="line">    ifr.setAttribute(<span class="string">'style'</span>, <span class="string">'display:none'</span>);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(ifr);</span><br><span class="line">    <span class="comment">//800ms后主动执行倒计时</span></span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//高德app大概呼出的时间戳</span></span><br><span class="line">        <span class="keyword">var</span> t2 = <span class="built_in">Date</span>.now();</span><br><span class="line">        <span class="comment">//app呼出时间戳减去点击地图按钮时间戳，如果小于800那就是没安装app</span></span><br><span class="line">        <span class="keyword">if</span> (!t1 || t2 - t1 &lt; defaulExeTime + <span class="number">100</span>) &#123;</span><br><span class="line">            hasApp = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, defaulExeTime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方案2小缺陷："><a href="#方案2小缺陷：" class="headerlink" title="方案2小缺陷："></a>方案2小缺陷：</h3><p>此方案虽然完美的实现了所有可以实现的功能。其实还有一个不足之处，就是非微信浏览器都是用setTimeOut() 和 时间戳的方法 都是用800ms的时间来判断是否能呼出app，所以0.8秒等待的时候还有点小遗憾的 ~~ 暂时还没想到更好的方法。还有一个不知道为什么Safari浏览器不能呼起不知道为什么~ </p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/微信开发/" rel="tag">#微信开发</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/22/前端规范/" rel="next" title="前端规范">
+                <i class="fa fa-chevron-left"></i> 前端规范
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/25/JS判断是否在微信浏览器打开/" rel="prev" title="用JS判断是否在微信浏览器打开">
+                用JS判断是否在微信浏览器打开 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/10/23/安卓非微信浏览器呼出高德地图App/"
+           data-title="安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案" data-url="https://github.com/Vuepack/2015/10/23/安卓非微信浏览器呼出高德地图App/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xnjvz.com1.z0.glb.clouddn.com/avatar.png"
+               alt="里昂" />
+          <div class="circle"></div>
+          <p class="site-author-name" itemprop="name">里昂</p>
+          <p class="site-description motion-element" itemprop="description">正行走在VueJS和Node路上的小前端</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">37.4k</span>
+              <span class="site-state-item-name">字数</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vuepack" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/Vuepack" target="_blank">
+                  
+                    <i class="fa fa-link"></i> 知乎
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/vuepack" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="MailTo:vuepack@gmail.com" target="_blank">
+                  
+                    <i class="fa fa-envelope"></i> Mail
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://humicai.cn/" target="_blank">轻微生活</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://liangdongpo.com/" target="_blank">梁东坡</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案1："><span class="nav-number">1.</span> <span class="nav-text">解决方案1：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html代码：一个a链接-href为高德appstore下载链接"><span class="nav-number">1.1.</span> <span class="nav-text">html代码：一个a链接 href为高德appstore下载链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS代码："><span class="nav-number">1.2.</span> <span class="nav-text">JS代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案1缺陷："><span class="nav-number">1.3.</span> <span class="nav-text">方案1缺陷：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案2："><span class="nav-number">2.</span> <span class="nav-text">解决方案2：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html代码：一个a链接-href为高德appstore下载链接-1"><span class="nav-number">2.1.</span> <span class="nav-text">html代码：一个a链接 href为高德appstore下载链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS代码：-1"><span class="nav-number">2.2.</span> <span class="nav-text">JS代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案2小缺陷："><span class="nav-number">2.3.</span> <span class="nav-text">方案2小缺陷：</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">里昂</span>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"vuepack"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("axAkKyPr5deJ283S2tmIccDr-gzGzoHsz", "WGTXer48llFScAnmsa4VWtc1");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+</body>
+</html>
