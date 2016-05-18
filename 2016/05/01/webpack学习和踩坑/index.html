@@ -60,24 +60,36 @@
 
 
 <meta name="description" content="迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。
-webpack报错（环境变量）123module.js:340throw err;canot find module &apos;webpack/lib/node/NodeTemplatePlugin&apos;
-没有找到这个模块？，cd ls顺着路径去下面找，该依赖模块安装了。Google了下，路径设置的问题。具体解决方案。
- 是因为我们没有设置">
+webpack学习构建流程
+
+首先创建 webpack目录，使用 npm init命令初始化依赖配置文件
+新建webpack.config.js的文件，webpack是根据config文件里面描述的内容对一个项目进行处理事情
+创建项目目录结构
+根据项目配置wenpack.config.js文件，并npm install安装项目">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack学习和踩坑">
 <meta property="og:url" content="https://github.com/Vuepack/2016/05/01/webpack学习和踩坑/index.html">
 <meta property="og:site_name" content="Leon's Daily">
 <meta property="og:description" content="迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。
-webpack报错（环境变量）123module.js:340throw err;canot find module &apos;webpack/lib/node/NodeTemplatePlugin&apos;
-没有找到这个模块？，cd ls顺着路径去下面找，该依赖模块安装了。Google了下，路径设置的问题。具体解决方案。
- 是因为我们没有设置">
-<meta property="og:updated_time" content="2016-05-17T13:22:47.000Z">
+webpack学习构建流程
+
+首先创建 webpack目录，使用 npm init命令初始化依赖配置文件
+新建webpack.config.js的文件，webpack是根据config文件里面描述的内容对一个项目进行处理事情
+创建项目目录结构
+根据项目配置wenpack.config.js文件，并npm install安装项目">
+<meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/webpack.png">
+<meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/92B7DA54-E723-4D4A-B436-335BAB00F50D.png">
+<meta property="og:updated_time" content="2016-05-18T14:57:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack学习和踩坑">
 <meta name="twitter:description" content="迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。
-webpack报错（环境变量）123module.js:340throw err;canot find module &apos;webpack/lib/node/NodeTemplatePlugin&apos;
-没有找到这个模块？，cd ls顺着路径去下面找，该依赖模块安装了。Google了下，路径设置的问题。具体解决方案。
- 是因为我们没有设置">
+webpack学习构建流程
+
+首先创建 webpack目录，使用 npm init命令初始化依赖配置文件
+新建webpack.config.js的文件，webpack是根据config文件里面描述的内容对一个项目进行处理事情
+创建项目目录结构
+根据项目配置wenpack.config.js文件，并npm install安装项目">
+<meta name="twitter:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/webpack.png">
 
 
 
@@ -137,7 +149,7 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">to be a better me</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -295,7 +307,7 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;290</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,619</span>
 
           
             
@@ -325,8 +337,58 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
       
 
       
-        <p>迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。</p>
-<h2 id="webpack报错（环境变量）"><a href="#webpack报错（环境变量）" class="headerlink" title="webpack报错（环境变量）"></a>webpack报错（环境变量）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.js:<span class="number">340</span></span><br><span class="line"><span class="keyword">throw</span> err;</span><br><span class="line">canot find <span class="built_in">module</span> <span class="string">'webpack/lib/node/NodeTemplatePlugin'</span></span><br></pre></td></tr></table></figure>
+        <p><img class="full-image" src="http://7xnjvz.com1.z0.glb.clouddn.com/webpack.png" alt=""></p>
+<p>迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。</p>
+<h2 id="webpack学习"><a href="#webpack学习" class="headerlink" title="webpack学习"></a>webpack学习</h2><p><code>构建流程</code></p>
+<ol>
+<li>首先创建 <code>webpack</code>目录，使用 <code>npm init</code>命令初始化依赖配置文件</li>
+<li>新建<code>webpack.config.js</code>的文件，<code>webpack</code>是根据<code>config</code>文件里面描述的内容对一个项目进行处理事情</li>
+<li>创建项目目录结构</li>
+<li>根据项目配置<code>wenpack.config.js</code>文件，并<code>npm install</code>安装项目所需依赖模块</li>
+<li>终端执行编译完成自动化构建</li>
+</ol>
+<a id="more"></a>
+<div class="tip"><br>    注意：<strong> package.json </strong>文件是 <code>npm init</code> 命令初始化生成的文件，这里面有很多配置信息，包含了这个项目要安装基于<code>nodeJS</code>的各种模块，<br>    还有很多配置信息。如果事先配置好所需要的配置信息，那么用 <code>npm install</code> 就可以自动安装你所需的模块。<br></div>
+
+<hr>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>所需<code>npm@2.15.0</code> 和 <code>node@4.4.2</code>,才能进行下一步。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g webpack;//安装全局模块webpack</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="配置webpack-config-js文件"><a href="#配置webpack-config-js文件" class="headerlink" title="配置webpack.config.js文件"></a>配置webpack.config.js文件</h3><p><code>参数说明：</code></p>
+<ul>
+<li><code>require()</code>：引入<code>nodeJs</code>的<code>path</code>模块</li>
+<li><code>path.resolve()</code>：<code>nodeJS</code>的方法，传递一个相对路径</li>
+<li><code>module.exports</code>：模块接口用于单独的定义，返回数据类型</li>
+<li><code>entry</code> ：入口文件 让<code>webpack</code>用哪个文件作为项目的入口</li>
+<li><code>output</code>：出口 让<code>webpack</code>把处理完成的文件放在哪里</li>
+<li><code>module</code>：模块 要用什么不同的模块来处理各种类型的文件</li>
+</ul>
+<p><code>目录结构：</code></p>
+<ul>
+<li>webpack<ul>
+<li>src/<ul>
+<li>index.js (内容： console.log(‘index.js’))</li>
+<li>main.js  (内容： console.log(‘main.js’))</li>
+</ul>
+</li>
+<li>package.json</li>
+<li>webpack.config.js</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);<span class="comment">//引入nodeJs的path模块</span></span><br><span class="line"><span class="keyword">var</span> HtmlwebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);<span class="comment">//自动生成html的模块</span></span><br><span class="line"><span class="comment">//path.resolve()为nodeJS的方法，传递一个相对路径</span></span><br><span class="line"><span class="comment">// var _PATH = path.resolve('src');//1.传入一个src的文件目录</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;<span class="comment">//模块接口用于单独的定义，返回数据类型</span></span><br><span class="line">  <span class="comment">// entry: _PATH, //2.entry的值如果是文件名，那么会默认会找index.js (单入口文件)</span></span><br><span class="line">  entry: [<span class="string">'./src/index.js'</span>,<span class="string">'./src/main.js'</span>],<span class="comment">//多入口文件只打包一个文件</span></span><br><span class="line">  output: &#123;<span class="comment">//输出接口</span></span><br><span class="line">    path: <span class="string">'./build'</span>,<span class="comment">//输出路径</span></span><br><span class="line">    filename: <span class="string">'build.js'</span><span class="comment">//合并后输出的文件名为build.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [<span class="comment">//html-webpack-plugin 自定生成.html文件</span></span><br><span class="line">    <span class="keyword">new</span> HtmlwebpackPlugin(&#123;</span><br><span class="line">      title: <span class="string">'Hello World'</span></span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>在终端中输入<code>webpack</code>，如下图：<br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/92B7DA54-E723-4D4A-B436-335BAB00F50D.png" alt=""></p>
+<p>可以看到<code>npm install</code>安装的 <code>html-webpack-plugin</code>模块帮我们自动生成了<code>index.html</code>，并且页面自动引入了合并好的<code>build.js</code></p>
+<hr>
+<h3 id="插件：样式处理器"><a href="#插件：样式处理器" class="headerlink" title="插件：样式处理器"></a>插件：样式处理器</h3><p><code>webpack</code>样式的处理，是通过<code>module</code>模块中的<code>loader</code>方式处理各种样式预处理的机制。</p>
+<p><code>样式相关插件说明：</code></p>
+<ul>
+<li><code>css-loader</code>  : 用于遍历带有<code>.css</code>的样式文件，并且进行相关处理</li>
+<li><code>style－loader</code>: 会把所有的样式插入到页面的一个style里</li>
+<li><code>node-sass</code>    : sass预处理器</li>
+<li><code>sass-loader</code>  : 编译预加载.sass文件</li>
+</ul>
+<h2 id="webpack踩坑"><a href="#webpack踩坑" class="headerlink" title="webpack踩坑"></a>webpack踩坑</h2><h3 id="webpack报错（环境变量）"><a href="#webpack报错（环境变量）" class="headerlink" title="webpack报错（环境变量）"></a>webpack报错（环境变量）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.js:<span class="number">340</span></span><br><span class="line"><span class="keyword">throw</span> err;</span><br><span class="line">canot find <span class="built_in">module</span> <span class="string">'webpack/lib/node/NodeTemplatePlugin'</span></span><br></pre></td></tr></table></figure>
 <p>没有找到这个模块？，<code>cd ls</code>顺着路径去下面找，该依赖模块安装了。<br>Google了下，路径设置的问题。<a href="https://segmentfault.com/a/1190000002478924" target="_blank" rel="external">具体解决方案</a>。</p>
 <p><strong> 是因为我们没有设置环境变量 </strong></p>
 <p><code>vim ~/.zshrc 后加入下面这段话</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NODE_PATH=<span class="string">"/usr/local/node_modules:/usr/local/lib/node_modules"</span></span><br></pre></td></tr></table></figure></p>
@@ -426,21 +488,21 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">37.4k</span>
+              <span class="site-state-item-count">40.9k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -524,7 +586,7 @@ webpack报错（环境变量）123module.js:340throw err;canot find module &apos
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack报错（环境变量）"><span class="nav-number">1.</span> <span class="nav-text">webpack报错（环境变量）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack学习"><span class="nav-number">1.</span> <span class="nav-text">webpack学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置webpack-config-js文件"><span class="nav-number">1.2.</span> <span class="nav-text">配置webpack.config.js文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件：样式处理器"><span class="nav-number">1.3.</span> <span class="nav-text">插件：样式处理器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack踩坑"><span class="nav-number">2.</span> <span class="nav-text">webpack踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack报错（环境变量）"><span class="nav-number">2.1.</span> <span class="nav-text">webpack报错（环境变量）</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

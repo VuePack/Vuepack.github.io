@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Leon&#39;s Daily</title>
-  <subtitle>to be a better me</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Vuepack/"/>
-  <updated>2016-05-17T13:22:47.000Z</updated>
+  <updated>2016-05-18T14:57:18.000Z</updated>
   <id>https://github.com/Vuepack/</id>
   
   <author>
@@ -20,10 +20,60 @@
     <link href="https://github.com/Vuepack/2016/05/01/webpack%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%B8%A9%E5%9D%91/"/>
     <id>https://github.com/Vuepack/2016/05/01/webpack学习和踩坑/</id>
     <published>2016-05-01T08:15:36.000Z</published>
-    <updated>2016-05-17T13:22:47.000Z</updated>
+    <updated>2016-05-18T14:57:18.000Z</updated>
     
-    <content type="html">&lt;p&gt;迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。&lt;/p&gt;
-&lt;h2 id=&quot;webpack报错（环境变量）&quot;&gt;&lt;a href=&quot;#webpack报错（环境变量）&quot; class=&quot;headerlink&quot; title=&quot;webpack报错（环境变量）&quot;&gt;&lt;/a&gt;webpack报错（环境变量）&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.js:&lt;span class=&quot;number&quot;&gt;340&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;canot find &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;webpack/lib/node/NodeTemplatePlugin&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    <content type="html">&lt;p&gt;&lt;img class=&quot;full-image&quot; src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/webpack.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。&lt;/p&gt;
+&lt;h2 id=&quot;webpack学习&quot;&gt;&lt;a href=&quot;#webpack学习&quot; class=&quot;headerlink&quot; title=&quot;webpack学习&quot;&gt;&lt;/a&gt;webpack学习&lt;/h2&gt;&lt;p&gt;&lt;code&gt;构建流程&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先创建 &lt;code&gt;webpack&lt;/code&gt;目录，使用 &lt;code&gt;npm init&lt;/code&gt;命令初始化依赖配置文件&lt;/li&gt;
+&lt;li&gt;新建&lt;code&gt;webpack.config.js&lt;/code&gt;的文件，&lt;code&gt;webpack&lt;/code&gt;是根据&lt;code&gt;config&lt;/code&gt;文件里面描述的内容对一个项目进行处理事情&lt;/li&gt;
+&lt;li&gt;创建项目目录结构&lt;/li&gt;
+&lt;li&gt;根据项目配置&lt;code&gt;wenpack.config.js&lt;/code&gt;文件，并&lt;code&gt;npm install&lt;/code&gt;安装项目所需依赖模块&lt;/li&gt;
+&lt;li&gt;终端执行编译完成自动化构建&lt;/li&gt;
+&lt;/ol&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;div class=&quot;tip&quot;&gt;&lt;br&gt;    注意：&lt;strong&gt; package.json &lt;/strong&gt;文件是 &lt;code&gt;npm init&lt;/code&gt; 命令初始化生成的文件，这里面有很多配置信息，包含了这个项目要安装基于&lt;code&gt;nodeJS&lt;/code&gt;的各种模块，&lt;br&gt;    还有很多配置信息。如果事先配置好所需要的配置信息，那么用 &lt;code&gt;npm install&lt;/code&gt; 就可以自动安装你所需的模块。&lt;br&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h3&gt;&lt;p&gt;所需&lt;code&gt;npm@2.15.0&lt;/code&gt; 和 &lt;code&gt;node@4.4.2&lt;/code&gt;,才能进行下一步。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g webpack;//安装全局模块webpack&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;配置webpack-config-js文件&quot;&gt;&lt;a href=&quot;#配置webpack-config-js文件&quot; class=&quot;headerlink&quot; title=&quot;配置webpack.config.js文件&quot;&gt;&lt;/a&gt;配置webpack.config.js文件&lt;/h3&gt;&lt;p&gt;&lt;code&gt;参数说明：&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;require()&lt;/code&gt;：引入&lt;code&gt;nodeJs&lt;/code&gt;的&lt;code&gt;path&lt;/code&gt;模块&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;path.resolve()&lt;/code&gt;：&lt;code&gt;nodeJS&lt;/code&gt;的方法，传递一个相对路径&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;module.exports&lt;/code&gt;：模块接口用于单独的定义，返回数据类型&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;entry&lt;/code&gt; ：入口文件 让&lt;code&gt;webpack&lt;/code&gt;用哪个文件作为项目的入口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;output&lt;/code&gt;：出口 让&lt;code&gt;webpack&lt;/code&gt;把处理完成的文件放在哪里&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;module&lt;/code&gt;：模块 要用什么不同的模块来处理各种类型的文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;目录结构：&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;webpack&lt;ul&gt;
+&lt;li&gt;src/&lt;ul&gt;
+&lt;li&gt;index.js (内容： console.log(‘index.js’))&lt;/li&gt;
+&lt;li&gt;main.js  (内容： console.log(‘main.js’))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;package.json&lt;/li&gt;
+&lt;li&gt;webpack.config.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; path = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;path&#39;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//引入nodeJs的path模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; HtmlwebpackPlugin = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;html-webpack-plugin&#39;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//自动生成html的模块&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//path.resolve()为nodeJS的方法，传递一个相对路径&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// var _PATH = path.resolve(&#39;src&#39;);//1.传入一个src的文件目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;span class=&quot;comment&quot;&gt;//模块接口用于单独的定义，返回数据类型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// entry: _PATH, //2.entry的值如果是文件名，那么会默认会找index.js (单入口文件)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  entry: [&lt;span class=&quot;string&quot;&gt;&#39;./src/index.js&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;./src/main.js&#39;&lt;/span&gt;],&lt;span class=&quot;comment&quot;&gt;//多入口文件只打包一个文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  output: &amp;#123;&lt;span class=&quot;comment&quot;&gt;//输出接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    path: &lt;span class=&quot;string&quot;&gt;&#39;./build&#39;&lt;/span&gt;,&lt;span class=&quot;comment&quot;&gt;//输出路径&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    filename: &lt;span class=&quot;string&quot;&gt;&#39;build.js&#39;&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;//合并后输出的文件名为build.js&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  plugins: [&lt;span class=&quot;comment&quot;&gt;//html-webpack-plugin 自定生成.html文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HtmlwebpackPlugin(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      title: &lt;span class=&quot;string&quot;&gt;&#39;Hello World&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在终端中输入&lt;code&gt;webpack&lt;/code&gt;，如下图：&lt;br&gt;&lt;img src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/92B7DA54-E723-4D4A-B436-335BAB00F50D.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到&lt;code&gt;npm install&lt;/code&gt;安装的 &lt;code&gt;html-webpack-plugin&lt;/code&gt;模块帮我们自动生成了&lt;code&gt;index.html&lt;/code&gt;，并且页面自动引入了合并好的&lt;code&gt;build.js&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;插件：样式处理器&quot;&gt;&lt;a href=&quot;#插件：样式处理器&quot; class=&quot;headerlink&quot; title=&quot;插件：样式处理器&quot;&gt;&lt;/a&gt;插件：样式处理器&lt;/h3&gt;&lt;p&gt;&lt;code&gt;webpack&lt;/code&gt;样式的处理，是通过&lt;code&gt;module&lt;/code&gt;模块中的&lt;code&gt;loader&lt;/code&gt;方式处理各种样式预处理的机制。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;样式相关插件说明：&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;css-loader&lt;/code&gt;  : 用于遍历带有&lt;code&gt;.css&lt;/code&gt;的样式文件，并且进行相关处理&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;style－loader&lt;/code&gt;: 会把所有的样式插入到页面的一个style里&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;node-sass&lt;/code&gt;    : sass预处理器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sass-loader&lt;/code&gt;  : 编译预加载.sass文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;webpack踩坑&quot;&gt;&lt;a href=&quot;#webpack踩坑&quot; class=&quot;headerlink&quot; title=&quot;webpack踩坑&quot;&gt;&lt;/a&gt;webpack踩坑&lt;/h2&gt;&lt;h3 id=&quot;webpack报错（环境变量）&quot;&gt;&lt;a href=&quot;#webpack报错（环境变量）&quot; class=&quot;headerlink&quot; title=&quot;webpack报错（环境变量）&quot;&gt;&lt;/a&gt;webpack报错（环境变量）&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.js:&lt;span class=&quot;number&quot;&gt;340&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;canot find &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;webpack/lib/node/NodeTemplatePlugin&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;没有找到这个模块？，&lt;code&gt;cd ls&lt;/code&gt;顺着路径去下面找，该依赖模块安装了。&lt;br&gt;Google了下，路径设置的问题。&lt;a href=&quot;https://segmentfault.com/a/1190000002478924&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;具体解决方案&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; 是因为我们没有设置环境变量 &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;vim ~/.zshrc 后加入下面这段话&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; NODE_PATH=&lt;span class=&quot;string&quot;&gt;&quot;/usr/local/node_modules:/usr/local/lib/node_modules&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -31,8 +81,16 @@
     
     <summary type="html">
     
-      &lt;p&gt;迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。&lt;/p&gt;
-&lt;h2 id=&quot;webpack报错（环境变量）&quot;&gt;&lt;a href=&quot;#webpack报错（环境变量）&quot; class=&quot;headerlink&quot; title=&quot;webpack报错（环境变量）&quot;&gt;&lt;/a
+      &lt;p&gt;&lt;img class=&quot;full-image&quot; src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/webpack.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。&lt;/p&gt;
+&lt;h2 id=&quot;webpack学习&quot;&gt;&lt;a href=&quot;#webpack学习&quot; class=&quot;headerlink&quot; title=&quot;webpack学习&quot;&gt;&lt;/a&gt;webpack学习&lt;/h2&gt;&lt;p&gt;&lt;code&gt;构建流程&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先创建 &lt;code&gt;webpack&lt;/code&gt;目录，使用 &lt;code&gt;npm init&lt;/code&gt;命令初始化依赖配置文件&lt;/li&gt;
+&lt;li&gt;新建&lt;code&gt;webpack.config.js&lt;/code&gt;的文件，&lt;code&gt;webpack&lt;/code&gt;是根据&lt;code&gt;config&lt;/code&gt;文件里面描述的内容对一个项目进行处理事情&lt;/li&gt;
+&lt;li&gt;创建项目目录结构&lt;/li&gt;
+&lt;li&gt;根据项目配置&lt;code&gt;wenpack.config.js&lt;/code&gt;文件，并&lt;code&gt;npm install&lt;/code&gt;安装项目所需依赖模块&lt;/li&gt;
+&lt;li&gt;终端执行编译完成自动化构建&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -221,6 +279,127 @@
     
     
       <category term="Git" scheme="https://github.com/Vuepack/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown主要语法备忘</title>
+    <link href="https://github.com/Vuepack/2016/01/01/Markdown%E4%B8%BB%E8%A6%81%E8%AF%AD%E6%B3%95%E5%A4%87%E5%BF%98/"/>
+    <id>https://github.com/Vuepack/2016/01/01/Markdown主要语法备忘/</id>
+    <published>2016-01-01T07:36:27.000Z</published>
+    <updated>2016-05-18T08:21:43.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#h1级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;##h2级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;###h3级标题&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;#h1级标题&lt;/p&gt;
+&lt;p&gt;##h2级标题&lt;/p&gt;
+&lt;p&gt;###h3级标题&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;超链接&quot;&gt;&lt;a href=&quot;#超链接&quot; class=&quot;headerlink&quot; title=&quot;超链接&quot;&gt;&lt;/a&gt;超链接&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[Google](http://www.google.com)//默认写法不显示href，只显示默认的自定义字段&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[Google][http://www.google.com]//另一种写法,显示自定义子弹和href&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;http://www.google.com&amp;gt;//显示href全称&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;br&gt;&lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[Google][&lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.google.com&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.google.com&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;图片&quot;&gt;&lt;a href=&quot;#图片&quot; class=&quot;headerlink&quot; title=&quot;图片&quot;&gt;&lt;/a&gt;图片&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;![这里不显示文字用来备注](http://7xnjvz.com1.z0.glb.clouddn.com/16560643.jpeg)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;img src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/16560643.jpeg&quot; alt=&quot;这里不显示文字用来备注&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;字体优化&quot;&gt;&lt;a href=&quot;#字体优化&quot; class=&quot;headerlink&quot; title=&quot;字体优化&quot;&gt;&lt;/a&gt;字体优化&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;`Leon`好帅哦~ //字体加重&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;  &lt;code&gt;Leon&lt;/code&gt;好帅哦~&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*Leon*好可爱哦~ //字体为斜体&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;em&gt;Leon&lt;/em&gt;好可爱哦~&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;**Leon**人真好~ //字体加粗&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;strong&gt;Leon&lt;/strong&gt;人真好~&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;表格&quot;&gt;&lt;a href=&quot;#表格&quot; class=&quot;headerlink&quot; title=&quot;表格&quot;&gt;&lt;/a&gt;表格&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;礼拜一 | 礼拜二&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;---   | ---&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;语文课 | 体育课&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;数学课 | 英语课&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;科学课 | 自习课&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;礼拜一&lt;/th&gt;
+&lt;th&gt;礼拜二&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;语文课&lt;/td&gt;
+&lt;td&gt;体育课&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数学课&lt;/td&gt;
+&lt;td&gt;英语课&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;科学课&lt;/td&gt;
+&lt;td&gt;自习课&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot; title=&quot;列表&quot;&gt;&lt;/a&gt;列表&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- 无需列表1 //无序列表：使用 - 加一个空格（）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 无序列表2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 无序列表3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无需列表1&lt;/li&gt;
+&lt;li&gt;无序列表2&lt;/li&gt;
+&lt;li&gt;无序列表3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1. 有序列表//有序列表：使用 数字 加一个英文句点&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2. 有序列表&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3. 有序列表&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;有序列表&lt;/li&gt;
+&lt;li&gt;有序列表&lt;/li&gt;
+&lt;li&gt;有序列表&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- 多层嵌套&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - 二级菜单&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - 二级菜单&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 多层嵌套&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - 二级菜单&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        - 三级菜单&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        - 三级菜单&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - 二级菜单&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多层嵌套&lt;ul&gt;
+&lt;li&gt;二级菜单&lt;/li&gt;
+&lt;li&gt;二级菜单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;多层嵌套&lt;ul&gt;
+&lt;li&gt;二级菜单&lt;ul&gt;
+&lt;li&gt;三级菜单&lt;/li&gt;
+&lt;li&gt;三级菜单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;二级菜单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;块&quot;&gt;&lt;a href=&quot;#块&quot; class=&quot;headerlink&quot; title=&quot;块&quot;&gt;&lt;/a&gt;块&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;这里先换行，然后缩进4个空格，之后的内容便可以原样显示了，适合用于显示代码内容。直到文本结束或最后一个存在缩进的行为止。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这里先换行，然后缩进4个空格，之后的内容便可以原样显示了，适合用于显示代码内容。直到文本结束或最后一个存在缩进的行为止。
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;给引用的文本开始位置都加一个 &#39;&amp;gt;&#39;，&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;便可组成一个块引用。在块引用中，可以结合&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;其他markdown元素一块使用，比如列表。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;**强调**&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给引用的文本开始位置都加一个 ‘&amp;gt;’，&lt;br&gt;便可组成一个块引用。在块引用中，可以结合&lt;br&gt;其他markdown元素一块使用，比如列表。&lt;br&gt;&lt;strong&gt;强调&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;以下是本博客自定义的一些样式列表（注意！）&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;警告块-本博客专用&quot;&gt;&lt;a href=&quot;#警告块-本博客专用&quot; class=&quot;headerlink&quot; title=&quot;警告块(本博客专用)&quot;&gt;&lt;/a&gt;警告块(本博客专用)&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;tip&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    预处理器很强大，但它只是编写 CSS 的辅助工具。出于对扩展和维护等方面的考虑，在大型项目中有必要使用预处理器构建 CSS；但是对于小型项目，原生的 CSS 可能是一种更好的选择。不要肆意使用预处理器！&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;tip&quot;&gt;&lt;br&gt;    预处理器很强大，但它只是编写 CSS 的辅助工具。出于对扩展和维护等方面的考虑，在大型项目中有必要使用预处理器构建 CSS；但是对于小型项目，原生的 CSS 可能是一种更好的选择。不要肆意使用预处理器！&lt;br&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&quot;展示内容区-本博客专用&quot;&gt;&lt;a href=&quot;#展示内容区-本博客专用&quot; class=&quot;headerlink&quot; title=&quot;展示内容区(本博客专用)&quot;&gt;&lt;/a&gt;展示内容区(本博客专用)&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;blockquote&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;blockquote-center&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;展示内容区&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;blockquote&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;    &lt;br&gt;展示内容区&lt;br&gt;&lt;br&gt;&lt;/blockquote&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&quot;图片相框模式-本博客专用&quot;&gt;&lt;a href=&quot;#图片相框模式-本博客专用&quot; class=&quot;headerlink&quot; title=&quot;图片相框模式(本博客专用)&quot;&gt;&lt;/a&gt;图片相框模式(本博客专用)&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;full-image&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://7xnjvz.com1.z0.glb.clouddn.com/banner-yun.jpg&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;演示：&lt;/code&gt;&lt;br&gt;&lt;img class=&quot;full-image&quot; src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/banner-yun.jpg&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span c
+    
+    </summary>
+    
+    
+      <category term="Markdown" scheme="https://github.com/Vuepack/tags/Markdown/"/>
     
   </entry>
   
@@ -852,36 +1031,6 @@
       <category term="JavaScript" scheme="https://github.com/Vuepack/tags/JavaScript/"/>
     
       <category term="微信开发" scheme="https://github.com/Vuepack/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>new Date()格式问题</title>
-    <link href="https://github.com/Vuepack/2015/10/25/new-Date-%E6%A0%BC%E5%BC%8F%E9%97%AE%E9%A2%98/"/>
-    <id>https://github.com/Vuepack/2015/10/25/new-Date-格式问题/</id>
-    <published>2015-10-25T14:50:30.000Z</published>
-    <updated>2016-05-17T13:11:44.000Z</updated>
-    
-    <content type="html">&lt;p&gt;最近遇到一个问题，查不到原因。卡在那里，所幸在&lt;code&gt;stackoverflow&lt;/code&gt;找到了答案；&lt;br&gt;后端提供的接口，json其中一条格式是这样的 &lt;code&gt;&amp;quot;start_date&amp;quot;: &amp;quot;2015-10-10 19:11&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;而然我从发送请求拉取json数据的时候，前台有这么一个事件是通过new Date()填充数据。&lt;br&gt;格式如下：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;scheduler.addEvent(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    start_date: &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(dataList.events[i].start_date), &lt;span class=&quot;comment&quot;&gt;//事件开始时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    end_date: &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(allDayEndDate),&lt;span class=&quot;comment&quot;&gt;//事件结束时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    text: dataList.events[i].title, &lt;span class=&quot;comment&quot;&gt;//日历事件主题内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    eid: dataList.events[i].eid, &lt;span class=&quot;comment&quot;&gt;//eid&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    start_time:dataList.events[i].day_num &lt;span class=&quot;comment&quot;&gt;//事件开始时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;这边的&lt;code&gt;start_date&lt;/code&gt; 和 &lt;code&gt;end_date&lt;/code&gt;的格式都是 &lt;strong&gt;2015-10-10 19:11&lt;/strong&gt;&lt;br&gt;没错，写完在我的chrome上数据显示正常。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;然后我就开始测浏览器兼容性问题，火狐，ie8，360,都不能显示。&lt;br&gt;但我仔细看了下，如果有的事件格式为&lt;code&gt;&amp;quot;start_date&amp;quot;: &amp;quot;2015-10-10&amp;quot;&lt;/code&gt; ie，火狐都正确显示了。&lt;br&gt;那问题应该就是日期格式了！！！&lt;/p&gt;
-&lt;p&gt;然后我就测试&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; time = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;2010-08-17 12:09:36&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(time)&lt;span class=&quot;comment&quot;&gt;//Invalid date&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;测试的结果是&lt;strong&gt;无效的日期？？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;于是我找到了答案，显然这种日期格式不适用于所有浏览器。&lt;br&gt;如果想适用于所有浏览器，&lt;br&gt;格式应该为：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;2010/08/17 12:09:36&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;于是就改了下如下：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;scheduler.addEvent(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    start_date: &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(dataList.events[i].start_date.replace(&lt;span class=&quot;regexp&quot;&gt;/-/g&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;/&quot;&lt;/span&gt;)), &lt;span class=&quot;comment&quot;&gt;//事件开始时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    end_date: &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(allDayEndDate.replace(&lt;span class=&quot;regexp&quot;&gt;/-/g&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;/&quot;&lt;/span&gt;)),&lt;span class=&quot;comment&quot;&gt;//事件结束时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    text: dataList.events[i].title, &lt;span class=&quot;comment&quot;&gt;//日历事件主题内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    eid: dataList.events[i].eid, &lt;span class=&quot;comment&quot;&gt;//eid&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    start_time:dataList.events[i].day_num &lt;span class=&quot;comment&quot;&gt;//事件开始时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;replace()&lt;/code&gt;函数：用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近遇到一个问题，查不到原因。卡在那里，所幸在&lt;code&gt;stackoverflow&lt;/code&gt;找到了答案；&lt;br&gt;后端提供的接口，json其中一条格式是这样的 &lt;code&gt;&amp;quot;start_date&amp;quot;: &amp;quot;2015-10-10 19:11&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;而然我从发送请求拉取json数据的时候，前台有这么一个事件是通过new Date()填充数据。&lt;br&gt;格式如下：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;scheduler.addEvent(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    start_date: &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(dataList.events[i].start_date), &lt;span class=&quot;comment&quot;&gt;//事件开始时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    end_date: &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(allDayEndDate),&lt;span class=&quot;comment&quot;&gt;//事件结束时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    text: dataList.events[i].title, &lt;span class=&quot;comment&quot;&gt;//日历事件主题内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    eid: dataList.events[i].eid, &lt;span class=&quot;comment&quot;&gt;//eid&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    start_time:dataList.events[i].day_num &lt;span class=&quot;comment&quot;&gt;//事件开始时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;这边的&lt;code&gt;start_date&lt;/code&gt; 和 &lt;code&gt;end_date&lt;/code&gt;的格式都是 &lt;strong&gt;2015-10-10 19:11&lt;/strong&gt;&lt;br&gt;没错，写完在我的chrome上数据显示正常。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://github.com/Vuepack/tags/JavaScript/"/>
     
   </entry>
   

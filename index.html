@@ -129,7 +129,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">to be a better me</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -248,15 +248,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
 
     
       
@@ -305,7 +296,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;290</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,619</span>
 
           
             
@@ -336,14 +327,21 @@
 
       
         
-          
-            <p>迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。</p>
-<h2 id="webpack报错（环境变量）"><a href="#webpack报错（环境变量）" class="headerlink" title="webpack报错（环境变量）"></a>webpack报错（环境变量）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.js:<span class="number">340</span></span><br><span class="line"><span class="keyword">throw</span> err;</span><br><span class="line">canot find <span class="built_in">module</span> <span class="string">'webpack/lib/node/NodeTemplatePlugin'</span></span><br></pre></td></tr></table></figure>
-<p>没有找到这个模块？，<code>cd ls</code>顺着路径去下面找，该依赖模块安装了。<br>Google了下，路径设置的问题。<a href="https://segmentfault.com/a/1190000002478924" target="_blank" rel="external">具体解决方案</a>。</p>
-<p><strong> 是因为我们没有设置环境变量 </strong></p>
-<p><code>vim ~/.zshrc 后加入下面这段话</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NODE_PATH=<span class="string">"/usr/local/node_modules:/usr/local/lib/node_modules"</span></span><br></pre></td></tr></table></figure></p>
-
-          
+          <p><img class="full-image" src="http://7xnjvz.com1.z0.glb.clouddn.com/webpack.png" alt=""></p>
+<p>迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。</p>
+<h2 id="webpack学习"><a href="#webpack学习" class="headerlink" title="webpack学习"></a>webpack学习</h2><p><code>构建流程</code></p>
+<ol>
+<li>首先创建 <code>webpack</code>目录，使用 <code>npm init</code>命令初始化依赖配置文件</li>
+<li>新建<code>webpack.config.js</code>的文件，<code>webpack</code>是根据<code>config</code>文件里面描述的内容对一个项目进行处理事情</li>
+<li>创建项目目录结构</li>
+<li>根据项目配置<code>wenpack.config.js</code>文件，并<code>npm install</code>安装项目所需依赖模块</li>
+<li>终端执行编译完成自动化构建</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/01/webpack学习和踩坑/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -881,7 +879,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -923,21 +921,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">37.4k</span>
+              <span class="site-state-item-count">40.9k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
