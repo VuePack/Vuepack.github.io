@@ -1546,7 +1546,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cd1632;
+  background: #ec7391;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2402,8 +2402,8 @@ pre .prompt {
 .post-toc .nav .active-current > a {
   color: #f98787 !important;
 }
-#sidebar .circle {
-  cursor: pointer;
+.post-body blockquote {
+  border-left: 4px solid #42b983;
 }
 .post-body h2,
 .post-body h3,
@@ -2455,6 +2455,14 @@ pre .prompt {
   text-align: center;
   background-color: #f66;
   font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+.blockquote-center,
+.page-home .post-type-quote blockquote,
+.page-post-detail .post-type-quote blockquote {
+  border-left: none !important;
+}
+#sidebar .circle {
+  cursor: pointer;
 }
 .site-state-item {
   text-align: center;
