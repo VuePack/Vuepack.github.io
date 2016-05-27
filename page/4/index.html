@@ -59,15 +59,15 @@
 
 
 
-<meta name="description" content="正行走在VueJS和Node路上的小前端">
+<meta name="description" content="正行走在Hybrid App（Vue,React）...">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Leon's Daily">
 <meta property="og:url" content="https://github.com/Vuepack/page/4/index.html">
 <meta property="og:site_name" content="Leon's Daily">
-<meta property="og:description" content="正行走在VueJS和Node路上的小前端">
+<meta property="og:description" content="正行走在Hybrid App（Vue,React）...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leon's Daily">
-<meta name="twitter:description" content="正行走在VueJS和Node路上的小前端">
+<meta name="twitter:description" content="正行走在Hybrid App（Vue,React）...">
 
 
 
@@ -129,7 +129,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">爱折腾，爱旅游，热爱生活</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -510,7 +510,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,950</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,954</span>
 
           
             
@@ -541,36 +541,122 @@
 
       
         
-          
-            <h2 id="自定义属性的读写操作"><a href="#自定义属性的读写操作" class="headerlink" title="自定义属性的读写操作"></a>自定义属性的读写操作</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  oBtn = <span class="built_in">document</span>.getElementByTagName(<span class="string">'input'</span>);</span><br><span class="line"></span><br><span class="line">oBtn[<span class="number">0</span>].abc = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(oBtn[<span class="number">0</span>].abc);<span class="comment">// 自定义属性的读</span></span><br><span class="line"></span><br><span class="line">oBtn[<span class="number">0</span>].abc = <span class="number">456</span>;<span class="comment">// 自定义属性的写</span></span><br><span class="line"><span class="comment">//JS可以为任何HTML元素添加任意个自定义属性</span></span><br></pre></td></tr></table></figure>
+          <h2 id="自定义属性的读写操作"><a href="#自定义属性的读写操作" class="headerlink" title="自定义属性的读写操作"></a>自定义属性的读写操作</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  oBtn = <span class="built_in">document</span>.getElementByTagName(<span class="string">'input'</span>);</span><br><span class="line"></span><br><span class="line">oBtn[<span class="number">0</span>].abc = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">console</span>.log(oBtn[<span class="number">0</span>].abc);<span class="comment">// 自定义属性的读</span></span><br><span class="line"></span><br><span class="line">oBtn[<span class="number">0</span>].abc = <span class="number">456</span>;<span class="comment">// 自定义属性的写</span></span><br><span class="line"><span class="comment">//JS可以为任何HTML元素添加任意个自定义属性</span></span><br></pre></td></tr></table></figure>
 <h2 id="自定义属性应用"><a href="#自定义属性应用" class="headerlink" title="自定义属性应用"></a>自定义属性应用</h2><blockquote>
 <p>用自定义属性可以元素添加开关属性，作为控制开关。如下面这个例子：</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line"><span class="comment">// var onOff = true; 一个onOff只能控制一个开关。要为多个元素设置各自的开关，就要给每个元素加个onOff开关。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;aLi.length; i++) &#123;</span><br><span class="line">    aLi[i].onOff = <span class="literal">true</span>;</span><br><span class="line">    aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.onOff)&#123;</span><br><span class="line">        <span class="keyword">this</span>.style.background = <span class="string">'url(img/active.png)'</span>;</span><br><span class="line">        <span class="keyword">this</span>.onOff = <span class="literal">false</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.style.background = <span class="string">'url(img/normal.png)'</span>;</span><br><span class="line">        <span class="keyword">this</span>.onOff = <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="获取自身递增数字及匹配数组内容"><a href="#获取自身递增数字及匹配数组内容" class="headerlink" title="获取自身递增数字及匹配数组内容"></a>获取自身递增数字及匹配数组内容</h2><blockquote>
-<p>在网页上设置三个按钮，默认值为0，每点击一次按钮，字母依次ABCD轮换:</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>];</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> oBtn = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;oBtn.length;i++)&#123;</span><br><span class="line">    oBtn[i].num = <span class="number">0</span>;</span><br><span class="line">    oBtn[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.value = arr[<span class="keyword">this</span>.num];</span><br><span class="line">        <span class="keyword">this</span>.num ++;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.num == arr.length)&#123;</span><br><span class="line">            <span class="keyword">this</span>.num = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="添加索引值、匹配数组、HTML元素"><a href="#添加索引值、匹配数组、HTML元素" class="headerlink" title="添加索引值、匹配数组、HTML元素"></a>添加索引值、匹配数组、HTML元素</h2><blockquote>
-<p>把三个按钮的value与数组里面的值依次进行匹配。</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"btn1"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"btn2"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"btn3"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aBtn = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>);</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">'莫涛'</span>,<span class="string">'张森'</span>,<span class="string">'杜鹏'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;aBtn.length; i++)&#123;</span><br><span class="line">    aBtn[i].index = i; <span class="comment">//自定义属性index，添加索引值</span></span><br><span class="line">    aBtn[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="comment">//alert(i); //不会弹出1、2，直接弹出3，也就是aBtn的长度。也就是说，在基础阶段，在for循环所包的函数里面再用i是不靠谱的。</span></span><br><span class="line">      <span class="keyword">this</span>.value = arr[<span class="keyword">this</span>.index];</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>##</p>
-<blockquote>
-<p>总结：要控制多个相同的<code>DOM</code>节点并处理相同的事情，这时候可以考虑用<code>自定义属性</code><br>上面是通过索引值匹配数组值，匹配HTML中的元素也是同理。<br>想建立”匹配“、”对应“关系，就用索引值。</p>
-</blockquote>
-<p><code>DEMO：</code></p>
-<ul>
-<li><a href="http://sandbox.runjs.cn/show/rgmjl8nn" target="_blank" rel="external">QQ列表展开收缩扩展(单选)</a></li>
-<li><a href="http://sandbox.runjs.cn/show/o1lfksh5" target="_blank" rel="external">QQ列表展开收缩扩展(多选)</a></li>
-<li><a href="http://sandbox.runjs.cn/show/8hhrz4dy" target="_blank" rel="external">带缩略图的图片切换效果</a></li>
-<li><a href="http://sandbox.runjs.cn/show/csqcitr1" target="_blank" rel="external">控制多组图片切换</a></li>
-</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/01/理解自定义属性的运用/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/11/01/理解函数返回值-return详解及应用/" itemprop="url">
+                  理解函数返回值-return详解及应用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-01T16:02:53+08:00" content="2015-11-01 16:02:53">
+              2015-11-01 16:02:53
+            </time>
+          </span>
+
 
           
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,820</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/01/理解函数返回值-return详解及应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/01/理解函数返回值-return详解及应用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
+<li><code>return</code> 返回值：函数名+括号（例如fn1())就相当于得到了该函数里面return后面的值</li>
+<li>所有函数默认返回值是：undefined</li>
+<li>可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义</li>
+<li><code>return</code> 后面的任何代码都不执行了</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/01/理解函数返回值-return详解及应用/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -694,172 +780,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/11/01/理解作用域/" itemprop="url">
-                  理解作用域
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-avatar">
-            <a class="avatar site-author-image"/></a>
-          </span>
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-01T13:45:07+08:00" content="2015-11-01 13:45:07">
-              2015-11-01 13:45:07
-            </time>
-          </span>
-
-
-          
-
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;4,801</span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/11/01/理解作用域/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/01/理解作用域/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="什么是作用域"><a href="#什么是作用域" class="headerlink" title="什么是作用域"></a>什么是作用域</h2><ul>
-<li>域：空间、范围、区域</li>
-<li>作用：读、写</li>
-</ul>
-<hr>
-<h2 id="浏览器的“JS解析器”"><a href="#浏览器的“JS解析器”" class="headerlink" title="浏览器的“JS解析器”"></a>浏览器的“JS解析器”</h2><p>“JS解析器”：浏览器中专门用来读JS的程序。它至少做下面两件事（当然还有其他事情）：</p>
-<ol>
-<li><p>准备工作（“找一些东西”）：根据<code>var、function、</code>参数找东西 —— <strong>JS的预解析</strong></p>
-<ul>
-<li>所有的变量，在正式运行代码之前，都提前赋了一个值：未定义（<code>a = 未定义</code>）</li>
-<li>所有的函数，在正式运行代码之前，都是整个函数块（<code>fn1 = function fn1(){alert(2);}</code>）</li>
-<li>遇到重名的，只留一个</li>
-</ul>
-</li>
-<li><p>逐行解读代码</p>
-<ul>
-<li>每读一行，就会回到预解析的库里面去看一眼。</li>
-<li>碰上表达式（带有 <code>= + - * / % ++ -- !</code>参数……都是表达式）能够改变值的是表达式。碰上表达式，就到库里面去修改值。</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert(a); <span class="comment">//未定义</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>; <span class="comment">//在库里面a的值由未定义换成1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">2</span>);&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">alert(a); <span class="comment">//弹出：function a()&#123;alert(4);&#125;</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>; <span class="comment">//预解析中的a改为了1</span></span><br><span class="line">alert(a);  <span class="comment">//弹出1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">2</span>);&#125;<span class="comment">//函数声明，没有改变a的值。什么也没发生。</span></span><br><span class="line">alert(a); <span class="comment">//继续弹出1，因为a在预处理库里面的值没有被改过。</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">3</span>; <span class="comment">//预处理中a的值变为3</span></span><br><span class="line">alert(a); <span class="comment">//弹出3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">4</span>);&#125; <span class="comment">//函数声明，什么也没有发生</span></span><br><span class="line">alert(a); <span class="comment">//继续弹出3</span></span><br><span class="line">a(); <span class="comment">//报错 a is not a function</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>以上代码在预解析中的过程如下：</p>
-</blockquote>
-<p><strong> 1）</strong>预解析： <code>var function</code> 参数 ……<br>读到 <code>var a = 1</code> =&gt; <code>a</code> 未定义<br>读到 <code>function a(){alert(2);}</code> =&gt; <code>a = functiona(){alert(2);}</code><br>变量与函数重名了，就只留下函数：<br><code>a = function(){alert(2);}</code><br>读到 <code>var a = 3</code> =&gt; <code>a</code> 未定义，这里与上面名为<code>a</code>的函数重名了，所以还是保留<code>a = function(){alert(2);}</code><br>读到<code>function a(){alert(4);}</code> =&gt; <code>a = function a(){alert(4);}</code> 与前面的 <code>a = function(){alert(2);}</code>重名，根据上下文，后面的函数覆盖了前面的函数，所以预解析就只留下了 <code>a = function(){alert(4);}</code></p>
-<p><strong> 2）</strong>逐行解读代码<br>读到表达式，表达式可以修改预解析的值。参数也可以改变预解析的值。<br>遇到函数调用，又要做两件事：预解析、逐行解析代码<br>函数声明，不是表达式，不改变预解析里面的值。</p>
-<hr>
-<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
-<li>在 <code>&lt;script&gt;</code> 标签里面声明的函数和变量，都是全局函数和全局变量（但是 <strong> js解析器 </strong>要把一块的事情处理完，然后处理另外一块事情）自上而下</li>
-<li>函数：函数也是个域，也是先找后执行。由里到外</li>
-<li>对象 {}</li>
-</ul>
-<blockquote>
-<p>作用域链：从子级作用域跳到父级作用域的过程</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">alert(a); //报错：a is not defined。因为在预解析里面压根就没有a这个东西</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var a = 1;</span><br><span class="line">&lt;/script</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">alert(a); <span class="comment">//不报错，会弹出undefined。因为预解析里面有a这个东西，但是由于执行的时候，还没有改变a的值，因此a的值为undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var a = 1; //预解析里面存了a，并且a的值存为1 并且a是全局变量</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">alert(a); //弹出1</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//预处理中的全局变量a的值改为1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(a);</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125; <span class="comment">//函数声明，什么也不做</span></span><br><span class="line">fn1(); <span class="comment">//遇到函数调用，开始进行预解析和逐行解读代码。在函数内，先预解析出一个局部的 a 是未定义（局部的a与全局的a一点关系都没有）；然后读代码，alert(a)弹出的是undefined；然后继续执行，遇到表达式，将局部的变量a的值改为2。这时fn1的函数执行已经完成了。</span></span><br><span class="line">alert(a); <span class="comment">//弹出全局变量a为1</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>以上代码在js解析器中的模拟如下：</p>
-</blockquote>
-<p><strong>1）</strong>预解析 var function 参数……<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = ...</span><br><span class="line">fn1 = <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">alert(a);</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>2) </strong>逐行解析代码</p>
-<blockquote>
-<p>另外一段代码：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//预处理中的全局变量a的值改为1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(a);</span><br><span class="line">    a = <span class="number">2</span>;</span><br><span class="line">&#125; <span class="comment">//函数声明，什么也不做</span></span><br><span class="line">fn1(); <span class="comment">//遇到函数调用，开始进行预解析和逐行解读代码。在函数内，没有任何函数和变量声明，因此预解析里面没东西；然后读代码，alert(a)，在局部没有找到预解析的a，于是从子级作用域跳到父级作用域去找，找到了全局的a，所以弹出的是全局变量a的值1；然后继续执行，遇到表达式，将全局变量a的值改为2。这时fn1的函数执行已经完成了。</span></span><br><span class="line">alert(a); <span class="comment">//弹出全局变量a为2</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//预处理中的全局变量a的值改为1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a</span>)</span>&#123; <span class="comment">//参数本质上就是一个局部变量</span></span><br><span class="line">    alert(a);</span><br><span class="line">    a = <span class="number">2</span>;</span><br><span class="line">&#125; <span class="comment">//函数声明，什么也不做</span></span><br><span class="line">fn1(); <span class="comment">//遇到函数调用，开始进行预解析和逐行解读代码。在函数内，找到参数a，因此预处理里面有个局部的a是未定义。；然后读代码，alert(a)，弹出的是局部的a为undefined；然后继续执行，遇到表达式，将局部变量a的值改为2。这时fn1的函数执行已经完成了。</span></span><br><span class="line">alert(a); <span class="comment">//弹出全局变量a为1</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//预处理中的全局变量a的值改为1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a</span>)</span>&#123; <span class="comment">//参数本质上就是一个局部变量</span></span><br><span class="line">    alert(a);</span><br><span class="line">    a = <span class="number">2</span>;</span><br><span class="line">&#125; <span class="comment">//函数声明，什么也不做</span></span><br><span class="line">fn1(a); <span class="comment">//遇到函数调用，开始进行预解析和逐行解读代码。在函数内，找到局部参数a，因此预处理里面有个局部的a是未定义。；然后读代码，读到第一行function fn1(a)，这时有参数进来，把全局的a的值1赋给了局部变量a，这时局部变量a的值变为1，alert(a)，弹出的是局部的a为1；然后继续执行，遇到表达式，将局部变量a的值改为2。这时fn1的函数执行已经完成了。</span></span><br><span class="line">alert(a); <span class="comment">//弹出全局变量a为1</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="获取函数内的值"><a href="#获取函数内的值" class="headerlink" title="获取函数内的值"></a>获取函数内的值</h2><ul>
-<li><p>方法一、把全局变量用到函数里面。因为函数可以读写全局变量。见下面的代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">''</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'大鸡腿~'</span>;</span><br><span class="line">    str = a;</span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>方法二，在函数里面调用全局函数，通过传参实现，见下面代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'99999999克拉钻石'</span>;</span><br><span class="line">    fn3(a);</span><br><span class="line">&#125;</span><br><span class="line">fn2();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params">a</span>)</span>&#123; <span class="comment">//注意这个a是fn3里面的，与fn2里面的a毫无关系</span></span><br><span class="line">    alert(a);<span class="comment">//99999999克拉钻石</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>函数的大括号是作用域；<code>if(){}</code>不是作用域；<code>for(){}</code>也不是作用域。只有作用域是先预解析、再执行。<code>if</code>和<code>for</code>的大括号没有预解析过程。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alert(a);</span><br><span class="line"><span class="comment">//弹出undefined。这说明if大括号中的a已经在全局就被预解析了，因此if的大括号并不是作用域</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>但是，需要注意：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">alert(fn1);</span><br><span class="line"><span class="comment">//在火狐浏览器里面会报错说fn1 is not defined。但是在chrome浏览器里可以正常弹出fun1函数。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">123</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>只有火狐浏览器预解析时，不能对<code>if</code>或<code>for</code>的括号里括起来的函数进行预解析。因此存在兼容性问题。因此，如果想要定义<code>全局函数</code>或<code>全局变量</code>，尽量不要放到<code>if</code>和<code>for</code>的大括号里面，放到大括号外面。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;aBtn.length; i++)&#123;</span><br><span class="line">    aBtn[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(i);</span><br><span class="line">        <span class="comment">//弹出3。因为必须for循环全部执行完成之后，aBtn才能够点击。</span></span><br><span class="line">        <span class="comment">//但是for循环执行完了，外面的i已经变成3；但是在function里面又没有i，自然找到了外面的i，也就是3.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;aBtn.length; i++)&#123;</span><br><span class="line">    aBtn[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(i); <span class="comment">//这时候弹出的就不是3了，是undefined</span></span><br><span class="line">        <span class="comment">//函数是作用域那就要预解析，alert(i) 找i的申明处，下面的var i= 0；所以是undefined</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;aBtn.legnth; i++)&#123;</span><br><span class="line">            aBtn[i].style.background = <span class="string">'yellow'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;aBtn.length; i++)&#123;</span><br><span class="line">    aBtn[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(i);</span><br><span class="line">        <span class="comment">//下面for循环的括号中的var删去了，function里面又找不到i了，所以到父级找到了i，又是个3。因此，此处会弹出3。</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i&lt;aBtn.length; i++)&#123;</span><br><span class="line">            aBtn[i].style.background = <span class="string">'yellow'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -902,19 +822,19 @@
                alt="里昂" />
           <div class="circle"></div>
           <p class="site-author-name" itemprop="name">里昂</p>
-          <p class="site-description motion-element" itemprop="description">正行走在VueJS和Node路上的小前端</p>
+          <p class="site-description motion-element" itemprop="description">正行走在Hybrid App（Vue,React）...</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">59.7k</span>
+              <span class="site-state-item-count">67.0k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

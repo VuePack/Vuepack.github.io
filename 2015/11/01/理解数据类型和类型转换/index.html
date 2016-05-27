@@ -95,7 +95,7 @@ Number（值是数字类型）
 String（值是字符串类型）
 Boolean（值是布尔类型）
 object">
-<meta property="og:updated_time" content="2016-05-26T05:43:47.000Z">
+<meta property="og:updated_time" content="2016-05-27T06:20:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解数据类型和类型转换和隐式类型转换">
 <meta name="twitter:description" content="数据类型
@@ -173,7 +173,7 @@ object">
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">爱折腾，爱旅游，热爱生活</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -331,7 +331,7 @@ object">
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,961</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,965</span>
 
           
             
@@ -387,6 +387,7 @@ object">
 </li>
 </ul>
 <p><code>typeof</code> 用来判断数据类型。<br>字符串方法 <code>charAt()</code>：通过字符串的下标获取子字符串。</p>
+<a id="more"></a>
 <hr>
 <h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>  把字符串转成数字的方法：</p>
 <h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'100'</span>;</span><br><span class="line">alert(a + <span class="number">100</span>); <span class="comment">//'100100'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'00100'</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(b)); <span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">'+100'</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(c)); <span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="string">''</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(d)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> e = <span class="string">'   '</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(e)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f = <span class="literal">true</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(f)); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = <span class="literal">false</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(g)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = [];</span><br><span class="line">alert(<span class="built_in">Number</span>(i)); <span class="comment">//0 空数组用Number转出来是0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> j = [<span class="string">''</span>];</span><br><span class="line">alert(<span class="built_in">Number</span>(j)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> k = [<span class="number">123</span>];</span><br><span class="line">alert(<span class="built_in">Number</span>(k)); <span class="comment">//123</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> l = [<span class="string">'123'</span>];</span><br><span class="line">alert(<span class="built_in">Number</span>(l)); <span class="comment">//123</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o = <span class="literal">null</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(o)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line">----------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> m = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">alert(<span class="built_in">Number</span>(m)); <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json = &#123;abc:<span class="number">123</span>&#125;;</span><br><span class="line">alert(<span class="built_in">Number</span>(json)); <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json2 = &#123;&#125;;</span><br><span class="line">alert(<span class="built_in">Number</span>(json2)); <span class="comment">//NaN 即使是空json，Number方法也转不了</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> h = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">alert(<span class="built_in">Number</span>(h)); <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p;</span><br><span class="line">alert(<span class="built_in">Number</span>(p)); <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> q = <span class="string">'100px'</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(q)); <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
@@ -534,19 +535,19 @@ object">
                alt="里昂" />
           <div class="circle"></div>
           <p class="site-author-name" itemprop="name">里昂</p>
-          <p class="site-description motion-element" itemprop="description">正行走在VueJS和Node路上的小前端</p>
+          <p class="site-description motion-element" itemprop="description">正行走在Hybrid App（Vue,React）...</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">59.7k</span>
+              <span class="site-state-item-count">67.0k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

@@ -1,0 +1,1025 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Leon's Daily" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://7xnjvz.com1.z0.glb.clouddn.com/favicon.ico?v=6.0.0" />
+
+
+
+
+
+
+<meta name="description" content="DOM基础概念、操作DOM的概念及节点类型DOM：ocument Object Model 文档对象模型
+
+文档：html页面
+文档对象：html页面当中的元素
+文档对象模型：一套定义、准则 为了能够让程序（js）去操作页面中的元素而定义出来的一套标准
+
+
+DOM会把文档看作是一棵树，页面中的每个元素就是树上的一个一个节点；同时DOM定义了很多方法、属性等来操作这棵树中的每一个元素（节点）——每个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解DOM基础概念、操作">
+<meta property="og:url" content="https://github.com/Vuepack/2015/11/02/理解DOM基础概念、操作/index.html">
+<meta property="og:site_name" content="Leon's Daily">
+<meta property="og:description" content="DOM基础概念、操作DOM的概念及节点类型DOM：ocument Object Model 文档对象模型
+
+文档：html页面
+文档对象：html页面当中的元素
+文档对象模型：一套定义、准则 为了能够让程序（js）去操作页面中的元素而定义出来的一套标准
+
+
+DOM会把文档看作是一棵树，页面中的每个元素就是树上的一个一个节点；同时DOM定义了很多方法、属性等来操作这棵树中的每一个元素（节点）——每个">
+<meta property="og:updated_time" content="2016-05-27T12:52:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="理解DOM基础概念、操作">
+<meta name="twitter:description" content="DOM基础概念、操作DOM的概念及节点类型DOM：ocument Object Model 文档对象模型
+
+文档：html页面
+文档对象：html页面当中的元素
+文档对象模型：一套定义、准则 为了能够让程序（js）去操作页面中的元素而定义出来的一套标准
+
+
+DOM会把文档看作是一棵树，页面中的每个元素就是树上的一个一个节点；同时DOM定义了很多方法、属性等来操作这棵树中的每一个元素（节点）——每个">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Admin'
+    }
+  };
+</script>
+
+  <title> 理解DOM基础概念、操作 | Leon's Daily </title>
+  <script src="https://cdn.bootcss.com/vue/1.0.14/vue.min.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?cb66b58ccd5ccc5bdf2d673b7b299c15";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Leon's Daily</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">爱折腾，爱旅游，热爱生活</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-code">
+          <a href="http://likr.cn/CV" rel="section">
+            
+              <i class="menu-item-icon fa fa-code fa-fw"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+
+      
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oobsx4abf7ttxGH71eMT','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                理解DOM基础概念、操作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-02T13:51:00+08:00" content="2015-11-02 13:51:00">
+              2015-11-02 13:51:00
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;7,263</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/02/理解DOM基础概念、操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/02/理解DOM基础概念、操作/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="DOM基础概念、操作"><a href="#DOM基础概念、操作" class="headerlink" title="DOM基础概念、操作"></a>DOM基础概念、操作</h1><h2 id="DOM的概念及节点类型"><a href="#DOM的概念及节点类型" class="headerlink" title="DOM的概念及节点类型"></a>DOM的概念及节点类型</h2><p><code>DOM</code>：<code>ocument Object Model</code> 文档对象模型</p>
+<ul>
+<li>文档：html页面</li>
+<li>文档对象：html页面当中的元素</li>
+<li>文档对象模型：一套定义、准则 为了能够让程序（js）去操作页面中的元素而定义出来的一套标准</li>
+</ul>
+<blockquote>
+<p><code>DOM</code>会把文档看作是一棵树，页面中的每个元素就是树上的一个一个节点；同时<code>DOM</code>定义了很多方法、属性等来操作这棵树中的每一个元素（节点）——每个节点称为<code>DOM</code>节点</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="DOM节点"><a href="#DOM节点" class="headerlink" title="DOM节点"></a>DOM节点</h3><ul>
+<li><code>childNodes \ children</code><ul>
+<li>获取第一级子元素</li>
+<li>有兼容性问题（空白节点），<code>nodeType</code>属性</li>
+</ul>
+</li>
+<li><code>firstChild \ firstElementChild</code><ul>
+<li>获取子元素里的第一个</li>
+</ul>
+</li>
+<li><code>lastChild \ lastElementChild</code><ul>
+<li>获取子元素里的最后一个</li>
+</ul>
+</li>
+</ul>
+<h3 id="childNodes"><a href="#childNodes" class="headerlink" title="childNodes"></a>childNodes</h3><p>元素<code>.childNodes</code>：只读属性 子节点列表集合</p>
+<p><code>childNodes</code>至包含一级子节点，不包含后辈孙级以下的节点</p>
+<p><code>childNodes</code>的兼容性问题</p>
+<ul>
+<li>标准浏览器下：childNodes包含了文本和元素类型的节点，并且也会包含非法嵌套的子节点；</li>
+<li>非标准浏览器下，至包含元素类型的节点，IE7及以下不包含非法嵌套的子节点</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">oUl = <span class="built_in">document</span>.getElementById(<span class="string">'ul1'</span>);</span><br><span class="line">alert(oUl.childNodes.length); <span class="comment">//在标准浏览器下弹出9；在IE6、7弹出4。因为标准浏览器下，文本元素（在这里是换行符）也包含在childNodes里面了。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;oUl.childNodes.length; i++)&#123;</span><br><span class="line">    oUl.childNodes[i].style.background = <span class="string">'red'</span>; <span class="comment">//在标准浏览器下会报错，因为文本元素（这里是换行符）没有是没有style属性的。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以通过下面这种方式来解决：</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;oUl.childNodes.length; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span> (oUl.childNodes[i].nodeType == <span class="number">1</span>) &#123;<span class="comment">//元素节点的nodeType为1 ，具体看下表格</span></span><br><span class="line">        oUl.childNodes[i].style.background = <span class="string">'red'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.nodeName <span class="comment">// "#document"</span></span><br><span class="line"><span class="built_in">document</span>.nodeType <span class="comment">// 9</span></span><br></pre></td></tr></table></figure>
+<h3 id="children"><a href="#children" class="headerlink" title="children"></a>children</h3><p>元素<code>.children</code>：只读 属性 子节点列表集合</p>
+<ul>
+<li>标准下： 只包含元素类型的节点，并且包含非法嵌套的子节点</li>
+<li>非标准下：只包含元素类型的节点，IE7及以下不包含非法嵌套的子节点</li>
+</ul>
+<p>这样，如果把<code>childNodes</code>换为<code>children</code>的话，就不用进行<code>nodeType</code>的判断了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;oUl.children.length; i++)&#123;</span><br><span class="line">    oUl.children[i].style.background = <span class="string">'red'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="nodeType"><a href="#nodeType" class="headerlink" title="nodeType"></a>nodeType</h3><p>元素<code>.nodeType</code>：只读 属性 当前元素的节点类型<br>常用的节点类型包括：元素节点、文本节点、属性节点：</p>
+<ul>
+<li>元素节点 ELEMENT_NODE：1</li>
+<li>属性节点 ATTRIBUTE_NODE ：2</li>
+<li>文本节点 TEXT_NODE：3</li>
+</ul>
+<p><code>nodeName</code>属性返回节点的名称，<code>nodeType</code>属性返回节点类型的常数值。具体的返回值，可查阅下方的表格。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>nodeName</th>
+<th>nodeType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DOCUMENT_NODE</td>
+<td>#document</td>
+<td>9</td>
+</tr>
+<tr>
+<td>ELEMENT_NODE</td>
+<td>大写的HTML元素名</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ATTRIBUTE_NODE</td>
+<td>等同于Attr.name</td>
+<td>2</td>
+</tr>
+<tr>
+<td>TEXT_NODE</td>
+<td>#text</td>
+<td>3</td>
+</tr>
+<tr>
+<td>DOCUMENT_FRAGMENT_NODE</td>
+<td>#document-fragment</td>
+<td>11</td>
+</tr>
+<tr>
+<td>DOCUMENT_TYPE_NODE</td>
+<td>等同于DocumentType.name</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul1"</span> <span class="attr">style</span>=<span class="string">"color: green"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">oUl = <span class="built_in">document</span>.getElementById(<span class="string">'ul1'</span>);</span><br><span class="line">alert(oUl.nodeType); <span class="comment">// 弹出1</span></span><br><span class="line">alert(oUl.childNodes[<span class="number">0</span>].nodeType); <span class="comment">//弹出3</span></span><br><span class="line">alert(oUl.attributes[<span class="number">0</span>].nodeType); <span class="comment">//弹出2</span></span><br><span class="line">alert(oUl.attributes[<span class="number">0</span>].name); <span class="comment">//弹出'id'</span></span><br><span class="line">alert(oUl.attributes.length); <span class="comment">//弹出2</span></span><br><span class="line">alert(oUl.attributes[<span class="number">0</span>].value); <span class="comment">//弹出'ul1'</span></span><br></pre></td></tr></table></figure>
+<h3 id="attributes"><a href="#attributes" class="headerlink" title="attributes"></a>attributes</h3><p>元素<code>.attributes</code>：只读 属性 属性列表集合</p>
+<p>具体代码可以查看<code>NodeType</code>中js代码中alert的部分。</p>
+<hr>
+<h2 id="子节点和兄弟节点的操作"><a href="#子节点和兄弟节点的操作" class="headerlink" title="子节点和兄弟节点的操作"></a>子节点和兄弟节点的操作</h2><h3 id="firstChild"><a href="#firstChild" class="headerlink" title="firstChild"></a>firstChild</h3><p>元素<code>.firstChild</code>：只读 属性 第一个子节点</p>
+<ul>
+<li>标准下：<code>firstChild</code>会包含文本类型的节点</li>
+<li>非标准下： 只包含元素节点</li>
+</ul>
+<h3 id="firstElementChild"><a href="#firstElementChild" class="headerlink" title="firstElementChild"></a>firstElementChild</h3><p>元素<code>.firstElementChild</code>：只读 属性</p>
+<ul>
+<li>标准下获取第一个元素类型节点的子节点</li>
+<li>非标准浏览器不支持</li>
+</ul>
+<p>因此要进行判断：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (oUl.firstElementChild)&#123;</span><br><span class="line">    oUl.firstElementChild.style.background = <span class="string">'red'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    oUl.firstChild.style.background = <span class="string">'red'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//更为简洁的写法：</span></span><br><span class="line"><span class="keyword">var</span> oFirst = oUl.firstElementChild || oUl.firstChild;</span><br><span class="line">oFirst.style.background = <span class="string">'red'</span>;</span><br></pre></td></tr></table></figure>
+<p>可能存在的问题：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oUl = <span class="built_in">document</span>.getElementById(<span class="string">'ul1'</span>);</span><br><span class="line"><span class="keyword">var</span> oFirst = oUl.firstElementChild || oUl.firstChild;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(oFirst)&#123;</span><br><span class="line">    oFirst.style.background = <span class="string">'red'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">'没有子节点可以设置'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上这段代码会报错。因为在<code>oUl</code>下面没有子元素节点，因此<code>oUl.firstElementChild</code>会返回为<code>null</code>，<code>null</code>不会传给变量<code>oFirst</code>，所以<code>oFirst</code>等于<code>oUl.firstChild</code>，而在标准浏览器下，<code>oUl.firstChild</code>是存在的，是一个文本节点，因此在下面的判断中，<code>oFirst</code>存在，因此走<code>if</code>语句的第一句，但是<code>oFirst</code>是文本节点，没有<code>style</code>可以设置，因此会报错。因此最好的做法是如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oUl.children[<span class="number">0</span>].style.background = <span class="string">'red'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="lastChild、lastElementChild"><a href="#lastChild、lastElementChild" class="headerlink" title="lastChild、lastElementChild"></a>lastChild、lastElementChild</h3><p>元素<code>.lastChild</code> || 元素<code>.lastElementChild</code> 最后一个子节点</p>
+<p>原理与<code>firstChild</code> || <code>firstElementChild</code>相似，不再赘述</p>
+<h3 id="nextSibling、previousSibling"><a href="#nextSibling、previousSibling" class="headerlink" title="nextSibling、previousSibling"></a>nextSibling、previousSibling</h3><p>元素<code>.nextSibling</code> || 元素<code>.nextElementSibling</code> 下一个兄弟节点</p>
+<p>元素<code>.previousSibling</code> || 元素<code>.previousElementSibling</code> 上一个兄弟节点</p>
+<hr>
+<h2 id="父节点"><a href="#父节点" class="headerlink" title="父节点"></a>父节点</h2><h3 id="parentNode"><a href="#parentNode" class="headerlink" title="parentNode"></a>parentNode</h3><p>元素<code>.parentNode</code>： 只读 属性 只有一个 当前节点的父级节点</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>隐藏<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>2222 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>隐藏<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3333 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>隐藏<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>4444 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>隐藏<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oA = <span class="built_in">document</span>.getElementsByTag(<span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;oA.length; i++)&#123;</span><br><span class="line">    oA[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.parentNode.style.display = <span class="string">'none'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="offsetParent"><a href="#offsetParent" class="headerlink" title="offsetParent"></a>offsetParent</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><br><span class="line">    div &#123;padding: 40px 50px;&#125;</span><br><span class="line">    #div1 &#123;background: red;&#125;</span><br><span class="line">    #div2 &#123;background: green;&#125;</span><br><span class="line">    #div3 &#123;background: orange;&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">id</span>=<span class="string">"body1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv3 = <span class="built_in">document</span>.getElementById(<span class="string">'div3'</span>);</span><br><span class="line">alert(oDiv3.parentNode.id); <span class="comment">//弹出div2</span></span><br><span class="line">alert(oDiv3.offsetParent.id); <span class="comment">//弹出body1</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码，如果给div1的style里面加上<code>position: relative</code>; 那么div3的<code>offsetParent</code>就变成了div1</p>
+<p>元素<code>.offsetParent</code>：只读 属性 离当前元素最近的一个有定位的父节点</p>
+<ul>
+<li>如果没有定位父级，默认是<code>body</code></li>
+<li>IE7及以下， 如果当前元素没有定位，默认为<code>body</code>；如果当前元素有定位则是<code>html</code></li>
+<li>IE7及以下，如果当前元素的某个父级触发了<code>layout</code>，那么o<code>ffsetParent</code>就会被指向到这个触发了<code>layout</code>特性的父节点</li>
+</ul>
+<p>如果给div2的<code>style</code>中添加了<code>zoom: 1</code>，并且其他所有div都没有设置<code>position</code>样式，在<code>IE</code>下，<code>alert(document.getElementById(&#39;div2&#39;).currentStyle.hasLayout)</code>; 会弹出<code>true</code>。这时候div3的<code>offsetParent</code>就会变成div2</p>
+<hr>
+<h2 id="元素位置宽高"><a href="#元素位置宽高" class="headerlink" title="元素位置宽高"></a>元素位置宽高</h2><h3 id="offsetLeft、offsetTop"><a href="#offsetLeft、offsetTop" class="headerlink" title="offsetLeft、offsetTop"></a>offsetLeft、offsetTop</h3><p>元素<code>.offsetLeft\offsetTop</code>：只读 属性 当前元素到定位父级的距离（偏移值）</p>
+<p>可以理解为到当前元素的<code>offsetParent</code>的距离</p>
+<p>IE7及以下：</p>
+<ul>
+<li>如果自己没有定位，那么<code>offsetLeft\offsetTop</code>是到body的距离；</li>
+<li>如果当前元素有定位的情况下，那么<code>offsetLeft\offsetTop</code>是到它定位父级的距离</li>
+<li>如果当前元素没有定位父级的情况下，那么<code>offsetLeft\offsetTop</code>是到html的距离（但是IE8以上，是到body的距离）</li>
+</ul>
+<p>如果没有定位父级：</p>
+<ul>
+<li>IE7及以下： <code>offsetLeft \ offsetTop</code> =&gt; <code>html</code></li>
+<li>其他：<code>offsetLeft \ offsetTop</code> =&gt; <code>body</code></li>
+</ul>
+<p>如果有定位父级：</p>
+<ul>
+<li>IE7及以下：<ul>
+<li>如果自己没有定位，那么<code>offsetLeft \ offsetTop</code> 是到<code>body</code>的距离</li>
+<li>如果自己有定位，那么就是到定位父级的距离</li>
+<li>其他：到定位父级的距离</li>
+</ul>
+</li>
+</ul>
+<h3 id="offsetWidth、offsetHeight"><a href="#offsetWidth、offsetHeight" class="headerlink" title="offsetWidth、offsetHeight"></a>offsetWidth、offsetHeight</h3><ul>
+<li>元素<code>.style.width</code>：样式宽：就是给元素的style中设置的width的值，带单位</li>
+<li><code>clientWidth</code>：可视区宽：样式宽 + padding，不带单位</li>
+<li><code>offsetWidth</code>：占位宽：样式宽 + padding + border = 可视区宽 + border</li>
+</ul>
+<p>高度同理，不再赘述。</p>
+<hr>
+<h2 id="getPos"><a href="#getPos" class="headerlink" title="getPos()"></a>getPos()</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><br><span class="line">        div &#123;padding: 40px 50px;&#125;</span><br><span class="line">        #div1 &#123;background: red; position: relative;&#125;</span><br><span class="line">        #div2 &#123;background: green; position: relative;&#125;</span><br><span class="line">        #div3 &#123;background: orange; position: relative;&#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">id</span>=<span class="string">"body1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过以下方法可以获得一个元素到达页面的绝对距离，通过各级元素与其offsetParent之间的距离累加的方式得到。</span></span><br><span class="line"><span class="keyword">var</span> iTop = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> obj = oDiv3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(obj)&#123;</span><br><span class="line">    iTop += obj.offsetTop;</span><br><span class="line">    obj = obj.offsetParent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>body</code>的<code>offsetTop</code>是<code>0</code>；<code>body</code>的<code>offsetParent</code>是<code>null</code>。</p>
+<p>下面是获取一个元素到达页面的绝对距离的方式，<code>getPos</code>函数。注意，一般工作中，把body的margin值清掉，这样可以避免IE6、7与其他标准浏览器在<code>getPos</code>上的差异。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPos</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pos = &#123;left: <span class="number">0</span>, top: <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">while</span>(obj)&#123;</span><br><span class="line">        pos.left += obj.offsetLeft;</span><br><span class="line">        pos.top += obj.offsetTop;</span><br><span class="line">        obj = obj.offsetParent;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="操作元素属性的多种方式"><a href="#操作元素属性的多种方式" class="headerlink" title="操作元素属性的多种方式"></a>操作元素属性的多种方式</h2><h3 id="点的形式和中括号形式"><a href="#点的形式和中括号形式" class="headerlink" title="点的形式和中括号形式"></a>点的形式和中括号形式</h3><ul>
+<li>通过.点的形式：<code>oText.value</code></li>
+<li>通过中括号[]的形式：<code>oText[&#39;value&#39;]</code> （当属性名用变量来表示的时候，用中括号）</li>
+</ul>
+<h3 id="getAttribute、setAttribute、removeAttribute"><a href="#getAttribute、setAttribute、removeAttribute" class="headerlink" title="getAttribute、setAttribute、removeAttribute"></a>getAttribute、setAttribute、removeAttribute</h3><ul>
+<li>元素<code>.getAttribute</code>(属性名称); 方法 获取指定元素的指定属性的值</li>
+<li>元素<code>.setAttribute</code>(属性名称, 属性值); 方法 给指定元素指定的属性设置值</li>
+<li>元素<code>.removeAttribute</code>(属性名称); 方法 移除指定的元素的指定的属性</li>
+</ul>
+<p><code>set/get</code>与用点.的区别：</p>
+<ol>
+<li>用<code>.</code>和<code>[]</code>的形式无法操作元素的自定义属性；<code>getAttribute</code>可以操作元素的自定义属性</li>
+<li>用.和[]的形式来获取src的时候，获取的是一长串绝对路径，但是在IE8以上以及标准浏览器中，用<code>getAttribute</code>(‘src’)可以获取到相对路径（但是在IE7及以下，获取的src还是绝对路径）</li>
+<li>如果给oImg设置了style = “width: 100px;”的属性，那么通过oImg.style.<code>getAttribute</code>(‘width’); 在IE浏览器下是可以取到值的，但是在标准浏览器下是取不到值的。</li>
+</ol>
+<h2 id="元素的创建操作"><a href="#元素的创建操作" class="headerlink" title="元素的创建操作"></a>元素的创建操作</h2><h3 id="document-createElement"><a href="#document-createElement" class="headerlink" title="document.createElement()"></a>document.createElement()</h3><p><code>document.createElement(标签名);</code></p>
+<ul>
+<li>动态创建元素</li>
+<li>不会直接显示在页面当中</li>
+<li>前面必须是<code>document</code>，不能是其他</li>
+</ul>
+<h3 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild()"></a>appendChild()</h3><p>父级<code>.appendChild(要追加的元素)</code></p>
+<ul>
+<li>方法</li>
+<li>在指定父级子节点最后一个后面追加子元素</li>
+</ul>
+<h3 id="insertBefore"><a href="#insertBefore" class="headerlink" title="insertBefore()"></a>insertBefore()</h3><p>父级<code>.insertBefore(新的元素，指定的被插入的元素)</code>;</p>
+<ul>
+<li>方法</li>
+<li>在父级的指定子元素前面插入一个新元素</li>
+<li>在IE下，如果第二个参数的节点不存在，会报错</li>
+<li>在其它标准浏览器下，如果第二个参数的节点不存在，则会以<code>appendChild</code>的方式进行添加</li>
+</ul>
+<p>为了兼容，应做以下判断：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"text1"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"留言"</span> <span class="attr">id</span>=<span class="string">"btn"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul1"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oText = <span class="built_in">document</span>.getElementById(<span class="string">'text1'</span>);</span><br><span class="line"><span class="keyword">var</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line"><span class="keyword">var</span> oUl = <span class="built_in">document</span>.getElementById(<span class="string">'ul1'</span>);</span><br><span class="line">oBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oLi = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line">    oLi.innerHTML = oText.value;</span><br><span class="line">    <span class="keyword">if</span> ( oUl.children[<span class="number">0</span>] ) &#123;</span><br><span class="line">        oUl.insertBefore( oLi, oUl.children[<span class="number">0</span>] );</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        oUl.appendChild( oLi );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> oA = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">    oA.innerHTML = <span class="string">'删除'</span>;</span><br><span class="line">    oA.href = <span class="string">'javascript:;'</span>;</span><br><span class="line">    oLi.appendChild( oA );</span><br><span class="line">    oA.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        oUl.removeChild( <span class="keyword">this</span>.parentNode );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="removeChild"><a href="#removeChild" class="headerlink" title="removeChild()"></a>removeChild()</h3><p>父级<code>.removeChild(要删除的节点);</code></p>
+<h3 id="replaceChild"><a href="#replaceChild" class="headerlink" title="replaceChild()"></a>replaceChild()</h3><p>父级<code>.replaceChild(新节点、被替换节点)</code> 替换子节点</p>
+<p><code>appendChild</code>，<code>insertBefore</code>，<code>replaceChild</code>可以操作静态节点，也可以操作动态生成的节点。</p>
+<h1 id="DOM、BOM相关方法及属性"><a href="#DOM、BOM相关方法及属性" class="headerlink" title="DOM、BOM相关方法及属性"></a>DOM、BOM相关方法及属性</h1><h2 id="getElementsByClassName"><a href="#getElementsByClassName" class="headerlink" title="getElementsByClassName"></a>getElementsByClassName</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getElementsByClassName</span> (<span class="params">parent, tagName, className</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aEls = parent.getElementsByTagName(tagName);</span><br><span class="line">    <span class="keyword">var</span> arr = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;aEls.length; i++)&#123;</span><br><span class="line">        <span class="comment">/* 以下注释中的这种方法对于拥有多个class的元素不适用</span><br><span class="line">        if(aEls[i].className == className)&#123;</span><br><span class="line">            arr.push(aEls[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        */</span></span><br><span class="line">        <span class="keyword">var</span> aClassName = aEls[i].className.split(<span class="string">' '</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;aClassName.length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(aClassName[j] == className)&#123;</span><br><span class="line">                arr.push(aEls[i]);</span><br><span class="line">                <span class="keyword">break</span>; <span class="comment">//当在某一个元素中找到了对应class马上就进行下一个循环，避免一个元素拥有多个重复class的时候，在数组中添加多次</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/01/理解自定义属性的运用/" rel="next" title="理解自定义属性的运用">
+                <i class="fa fa-chevron-left"></i> 理解自定义属性的运用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/02/移动端H5页面多终端适配解决方案/" rel="prev" title="移动端H5页面多终端适配解决方案">
+                移动端H5页面多终端适配解决方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/11/02/理解DOM基础概念、操作/"
+           data-title="理解DOM基础概念、操作" data-url="https://github.com/Vuepack/2015/11/02/理解DOM基础概念、操作/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xnjvz.com1.z0.glb.clouddn.com/avatar.png"
+               alt="里昂" />
+          <div class="circle"></div>
+          <p class="site-author-name" itemprop="name">里昂</p>
+          <p class="site-description motion-element" itemprop="description">正行走在Hybrid App（Vue,React）...</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">67.0k</span>
+              <span class="site-state-item-name">字数</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/vuepack" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/Vuepack" target="_blank">
+                  
+                    <i class="fa fa-link"></i> 知乎
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/vuepack" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="MailTo:vuepack@gmail.com" target="_blank">
+                  
+                    <i class="fa fa-envelope"></i> Mail
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://humicai.cn/" target="_blank">轻微生活</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://liangdongpo.com/" target="_blank">梁东坡</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM基础概念、操作"><span class="nav-number">1.</span> <span class="nav-text">DOM基础概念、操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM的概念及节点类型"><span class="nav-number">1.1.</span> <span class="nav-text">DOM的概念及节点类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM节点"><span class="nav-number">1.1.1.</span> <span class="nav-text">DOM节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#childNodes"><span class="nav-number">1.1.2.</span> <span class="nav-text">childNodes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#children"><span class="nav-number">1.1.3.</span> <span class="nav-text">children</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nodeType"><span class="nav-number">1.1.4.</span> <span class="nav-text">nodeType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#attributes"><span class="nav-number">1.1.5.</span> <span class="nav-text">attributes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子节点和兄弟节点的操作"><span class="nav-number">1.2.</span> <span class="nav-text">子节点和兄弟节点的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#firstChild"><span class="nav-number">1.2.1.</span> <span class="nav-text">firstChild</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#firstElementChild"><span class="nav-number">1.2.2.</span> <span class="nav-text">firstElementChild</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lastChild、lastElementChild"><span class="nav-number">1.2.3.</span> <span class="nav-text">lastChild、lastElementChild</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nextSibling、previousSibling"><span class="nav-number">1.2.4.</span> <span class="nav-text">nextSibling、previousSibling</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父节点"><span class="nav-number">1.3.</span> <span class="nav-text">父节点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#parentNode"><span class="nav-number">1.3.1.</span> <span class="nav-text">parentNode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offsetParent"><span class="nav-number">1.3.2.</span> <span class="nav-text">offsetParent</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素位置宽高"><span class="nav-number">1.4.</span> <span class="nav-text">元素位置宽高</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#offsetLeft、offsetTop"><span class="nav-number">1.4.1.</span> <span class="nav-text">offsetLeft、offsetTop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offsetWidth、offsetHeight"><span class="nav-number">1.4.2.</span> <span class="nav-text">offsetWidth、offsetHeight</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getPos"><span class="nav-number">1.5.</span> <span class="nav-text">getPos()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作元素属性的多种方式"><span class="nav-number">1.6.</span> <span class="nav-text">操作元素属性的多种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点的形式和中括号形式"><span class="nav-number">1.6.1.</span> <span class="nav-text">点的形式和中括号形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getAttribute、setAttribute、removeAttribute"><span class="nav-number">1.6.2.</span> <span class="nav-text">getAttribute、setAttribute、removeAttribute</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的创建操作"><span class="nav-number">1.7.</span> <span class="nav-text">元素的创建操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#document-createElement"><span class="nav-number">1.7.1.</span> <span class="nav-text">document.createElement()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appendChild"><span class="nav-number">1.7.2.</span> <span class="nav-text">appendChild()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertBefore"><span class="nav-number">1.7.3.</span> <span class="nav-text">insertBefore()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#removeChild"><span class="nav-number">1.7.4.</span> <span class="nav-text">removeChild()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replaceChild"><span class="nav-number">1.7.5.</span> <span class="nav-text">replaceChild()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM、BOM相关方法及属性"><span class="nav-number">2.</span> <span class="nav-text">DOM、BOM相关方法及属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#getElementsByClassName"><span class="nav-number">2.1.</span> <span class="nav-text">getElementsByClassName</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">里昂</span>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"vuepack"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+</body>
+</html>

@@ -59,15 +59,15 @@
 
 
 
-<meta name="description" content="正行走在VueJS和Node路上的小前端">
+<meta name="description" content="正行走在Hybrid App（Vue,React）...">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Leon's Daily">
 <meta property="og:url" content="https://github.com/Vuepack/page/5/index.html">
 <meta property="og:site_name" content="Leon's Daily">
-<meta property="og:description" content="正行走在VueJS和Node路上的小前端">
+<meta property="og:description" content="正行走在Hybrid App（Vue,React）...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leon's Daily">
-<meta name="twitter:description" content="正行走在VueJS和Node路上的小前端">
+<meta name="twitter:description" content="正行走在Hybrid App（Vue,React）...">
 
 
 
@@ -129,7 +129,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">爱折腾，爱旅游，热爱生活</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -276,6 +276,127 @@
             
               
                 
+                <a class="post-title-link" href="/2015/11/01/理解作用域/" itemprop="url">
+                  理解作用域
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-01T13:45:07+08:00" content="2015-11-01 13:45:07">
+              2015-11-01 13:45:07
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;4,829</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/01/理解作用域/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/01/理解作用域/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="什么是作用域"><a href="#什么是作用域" class="headerlink" title="什么是作用域"></a>什么是作用域</h2><ul>
+<li>域：空间、范围、区域</li>
+<li>作用：读、写</li>
+</ul>
+<hr>
+<h2 id="浏览器的“JS解析器”"><a href="#浏览器的“JS解析器”" class="headerlink" title="浏览器的“JS解析器”"></a>浏览器的“JS解析器”</h2><p>“JS解析器”：浏览器中专门用来读JS的程序。它至少做下面两件事（当然还有其他事情）：</p>
+<ol>
+<li><p>准备工作（“找一些东西”）：根据<code>var、function、</code>参数找东西 —— <strong>JS的预解析</strong></p>
+<ul>
+<li>所有的变量，在正式运行代码之前，都提前赋了一个值：未定义（<code>a = 未定义</code>）</li>
+<li>所有的函数，在正式运行代码之前，都是整个函数块（<code>fn1 = function fn1(){alert(2);}</code>）</li>
+<li>遇到重名的，只留一个</li>
+</ul>
+</li>
+<li><p>逐行解读代码</p>
+<ul>
+<li>每读一行，就会回到预解析的库里面去看一眼。</li>
+<li>碰上表达式（带有 <code>= + - * / % ++ -- !</code>参数……都是表达式）能够改变值的是表达式。碰上表达式，就到库里面去修改值。</li>
+</ul>
+</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/01/理解作用域/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/11/01/理解数据类型和类型转换/" itemprop="url">
                   理解数据类型和类型转换和隐式类型转换
                 </a>
@@ -301,7 +422,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,961</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,965</span>
 
           
             
@@ -332,8 +453,7 @@
 
       
         
-          
-            <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+          <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
 <li>HTML标签类型：<ul>
 <li>block</li>
 <li>inline</li>
@@ -359,60 +479,11 @@
 </li>
 </ul>
 <p><code>typeof</code> 用来判断数据类型。<br>字符串方法 <code>charAt()</code>：通过字符串的下标获取子字符串。</p>
-<hr>
-<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>  把字符串转成数字的方法：</p>
-<h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'100'</span>;</span><br><span class="line">alert(a + <span class="number">100</span>); <span class="comment">//'100100'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'00100'</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(b)); <span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">'+100'</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(c)); <span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="string">''</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(d)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> e = <span class="string">'   '</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(e)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f = <span class="literal">true</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(f)); <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = <span class="literal">false</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(g)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = [];</span><br><span class="line">alert(<span class="built_in">Number</span>(i)); <span class="comment">//0 空数组用Number转出来是0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> j = [<span class="string">''</span>];</span><br><span class="line">alert(<span class="built_in">Number</span>(j)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> k = [<span class="number">123</span>];</span><br><span class="line">alert(<span class="built_in">Number</span>(k)); <span class="comment">//123</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> l = [<span class="string">'123'</span>];</span><br><span class="line">alert(<span class="built_in">Number</span>(l)); <span class="comment">//123</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o = <span class="literal">null</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(o)); <span class="comment">//0</span></span><br><span class="line"></span><br><span class="line">----------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> m = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">alert(<span class="built_in">Number</span>(m)); <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json = &#123;abc:<span class="number">123</span>&#125;;</span><br><span class="line">alert(<span class="built_in">Number</span>(json)); <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json2 = &#123;&#125;;</span><br><span class="line">alert(<span class="built_in">Number</span>(json2)); <span class="comment">//NaN 即使是空json，Number方法也转不了</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> h = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">alert(<span class="built_in">Number</span>(h)); <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p;</span><br><span class="line">alert(<span class="built_in">Number</span>(p)); <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> q = <span class="string">'100px'</span>;</span><br><span class="line">alert(<span class="built_in">Number</span>(q)); <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
-<h3 id="parseInt与parseFloat"><a href="#parseInt与parseFloat" class="headerlink" title="parseInt与parseFloat"></a>parseInt与parseFloat</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'100px'</span>;</span><br><span class="line">alert(<span class="built_in">parseInt</span>(a)); <span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'100px123456789'</span>;</span><br><span class="line">alert(<span class="built_in">parseInt</span>(b)); <span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="string">'-100px'</span>;</span><br><span class="line">alert(<span class="built_in">parseInt</span>(d)); <span class="comment">//-100 parseInt还是认加减号的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> e = <span class="string">'   100px'</span>;</span><br><span class="line">alert(<span class="built_in">parseInt</span>(e)); <span class="comment">//100 parseInt也是认空格的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f = <span class="string">'000000100px'</span>;</span><br><span class="line">alert(<span class="built_in">parseInt</span>(f)); <span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = <span class="string">'12.34元'</span>;</span><br><span class="line">alert(<span class="built_in">parseInt</span>(g)); <span class="comment">//12 parseInt只能转出整数</span></span><br><span class="line"></span><br><span class="line">------------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">true</span>;</span><br><span class="line">alert(<span class="built_in">parseInt</span>(c)); <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//parseInt也不能用于转函数等</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>parseInt()</code> 方法还有一个参数，就是按照几进制来转，比如<code>parseInt(a, 10)</code>表示按照十进制来转；<code>parseInt(b, 2)</code>表示按照二进制来转</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'12.34元'</span>;</span><br><span class="line">alert(<span class="built_in">parseFloat</span>(a)); <span class="comment">//12.34</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'12.3.4元'</span>;</span><br><span class="line">alert(<span class="built_in">parseFloat</span>(b)); <span class="comment">//12.3 parseFloat只认第一个小数点</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>parseInt</code> 和 <code>parseFloat</code> 的配合使用，可以来判断某个值是整数还是小数，如下：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="string">'200.345'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">parseInt</span>(num) == <span class="built_in">parseFloat</span>(num)) &#123;</span><br><span class="line">  alert(num + <span class="string">'是整数'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(num + <span class="string">'是小数'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>显式类型转换（强制类型转换）：</p>
-<ul>
-<li>Number();</li>
-<li>parseInt();</li>
-<li>parseFloat();</li>
-</ul>
-<p>隐式类型转换：</p>
-<ul>
-<li><code>- * / %</code>减、乘、除、取模可以将字符串转成数字</li>
-<li><code>+</code> 加号可以将数字转成字符串</li>
-<li><code>++ --</code> 加加、减减运算符可以把字符串转成数字</li>
-<li><code>&lt; &gt;</code> 大于号、小于号可以把字符串转成数字，一定要注意是进行数字的比较还是字符串的比较</li>
-<li><code>!</code>取反 把右边的数据类型转成布尔值</li>
-<li><code>==</code> 判断是否等于</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'200'</span> - <span class="number">3</span>); <span class="comment">//197</span></span><br><span class="line">alert(<span class="number">200</span> + <span class="string">'3'</span>); <span class="comment">//2003</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'10'</span>;</span><br><span class="line">a++;</span><br><span class="line">alert(a); <span class="comment">//11</span></span><br><span class="line"></span><br><span class="line">alert(<span class="string">'10'</span>&gt;<span class="number">9</span>); <span class="comment">//true</span></span><br><span class="line">alert(<span class="string">'1000000'</span>&gt;<span class="string">'9'</span>); <span class="comment">//false</span></span><br><span class="line"><span class="comment">//注意：数字的比较和字符串的比较不同；字符串的比较是一位一位的比较。</span></span><br><span class="line"></span><br><span class="line">alert(!<span class="string">'ok'</span>); <span class="comment">//false</span></span><br><span class="line">alert(!<span class="number">100</span>); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">alert(<span class="string">'2'</span> == <span class="number">2</span>); <span class="comment">//true</span></span><br><span class="line">alert(<span class="string">'2'</span> === <span class="number">2</span>); <span class="comment">//false 三个等号不仅判断值，还会先判断两者的类型</span></span><br></pre></td></tr></table></figure>
-<p>隐式类型转换转不出来，也会返回一个NaN，例如：alert(‘……’ - 9);就会弹出NaN。</p>
-<hr>
-<h2 id="isNaN应用实例"><a href="#isNaN应用实例" class="headerlink" title="isNaN应用实例"></a>isNaN应用实例</h2><p><code>NaN</code>: (not a number)。<code>NaN</code>是个不是数字的数字类型。所有的数字都是数字类型，但不是所有的数字类型都是数字。</p>
-<ul>
-<li><code>NaN</code>是个数字类型，但它不是个数字。</li>
-<li>一旦写程序中出现了<code>NaN</code>，肯定说明进行了非法的运算操作。</li>
-<li><code>NaN</code>是个<code>false</code>。</li>
-<li><code>NaN</code>与自己都不相等。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">Number</span>(<span class="string">'abc'</span>);</span><br><span class="line"><span class="comment">//alert(a); //NaN</span></span><br><span class="line"><span class="comment">//alert(typeof(a)); //number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(a) &#123; <span class="comment">//会弹出‘假’，说明NaN是false</span></span><br><span class="line">  alert(<span class="string">'真'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">'假'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//alert(a === a); //false NaN比较，比出false</span></span><br></pre></td></tr></table></figure>
-<p><strong> isNaN：</strong> is not a Number 是不是不是个数字（不是数字）。</p>
-<p><code>isNaN()</code> 是个方法，用来干活的。</p>
-<ul>
-<li>帮助判断某些值是不是数字。</li>
-<li>不喜欢数字、讨厌数字(不是讨厌数字类型，<code>isNaN</code>遇到<code>NaN</code>就很喜欢，会返回<code>true</code>，但是<code>NaN</code>就是个数字类型) 用来判断数字。如alert(isNaN(2)); 返回<code>false</code>。alert(isNaN(‘我爱你’)); 返回<code>true</code>。alert(isNaN(function(){})); 返回<code>true</code>。</li>
-</ul>
-<p><code>isNaN</code> 的判断过程，将括号里面的东西扔给<code>Number</code>，<code>Number</code>转出来数字，就返回<code>false</code>；转不出来就返回<code>true</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">isNaN</span>(<span class="string">'250'</span>));</span><br><span class="line"><span class="comment">//Number() '250' =&gt; 250 =&gt; false</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">isNaN</span>(<span class="literal">true</span>));</span><br><span class="line"><span class="comment">//Number() true =&gt; 1 =&gt; false</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">isNaN</span>([]));</span><br><span class="line"><span class="comment">//Number() [] =&gt; 0 =&gt; false</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>下面是一个isNaN的小应用：</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"判断输入值是不是数字"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> aInp = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>);</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">  aInp[<span class="number">1</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    str = aInp[<span class="number">0</span>].value</span><br><span class="line">    <span class="comment">//alert(type of str); //总是返回string 从HTML中拿到的内容，类型都是字符串</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">isNaN</span>(str))&#123;</span><br><span class="line">      alert(str + <span class="string">'不是数字'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      alert(str + <span class="string">'是数字'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/01/理解数据类型和类型转换/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -849,115 +920,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/10/22/前端规范/" itemprop="url">
-                  前端规范
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-avatar">
-            <a class="avatar site-author-image"/></a>
-          </span>
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-10-22T22:46:56+08:00" content="2015-10-22 22:46:56">
-              2015-10-22 22:46:56
-            </time>
-          </span>
-
-
-          
-
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,274</span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/22/前端规范/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/22/前端规范/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前端CSS规范文档"><a href="#前端CSS规范文档" class="headerlink" title="前端CSS规范文档"></a>前端CSS规范文档</h1><p>初写，参考一些国内规范文档案例，有不足之处多提建议：</p>
-<hr>
-<h2 id="1-命名规则"><a href="#1-命名规则" class="headerlink" title="1.命名规则"></a>1.命名规则</h2><p>为了团队之间更好的协调配合，标签语义化，让别人看懂你写的代码。一套语义化的命名规范很重要。</p>
-<h3 id="1-1-CSS书写顺序"><a href="#1-1-CSS书写顺序" class="headerlink" title="1.1 CSS书写顺序"></a>1.1 CSS书写顺序</h3><pre><code>（1）.位置属性(position, top, right, z-index, display, float等)
-（2）.大小(width, height, padding, margin)
-（3）.文字系列(font, line-height, letter-spacing, color, text-align等)
-（4）.背景(background, border等)
-（5）.其他(animation, transition等)
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/22/前端规范/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1000,19 +962,19 @@
                alt="里昂" />
           <div class="circle"></div>
           <p class="site-author-name" itemprop="name">里昂</p>
-          <p class="site-description motion-element" itemprop="description">正行走在VueJS和Node路上的小前端</p>
+          <p class="site-description motion-element" itemprop="description">正行走在Hybrid App（Vue,React）...</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">59.7k</span>
+              <span class="site-state-item-count">67.0k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

@@ -62,9 +62,7 @@
 <meta name="description" content="return 返回值：函数名+括号（例如fn1())就相当于得到了该函数里面return后面的值
 所有函数默认返回值是：undefined
 可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义
-return 后面的任何代码都不执行了
-
-return实例1234567alert fn1();function fn1()&amp;#123;    return function()&amp;">
+return 后面的任何代码都不执行了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解函数返回值-return详解及应用">
 <meta property="og:url" content="https://github.com/Vuepack/2015/11/01/理解函数返回值-return详解及应用/index.html">
@@ -72,18 +70,14 @@ return实例1234567alert fn1();function fn1()&amp;#123;    return function()&amp
 <meta property="og:description" content="return 返回值：函数名+括号（例如fn1())就相当于得到了该函数里面return后面的值
 所有函数默认返回值是：undefined
 可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义
-return 后面的任何代码都不执行了
-
-return实例1234567alert fn1();function fn1()&amp;#123;    return function()&amp;">
-<meta property="og:updated_time" content="2016-05-26T13:40:34.000Z">
+return 后面的任何代码都不执行了">
+<meta property="og:updated_time" content="2016-05-27T06:20:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解函数返回值-return详解及应用">
 <meta name="twitter:description" content="return 返回值：函数名+括号（例如fn1())就相当于得到了该函数里面return后面的值
 所有函数默认返回值是：undefined
 可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义
-return 后面的任何代码都不执行了
-
-return实例1234567alert fn1();function fn1()&amp;#123;    return function()&amp;">
+return 后面的任何代码都不执行了">
 
 
 
@@ -143,7 +137,7 @@ return实例1234567alert fn1();function fn1()&amp;#123;    return function()&amp
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">爱折腾，爱旅游，热爱生活</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -301,7 +295,7 @@ return实例1234567alert fn1();function fn1()&amp;#123;    return function()&amp
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,816</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,820</span>
 
           
             
@@ -337,6 +331,7 @@ return实例1234567alert fn1();function fn1()&amp;#123;    return function()&amp
 <li>可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义</li>
 <li><code>return</code> 后面的任何代码都不执行了</li>
 </ul>
+<a id="more"></a>
 <h2 id="return实例"><a href="#return实例" class="headerlink" title="return实例"></a>return实例</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alert fn1();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//此时弹出的是：function()&#123;alert(1);&#125;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alert fn1()();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//此时弹出的是1，也就是return的匿名函数执行的结果。</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alert fn1()(<span class="number">10</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">        alert(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//此时弹出的是10。</span></span><br></pre></td></tr></table></figure>
@@ -458,19 +453,19 @@ return实例1234567alert fn1();function fn1()&amp;#123;    return function()&amp
                alt="里昂" />
           <div class="circle"></div>
           <p class="site-author-name" itemprop="name">里昂</p>
-          <p class="site-description motion-element" itemprop="description">正行走在VueJS和Node路上的小前端</p>
+          <p class="site-description motion-element" itemprop="description">正行走在Hybrid App（Vue,React）...</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">59.7k</span>
+              <span class="site-state-item-count">67.0k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

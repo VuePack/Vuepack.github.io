@@ -85,7 +85,7 @@
 
 所有的变量，在正式运行代码之前，都提前赋了一个值：未定义（a = 未定义）
 所有的函数，在正式运行代码之前，都是整个函数块（fn1 = fun">
-<meta property="og:updated_time" content="2016-05-26T08:03:07.000Z">
+<meta property="og:updated_time" content="2016-05-27T06:19:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解作用域">
 <meta name="twitter:description" content="什么是作用域
@@ -158,7 +158,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">爱折腾，爱旅游，热爱生活</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -316,7 +316,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;4,801</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;4,829</span>
 
           
             
@@ -367,6 +367,7 @@
 </ul>
 </li>
 </ol>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert(a); <span class="comment">//未定义</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>; <span class="comment">//在库里面a的值由未定义换成1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">2</span>);&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">alert(a); <span class="comment">//弹出：function a()&#123;alert(4);&#125;</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>; <span class="comment">//预解析中的a改为了1</span></span><br><span class="line">alert(a);  <span class="comment">//弹出1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">2</span>);&#125;<span class="comment">//函数声明，没有改变a的值。什么也没发生。</span></span><br><span class="line">alert(a); <span class="comment">//继续弹出1，因为a在预处理库里面的值没有被改过。</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">3</span>; <span class="comment">//预处理中a的值变为3</span></span><br><span class="line">alert(a); <span class="comment">//弹出3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">4</span>);&#125; <span class="comment">//函数声明，什么也没有发生</span></span><br><span class="line">alert(a); <span class="comment">//继续弹出3</span></span><br><span class="line">a(); <span class="comment">//报错 a is not a function</span></span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -384,7 +385,7 @@
 <p>作用域链：从子级作用域跳到父级作用域的过程</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">alert(a); //报错：a is not defined。因为在预解析里面压根就没有a这个东西</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var a = 1;</span><br><span class="line">&lt;/script</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">alert(a); <span class="comment">//不报错，会弹出undefined。因为预解析里面有a这个东西，但是由于执行的时候，还没有改变a的值，因此a的值为undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">alert(a); <span class="comment">//不报错，会弹出undefined。因为预解析里面有a这个东西，但是由于执行的时候，还没有改变a的值，因此a的值为undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var a = 1; //预解析里面存了a，并且a的值存为1 并且a是全局变量</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">alert(a); //弹出1</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; <span class="comment">//预处理中的全局变量a的值改为1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(a);</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125; <span class="comment">//函数声明，什么也不做</span></span><br><span class="line">fn1(); <span class="comment">//遇到函数调用，开始进行预解析和逐行解读代码。在函数内，先预解析出一个局部的 a 是未定义（局部的a与全局的a一点关系都没有）；然后读代码，alert(a)弹出的是undefined；然后继续执行，遇到表达式，将局部的变量a的值改为2。这时fn1的函数执行已经完成了。</span></span><br><span class="line">alert(a); <span class="comment">//弹出全局变量a为1</span></span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -509,19 +510,19 @@
                alt="里昂" />
           <div class="circle"></div>
           <p class="site-author-name" itemprop="name">里昂</p>
-          <p class="site-description motion-element" itemprop="description">正行走在VueJS和Node路上的小前端</p>
+          <p class="site-description motion-element" itemprop="description">正行走在Hybrid App（Vue,React）...</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">59.7k</span>
+              <span class="site-state-item-count">67.0k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>
