@@ -1546,7 +1546,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ec7391;
+  background: #4a41fe;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2418,13 +2418,21 @@ pre .prompt {
 .post-body h4:before,
 .post-body h5:before,
 .post-body h6:before {
-  content: "#";
-  color: #42b983;
   position: absolute;
   left: -0.8em;
   top: 8px;
   font-size: 1.2em;
   font-weight: bold;
+  content: "#";
+}
+.post-body h2:before {
+  color: #42b983;
+}
+.post-body h3:before,
+.post-body h4:before,
+.post-body h5:before,
+.post-body h6:before {
+  color: #fc6423;
 }
 .post-body a {
   color: #42b983;
