@@ -640,13 +640,13 @@
       
         
           <p>真快，再过1天，就是2016年了，过完年凯锅就24岁了，又老了😶。。<br>2015年，这一年还是过的挺丰富的，但也过的很慵懒。</p>
-<h4 id="回顾下2014年给2015年的计划："><a href="#回顾下2014年给2015年的计划：" class="headerlink" title="回顾下2014年给2015年的计划："></a>回顾下2014年给2015年的计划：</h4><ul>
+<h2 id="回顾下2014年给2015年的计划："><a href="#回顾下2014年给2015年的计划：" class="headerlink" title="回顾下2014年给2015年的计划："></a>回顾下2014年给2015年的计划：</h2><ul>
 <li>1.看完《Javascript高级程序设计》等一堆书</li>
 <li>2.一场云南的旅游</li>
 <li>3.坚持锻炼</li>
 <li>4.驾照考出</li>
 </ul>
-<h4 id="再来看看2015做的"><a href="#再来看看2015做的" class="headerlink" title="再来看看2015做的"></a>再来看看2015做的</h4><ul>
+<h2 id="再来看看2015做的"><a href="#再来看看2015做的" class="headerlink" title="再来看看2015做的"></a>再来看看2015做的</h2><ul>
 <li><p>1.《JavaScript高级程序设计》啃了一半，书很经典，啃不下去了。<br>看了《JavaScript秘密花园》，嗯嗯 真的很不错，个个经典核心知识都概要了。<br>把之前未看完的《JavaScript DOM编程艺术》看完了。<br>还看了阮一峰老师陆陆续续写的稿书《JavaScript 标准参考教程（alpha）》10% ，说到这书（未出，在他博客上看的），貌似是唯一一本有动力看下去的，讲的很通俗易懂，超棒的说，出了一定买。阮一峰老师是上海财经大学大学教师， - -。人家专业竟然不是计算机，博客包含读书、版权制度、经济学、英语、历史、IT技术。<br>其实我想说凯锅虽然是计算机专业，可是我从小到大文科比较好， - -理科烂 。。。😄</p>
 </li>
 <li><p>2.说到旅行，一直想去，本来国庆节想去的，家里各种事，又没去成。（未完成：不过延迟到2016年2月不算遗憾  嘿嘿）</p>
@@ -757,10 +757,10 @@
       
         
           
-            <h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装<code>oh-my-zsh</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+            <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装<code>oh-my-zsh</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
 <p>用命令检查Mac 检查系统支持哪些终端<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells</span><br><span class="line"></span><br><span class="line">&lt;!-- 显示结果： --&gt;</span><br><span class="line">/bin/bash</span><br><span class="line">/bin/csh</span><br><span class="line">/bin/ksh</span><br><span class="line">/bin/sh</span><br><span class="line">/bin/tcsh</span><br><span class="line">/bin/zsh</span><br></pre></td></tr></table></figure></p>
-<h3 id="mac中zsh命令-用sublime打开指定文件"><a href="#mac中zsh命令-用sublime打开指定文件" class="headerlink" title="mac中zsh命令,用sublime打开指定文件"></a>mac中<code>zsh</code>命令,用sublime打开指定文件</h3><p><code>zsh</code>配置清单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> subl=<span class="string">"'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"</span></span><br><span class="line"><span class="built_in">alias</span> nano=<span class="string">"subl"</span></span><br><span class="line"><span class="built_in">export</span> EDITOR=<span class="string">"subl"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> markdown=subl //指定markdown格式</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> md=subl //在命令行直接输入后缀为md的文件名，会在sublime text中打开</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> <span class="built_in">log</span>=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> txt=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> gz=<span class="string">'tar -xzvf'</span> //表示自动解压后缀为 gz 的压缩包</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> tgz=<span class="string">'tar -xzvf'</span>//表示自动解压后缀为 tgz 的压缩包</span><br></pre></td></tr></table></figure></p>
-<h3 id="自带插件快捷键"><a href="#自带插件快捷键" class="headerlink" title="自带插件快捷键"></a>自带插件快捷键</h3><p><code>d</code>,按下<code>d</code>命令会显示最近的历史记录<br><code>zsh_stats</code>,按下<code>zsh_stats</code>会显示你的使用频率前 20 的命令</p>
+<h2 id="mac中zsh命令-用sublime打开指定文件"><a href="#mac中zsh命令-用sublime打开指定文件" class="headerlink" title="mac中zsh命令,用sublime打开指定文件"></a>mac中<code>zsh</code>命令,用sublime打开指定文件</h2><p><code>zsh</code>配置清单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> subl=<span class="string">"'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"</span></span><br><span class="line"><span class="built_in">alias</span> nano=<span class="string">"subl"</span></span><br><span class="line"><span class="built_in">export</span> EDITOR=<span class="string">"subl"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> markdown=subl //指定markdown格式</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> md=subl //在命令行直接输入后缀为md的文件名，会在sublime text中打开</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> <span class="built_in">log</span>=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> txt=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> gz=<span class="string">'tar -xzvf'</span> //表示自动解压后缀为 gz 的压缩包</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> tgz=<span class="string">'tar -xzvf'</span>//表示自动解压后缀为 tgz 的压缩包</span><br></pre></td></tr></table></figure></p>
+<h2 id="自带插件快捷键"><a href="#自带插件快捷键" class="headerlink" title="自带插件快捷键"></a>自带插件快捷键</h2><p><code>d</code>,按下<code>d</code>命令会显示最近的历史记录<br><code>zsh_stats</code>,按下<code>zsh_stats</code>会显示你的使用频率前 20 的命令</p>
 
           
         
@@ -939,7 +939,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">79.7k</span>
+              <span class="site-state-item-count">94.9k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>
@@ -974,7 +974,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/Vuepack" target="_blank">
+                <a href="http://www.zhihu.com/people/lizhoukai" target="_blank">
                   
                     <i class="fa fa-link"></i> 知乎
                   
@@ -982,7 +982,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/vuepack" target="_blank">
+                <a href="https://twitter.com/lizhoukai" target="_blank">
                   
                     <i class="fa fa-twitter"></i> Twitter
                   
@@ -1104,7 +1104,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"vuepack"};
+    var duoshuoQuery = {short_name:"lizhoukai"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;

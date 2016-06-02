@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="Leon's Daily">
 <meta property="og:description" content="安装oh-my-zsh1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 用命令检查Mac 检查系统支持哪些终端123456789cat /etc/shells&amp;lt;!-- 显示结果： --&amp;gt;/bin/bash/bin/csh/bin/ksh/bin/sh/bin/tcs">
-<meta property="og:updated_time" content="2016-05-17T13:10:56.000Z">
+<meta property="og:updated_time" content="2016-06-01T05:54:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="强大的zsh">
 <meta name="twitter:description" content="安装oh-my-zsh1wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
@@ -319,10 +319,10 @@
       
 
       
-        <h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装<code>oh-my-zsh</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+        <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装<code>oh-my-zsh</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
 <p>用命令检查Mac 检查系统支持哪些终端<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells</span><br><span class="line"></span><br><span class="line">&lt;!-- 显示结果： --&gt;</span><br><span class="line">/bin/bash</span><br><span class="line">/bin/csh</span><br><span class="line">/bin/ksh</span><br><span class="line">/bin/sh</span><br><span class="line">/bin/tcsh</span><br><span class="line">/bin/zsh</span><br></pre></td></tr></table></figure></p>
-<h3 id="mac中zsh命令-用sublime打开指定文件"><a href="#mac中zsh命令-用sublime打开指定文件" class="headerlink" title="mac中zsh命令,用sublime打开指定文件"></a>mac中<code>zsh</code>命令,用sublime打开指定文件</h3><p><code>zsh</code>配置清单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> subl=<span class="string">"'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"</span></span><br><span class="line"><span class="built_in">alias</span> nano=<span class="string">"subl"</span></span><br><span class="line"><span class="built_in">export</span> EDITOR=<span class="string">"subl"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> markdown=subl //指定markdown格式</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> md=subl //在命令行直接输入后缀为md的文件名，会在sublime text中打开</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> <span class="built_in">log</span>=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> txt=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> gz=<span class="string">'tar -xzvf'</span> //表示自动解压后缀为 gz 的压缩包</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> tgz=<span class="string">'tar -xzvf'</span>//表示自动解压后缀为 tgz 的压缩包</span><br></pre></td></tr></table></figure></p>
-<h3 id="自带插件快捷键"><a href="#自带插件快捷键" class="headerlink" title="自带插件快捷键"></a>自带插件快捷键</h3><p><code>d</code>,按下<code>d</code>命令会显示最近的历史记录<br><code>zsh_stats</code>,按下<code>zsh_stats</code>会显示你的使用频率前 20 的命令</p>
+<h2 id="mac中zsh命令-用sublime打开指定文件"><a href="#mac中zsh命令-用sublime打开指定文件" class="headerlink" title="mac中zsh命令,用sublime打开指定文件"></a>mac中<code>zsh</code>命令,用sublime打开指定文件</h2><p><code>zsh</code>配置清单<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> subl=<span class="string">"'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"</span></span><br><span class="line"><span class="built_in">alias</span> nano=<span class="string">"subl"</span></span><br><span class="line"><span class="built_in">export</span> EDITOR=<span class="string">"subl"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> markdown=subl //指定markdown格式</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> md=subl //在命令行直接输入后缀为md的文件名，会在sublime text中打开</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> <span class="built_in">log</span>=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> txt=vim</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> gz=<span class="string">'tar -xzvf'</span> //表示自动解压后缀为 gz 的压缩包</span><br><span class="line"><span class="built_in">alias</span> <span class="_">-s</span> tgz=<span class="string">'tar -xzvf'</span>//表示自动解压后缀为 tgz 的压缩包</span><br></pre></td></tr></table></figure></p>
+<h2 id="自带插件快捷键"><a href="#自带插件快捷键" class="headerlink" title="自带插件快捷键"></a>自带插件快捷键</h2><p><code>d</code>,按下<code>d</code>命令会显示最近的历史记录<br><code>zsh_stats</code>,按下<code>zsh_stats</code>会显示你的使用频率前 20 的命令</p>
 
       
     </div>
@@ -430,7 +430,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">79.7k</span>
+              <span class="site-state-item-count">94.9k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>
@@ -465,7 +465,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/Vuepack" target="_blank">
+                <a href="http://www.zhihu.com/people/lizhoukai" target="_blank">
                   
                     <i class="fa fa-link"></i> 知乎
                   
@@ -473,7 +473,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/vuepack" target="_blank">
+                <a href="https://twitter.com/lizhoukai" target="_blank">
                   
                     <i class="fa fa-twitter"></i> Twitter
                   
@@ -521,7 +521,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装oh-my-zsh"><span class="nav-number">1.</span> <span class="nav-text">安装oh-my-zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mac中zsh命令-用sublime打开指定文件"><span class="nav-number">2.</span> <span class="nav-text">mac中zsh命令,用sublime打开指定文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自带插件快捷键"><span class="nav-number">3.</span> <span class="nav-text">自带插件快捷键</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装oh-my-zsh"><span class="nav-number">1.</span> <span class="nav-text">安装oh-my-zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mac中zsh命令-用sublime打开指定文件"><span class="nav-number">2.</span> <span class="nav-text">mac中zsh命令,用sublime打开指定文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自带插件快捷键"><span class="nav-number">3.</span> <span class="nav-text">自带插件快捷键</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -773,7 +773,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"vuepack"};
+    var duoshuoQuery = {short_name:"lizhoukai"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;

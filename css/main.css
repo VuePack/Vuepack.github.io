@@ -1546,7 +1546,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4a41fe;
+  background: #4a87ff;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2402,6 +2402,9 @@ pre .prompt {
 .post-toc .nav .active-current > a {
   color: #f98787 !important;
 }
+.post-toc ol {
+  padding: 0 0px 0px 20px;
+}
 .post-body blockquote {
   border-left: 4px solid #42b983;
 }
@@ -2429,10 +2432,12 @@ pre .prompt {
   color: #42b983;
 }
 .post-body h3:before,
-.post-body h4:before,
 .post-body h5:before,
 .post-body h6:before {
   color: #fc6423;
+}
+.post-body h4:before {
+  color: #fcb523;
 }
 .post-body a {
   color: #42b983;
