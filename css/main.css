@@ -1546,7 +1546,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4a87ff;
+  background: #460f3b;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2527,6 +2527,7 @@ pre .prompt {
 .scroll-sidebar {
   position: fixed;
   top: 0px;
+  right: 103px;
   margin-top: 0px !important;
 }
 #ds-recent-visitors .ds-avatar {
