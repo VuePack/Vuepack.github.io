@@ -113,7 +113,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container one-collumn sidebar-position-right 
    page-home 
  ">
     <div class="headband"></div>
@@ -257,6 +257,136 @@
 
       
     
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/07/理解JS面向对象/" itemprop="url">
+                  理解JS面向对象
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-07T20:40:20+08:00" content="2016-06-07 20:40:20">
+              2016-06-07 20:40:20
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,301</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/07/理解JS面向对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/07/理解JS面向对象/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什么是面向对象编程"><a href="#什么是面向对象编程" class="headerlink" title="什么是面向对象编程"></a>什么是面向对象编程</h1><ul>
+<li>用对象的思想去写代码，就是面向对象编程<ul>
+<li>过程式写法</li>
+<li>面向对象写法</li>
+</ul>
+</li>
+<li>我们一直都在使用对象<ul>
+<li>数组Array 时间Date</li>
+</ul>
+</li>
+</ul>
+<h2 id="面向对象编程（OOP）的特点"><a href="#面向对象编程（OOP）的特点" class="headerlink" title="面向对象编程（OOP）的特点"></a>面向对象编程（OOP）的特点</h2><ul>
+<li>抽象：抓住核心问题</li>
+<li>封装：只能通过对象来访问方法</li>
+<li>继承：从已有对象上继承出新的对象</li>
+<li>多态：多对象的不同形态</li>
+</ul>
+<h2 id="对象的组成"><a href="#对象的组成" class="headerlink" title="对象的组成"></a>对象的组成</h2><p>方法（行为、操作） —— 对象下面的函数：过程、动态的<br>属性 —— 对象下面的变量：状态、静态的</p>
+<h2 id="创建第一个面向对象程序"><a href="#创建第一个面向对象程序" class="headerlink" title="创建第一个面向对象程序"></a>创建第一个面向对象程序</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//var obj = &#123;&#125;;</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">//创建了一个空的对象</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">'小明'</span>; <span class="comment">//属性</span></span><br><span class="line">obj.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//方法</span></span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.showName();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>为对象添加属性和方法<ul>
+<li>Object对象</li>
+<li>this指向</li>
+<li>创建两个对象：重复代码过多</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//var obj = &#123;&#125;;</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">//创建了一个空的对象</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">'小明'</span>; <span class="comment">//属性</span></span><br><span class="line">obj.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//方法</span></span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.showName();</span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">obj2.name = <span class="string">'小强'</span>;</span><br><span class="line">obj.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj2.showName();</span><br></pre></td></tr></table></figure>
+<h2 id="工厂方式"><a href="#工厂方式" class="headerlink" title="工厂方式"></a>工厂方式</h2><blockquote>
+<p>面向对象中的封装函数</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//工厂方式：封装函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//1. 原料</span></span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. 加工</span></span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3. 出厂</span></span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = createPerson(<span class="string">'小明'</span>);</span><br><span class="line">p1.showName();</span><br><span class="line"><span class="keyword">var</span> p2 = createPerson(<span class="string">'小强'</span>);</span><br><span class="line">p2.showName();</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -770,119 +900,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/28/云南记/" itemprop="url">
-                  云南记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-avatar">
-            <a class="avatar site-author-image"/></a>
-          </span>
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-28T21:45:26+08:00" content="2016-01-28 21:45:26">
-              2016-01-28 21:45:26
-            </time>
-          </span>
-
-
-          
-
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;2,296</span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/28/云南记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/28/云南记/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img class="full-image" src="http://7xnjvz.com1.z0.glb.clouddn.com/banner-yun.jpg" /></p>
-<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><blockquote class="blockquote-center"><br>很久就一直想去云南<br>一场说走就走的旅行<br>会一直更新途中的新鲜事情<br></blockquote>
-
-
-<h2 id="目的地"><a href="#目的地" class="headerlink" title="目的地"></a>目的地</h2><ul>
-<li>丽江 &gt; 大理 &gt; 昆明</li>
-</ul>
-<h2 id="旅游安排："><a href="#旅游安排：" class="headerlink" title="旅游安排："></a>旅游安排：</h2><ul>
-<li>第一天{1.30}：中午到，去拉市海骑马划船，晚上回丽江古镇（包括逛）</li>
-<li>第二三天{1.31~2.1}：香格里拉二日游</li>
-<li>第四五天{2.2~2.3}：泸沽湖二日游</li>
-<li>第六七八天{2.4~2.7}：大理二日游半</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/28/云南记/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -930,14 +947,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">94.9k</span>
+              <span class="site-state-item-count">96.3k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

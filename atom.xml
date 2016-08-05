@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/lizhoukai/"/>
-  <updated>2016-05-22T03:05:34.000Z</updated>
+  <updated>2016-06-07T12:59:34.000Z</updated>
   <id>https://github.com/lizhoukai/</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>理解JS面向对象</title>
+    <link href="https://github.com/lizhoukai/2016/06/07/%E7%90%86%E8%A7%A3JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://github.com/lizhoukai/2016/06/07/理解JS面向对象/</id>
+    <published>2016-06-07T12:40:20.000Z</published>
+    <updated>2016-06-07T12:59:34.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;什么是面向对象编程&quot;&gt;&lt;a href=&quot;#什么是面向对象编程&quot; class=&quot;headerlink&quot; title=&quot;什么是面向对象编程&quot;&gt;&lt;/a&gt;什么是面向对象编程&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;用对象的思想去写代码，就是面向对象编程&lt;ul&gt;
+&lt;li&gt;过程式写法&lt;/li&gt;
+&lt;li&gt;面向对象写法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;我们一直都在使用对象&lt;ul&gt;
+&lt;li&gt;数组Array 时间Date&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;面向对象编程（OOP）的特点&quot;&gt;&lt;a href=&quot;#面向对象编程（OOP）的特点&quot; class=&quot;headerlink&quot; title=&quot;面向对象编程（OOP）的特点&quot;&gt;&lt;/a&gt;面向对象编程（OOP）的特点&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;抽象：抓住核心问题&lt;/li&gt;
+&lt;li&gt;封装：只能通过对象来访问方法&lt;/li&gt;
+&lt;li&gt;继承：从已有对象上继承出新的对象&lt;/li&gt;
+&lt;li&gt;多态：多对象的不同形态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;对象的组成&quot;&gt;&lt;a href=&quot;#对象的组成&quot; class=&quot;headerlink&quot; title=&quot;对象的组成&quot;&gt;&lt;/a&gt;对象的组成&lt;/h2&gt;&lt;p&gt;方法（行为、操作） —— 对象下面的函数：过程、动态的&lt;br&gt;属性 —— 对象下面的变量：状态、静态的&lt;/p&gt;
+&lt;h2 id=&quot;创建第一个面向对象程序&quot;&gt;&lt;a href=&quot;#创建第一个面向对象程序&quot; class=&quot;headerlink&quot; title=&quot;创建第一个面向对象程序&quot;&gt;&lt;/a&gt;创建第一个面向对象程序&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//var obj = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;(); &lt;span class=&quot;comment&quot;&gt;//创建了一个空的对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.name = &lt;span class=&quot;string&quot;&gt;&#39;小明&#39;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;//属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.showName = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;//方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.showName();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;为对象添加属性和方法&lt;ul&gt;
+&lt;li&gt;Object对象&lt;/li&gt;
+&lt;li&gt;this指向&lt;/li&gt;
+&lt;li&gt;创建两个对象：重复代码过多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//var obj = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;(); &lt;span class=&quot;comment&quot;&gt;//创建了一个空的对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.name = &lt;span class=&quot;string&quot;&gt;&#39;小明&#39;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;//属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.showName = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; &lt;span class=&quot;comment&quot;&gt;//方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.showName();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj2 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj2.name = &lt;span class=&quot;string&quot;&gt;&#39;小强&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj.showName = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj2.showName();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;工厂方式&quot;&gt;&lt;a href=&quot;#工厂方式&quot; class=&quot;headerlink&quot; title=&quot;工厂方式&quot;&gt;&lt;/a&gt;工厂方式&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;面向对象中的封装函数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//工厂方式：封装函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;createPerson&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//1. 原料&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; obj = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//2. 加工&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    obj.name = name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    obj.showName = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//3. 出厂&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; obj;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; p1 = createPerson(&lt;span class=&quot;string&quot;&gt;&#39;小明&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;p1.showName();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; p2 = createPerson(&lt;span class=&quot;string&quot;&gt;&#39;小强&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;p2.showName();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是面向对象编程&quot;&gt;&lt;a href=&quot;#什么是面向对象编程&quot; class=&quot;headerlink&quot; title=&quot;什么是面向对象编程&quot;&gt;&lt;/a&gt;什么是面向对象编程&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;用对象的思想去写代码，就是面向对象编程&lt;ul&gt;
+&lt;li&gt;过程式写法&lt;/l
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://github.com/lizhoukai/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo npm 常见报错</title>
@@ -1030,58 +1084,6 @@
     
     
       <category term="JavaScript" scheme="https://github.com/lizhoukai/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>移动端H5页面多终端适配解决方案</title>
-    <link href="https://github.com/lizhoukai/2015/11/02/%E7%A7%BB%E5%8A%A8%E7%AB%AFH5%E9%A1%B5%E9%9D%A2%E5%A4%9A%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>https://github.com/lizhoukai/2015/11/02/移动端H5页面多终端适配解决方案/</id>
-    <published>2015-11-02T12:57:20.000Z</published>
-    <updated>2016-05-17T13:11:10.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;开发背景：&quot;&gt;&lt;a href=&quot;#开发背景：&quot; class=&quot;headerlink&quot; title=&quot;开发背景：&quot;&gt;&lt;/a&gt;开发背景：&lt;/h2&gt;&lt;p&gt;1.移动端Html5页面开发&lt;br&gt;2.适配不同分辨率的手机&lt;br&gt;3.适配不同屏幕尺寸的手机&lt;/p&gt;
-&lt;h2 id=&quot;开发工具&quot;&gt;&lt;a href=&quot;#开发工具&quot; class=&quot;headerlink&quot; title=&quot;开发工具&quot;&gt;&lt;/a&gt;开发工具&lt;/h2&gt;&lt;p&gt;1.Sublime编辑器:页面开发&lt;br&gt;2.BrowserSync终端:监测文件,搭建本地服务器,多终端页面实时刷新（告别F5手党哈哈哈~~）&lt;br&gt;3.LiveStyle:配合chrome，进行面板调试css,实时缓存css文件&lt;/p&gt;
-&lt;h2 id=&quot;进入主题&quot;&gt;&lt;a href=&quot;#进入主题&quot; class=&quot;headerlink&quot; title=&quot;进入主题&quot;&gt;&lt;/a&gt;进入主题&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;先说下一些基本的概念，普及下
-&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;物理像素-physical-pixel&quot;&gt;&lt;a href=&quot;#物理像素-physical-pixel&quot; class=&quot;headerlink&quot; title=&quot;物理像素(physical pixel)&quot;&gt;&lt;/a&gt;物理像素(physical pixel)&lt;/h3&gt;&lt;p&gt;一个物理像素是显示器(手机屏幕)上最小的物理显示单元，在操作系统的调度下，每一个设备像素都有自己的颜色值和亮度值。&lt;/p&gt;
-&lt;h3 id=&quot;设备独立像素-density-independent-pixel&quot;&gt;&lt;a href=&quot;#设备独立像素-density-independent-pixel&quot; class=&quot;headerlink&quot; title=&quot;设备独立像素(density-independent pixel)&quot;&gt;&lt;/a&gt;设备独立像素(density-independent pixel)&lt;/h3&gt;&lt;p&gt;设备独立像素(也叫密度无关像素)，可以认为是计算机坐标系统中得一个点，这个点代表一个可以由程序使用的虚拟像素(比如: css像素)，然后由相关系统转换为物理像素。&lt;/p&gt;
-&lt;h3 id=&quot;设备像素比-device-pixel-ratio&quot;&gt;&lt;a href=&quot;#设备像素比-device-pixel-ratio&quot; class=&quot;headerlink&quot; title=&quot;设备像素比(device pixel ratio )&quot;&gt;&lt;/a&gt;设备像素比(device pixel ratio )&lt;/h3&gt;&lt;p&gt;官方定义：设备物理像素和设备独立像素的比例&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;设备像素比 = 物理像素 / 设备独立像素 // 在某一方向上，x方向或者y方向
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;总结下：css中的1px并不等于设备的1px,在pc端浏览器中css的1个像素往往对应着电脑屏幕的一个物理像素。但是css的像素是个抽象的单位。&lt;br&gt;举个例子：比如&lt;code&gt;iPhone3&lt;/code&gt;的分辨率为320 * 480，在那个年代一个css像素确实等于一个屏幕物理像素。但是技术水平高了，苹果推出了Retina屏，屏幕越来越细腻了。&lt;br&gt;例如：在&lt;code&gt;Retina&lt;/code&gt;屏的iPhone上，&lt;code&gt;devicePixeRatio&lt;/code&gt;值为2，也就是说一个css像素相当于2个物理像素。&lt;/p&gt;
-&lt;h2 id=&quot;解决思路&quot;&gt;&lt;a href=&quot;#解决思路&quot; class=&quot;headerlink&quot; title=&quot;解决思路&quot;&gt;&lt;/a&gt;解决思路&lt;/h2&gt;&lt;h3 id=&quot;1-viewport-简单粗暴的方式：&quot;&gt;&lt;a href=&quot;#1-viewport-简单粗暴的方式：&quot; class=&quot;headerlink&quot; title=&quot;1.viewport 简单粗暴的方式：&quot;&gt;&lt;/a&gt;1.viewport 简单粗暴的方式：&lt;/h3&gt;&lt;p&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=320,maximum-scale=1.3,user-scalable=no&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;initial-scale&lt;/strong&gt; - 初始的缩放比例&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;minimum-scale&lt;/strong&gt; - 允许用户缩放到的最小比例&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;maximum-scale&lt;/strong&gt; - 允许用户缩放到的最大比例&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;user-scalable&lt;/strong&gt; - 用户是否可以手动缩放&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;直接设置&lt;code&gt;viewport&lt;/code&gt;为320px的1.3倍，将页面放大1.3倍&lt;br&gt;目前大部分页面都是以320px为基准的布局，而iphone6的宽度比是375/320 = 1.171875，iphone6+则是 414/320 = 1.29375&lt;br&gt;那么以1.29倍也就约等于1.3了。&lt;/p&gt;
-&lt;h3 id=&quot;2-iPhone6-的CSS-media-query&quot;&gt;&lt;a href=&quot;#2-iPhone6-的CSS-media-query&quot; class=&quot;headerlink&quot; title=&quot;2.iPhone6+ 的CSS media query&quot;&gt;&lt;/a&gt;2.iPhone6+ 的CSS media query&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*320px布局*/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;html&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100px&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.14rem&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;/*实际相当于14px*/&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* iphone 6 */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (min-device-width : &lt;span class=&quot;number&quot;&gt;375px&lt;/span&gt;) and (max-device-width : &lt;span class=&quot;number&quot;&gt;667px&lt;/span&gt;) and (-webkit-min-device-pixel-ratio : &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;html&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;117.1875px&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* iphone6 plus */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (min-device-width : &lt;span class=&quot;number&quot;&gt;414px&lt;/span&gt;) and (max-device-width : &lt;span class=&quot;number&quot;&gt;736px&lt;/span&gt;) and (-webkit-min-device-pixel-ratio : &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;html&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;129.375px&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;不过用媒体查询的方式好像不是很精确。具体看下面js的方案&lt;/p&gt;
-&lt;h3 id=&quot;3-JS去动态计算根元素的font-size&quot;&gt;&lt;a href=&quot;#3-JS去动态计算根元素的font-size&quot; class=&quot;headerlink&quot; title=&quot;3.JS去动态计算根元素的font-size&quot;&gt;&lt;/a&gt;3.JS去动态计算根元素的font-size&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;doc, win&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; docEl = doc.documentElement,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    resizeEvt = &lt;span class=&quot;string&quot;&gt;&#39;orientationchange&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt; ? &lt;span class=&quot;string&quot;&gt;&#39;orientationchange&#39;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&#39;resize&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    recalc = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; clientWidth = docEl.clientWidth;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!clientWidth) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      docEl.style.fontSize = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt; * (clientWidth / &lt;span class=&quot;number&quot;&gt;320&lt;/span&gt;) + &lt;span class=&quot;string&quot;&gt;&#39;px&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!doc.addEventListener) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  win.addEventListener(resizeEvt, recalc, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  doc.addEventListener(&lt;span class=&quot;string&quot;&gt;&#39;DOMContentLoaded&#39;&lt;/span&gt;, recalc, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;页面初始化的时候计算font-size，然后再绑定resize事件。这种效果就和百分比布局一样了。&lt;/p&gt;
-&lt;h2 id=&quot;其他解决方案&quot;&gt;&lt;a href=&quot;#其他解决方案&quot; class=&quot;headerlink&quot; title=&quot;其他解决方案&quot;&gt;&lt;/a&gt;其他解决方案&lt;/h2&gt;&lt;p&gt;&lt;code&gt;github&lt;/code&gt;上找到的一些解决方案分享下：&lt;/p&gt;
-&lt;p&gt;1.使用transform:scale属性缩放页面，这个还真没想到。&lt;br&gt;&lt;a href=&quot;https://github.com/peunzhang/pageResponse&quot;&gt;https://github.com/peunzhang/pageResponse&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ufologist/responsive-page&quot;&gt;https://github.com/ufologist/responsive-page&lt;/a&gt;&lt;br&gt;2.阿里无线伸缩布局方案：&lt;br&gt;&lt;a href=&quot;https://github.com/amfe/lib-flexible&quot;&gt;https://github.com/amfe/lib-flexible&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;开发背景：&quot;&gt;&lt;a href=&quot;#开发背景：&quot; class=&quot;headerlink&quot; title=&quot;开发背景：&quot;&gt;&lt;/a&gt;开发背景：&lt;/h2&gt;&lt;p&gt;1.移动端Html5页面开发&lt;br&gt;2.适配不同分辨率的手机&lt;br&gt;3.适配不同屏幕尺寸的手机&lt;/p&gt;
-&lt;h2 id=&quot;开发工具&quot;&gt;&lt;a href=&quot;#开发工具&quot; class=&quot;headerlink&quot; title=&quot;开发工具&quot;&gt;&lt;/a&gt;开发工具&lt;/h2&gt;&lt;p&gt;1.Sublime编辑器:页面开发&lt;br&gt;2.BrowserSync终端:监测文件,搭建本地服务器,多终端页面实时刷新（告别F5手党哈哈哈~~）&lt;br&gt;3.LiveStyle:配合chrome，进行面板调试css,实时缓存css文件&lt;/p&gt;
-&lt;h2 id=&quot;进入主题&quot;&gt;&lt;a href=&quot;#进入主题&quot; class=&quot;headerlink&quot; title=&quot;进入主题&quot;&gt;&lt;/a&gt;进入主题&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;先说下一些基本的概念，普及下
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://github.com/lizhoukai/tags/JavaScript/"/>
-    
-      <category term="移动端" scheme="https://github.com/lizhoukai/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-      <category term="Html5" scheme="https://github.com/lizhoukai/tags/Html5/"/>
     
   </entry>
   
