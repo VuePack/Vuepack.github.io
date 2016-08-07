@@ -20,10 +20,10 @@ $(document).ready(function () {
       var scrollTop = $(window).scrollTop();
       if(scrollTop > $('.header-inner').height()){
           $('#header').hide();
-          $('#sidebar').addClass('scroll-sidebar');
+          $('.sidebar-inner').addClass('scroll-sidebar');
       }else{
           $('#header').show();
-          $('#sidebar').removeClass('scroll-sidebar');
+          $('.sidebar-inner').removeClass('scroll-sidebar');
       }
   });
 
