@@ -256,7 +256,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,044</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,032</span>
 
           
             
@@ -288,7 +288,7 @@
       
         <h2 id="1-1微信浏览器不支持scroll属性"><a href="#1-1微信浏览器不支持scroll属性" class="headerlink" title="1.1微信浏览器不支持scroll属性"></a>1.1微信浏览器不支持scroll属性</h2><p>最近在做一个全屏的移动端h5页面，需要用js获取设备的高度进行计算，刚好有一个模块类似于列表，需要实现一个适配各自机型的，在全屏下该模块内容溢出，出现滚动条。<br>在移动端页面，若对某个<code>dom</code>元素或模块使用了<code>overflow:scroll</code>，我才发现，在手机上滑动这个模块或页面会比较卡顿。 坑啊~~</p>
 <p><strong>解决方案：</strong><br>1.用原生的<code>iscroll.js</code> 实现滚动效果（感觉为了一个模块的滚动来加载一个js文件，浪费资源所以放弃了）<br>2.添加支持-wekbit-的属性：<code>-webkit-overflow-scrolling: touch</code>;允许独立的滚动区域和触摸回弹</p>
-<h2 id="1-2安卓2-3版本不支持百分比，Safari-低版本圆角问题"><a href="#1-2安卓2-3版本不支持百分比，Safari-低版本圆角问题" class="headerlink" title="1.2安卓2.3版本不支持百分比，Safari 低版本圆角问题"></a>1.2安卓2.3版本不支持百分比，Safari 低版本圆角问题</h2><p><strong>解决方案：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-top-left-radius</span>: 999<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">border-top-right-radius</span>: 999<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">border-bottom-left-radius</span>: 999<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">border-bottom-right-radius</span>: 999<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">border-radius</span>: 999<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-2安卓2-3版本不支持百分比，Safari-低版本圆角问题"><a href="#1-2安卓2-3版本不支持百分比，Safari-低版本圆角问题" class="headerlink" title="1.2安卓2.3版本不支持百分比，Safari 低版本圆角问题"></a>1.2安卓2.3版本不支持百分比，Safari 低版本圆角问题</h2><p><strong>解决方案：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-top-left-radius</span>: 999<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-top-right-radius</span>: 999<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-bottom-left-radius</span>: 999<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-bottom-right-radius</span>: 999<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-radius</span>: 999<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure></p>
 <h2 id="1-3微信窗口算顶部栏目-高度为88"><a href="#1-3微信窗口算顶部栏目-高度为88" class="headerlink" title="1.3微信窗口算顶部栏目 高度为88"></a>1.3微信窗口算顶部栏目 高度为88</h2><p>在适配全屏页面，获取当前设备的浏览器高度，发现微信浏览器的高度和uc，Safari浏览器的设备高度不一样。</p>
 <p><strong>在iPhone6测试下：</strong></p>
 <ul>
@@ -305,7 +305,7 @@
 <li>手机系统：ios9.2</li>
 </ul>
 <p>测试下来，发现微信内置浏览器，长按二维码不能识别;<br>搜了半天，大多都是微信旧版本的bug。<br>然后把收集的bug，一一排除后，发现微信最新版本貌似无法识别<code>meta viweport</code>;</p>
-<p>固最终解决方案：既然不能识别动态<code>meta</code>,那固定设置一个呗，果然识别了- -<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>固最终解决方案：既然不能识别动态<code>meta</code>,那固定设置一个呗，果然识别了- -<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -415,7 +415,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">97.2k</span>
+              <span class="site-state-item-count">92.4k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

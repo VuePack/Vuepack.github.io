@@ -260,7 +260,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;966</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;958</span>
 
           
             
@@ -304,10 +304,10 @@
 </ul>
 <p><strong>具体流程:</strong></p>
 <p><img src="https://res.wx.qq.com/open/zh_CN/htmledition/res/img/pic/web-wxlogin/12168b9.png" alt="登录"></p>
-<p><strong>官网提供的URL：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://open.weixin.qq.com/connect/qrconnect?appid=APPID&amp;redirect_uri=REDIRECT_URI&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect</span><br></pre></td></tr></table></figure></p>
+<p><strong>官网提供的URL：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://open.weixin.qq.com/connect/qrconnect?appid=APPID&amp;redirect_uri=REDIRECT_URI&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect</div></pre></td></tr></table></figure></p>
 <p><code>appid</code>：应用唯一标识<br><code>redirect_uri</code> ：重定向地址，需要进行UrlEncode<br><code>response_type</code>：填code<br><code>scope</code>：应用授权作用域，拥有多个作用域用逗号（,）分隔，网页应用目前仅填写snsapi_login即可<br><code>state</code>        ：用于保持请求和回调的状态，授权请求后原样带回给第三方。该参数可用于防止csrf攻击（跨站请求伪造攻击），建议第三方带上该参数，可设置为简单的随机数加session进行校验</p>
 <p>注意：<strong>redirect_uri</strong>（重定向地址必须开发者信息审核通过的网站URL）</p>
-<p><strong>Demo:</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> redirect  =  <span class="string">'http://api.date.tm'</span>;</span><br><span class="line"><span class="keyword">var</span> RedirectUrlEncode = <span class="built_in">encodeURIComponent</span>(redirect);</span><br><span class="line"><span class="keyword">var</span> wecaht_entryUrl = <span class="string">'https://open.weixin.qq.com/connect/qrconnect?appid=wx4b58644b2d59e8c9&amp;redirect_uri='</span>+ RedirectUrlEncode +<span class="string">'&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Demo:</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> redirect  =  <span class="string">'http://api.date.tm'</span>;</div><div class="line"><span class="keyword">var</span> RedirectUrlEncode = <span class="built_in">encodeURIComponent</span>(redirect);</div><div class="line"><span class="keyword">var</span> wecaht_entryUrl = <span class="string">'https://open.weixin.qq.com/connect/qrconnect?appid=wx4b58644b2d59e8c9&amp;redirect_uri='</span>+ RedirectUrlEncode +<span class="string">'&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect'</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -417,7 +417,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">97.2k</span>
+              <span class="site-state-item-count">92.4k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

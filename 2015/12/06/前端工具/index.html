@@ -256,7 +256,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,004</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;986</span>
 
           
             
@@ -292,16 +292,16 @@
 <p>注意我这边安装时是最新的<strong>babel6</strong>,新版的<strong>babel6</strong>跟以前不一样，<strong>babel6</strong>拆分成两个包：<code>babel-cli</code>和<code>babel-core</code>;<br>具体安装编译步骤：<br><a id="more"></a></p>
 <ul>
 <li><p>1.安装babel命令行工具：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g babel@<span class="number">5</span><span class="comment">//这边注意我安装是babel5不是babel6版本</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g babel@<span class="number">5</span><span class="comment">//这边注意我安装是babel5不是babel6版本</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>2.在项目文件下创建依赖配置文件：</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init;<span class="comment">//创建一个package.json模块依赖配置文件</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init;<span class="comment">//创建一个package.json模块依赖配置文件</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>3.创建es6的JS文件比如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> breakfast = (dessert,drink) =&gt; dessert + drink;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> breakfast = (dessert,drink) =&gt; dessert + drink;</div></pre></td></tr></table></figure>
 </li>
 <li><p>5.使用命令编译es6文件：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">babel script.js</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">babel script.js</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><strong>终端编译结果：</strong><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/es5.png" alt="babel"></p>
@@ -310,8 +310,8 @@
 <p>jspm 还是一个为浏览器上用的东西准备的一个包管理 .. 比如它可以让你去从不同的源去安装不同的包 .. 默认的源有 npm ，还有 github .. 安装好你需要的包以后，在你的代码里，只需要一行代码，就可以使用这些包提供的功能 .. 不用担心其它的事情 . .</p>
 <p>在开发的时候，jspm 可以使用 Traceur 或者 Babel ，实时的在浏览器上编译 JavaScript ，把 es6 的代码编译成 es5 的代码 ..</p>
 <p>在正式发布应用的时候，可以优化创建的模块，把模块依赖的东西打成一个包。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install jspm -g<span class="comment">//全局环境下</span></span><br><span class="line">npm install jspm --save-dev<span class="comment">//项目局部环境下</span></span><br></pre></td></tr></table></figure>
-<p>在项目更目录添加jspm后，还需要创建一个jspm需要的配置文件：<br>输入：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">jspm </span>init</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install jspm -g<span class="comment">//全局环境下</span></div><div class="line">npm install jspm --save-dev<span class="comment">//项目局部环境下</span></div></pre></td></tr></table></figure>
+<p>在项目更目录添加jspm后，还需要创建一个jspm需要的配置文件：<br>输入：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">jspm init</span></div></pre></td></tr></table></figure></p>
 <ul>
 <li><p>config.js: 这个文件是 jspm 需要的配置文件 .. 里面有一些配置信息 ..</p>
 </li>
@@ -425,7 +425,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">97.2k</span>
+              <span class="site-state-item-count">92.4k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>
