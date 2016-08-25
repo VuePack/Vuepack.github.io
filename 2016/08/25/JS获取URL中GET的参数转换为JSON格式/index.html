@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,微信开发," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -59,16 +59,15 @@
 
 
 
-<meta name="description" content="最近做了挺多针对微信浏览器的H5页面开发。总结下：思路：获取当前浏览器ua，再做判断">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用JS判断是否在微信浏览器打开">
-<meta property="og:url" content="https://github.com/lizhoukai/2015/10/25/JS判断是否在微信浏览器打开/index.html">
+<meta property="og:title" content="JS获取URL中GET的参数转换为JSON格式">
+<meta property="og:url" content="https://github.com/lizhoukai/2016/08/25/JS获取URL中GET的参数转换为JSON格式/index.html">
 <meta property="og:site_name" content="Leon's Daily">
-<meta property="og:description" content="最近做了挺多针对微信浏览器的H5页面开发。总结下：思路：获取当前浏览器ua，再做判断">
-<meta property="og:updated_time" content="2016-05-17T13:11:28.000Z">
+<meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2016082523067mall.gif">
+<meta property="og:updated_time" content="2016-08-25T13:40:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用JS判断是否在微信浏览器打开">
-<meta name="twitter:description" content="最近做了挺多针对微信浏览器的H5页面开发。总结下：思路：获取当前浏览器ua，再做判断">
+<meta name="twitter:title" content="JS获取URL中GET的参数转换为JSON格式">
+<meta name="twitter:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2016082523067mall.gif">
 
 
 
@@ -86,7 +85,7 @@
   };
 </script>
 
-  <title> 用JS判断是否在微信浏览器打开 | Leon's Daily </title>
+  <title> JS获取URL中GET的参数转换为JSON格式 | Leon's Daily </title>
   <script src="https://cdn.bootcss.com/vue/1.0.14/vue.min.js"></script>
 </head>
 
@@ -228,7 +227,7 @@
             
             
               
-                用JS判断是否在微信浏览器打开
+                JS获取URL中GET的参数转换为JSON格式
               
             
           </h1>
@@ -243,22 +242,22 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-10-25T22:31:06+08:00" content="2015-10-25 22:31:06">
-              2015-10-25 22:31:06
+            <time itemprop="dateCreated" datetime="2016-08-25T19:55:59+08:00" content="2016-08-25 19:55:59">
+              2016-08-25 19:55:59
             </time>
           </span>
 
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,070</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,301</span>
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/25/JS判断是否在微信浏览器打开/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/25/JS判断是否在微信浏览器打开/" itemprop="commentsCount"></span>
+                <a href="/2016/08/25/JS获取URL中GET的参数转换为JSON格式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/25/JS获取URL中GET的参数转换为JSON格式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -281,7 +280,24 @@
       
 
       
-        <p>最近做了挺多针对微信浏览器的H5页面开发。总结下：<br>思路：获取当前浏览器ua，再做判断<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> browser = &#123;</div><div class="line">    versions: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> u = navigator.userAgent.toLowerCase();</div><div class="line">        <span class="keyword">return</span> &#123;         <span class="comment">//移动终端浏览器版本信息</span></div><div class="line">            txt: u, <span class="comment">// 浏览器版本信息</span></div><div class="line">            version: (u.match(<span class="regexp">/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/</span>) || [])[<span class="number">1</span>], <span class="comment">// 版本号</span></div><div class="line">            msie: <span class="regexp">/msie/</span>.test(u) &amp;&amp; !<span class="regexp">/opera/</span>.test(u), <span class="comment">// IE内核</span></div><div class="line">            mozilla: <span class="regexp">/mozilla/</span>.test(u) &amp;&amp; !<span class="regexp">/(compatible|webkit)/</span>.test(u), <span class="comment">// 火狐浏览器</span></div><div class="line">            safari: <span class="regexp">/safari/</span>.test(u) &amp;&amp; !<span class="regexp">/chrome/</span>.test(u), <span class="comment">//是否为safair</span></div><div class="line">            chrome: <span class="regexp">/chrome/</span>.test(u), <span class="comment">//是否为chrome</span></div><div class="line">            opera: <span class="regexp">/opera/</span>.test(u), <span class="comment">//是否为oprea</span></div><div class="line">            presto: u.indexOf(<span class="string">'presto/'</span>) &gt; <span class="number">-1</span>, <span class="comment">//opera内核</span></div><div class="line">            webKit: u.indexOf(<span class="string">'applewebkit/'</span>) &gt; <span class="number">-1</span>, <span class="comment">//苹果、谷歌内核</span></div><div class="line">            gecko: u.indexOf(<span class="string">'gecko/'</span>) &gt; <span class="number">-1</span> &amp;&amp; u.indexOf(<span class="string">'khtml'</span>) == <span class="number">-1</span>, <span class="comment">//火狐内核</span></div><div class="line">            mobile: !!u.match(<span class="regexp">/applewebkit.*mobile.*/</span>), <span class="comment">//是否为移动终端</span></div><div class="line">            ios: !!u.match(<span class="regexp">/\(i[^;]+;( u;)? cpu.+mac os x/</span>), <span class="comment">//ios终端</span></div><div class="line">            android: u.indexOf(<span class="string">'android'</span>) &gt; <span class="number">-1</span>, <span class="comment">//android终端</span></div><div class="line">            iPhone: u.indexOf(<span class="string">'iphone'</span>) &gt; <span class="number">-1</span>, <span class="comment">//是否为iPhone</span></div><div class="line">            iPad: u.indexOf(<span class="string">'ipad'</span>) &gt; <span class="number">-1</span>, <span class="comment">//是否iPad</span></div><div class="line">            webApp: !!u.match(<span class="regexp">/applewebkit.*mobile.*/</span>) &amp;&amp; u.indexOf(<span class="string">'safari/'</span>) == <span class="number">-1</span> <span class="comment">//是否web应该程序，没有头部与底部</span></div><div class="line">        &#125;;</div><div class="line">    &#125;(),</div><div class="line">    <span class="comment">// language: (navigator.browserLanguage || navigator.language).toLowerCase()</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (browser.versions.mobile) &#123;<span class="comment">//判断是否是移动设备打开</span></div><div class="line">    <span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();<span class="comment">//获取判断用的对象</span></div><div class="line">    <span class="keyword">if</span> (ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">"micromessenger"</span>) &#123;<span class="comment">//微信端</span></div><div class="line">             <span class="built_in">window</span>.location.href = <span class="string">'http://m.amap.com/?mk=30.36244801,120.09799636,杭州市西湖区三墩镇三墩公平路'</span>;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (browser.versions.ios) &#123;<span class="comment">//ios终端</span></div><div class="line">            <span class="built_in">window</span>.location=<span class="string">"iosamap://viewMap?sourceApplication=applicationName&amp;poiname=杭州市西湖区三墩镇三墩公平路&amp;lat=30.36244801&amp;lon=120.09799636&amp;dev=1"</span>;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (browser.versions.android) &#123;<span class="comment">//android终端</span></div><div class="line">        <span class="built_in">window</span>.location.href = <span class="string">'http://m.amap.com/?mk=30.36244801,120.09799636,杭州市西湖区三墩镇三墩公平路'</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">//否则就是PC浏览器打开</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016082523067mall.gif" alt="2016082523067mall.gif"></p>
+<a id="more"></a>
+<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>商城页的分页组件和顶部的TAG选项的筛选条件。</p>
+<p>当分页器默认点击所有商品页下一页的时候，<code>url</code>后会添加一个<code>page=2</code>翻页。然后点击 <strong>TAG</strong> 的时候，<code>url</code>也随应也加上参数<code>categories=1</code> </p>
+<p>现在遇到的问题:</p>
+<blockquote>
+<p>1.如果当前<strong>TAG</strong>筛选的商品比较少，只够展示一页的数据，那么当前<code>page=2</code>，是不是应该只展示第一页的数据。<br>2.每次点击翻页，分页器都会<strong>JS</strong>重新获取 <code>window.location.search</code> <strong>URl ？</strong>号后面的<code>get</code>参数，但是分页器翻页的时候，下一页比如<code>page=3</code>，当前 <strong>URL</strong> 的也包含了上一次的<code>page=2</code>，这时候要过滤之前的参数。</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><code>window.location.search</code>获取当前<strong>URL</strong>后面的<code>get</code>参数，然后转换成<strong>JS对象</strong>，列如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	page:<span class="number">1</span>,</div><div class="line">	categories:[</div><div class="line">		<span class="string">"1"</span>,</div><div class="line">		<span class="string">"2"</span></div><div class="line">	], </div><div class="line">	producer:[</div><div class="line">		<span class="string">"2"</span>,</div><div class="line">		<span class="string">"3"</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后对这个<strong>对象</strong>进行参数修改<br>接着再把这个对象转换成<code>url</code>中的<code>get</code>字符串，成为一个新的链接地址</p>
+<h2 id="需要的知识点"><a href="#需要的知识点" class="headerlink" title="需要的知识点"></a>需要的知识点</h2><p>对象转JSON，JSON转对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;<span class="string">"name"</span>:<span class="string">"tom"</span>,<span class="string">"sex"</span>:<span class="string">"男"</span>,<span class="string">"age"</span>:<span class="string">"24"</span>&#125;; </div><div class="line"><span class="keyword">var</span> b=<span class="string">'&#123;"name":"Mike","sex":"女","age":"29"&#125;'</span>;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> aToStr=<span class="built_in">JSON</span>.stringify(a);</div><div class="line"><span class="keyword">var</span> bToObj=<span class="built_in">JSON</span>.parse(b);</div><div class="line"> </div><div class="line">alert(<span class="keyword">typeof</span>(aToStr));  <span class="comment">//string</span></div><div class="line">alert(<span class="keyword">typeof</span>(bToObj));<span class="comment">//object</span></div></pre></td></tr></table></figure>
+<p>分页取余：<br><code>Math.random()</code><br><strong>random()</strong><br>返回 0 ~ 1 之间的随机数。    </p>
+<p><code>Math.ceil()</code><br><strong>ceil()</strong> 方法可对一个数进行上舍入。<br>参数必须是一个数值。返回值大于等于 x，并且与它最接近的整数。</p>
+<p><code>Math.floor()</code><br><strong>floor()</strong> 方法可对一个数进行下舍入。<br>参数可以是任意数值或表达式。返回值小于等于 x，且与 x 最接近的整数。</p>
+<p><code>Math.round()</code><br><strong>round()</strong> 方法可把一个数字舍入为最接近的整数</p>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> getArgs = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmpArray = &#123;&#125;;</div><div class="line">  <span class="keyword">var</span> currentArgsStr = <span class="built_in">window</span>.location.search;</div><div class="line">  <span class="keyword">var</span> tmp, tmpKey, tmpVal;</div><div class="line">  <span class="keyword">if</span> (!currentArgsStr) &#123;</div><div class="line">    <span class="keyword">return</span> &#123;&#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  currentArgsStr = currentArgsStr.replace(<span class="string">'?'</span>, <span class="string">''</span>);</div><div class="line">  $.each(currentArgsStr.split(<span class="string">"&amp;"</span>), <span class="function"><span class="keyword">function</span>(<span class="params">index, ele</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> array = [];</div><div class="line">    tmp = ele.split(<span class="string">"="</span>);</div><div class="line">    tmpKey = tmp[<span class="number">0</span>];</div><div class="line">    tmpVal = tmp[<span class="number">1</span>];</div><div class="line">    <span class="keyword">if</span> (tmpArray[tmpKey]) &#123;</div><div class="line">      tmpArray[tmpKey].push(tmpVal);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      array.push(tmpVal);</div><div class="line">      tmpArray[tmpKey] = array;</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> tmpArray;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -292,8 +308,6 @@
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/微信开发/" rel="tag">#微信开发</a>
-          
         </div>
       
 
@@ -301,17 +315,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/23/安卓非微信浏览器呼出高德地图App/" rel="next" title="安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案">
-                <i class="fa fa-chevron-left"></i> 安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案
+              <a href="/2016/08/20/聊聊最近/" rel="next" title="聊聊最近">
+                <i class="fa fa-chevron-left"></i> 聊聊最近
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/10/25/new-Date-格式问题/" rel="prev" title="new Date()格式问题">
-                new Date()格式问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -337,8 +347,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/10/25/JS判断是否在微信浏览器打开/"
-           data-title="用JS判断是否在微信浏览器打开" data-url="https://github.com/lizhoukai/2015/10/25/JS判断是否在微信浏览器打开/">
+      <div class="ds-thread" data-thread-key="2016/08/25/JS获取URL中GET的参数转换为JSON格式/"
+           data-title="JS获取URL中GET的参数转换为JSON格式" data-url="https://github.com/lizhoukai/2016/08/25/JS获取URL中GET的参数转换为JSON格式/">
       </div>
     
   </div>
@@ -482,7 +492,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求分析"><span class="nav-number">1.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要的知识点"><span class="nav-number">3.</span> <span class="nav-text">需要的知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实践"><span class="nav-number">4.</span> <span class="nav-text">实践</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
