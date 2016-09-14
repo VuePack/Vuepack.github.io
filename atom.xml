@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/lizhoukai/"/>
-  <updated>2016-08-25T13:40:21.000Z</updated>
+  <updated>2016-09-14T13:50:07.000Z</updated>
   <id>https://github.com/lizhoukai/</id>
   
   <author>
@@ -14,6 +14,113 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>针对项目思考的前端脚手架</title>
+    <link href="https://github.com/lizhoukai/2016/09/14/%E9%92%88%E5%AF%B9%E9%A1%B9%E7%9B%AE%E6%80%9D%E8%80%83%E7%9A%84%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    <id>https://github.com/lizhoukai/2016/09/14/针对项目思考的前端脚手架/</id>
+    <published>2016-09-14T13:46:48.000Z</published>
+    <updated>2016-09-14T13:50:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue-Gulp-Webpack前端脚手架"><a href="#Vue-Gulp-Webpack前端脚手架" class="headerlink" title="Vue-Gulp-Webpack前端脚手架"></a>Vue-Gulp-Webpack前端脚手架</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#install">安装</a></li>
+<li><a href="#directory">工程目录规范</a></li>
+<li><a href="#condition">前置条件</a></li>
+<li><a href="#question">解决问题</a></li>
+<li><a href="#foreend">前端技术要求</a></li>
+<li><a href="#help">如何使用</a></li>
+<li><a href="#deficiency">不足之处</a></li>
+</ol>
+<a id="more"></a>
+<p><a name="install"></a></p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p><strong>版本</strong>：NODE: v6.2.0 NPM: 3.8.9</p>
+<p>由于npm安装源太慢，建议换成淘宝cnpm安装源</p>
+<p>工程目录模块安装：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm <span class="keyword">install</span></div></pre></td></tr></table></figure>
+<p><a name="directory"></a></p>
+<h2 id="2-工程目录规范"><a href="#2-工程目录规范" class="headerlink" title="2.工程目录规范"></a>2.工程目录规范</h2><pre><code>|—— mode_modules                 npm安装的模块
+|—— gulpfile.js                  Gulp
+|—— webpack.dev.conf.js          webpack生产环境
+|—— webpack.prod.conf.js         webpack发布环境
+|—— index.html                   首页
+|   |—— src   开发目录
+|   |   |—— script           Vue代码
+|   |   |   |—— component    公共组件目录
+|   |   |—— js               js源代码
+|   |   |   |—— public_lib   第三方库
+|   |   |   |—— component    公共组件目录
+|   |   |   |—— lib    公共组件目录
+|   |   |   |—— xx.js        组件合成chunk.js
+|   |   |—— style            scss源代码
+|   |   |   |—— common         基础库
+|   |   |   |—— component    公共组件目录
+|   |   |   |—— lib          第三方库
+|   |   |—— img              scss源代码
+|   |   |—— flash            flash源文件
+|   |   |—— fonts            字体源文件
+|   |—— dist                 编译合并压缩后的js、css
+</code></pre><h2 id="3-前置条件"><a href="#3-前置条件" class="headerlink" title="3.  前置条件"></a>3.  前置条件</h2><ul>
+<li>NPM管理第三方JS依赖，统一在 <strong>LIB</strong>文件导入，非NPM第三方插件放置 <strong>public_lib</strong>目录</li>
+<li>此项目非前后端分离，故生产环境中每次都需要重新编译文件，输出发布目录</li>
+<li>主要技术 vue.js ,jQuery,JavaScript;</li>
+</ul>
+<p><a name="question"></a></p>
+<h2 id="4-解决问题"><a href="#4-解决问题" class="headerlink" title="4. 解决问题"></a>4. 解决问题</h2><ul>
+<li>减少css,js文件请求数，跟据文件名+MD5戳方式清除缓存，自动替换页面里的文件路径</li>
+<li>无需动刷新页面，文件改变后自动同步刷新多设备浏览器</li>
+<li>Gulp处理SCSS的编译、压缩、合并、兼容前缀、md5</li>
+<li>webpack处理JS多模块合并、压缩、打包</li>
+</ul>
+<p><a name="foreend"></a></p>
+<h2 id="5-前端技术要求"><a href="#5-前端技术要求" class="headerlink" title="5. 前端技术要求"></a>5. 前端技术要求</h2><ul>
+<li>略懂linux,nodejs,gulp,webpack,git</li>
+</ul>
+<p><a name="help"></a></p>
+<h2 id="6-如何使用"><a href="#6-如何使用" class="headerlink" title="6. 如何使用"></a>6. 如何使用</h2><ul>
+<li>Gulp：负责多任务的定制</li>
+<li>webpack：负责打包JS模块</li>
+<li>公共组件共同导入的chunk父级文件，统一在webpack的 <strong>config</strong>配置引入</li>
+</ul>
+<blockquote>
+<p>生产</p>
+</blockquote>
+<pre><code>gulp watch ：//启动开发环境，监测文件动向，实时刷新编译
+gulp build:dev：//编译合并压缩js输出发布目录（包含sourceMap）
+gulp build:scss：//编译合并压缩scss输出发布目录
+gulp build:common：//公共文件输出发布目录
+</code></pre><blockquote>
+<p>发布</p>
+</blockquote>
+<pre><code>gulp build：//执行以上命令（不包含sourceMap）
+</code></pre><p><a name="deficiency"></a></p>
+<h2 id="7-不足之处"><a href="#7-不足之处" class="headerlink" title="7. 不足之处"></a>7. 不足之处</h2><ul>
+<li>项目非前后端分离，现在的生产环境也可以是发布环境，每次都需要编译文件会有点慢</li>
+<li><strong>由于webpack的同步编译机制，js文件太大导致压缩缓慢</strong></li>
+<li>默认不监测html自动刷新，因为编译scss会自动给html加入hash值，会导致刷新多次</li>
+<li>暂时不支持scss的<strong>devtool</strong>调试</li>
+<li>.vue不是用webpack的热替换，会有些慢</li>
+</ul>
+<p><a href="https://github.com/lizhoukai/VUE-gulp-webpack">项目地址</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Vue-Gulp-Webpack前端脚手架&quot;&gt;&lt;a href=&quot;#Vue-Gulp-Webpack前端脚手架&quot; class=&quot;headerlink&quot; title=&quot;Vue-Gulp-Webpack前端脚手架&quot;&gt;&lt;/a&gt;Vue-Gulp-Webpack前端脚手架&lt;/h1&gt;&lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;#install&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#directory&quot;&gt;工程目录规范&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#condition&quot;&gt;前置条件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#question&quot;&gt;解决问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#foreend&quot;&gt;前端技术要求&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#help&quot;&gt;如何使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#deficiency&quot;&gt;不足之处&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://github.com/lizhoukai/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>JS获取URL中GET的参数转换为JSON格式</title>
@@ -950,32 +1057,6 @@
       <category term="JavaScript" scheme="https://github.com/lizhoukai/tags/JavaScript/"/>
     
       <category term="微信开发" scheme="https://github.com/lizhoukai/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>日期正则表达式验证</title>
-    <link href="https://github.com/lizhoukai/2015/11/24/%E6%97%A5%E6%9C%9F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%AA%8C%E8%AF%81/"/>
-    <id>https://github.com/lizhoukai/2015/11/24/日期正则表达式验证/</id>
-    <published>2015-11-24T09:25:03.000Z</published>
-    <updated>2016-05-17T13:11:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近项目中要运用到日期正则表达式验证判断格式是否正确。</p>
-<p>1.判断yy-mm-dd<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">RegExp</span>= <span class="regexp">/^(\d&#123;4&#125;)(?:(?:-(1[012]|0[1-9]|[1-9]))(?:-(3[01]|[12]\d|0[1-9]|[1-9]))?)?$/</span>;</div><div class="line"><span class="keyword">var</span> date = <span class="string">'2015-11-24 '</span></div><div class="line"></div><div class="line"><span class="built_in">RegExp</span>.test(date)</div></pre></td></tr></table></figure></p>
-<p>2.判断yy-mm-dd hh:mm<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">RegExp</span> =  <span class="regexp">/^[1-2][0-9][0-9][0-9]-([1][0-2]|0?[1-9])-([12][0-9]|3[01]|0?[1-9]) ([01]?[0-9]|[2][0-3]):[0-5]?[0-9]$/</span> ;</div><div class="line"></div><div class="line"><span class="keyword">var</span> date = <span class="string">'2015-11-24 8:08'</span></div><div class="line"></div><div class="line"><span class="built_in">RegExp</span>.test(date)</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近项目中要运用到日期正则表达式验证判断格式是否正确。&lt;/p&gt;
-&lt;p&gt;1.判断yy-mm-dd&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/d
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://github.com/lizhoukai/tags/JavaScript/"/>
-    
-      <category term="正则表达式" scheme="https://github.com/lizhoukai/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
