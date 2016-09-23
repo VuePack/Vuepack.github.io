@@ -4,8 +4,27 @@
 
     
   <url>
+    <loc>https://github.com/lizhoukai/2016/09/23/VUE%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-09-23T12:44:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>VUE学习工作笔记</title>
+        <pubTime>2016-09-23T12:38:11.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>VUE</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://github.com/lizhoukai/2016/09/18/%E3%80%8A%E4%B8%83%E6%9C%88%E7%9A%84%E5%AE%89%E7%94%9F%E3%80%8B/</loc>
-    <lastmod>2016-09-18T14:23:35.000Z</lastmod>
+    <lastmod>2016-09-18T14:25:58.000Z</lastmod>
     <data>
         <display>
         <title>《七月的安生》</title>
@@ -629,22 +648,6 @@
 
     
     
-  <url>
-    <loc>https://github.com/lizhoukai/2016/03/28/%E7%90%86%E8%A7%A3jsonP%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BC%98%E7%BC%BA%E7%82%B9/</loc>
-    <lastmod>2016-05-17T12:07:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>理解jsonP的原理和优缺点</title>
-        <pubTime>2016-03-28T13:11:00.000Z</pubTime>
-        
-        <tag>jsonp</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://github.com/lizhoukai/2016/04/12/JS%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0/</loc>
@@ -663,5 +666,21 @@
     </url>
 
     
+  <url>
+    <loc>https://github.com/lizhoukai/2016/03/28/%E7%90%86%E8%A7%A3jsonP%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BC%98%E7%BC%BA%E7%82%B9/</loc>
+    <lastmod>2016-05-17T12:07:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>理解jsonP的原理和优缺点</title>
+        <pubTime>2016-03-28T13:11:00.000Z</pubTime>
+        
+        <tag>jsonp</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
     
 </urlset>

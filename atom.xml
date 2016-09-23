@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/lizhoukai/"/>
-  <updated>2016-09-18T14:23:35.000Z</updated>
+  <updated>2016-09-23T12:44:38.000Z</updated>
   <id>https://github.com/lizhoukai/</id>
   
   <author>
@@ -16,14 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>VUE学习工作笔记</title>
+    <link href="https://github.com/lizhoukai/2016/09/23/VUE%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
+    <id>https://github.com/lizhoukai/2016/09/23/VUE学习工作笔记/</id>
+    <published>2016-09-23T12:38:11.000Z</published>
+    <updated>2016-09-23T12:44:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>记录平时学习工作中VUE遇到的问题和总结。</p>
+</blockquote>
+<h2 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h2><h3 id="更改Attribute属性却没同步视图"><a href="#更改Attribute属性却没同步视图" class="headerlink" title="更改Attribute属性却没同步视图"></a>更改Attribute属性却没同步视图</h3><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;记录平时学习工作中VUE遇到的问题和总结。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;常见报错&quot;&gt;&lt;a href=&quot;#常见报错&quot; class=&quot;headerlink&quot; title=&quot;常见报错&quot;&gt;&lt;/a&gt;常见报错&lt;/h2&gt;&lt;h3 id=&quot;更
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://github.com/lizhoukai/tags/JavaScript/"/>
+    
+      <category term="VUE" scheme="https://github.com/lizhoukai/tags/VUE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>《七月的安生》</title>
     <link href="https://github.com/lizhoukai/2016/09/18/%E3%80%8A%E4%B8%83%E6%9C%88%E7%9A%84%E5%AE%89%E7%94%9F%E3%80%8B/"/>
     <id>https://github.com/lizhoukai/2016/09/18/《七月的安生》/</id>
     <published>2016-09-18T13:06:57.000Z</published>
-    <updated>2016-09-18T14:23:35.000Z</updated>
+    <updated>2016-09-18T14:25:58.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center"><br>    <br>七月一个乖巧聪明，对感情专一，从小到大规规矩矩，过着父母规划好的生活<br>    安生一个桀骜叛逆，没父母关爱，随风逐流，个性大大咧咧，独立坚强的女孩<br><br></blockquote>
 
+<a id="more"></a>
 <h2 id="七月也是安生"><a href="#七月也是安生" class="headerlink" title="七月也是安生"></a>七月也是安生</h2><p>每个人都有两面，一面可能遵从一份大家都认可的安定，一面需要自己独自去承担面对的风险。</p>
 <p>我觉得 <code>七月</code> 也是 <code>安生</code> 。她们都在各个年龄段，独自探索着另一面；<br><code>安生</code> 走走停停，走南闯北，风风雨雨什么都见过了，她比较坚强，靠自己的本事吃饭，哪怕 <strong>1%</strong> 的希望她都争取。<br><code>七月</code> 从小就很优秀，她会尽自己全力争取 <strong>100%</strong>，过着安逸的日子，守护着真挚的爱情。</p>
 <p>当她们都累了，疲倦了，可能就互换下身份，做个不一样的自己，寻求自己心里的那份安定。</p>
@@ -45,7 +74,7 @@
     
     <summary type="html">
     
-      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;    &lt;br&gt;七月一个乖巧聪明，对感情专一，从小到大规规矩矩，过着父母规划好的生活&lt;br&gt;    安生一个桀骜叛逆，没父母关爱，随风逐流，个性大大咧咧，独立坚强的女孩&lt;br&gt;&lt;br&gt;&lt;/bloc
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;    &lt;br&gt;七月一个乖巧聪明，对感情专一，从小到大规规矩矩，过着父母规划好的生活&lt;br&gt;    安生一个桀骜叛逆，没父母关爱，随风逐流，个性大大咧咧，独立坚强的女孩&lt;br&gt;&lt;br&gt;&lt;/blockquote&gt;
     
     </summary>
     
@@ -1012,48 +1041,6 @@ gulp build:common：//公共文件输出发布目录
       <category term="前端工具" scheme="https://github.com/lizhoukai/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
     
       <category term="Gulp" scheme="https://github.com/lizhoukai/tags/Gulp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信h5踩坑</title>
-    <link href="https://github.com/lizhoukai/2015/12/02/%E5%BE%AE%E4%BF%A1h5%E8%B8%A9%E5%9D%91/"/>
-    <id>https://github.com/lizhoukai/2015/12/02/微信h5踩坑/</id>
-    <published>2015-12-02T12:43:59.000Z</published>
-    <updated>2016-05-17T13:11:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-1微信浏览器不支持scroll属性"><a href="#1-1微信浏览器不支持scroll属性" class="headerlink" title="1.1微信浏览器不支持scroll属性"></a>1.1微信浏览器不支持scroll属性</h2><p>最近在做一个全屏的移动端h5页面，需要用js获取设备的高度进行计算，刚好有一个模块类似于列表，需要实现一个适配各自机型的，在全屏下该模块内容溢出，出现滚动条。<br>在移动端页面，若对某个<code>dom</code>元素或模块使用了<code>overflow:scroll</code>，我才发现，在手机上滑动这个模块或页面会比较卡顿。 坑啊~~</p>
-<p><strong>解决方案：</strong><br>1.用原生的<code>iscroll.js</code> 实现滚动效果（感觉为了一个模块的滚动来加载一个js文件，浪费资源所以放弃了）<br>2.添加支持-wekbit-的属性：<code>-webkit-overflow-scrolling: touch</code>;允许独立的滚动区域和触摸回弹</p>
-<h2 id="1-2安卓2-3版本不支持百分比，Safari-低版本圆角问题"><a href="#1-2安卓2-3版本不支持百分比，Safari-低版本圆角问题" class="headerlink" title="1.2安卓2.3版本不支持百分比，Safari 低版本圆角问题"></a>1.2安卓2.3版本不支持百分比，Safari 低版本圆角问题</h2><p><strong>解决方案：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-top-left-radius</span>: 999<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-top-right-radius</span>: 999<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-bottom-left-radius</span>: 999<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-bottom-right-radius</span>: 999<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-radius</span>: 999<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure></p>
-<h2 id="1-3微信窗口算顶部栏目-高度为88"><a href="#1-3微信窗口算顶部栏目-高度为88" class="headerlink" title="1.3微信窗口算顶部栏目 高度为88"></a>1.3微信窗口算顶部栏目 高度为88</h2><p>在适配全屏页面，获取当前设备的浏览器高度，发现微信浏览器的高度和uc，Safari浏览器的设备高度不一样。</p>
-<p><strong>在iPhone6测试下：</strong></p>
-<ul>
-<li>微信浏览器：1206</li>
-<li>UC浏览器：1118</li>
-<li>Safari浏览器：1118</li>
-</ul>
-<p>为什么会多出88px的值，原来微信内置浏览器，把<code>topbar</code>导航栏也算进去了。！！！！</p>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/ht.jpg" alt="浏览器高度"></p>
-<h2 id="1-4ios微信内置浏览器长按二维码不能识别"><a href="#1-4ios微信内置浏览器长按二维码不能识别" class="headerlink" title="1.4ios微信内置浏览器长按二维码不能识别"></a>1.4ios微信内置浏览器长按二维码不能识别</h2><p>在适配移动端页面的时候，因用了flexible布局方案，原理是用js动态改写<code>&lt;meta name=&quot;viweport&quot;&gt;</code>。</p>
-<ul>
-<li>微信版本号：6.3.8</li>
-<li>测试设备：iPhone6s</li>
-<li>手机系统：ios9.2</li>
-</ul>
-<p>测试下来，发现微信内置浏览器，长按二维码不能识别;<br>搜了半天，大多都是微信旧版本的bug。<br>然后把收集的bug，一一排除后，发现微信最新版本貌似无法识别<code>meta viweport</code>;</p>
-<p>固最终解决方案：既然不能识别动态<code>meta</code>,那固定设置一个呗，果然识别了- -<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-1微信浏览器不支持scroll属性&quot;&gt;&lt;a href=&quot;#1-1微信浏览器不支持scroll属性&quot; class=&quot;headerlink&quot; title=&quot;1.1微信浏览器不支持scroll属性&quot;&gt;&lt;/a&gt;1.1微信浏览器不支持scroll属性&lt;/h2&gt;&lt;p&gt;最近
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://github.com/lizhoukai/tags/JavaScript/"/>
-    
-      <category term="微信开发" scheme="https://github.com/lizhoukai/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
