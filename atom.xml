@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/lizhoukai/"/>
-  <updated>2016-09-29T05:05:32.000Z</updated>
+  <updated>2016-10-03T13:15:42.000Z</updated>
   <id>https://github.com/lizhoukai/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://github.com/lizhoukai/2016/09/23/VUE%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
     <id>https://github.com/lizhoukai/2016/09/23/VUE学习工作笔记/</id>
     <published>2016-09-23T12:38:11.000Z</published>
-    <updated>2016-09-29T05:05:32.000Z</updated>
+    <updated>2016-10-03T13:15:42.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center">记录平时学习工作中VUE遇到的问题和总结</blockquote>
 
@@ -47,7 +47,21 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.config.delimiters = [<span class="string">'[['</span>, <span class="string">']]'</span>]</div></pre></td></tr></table></figure>
 <h3 id="Vue-warn-v-on-click-”listtime”-expects-a-function-value-got-undefined"><a href="#Vue-warn-v-on-click-”listtime”-expects-a-function-value-got-undefined" class="headerlink" title="[Vue warn]: v-on:click=”listtime” expects a function value, got undefined"></a>[Vue warn]: v-on:click=”listtime” expects a function value, got undefined</h3><pre><code>父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译
-</code></pre><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2>]]></content>
+</code></pre><p>###</p>
+<h2 id="升级Vue2-0遇到问题"><a href="#升级Vue2-0遇到问题" class="headerlink" title="升级Vue2.0遇到问题"></a>升级Vue2.0遇到问题</h2><h3 id="Vue-warn-Do-not-mount-Vue-to-lt-html-gt-or-lt-body-gt-mount-to-normal-elements-instead"><a href="#Vue-warn-Do-not-mount-Vue-to-lt-html-gt-or-lt-body-gt-mount-to-normal-elements-instead" class="headerlink" title="[Vue warn]: Do not mount Vue to &lt;html&gt; or &lt;body&gt; - mount to normal elements instead."></a><code>[Vue warn]: Do not mount Vue to &lt;html&gt; or &lt;body&gt; - mount to normal elements instead.</code></h3><blockquote>
+<p>解决方法：</p>
+</blockquote>
+<p>字面意思就是说不要讲元素插入 <code>html</code> 和 <code>body</code> 的节点上，换成<code>ID</code>或<code>class</code>选择器就可以解决。</p>
+<h3 id="Vue-warn-Failed-to-mount-component-template-or-render-function-not-defined-found-in-root-instance"><a href="#Vue-warn-Failed-to-mount-component-template-or-render-function-not-defined-found-in-root-instance" class="headerlink" title="[Vue warn]: Failed to mount component: template or render function not defined. (found in root instance)"></a><code>[Vue warn]: Failed to mount component: template or render function not defined. (found in root instance)</code></h3><blockquote>
+<p>解决方法：</p>
+</blockquote>
+<p><code>vue2.0</code>的脚手架, <code>webpack.base.conf.js</code>的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">alias: &#123;</div><div class="line">      <span class="string">'vue'</span>: <span class="string">'vue/dist/vue.common.js'</span>,<span class="comment">//注意这边改为vue.js 不然就报错</span></div><div class="line">      <span class="string">'src'</span>: path.resolve(__dirname, <span class="string">'../src'</span>),</div><div class="line">      <span class="string">'assets'</span>: path.resolve(__dirname, <span class="string">'../src/assets'</span>),</div><div class="line">      <span class="string">'components'</span>: path.resolve(__dirname, <span class="string">'../src/components'</span>)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p><code>import Vue from &#39;vue&#39;</code>,默认引是<code>vue.common.js</code></p>
+<h3 id="transition-quot-bounce-quot-改为"><a href="#transition-quot-bounce-quot-改为" class="headerlink" title=":transition=&quot;bounce&quot;  改为 "></a><code>:transition=&quot;bounce&quot;</code>  改为 <transition name="bounce"></transition></h3><p><strong>新版本</strong> 改为标签类型，多个引用 <code>transition-group</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;transition-group name=<span class="string">"list"</span> tag=<span class="string">"p"</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">v-bind:key</span>=<span class="string">"item"</span> <span class="attr">class</span>=<span class="string">"list-item"</span>&gt;</span></span></div><div class="line">      &#123;&#123; item &#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">  &lt;<span class="regexp">/transition-group&gt;</span></div></pre></td></tr></table></figure>
+<p>配合 <code>animate.css</code>  <code>import Animate from &#39;animate.css &#39;</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;transition name=<span class="string">"custom-classes-transition"</span></div><div class="line">  enter-active-<span class="class"><span class="keyword">class</span></span>=<span class="string">"animated tada"</span> <span class="comment">//进行中时的动画</span></div><div class="line">  leave-active-<span class="class"><span class="keyword">class</span></span>=<span class="string">"animated bounceOutRight"</span>&gt;<span class="comment">//结束离开时的动画</span></div><div class="line">  &lt;panel-casesShow v-show=<span class="string">"isShow == true"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">panel-casesShow</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2>]]></content>
     
     <summary type="html">
     
