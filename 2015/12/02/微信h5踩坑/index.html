@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,微信开发," />
+  <meta name="keywords" content="微信开发,移动端," />
 
 
 
@@ -68,7 +68,7 @@
 <meta property="og:description" content="1.1微信浏览器不支持scroll属性最近在做一个全屏的移动端h5页面，需要用js获取设备的高度进行计算，刚好有一个模块类似于列表，需要实现一个适配各自机型的，在全屏下该模块内容溢出，出现滚动条。在移动端页面，若对某个dom元素或模块使用了overflow:scroll，我才发现，在手机上滑动这个模块或页面会比较卡顿。 坑啊~~
 解决方案：1.用原生的iscroll.js 实现滚动效果（感觉为了一">
 <meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/ht.jpg">
-<meta property="og:updated_time" content="2016-05-17T13:11:01.000Z">
+<meta property="og:updated_time" content="2016-10-04T02:50:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信h5踩坑">
 <meta name="twitter:description" content="1.1微信浏览器不支持scroll属性最近在做一个全屏的移动端h5页面，需要用js获取设备的高度进行计算，刚好有一个模块类似于列表，需要实现一个适配各自机型的，在全屏下该模块内容溢出，出现滚动条。在移动端页面，若对某个dom元素或模块使用了overflow:scroll，我才发现，在手机上滑动这个模块或页面会比较卡顿。 坑啊~~
@@ -256,7 +256,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,032</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,198</span>
 
           
             
@@ -306,6 +306,8 @@
 </ul>
 <p>测试下来，发现微信内置浏览器，长按二维码不能识别;<br>搜了半天，大多都是微信旧版本的bug。<br>然后把收集的bug，一一排除后，发现微信最新版本貌似无法识别<code>meta viweport</code>;</p>
 <p>固最终解决方案：既然不能识别动态<code>meta</code>,那固定设置一个呗，果然识别了- -<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="移动设备上iframe滚动条自动适应高度的问题"><a href="#移动设备上iframe滚动条自动适应高度的问题" class="headerlink" title="移动设备上iframe滚动条自动适应高度的问题"></a>移动设备上iframe滚动条自动适应高度的问题</h2><p>在移动设备上<code>（ios，Android）</code>不支持 <code>iframe</code> 出现 <strong>滚动条</strong> ，当 <code>iframe</code> 的内容超出其宽度或高度的时候，<code>iframe</code> 会自动适应内容的宽度或高度</p>
+<p>在 <code>iframe</code>外面套一个 <code>div</code>, 超过固定高度。<code>overflow: scroll</code>, <code>iframe</code>设置宽高 <code>100%</code></p>
 
       
     </div>
@@ -314,9 +316,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
-          
             <a href="/tags/微信开发/" rel="tag">#微信开发</a>
+          
+            <a href="/tags/移动端/" rel="tag">#移动端</a>
           
         </div>
       
@@ -415,7 +417,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">97.7k</span>
+              <span class="site-state-item-count">97.8k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>
@@ -506,7 +508,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1微信浏览器不支持scroll属性"><span class="nav-number">1.</span> <span class="nav-text">1.1微信浏览器不支持scroll属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2安卓2-3版本不支持百分比，Safari-低版本圆角问题"><span class="nav-number">2.</span> <span class="nav-text">1.2安卓2.3版本不支持百分比，Safari 低版本圆角问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3微信窗口算顶部栏目-高度为88"><span class="nav-number">3.</span> <span class="nav-text">1.3微信窗口算顶部栏目 高度为88</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4ios微信内置浏览器长按二维码不能识别"><span class="nav-number">4.</span> <span class="nav-text">1.4ios微信内置浏览器长按二维码不能识别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1微信浏览器不支持scroll属性"><span class="nav-number">1.</span> <span class="nav-text">1.1微信浏览器不支持scroll属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2安卓2-3版本不支持百分比，Safari-低版本圆角问题"><span class="nav-number">2.</span> <span class="nav-text">1.2安卓2.3版本不支持百分比，Safari 低版本圆角问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3微信窗口算顶部栏目-高度为88"><span class="nav-number">3.</span> <span class="nav-text">1.3微信窗口算顶部栏目 高度为88</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4ios微信内置浏览器长按二维码不能识别"><span class="nav-number">4.</span> <span class="nav-text">1.4ios微信内置浏览器长按二维码不能识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动设备上iframe滚动条自动适应高度的问题"><span class="nav-number">5.</span> <span class="nav-text">移动设备上iframe滚动条自动适应高度的问题</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
