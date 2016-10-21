@@ -213,15 +213,104 @@
 
     
     
+
+    
       
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/21/JS-Tips/" itemprop="url">
+                  JS Tips
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-21T14:06:38+08:00" content="2016-10-21 14:06:38">
+              2016-10-21 14:06:38
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;0</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/21/JS-Tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/21/JS-Tips/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        
-        
-        
       
 
       
-    
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -776,107 +865,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/22/hexo常见报错/" itemprop="url">
-                  Hexo npm 常见报错
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-avatar">
-            <a class="avatar site-author-image"/></a>
-          </span>
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-22T10:22:43+08:00" content="2016-05-22 10:22:43">
-              2016-05-22 10:22:43
-            </time>
-          </span>
-
-
-          
-
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;395</span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/22/hexo常见报错/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/22/hexo常见报错/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>报错如下：</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">➜  Vuepack.github.io git:(develop) ✗ hexo -v</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">hexo: 3.2.0</div><div class="line">hexo-cli: 1.0.1</div><div class="line">os: Darwin 15.4.0 darwin x64</div><div class="line">http_parser: 2.5.2</div><div class="line">node: 4.4.4</div><div class="line">v8: 4.5.103.35</div><div class="line">uv: 1.8.0</div><div class="line">zlib: 1.2.8</div><div class="line">ares: 1.10.1-DEV</div><div class="line">icu: 56.1</div><div class="line">modules: 46</div><div class="line">openssl: 1.0.2h</div></pre></td></tr></table></figure></p>
-<p>解决方案：<br>缺少 <code>dtrace-provider</code> 这个 <code>module</code>，可以 <code>cd /Users/kevinli/.npm/</code> 查看是否有这个模块<br>注意要记得翻墙执行以下命令：</p>
-<p> 1.执行 <code>npm uninstall hexo</code> 卸载 <code>hexo</code>；<br> 2.执行 <code>npm install -g hexo --no-optional</code>；<br> 3.<code>cd</code> 到博客目录，删除 <code>db.json</code>，执行 <code>npm install</code> ，重新安装 <code>package.json</code> 中配置的依赖库<strong> (node_modules) </strong>；<br> 4.依次执行 <code>hexo clean</code> 和 <code>hexo s</code> ，查看是否报错</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -924,7 +912,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">38</span>
+              <span class="site-state-item-count">39</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -213,11 +213,114 @@
 
     
     
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/23/安卓非微信浏览器呼出高德地图App/" itemprop="url">
+                  安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-23T12:44:42+08:00" content="2015-10-23 12:44:42">
+              2015-10-23 12:44:42
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,141</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/23/安卓非微信浏览器呼出高德地图App/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/23/安卓非微信浏览器呼出高德地图App/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
-    
+        
+          <p>大家都知道微信屏蔽了呼起App，除非App应用在腾讯的应用宝上架跳转貌似可以呼起，不过没尝试。<br>不过此方案劳身费神，所以否决</p>
+<hr>
+<h2 id="解决方案1："><a href="#解决方案1：" class="headerlink" title="解决方案1："></a>解决方案1：</h2><p>微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器</p>
+<ol>
+<li>是的话调用web版高德地图  (<strong>注意：这边调用高德地图参数先是维度再是经度 坑~~</strong>)</li>
+<li>不是的话呼起高德地图App (<strong>这边我是创建iframe的方式把App打开协议服务地址赋值给src，通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为</strong>) 【这边a标签链接是Appstore下载高德地图的链接】</li>
+</ol>
+<h3 id="html代码：一个a链接-href为高德appstore下载链接"><a href="#html代码：一个a链接-href为高德appstore下载链接" class="headerlink" title="html代码：一个a链接 href为高德appstore下载链接"></a>html代码：一个a链接 href为高德appstore下载链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"oPenMap"</span> <span class="attr">class</span>=<span class="string">"location"</span> <span class="attr">href</span>=<span class="string">"https://itunes.apple.com/app/id461703208?spm=0.0.0.0.6cS3kh&amp;ls=1&amp;mt=8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/23/安卓非微信浏览器呼出高德地图App/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -478,7 +581,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">38</span>
+              <span class="site-state-item-count">39</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
