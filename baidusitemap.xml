@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>https://github.com/lizhoukai/2016/11/26/VUE%E5%9C%A8%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/</loc>
+    <lastmod>2016-11-26T14:31:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>VUE在购物车的应用场景</title>
+        <pubTime>2016-11-26T09:20:07.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>VUE</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://github.com/lizhoukai/2015/12/02/%E5%BE%AE%E4%BF%A1h5%E8%B8%A9%E5%9D%91/</loc>
     <lastmod>2016-10-04T02:50:42.000Z</lastmod>
     <data>
@@ -649,6 +668,24 @@
     
     
   <url>
+    <loc>https://github.com/lizhoukai/2016/03/28/%E7%90%86%E8%A7%A3jsonP%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BC%98%E7%BC%BA%E7%82%B9/</loc>
+    <lastmod>2016-05-17T12:07:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>理解jsonP的原理和优缺点</title>
+        <pubTime>2016-03-28T13:11:00.000Z</pubTime>
+        
+        <tag>jsonp</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>https://github.com/lizhoukai/2016/04/12/JS%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0/</loc>
     <lastmod>2016-05-17T12:07:33.000Z</lastmod>
     <data>
@@ -665,22 +702,4 @@
     </url>
 
     
-    
-    
-  <url>
-    <loc>https://github.com/lizhoukai/2016/03/28/%E7%90%86%E8%A7%A3jsonP%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BC%98%E7%BC%BA%E7%82%B9/</loc>
-    <lastmod>2016-05-17T12:07:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>理解jsonP的原理和优缺点</title>
-        <pubTime>2016-03-28T13:11:00.000Z</pubTime>
-        
-        <tag>jsonp</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
 </urlset>

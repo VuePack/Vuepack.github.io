@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="JavaScript,VUE," />
 
 
 
@@ -59,25 +59,20 @@
 
 
 
-<meta name="description" content="window是js中的”老大“
-this： 指的是调用 当前 方法（函数）的那个对象
-
-默认函数指向的是 window如果对象在执行语句块内或作用域内用到this关键字，指向的是当前对象但如果执行了匿名函数内执行了另外一个函数内的this，指向的是window">
+<meta name="description" content="最终效果图：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解this指向和this应用">
-<meta property="og:url" content="https://github.com/lizhoukai/2015/11/01/理解this指向和this应用/index.html">
+<meta property="og:title" content="VUE在购物车的应用场景">
+<meta property="og:url" content="https://github.com/lizhoukai/2016/11/26/VUE在购物车的应用场景/index.html">
 <meta property="og:site_name" content="Leon's Daily">
-<meta property="og:description" content="window是js中的”老大“
-this： 指的是调用 当前 方法（函数）的那个对象
-
-默认函数指向的是 window如果对象在执行语句块内或作用域内用到this关键字，指向的是当前对象但如果执行了匿名函数内执行了另外一个函数内的this，指向的是window">
-<meta property="og:updated_time" content="2016-05-26T02:19:53.000Z">
+<meta property="og:description" content="最终效果图：">
+<meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2016112621608cart.gif">
+<meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2016112688583_cart.png">
+<meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2016112625364model.png">
+<meta property="og:updated_time" content="2016-11-26T14:31:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解this指向和this应用">
-<meta name="twitter:description" content="window是js中的”老大“
-this： 指的是调用 当前 方法（函数）的那个对象
-
-默认函数指向的是 window如果对象在执行语句块内或作用域内用到this关键字，指向的是当前对象但如果执行了匿名函数内执行了另外一个函数内的this，指向的是window">
+<meta name="twitter:title" content="VUE在购物车的应用场景">
+<meta name="twitter:description" content="最终效果图：">
+<meta name="twitter:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2016112621608cart.gif">
 
 
 
@@ -95,7 +90,7 @@ this： 指的是调用 当前 方法（函数）的那个对象
   };
 </script>
 
-  <title> 理解this指向和this应用 | Leon's Daily </title>
+  <title> VUE在购物车的应用场景 | Leon's Daily </title>
   <script src="https://cdn.bootcss.com/vue/1.0.14/vue.min.js"></script>
 </head>
 
@@ -237,7 +232,7 @@ this： 指的是调用 当前 方法（函数）的那个对象
             
             
               
-                理解this指向和this应用
+                VUE在购物车的应用场景
               
             
           </h1>
@@ -252,22 +247,22 @@ this： 指的是调用 当前 方法（函数）的那个对象
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-01T14:28:43+08:00" content="2015-11-01 14:28:43">
-              2015-11-01 14:28:43
+            <time itemprop="dateCreated" datetime="2016-11-26T17:20:07+08:00" content="2016-11-26 17:20:07">
+              2016-11-26 17:20:07
             </time>
           </span>
 
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,967</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,438</span>
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/01/理解this指向和this应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/01/理解this指向和this应用/" itemprop="commentsCount"></span>
+                <a href="/2016/11/26/VUE在购物车的应用场景/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/26/VUE在购物车的应用场景/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -290,32 +285,32 @@ this： 指的是调用 当前 方法（函数）的那个对象
       
 
       
-        <ul>
-<li><code>window</code>是js中的”老大“</li>
-<li><code>this</code>： 指的是调用 当前 方法（函数）的那个对象</li>
-</ul>
-<p>默认函数指向的是 <code>window</code><br>如果对象在执行<code>语句块内</code>或<code>作用域内</code>用到<code>this</code>关键字，指向的是当前对象<br>但如果执行了匿名函数内执行了另外一个函数内的<code>this</code>，指向的是<code>window</code></p>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">fn1();<span class="comment">// [object Window]</span></div><div class="line"></div><div class="line"><span class="comment">//上述代码中执行函数fn1()相当于window.fn1();因此，在函数体内弹出这个this是window。</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">oBtn.onclick = fn1; <span class="comment">// [object HTMLInputElement]</span></div><div class="line"></div><div class="line"><span class="comment">//上述代码，点击oBtn按钮，弹出的就不再是oBtn这个对象，而是window。</span></div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"btn2"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"按钮2"</span> <span class="attr">onclick</span>=<span class="string">"alert(this)"</span> /&gt;</span>// [object HTMLInputElement]</div><div class="line"></div><div class="line">//上述代码是行间事件，onclick的作用域在 " "之间， 弹出的this就是这个按钮btn2。</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function fn1()&#123;</div><div class="line">    alert(this);</div><div class="line">&#125;</div><div class="line">&lt;input id="btn2" type="button" onclick="fn1();" value="按钮2” /&gt; // [object Window]</div><div class="line"></div><div class="line">//上述代码中，弹出的this就是window。</div></pre></td></tr></table></figure>
-<blockquote>
-<p>this: 调用当前方法（函数）的那个对象案例：</p>
+        <h2 id="最终效果图："><a href="#最终效果图：" class="headerlink" title="最终效果图："></a>最终效果图：</h2><p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016112621608cart.gif" alt="实例"><br><a id="more"></a></p>
+<h2 id="购物车脑图"><a href="#购物车脑图" class="headerlink" title="购物车脑图"></a>购物车脑图</h2><blockquote>
+<p>简单大致画了下，一些小细节没包含</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">fn1(); <span class="comment">//this ＝&gt; window</span></div><div class="line"></div><div class="line">oDiv.onclick = fn1; <span class="comment">//this =&gt; oDiv</span></div><div class="line"></div><div class="line">oDiv.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span> <span class="comment">// =&gt; oDiv</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">oDiv.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    fn1(); <span class="comment">// fn1()里面的this =&gt; window</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div onclick=<span class="string">"  this  "</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> <span class="comment">//this =&gt; div</span></div><div class="line"></div><div class="line">&lt;div onclick = <span class="string">"  fn1();  "</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>  <span class="comment">//fn1()里面的this =&gt; window</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">fn1(<span class="keyword">this</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  obj <span class="comment">//=&gt; window</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">oDiv.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span></div><div class="line">  fn1(<span class="keyword">this</span>);<span class="comment">//当前对象参数传递</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">obj</span>)</span>&#123; obj <span class="comment">//=&gt; oDiv &#125;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮1"</span> /&gt;</div><div class="line">&lt;input type="button" value="按钮2" /&gt;</div><div class="line">&lt;input type="button" value="按钮3" /&gt;</div><div class="line"></div><div class="line">var aBtn = document.getElementsByTagName('input');</div><div class="line">for(var i=0; i&lt;aBtn.length; i++) &#123;</div><div class="line">  aBtn[i].onclick = function()&#123;</div><div class="line">    this.style.background = 'yellow';</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  上述代码的作用与下面这段代码的作用等价，注意that的使用方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮1"</span> /&gt;</div><div class="line">&lt;input type="button" value="按钮2" /&gt;</div><div class="line">&lt;input type="button" value="按钮3" /&gt;</div><div class="line"></div><div class="line">var aBtn = document.getElementsByTagName('input');</div><div class="line">var that = null;</div><div class="line"></div><div class="line">for(var i=0; i&lt;aBtn.length; i++) &#123;</div><div class="line">  aBtn[i].onclick = function()&#123;</div><div class="line">    that = this;</div><div class="line">    fn1();</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function fn1()&#123;</div><div class="line">  //this =&gt; window</div><div class="line">  that.style.background = 'yellow';</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  上述代码还等价于下面这段代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮1"</span> /&gt;</div><div class="line">&lt;input type="button" value="按钮2" /&gt;</div><div class="line">&lt;input type="button" value="按钮3" /&gt;</div><div class="line"></div><div class="line">var aBtn = document.getElementsByTagName('input');</div><div class="line"></div><div class="line">for(var i=0; i&lt;a.aBtn.length; i++) &#123;</div><div class="line">  aBtn[i].onclick = fn1; //注意不要在fn1后面加括号</div><div class="line">&#125;</div><div class="line"></div><div class="line">function fn1()&#123;</div><div class="line">  this.style.background = 'yellow';</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>DEMO：</code></p>
-<ul>
-<li><a href="http://sandbox.runjs.cn/show/39i8mast" target="_blank" rel="external">鼠标经过弹出提示框</a></li>
-<li><a href="view-source:http://sandbox.runjs.cn/show/j4fajpjx" target="_blank" rel="external">奇偶横竖排判断</a></li>
-<li><a href="http://sandbox.runjs.cn/show/w2k1b77g" target="_blank" rel="external">选项卡交叉同步走</a></li>
-</ul>
+<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016112688583_cart.png" alt="cart.png"></p>
+<h2 id="数据块"><a href="#数据块" class="headerlink" title="数据块"></a>数据块</h2><p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016112625364model.png" alt="model"><br>首次从服务器获取的数据，绑定到 <code>Model</code> 层，然后进行 <code>DOM</code> 编译，渲染到 <code>VIEW</code> 层。<br>每次用户的操作，产生的状态或者数据的变化，不管是 <code>Model</code> 层或者 <code>VIEW</code> 层，都会实时响应，更新视图和数据，保持视图与数据的一致。</p>
+<p>这边考虑几点，哪些状态或者数据是唯一的，抽取出来放入 <code>DATA</code> 中。列如：<strong>全选按钮</strong> 、<strong>总金额</strong> 、<strong>总吨数</strong>；</p>
+<h2 id="功能块"><a href="#功能块" class="headerlink" title="功能块"></a>功能块</h2><h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><p>多选这栏，之前用的是 <strong>v-model</strong>，双向绑定，现在已被剔除。现在改用 <code>@click</code>事件。<br>考虑以后选择状态会保存在服务器上，与后端协调接口增加 <strong>default</strong> 字段，方便后面的过滤。</p>
+<blockquote>
+<p>选择这块有几个小细节逻辑，</p>
+</blockquote>
+<p>1.首次进入购物车，渲染页面的时候，如果当前的商品 <code>default != 1</code>，复选框就不会被选中。<br>2.选中当前的商品会计算响应当前的吨数、价格。若当前没选中，为了防止修改 <code>input</code> 框内的数量，这边我现在是禁止修改的。（😄 偷了个懒）。<br>理论上当前的商品未选中，修改数量，当前的复选框会再次被选中。<br>3.若选中的商品数量等于商品的总数量，那么全选的复选框应该选中。</p>
+<blockquote>
+<p>code:</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"goods-checkbox"</span>  <span class="attr">:checked</span>=<span class="string">"item.default == 1 ? true : false"</span>  @<span class="attr">click</span>=<span class="string">"isCheck($index,$event)"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p><code>v-model</code>，这边双向绑定的是 <strong>吨数</strong> 、<strong>包数</strong> 。<br><code>v-model</code> 是不支持 <strong>索引</strong> 的，所以这边我加入了 <code>过滤器</code> ；用于过滤非法字符和整数和小数位。<br>过滤器有两个函数，<code>read</code> 指的是 <code>model -&gt; view</code>, <code>write</code> 指的是 <code>view -&gt; model</code>。这边要注意的是 <code>read</code> 只负责 <code>view</code>层的渲染，<code>write</code> 负责若 <code>model</code>层的更新 ，<code>model</code> 数据没有变化，是不会执行 <code>read</code> 函数。</p>
+<p>当前商品吨数计算，这边我直接在 <code>for</code> 循环渲染的列表 <code>html</code>里，放了个 <strong>函数</strong> ，传入当前绑定的 <code>吨数</code> 和 <code>包数</code>,同样价格也一样。</p>
+<blockquote>
+<p>code:</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">filters: &#123;</div><div class="line">    filterByDot: &#123;</div><div class="line">        <span class="comment">// model -&gt; view</span></div><div class="line">        read: <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (num == <span class="number">0</span> || <span class="built_in">isNaN</span>(num)) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">'0'</span>;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.hasDot(num))&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.dotSplit(num);</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">return</span> num;</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="comment">// view -&gt; model</span></div><div class="line">        write: <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (num == <span class="number">0</span> || <span class="built_in">isNaN</span>(num)) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="string">'0'</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> num.split(<span class="string">'.'</span>)[<span class="number">0</span>];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    ....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><p>这个简单，不说！</p>
+<h3 id="submit"><a href="#submit" class="headerlink" title="submit"></a>submit</h3><p>这个就过滤选中状态数据，也简单不说！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>多思考，就多个解决方案。话说购物车第一次写，在 PM 需求的变更下，默默的重构了3次！比第一次写的代码量少了一半，坑爹，不过这次的重构感觉颇为满意，加入了不少黑魔法糖，多了些解决思路。</p>
+<p>距离年终总结，还是一个月不到了！去年定的 <code>构建大型单页应用商城（webapp）</code> 目标，我才刚画完原型图，干吧得啊！</p>
 
       
     </div>
@@ -326,6 +321,8 @@ this： 指的是调用 当前 方法（函数）的那个对象
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
+            <a href="/tags/VUE/" rel="tag">#VUE</a>
+          
         </div>
       
 
@@ -333,17 +330,13 @@ this： 指的是调用 当前 方法（函数）的那个对象
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/01/理解作用域/" rel="next" title="理解作用域">
-                <i class="fa fa-chevron-left"></i> 理解作用域
+              <a href="/2016/09/23/VUE学习工作笔记/" rel="next" title="VUE学习工作笔记">
+                <i class="fa fa-chevron-left"></i> VUE学习工作笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/01/理解函数返回值-return详解及应用/" rel="prev" title="理解函数返回值-return详解及应用">
-                理解函数返回值-return详解及应用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -369,8 +362,8 @@ this： 指的是调用 当前 方法（函数）的那个对象
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/01/理解this指向和this应用/"
-           data-title="理解this指向和this应用" data-url="https://github.com/lizhoukai/2015/11/01/理解this指向和this应用/">
+      <div class="ds-thread" data-thread-key="2016/11/26/VUE在购物车的应用场景/"
+           data-title="VUE在购物车的应用场景" data-url="https://github.com/lizhoukai/2016/11/26/VUE在购物车的应用场景/">
       </div>
     
   </div>
@@ -514,7 +507,7 @@ this： 指的是调用 当前 方法（函数）的那个对象
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#最终效果图："><span class="nav-number">1.</span> <span class="nav-text">最终效果图：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#购物车脑图"><span class="nav-number">2.</span> <span class="nav-text">购物车脑图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据块"><span class="nav-number">3.</span> <span class="nav-text">数据块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能块"><span class="nav-number">4.</span> <span class="nav-text">功能块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#select"><span class="nav-number">4.1.</span> <span class="nav-text">select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model"><span class="nav-number">4.2.</span> <span class="nav-text">v-model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete"><span class="nav-number">4.3.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#submit"><span class="nav-number">4.4.</span> <span class="nav-text">submit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
