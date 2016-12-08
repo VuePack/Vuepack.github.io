@@ -32,10 +32,6 @@
 
 
 
-  <link href="http://fonts.gmirror.org/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
-
-
-
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
@@ -69,15 +65,15 @@
 <meta property="og:description" content="网站需要接入一个微信登录的功能。于是知乎了下，了解了下原理
 （1）每打开一次微信网页版页面的时候会随机生成一个含有唯一uuid的二维码，每次刷新页面都会不一样（这个可以保证一个 uuid只可以绑定一个账号和密码，如果一个uuid可以绑定多个账号和密码，那么很可能你的电脑会登陆别人的微信）；
 确实返回了唯一 id，但目的是为了识别用户身份，而且实际上打开这个页面的时候浏览器已经和 Server 创建">
-<meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/weixin.png">
+<meta property="og:image" content="https://ohv0hyr4v.qnssl.com/weixin.png">
 <meta property="og:image" content="https://res.wx.qq.com/open/zh_CN/htmledition/res/img/pic/web-wxlogin/12168b9.png">
-<meta property="og:updated_time" content="2016-05-17T13:11:52.000Z">
+<meta property="og:updated_time" content="2016-12-08T09:47:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pc网站微信登录开发">
 <meta name="twitter:description" content="网站需要接入一个微信登录的功能。于是知乎了下，了解了下原理
 （1）每打开一次微信网页版页面的时候会随机生成一个含有唯一uuid的二维码，每次刷新页面都会不一样（这个可以保证一个 uuid只可以绑定一个账号和密码，如果一个uuid可以绑定多个账号和密码，那么很可能你的电脑会登陆别人的微信）；
 确实返回了唯一 id，但目的是为了识别用户身份，而且实际上打开这个页面的时候浏览器已经和 Server 创建">
-<meta name="twitter:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/weixin.png">
+<meta name="twitter:image" content="https://ohv0hyr4v.qnssl.com/weixin.png">
 
 
 
@@ -265,7 +261,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;958</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;955</span>
 
           
             
@@ -299,7 +295,7 @@
 <p>（1）每打开一次微信网页版页面的时候会随机生成一个含有唯一<code>uuid</code>的二维码，每次刷新页面都会不一样（这个可以保证一个 <code>uuid</code>只可以绑定一个账号和密码，如果一个<code>uuid</code>可以绑定多个账号和密码，那么很可能你的电脑会登陆别人的微信）；</p>
 <p>确实返回了唯一 id，但目的是为了识别用户身份，而且实际上打开这个页面的时候浏览器已经和 Server 创建了一个长连接等待确认信息。查看 <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx4b58644b2d59e8c9&amp;redirect_uri=http%3A%2F%2Fapi.date.tm&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect" target="_blank" rel="external">https://open.weixin.qq.com/connect/qrconnect?appid=wx4b58644b2d59e8c9&amp;redirect_uri=http%3A%2F%2Fapi.date.tm&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect</a> 的源码可以看到，这个页面在加载完毕时，也已经把很多登录后才需要的相关资源都预先加载进来了，所以长连接等待登录用户得到确认后展示用户信息的速度很快，因为无需刷页面和加载头像外的其他资源。</p>
 <a id="more"></a>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/weixin.png" alt="微信图片"></p>
+<p><img src="https://ohv0hyr4v.qnssl.com/weixin.png" alt="微信图片"></p>
 <p>（2）当用户使用登陆后的微信扫描该二维码的时候，会将这个id和手机上的微信账号及密码绑定，并上传到微信网页版服务器；</p>
 <ul>
 <li>1.在浏览器生成二维码，二维码中包含登录信息和服务端给它生成了一个唯一标识码UUID，同时服务端监听服务端登录请求；</li>
@@ -422,7 +418,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">99.3k</span>
+              <span class="site-state-item-count">99.1k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

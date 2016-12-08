@@ -32,10 +32,6 @@
 
 
 
-  <link href="http://fonts.gmirror.org/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
-
-
-
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
@@ -63,11 +59,11 @@
 <meta property="og:title" content="JS获取URL中GET的参数转换为JSON格式">
 <meta property="og:url" content="https://likr.cn/2016/08/25/JS获取URL中GET的参数转换为JSON格式/index.html">
 <meta property="og:site_name" content="Leon's Daily">
-<meta property="og:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2016082523067mall.gif">
-<meta property="og:updated_time" content="2016-08-25T13:40:21.000Z">
+<meta property="og:image" content="https://ohv0hyr4v.qnssl.com/2016082523067mall.gif">
+<meta property="og:updated_time" content="2016-12-08T09:47:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS获取URL中GET的参数转换为JSON格式">
-<meta name="twitter:image" content="http://7xnjvz.com1.z0.glb.clouddn.com/2016082523067mall.gif">
+<meta name="twitter:image" content="https://ohv0hyr4v.qnssl.com/2016082523067mall.gif">
 
 
 
@@ -255,7 +251,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,301</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,298</span>
 
           
             
@@ -285,20 +281,20 @@
       
 
       
-        <p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016082523067mall.gif" alt="2016082523067mall.gif"></p>
+        <p><img src="https://ohv0hyr4v.qnssl.com/2016082523067mall.gif" alt="2016082523067mall.gif"></p>
 <a id="more"></a>
 <h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>商城页的分页组件和顶部的TAG选项的筛选条件。</p>
-<p>当分页器默认点击所有商品页下一页的时候，<code>url</code>后会添加一个<code>page=2</code>翻页。然后点击 <strong>TAG</strong> 的时候，<code>url</code>也随应也加上参数<code>categories=1</code> </p>
+<p>当分页器默认点击所有商品页下一页的时候，<code>url</code>后会添加一个<code>page=2</code>翻页。然后点击 <strong>TAG</strong> 的时候，<code>url</code>也随应也加上参数<code>categories=1</code></p>
 <p>现在遇到的问题:</p>
 <blockquote>
 <p>1.如果当前<strong>TAG</strong>筛选的商品比较少，只够展示一页的数据，那么当前<code>page=2</code>，是不是应该只展示第一页的数据。<br>2.每次点击翻页，分页器都会<strong>JS</strong>重新获取 <code>window.location.search</code> <strong>URl ？</strong>号后面的<code>get</code>参数，但是分页器翻页的时候，下一页比如<code>page=3</code>，当前 <strong>URL</strong> 的也包含了上一次的<code>page=2</code>，这时候要过滤之前的参数。</p>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><code>window.location.search</code>获取当前<strong>URL</strong>后面的<code>get</code>参数，然后转换成<strong>JS对象</strong>，列如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	page:<span class="number">1</span>,</div><div class="line">	categories:[</div><div class="line">		<span class="string">"1"</span>,</div><div class="line">		<span class="string">"2"</span></div><div class="line">	], </div><div class="line">	producer:[</div><div class="line">		<span class="string">"2"</span>,</div><div class="line">		<span class="string">"3"</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	page:<span class="number">1</span>,</div><div class="line">	categories:[</div><div class="line">		<span class="string">"1"</span>,</div><div class="line">		<span class="string">"2"</span></div><div class="line">	],</div><div class="line">	producer:[</div><div class="line">		<span class="string">"2"</span>,</div><div class="line">		<span class="string">"3"</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>然后对这个<strong>对象</strong>进行参数修改<br>接着再把这个对象转换成<code>url</code>中的<code>get</code>字符串，成为一个新的链接地址</p>
 <h2 id="需要的知识点"><a href="#需要的知识点" class="headerlink" title="需要的知识点"></a>需要的知识点</h2><p>对象转JSON，JSON转对象：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;<span class="string">"name"</span>:<span class="string">"tom"</span>,<span class="string">"sex"</span>:<span class="string">"男"</span>,<span class="string">"age"</span>:<span class="string">"24"</span>&#125;; </div><div class="line"><span class="keyword">var</span> b=<span class="string">'&#123;"name":"Mike","sex":"女","age":"29"&#125;'</span>;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> aToStr=<span class="built_in">JSON</span>.stringify(a);</div><div class="line"><span class="keyword">var</span> bToObj=<span class="built_in">JSON</span>.parse(b);</div><div class="line"> </div><div class="line">alert(<span class="keyword">typeof</span>(aToStr));  <span class="comment">//string</span></div><div class="line">alert(<span class="keyword">typeof</span>(bToObj));<span class="comment">//object</span></div></pre></td></tr></table></figure>
-<p>分页取余：<br><code>Math.random()</code><br><strong>random()</strong><br>返回 0 ~ 1 之间的随机数。    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;<span class="string">"name"</span>:<span class="string">"tom"</span>,<span class="string">"sex"</span>:<span class="string">"男"</span>,<span class="string">"age"</span>:<span class="string">"24"</span>&#125;;</div><div class="line"><span class="keyword">var</span> b=<span class="string">'&#123;"name":"Mike","sex":"女","age":"29"&#125;'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> aToStr=<span class="built_in">JSON</span>.stringify(a);</div><div class="line"><span class="keyword">var</span> bToObj=<span class="built_in">JSON</span>.parse(b);</div><div class="line"></div><div class="line">alert(<span class="keyword">typeof</span>(aToStr));  <span class="comment">//string</span></div><div class="line">alert(<span class="keyword">typeof</span>(bToObj));<span class="comment">//object</span></div></pre></td></tr></table></figure>
+<p>分页取余：<br><code>Math.random()</code><br><strong>random()</strong><br>返回 0 ~ 1 之间的随机数。</p>
 <p><code>Math.ceil()</code><br><strong>ceil()</strong> 方法可对一个数进行上舍入。<br>参数必须是一个数值。返回值大于等于 x，并且与它最接近的整数。</p>
 <p><code>Math.floor()</code><br><strong>floor()</strong> 方法可对一个数进行下舍入。<br>参数可以是任意数值或表达式。返回值小于等于 x，且与 x 最接近的整数。</p>
 <p><code>Math.round()</code><br><strong>round()</strong> 方法可把一个数字舍入为最接近的整数</p>
@@ -410,7 +406,7 @@
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">99.3k</span>
+              <span class="site-state-item-count">99.1k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>

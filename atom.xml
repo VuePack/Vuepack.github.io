@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://likr.cn/"/>
-  <updated>2016-12-08T08:10:41.000Z</updated>
+  <updated>2016-12-08T09:47:44.000Z</updated>
   <id>https://likr.cn/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="https://likr.cn/2016/11/26/VUE%E5%9C%A8%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
     <id>https://likr.cn/2016/11/26/VUE在购物车的应用场景/</id>
     <published>2016-11-26T09:20:07.000Z</published>
-    <updated>2016-12-08T08:10:41.000Z</updated>
+    <updated>2016-12-08T09:47:44.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="购物车脑图"><a href="#购物车脑图" class="headerlink" title="购物车脑图"></a>购物车脑图</h2><blockquote>
 <p>简单大致画了下，一些小细节没包含</p>
 </blockquote>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016112688583_cart.png" alt="cart.png"><br><a id="more"></a></p>
-<h2 id="最终效果图："><a href="#最终效果图：" class="headerlink" title="最终效果图："></a>最终效果图：</h2><p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016112621608cart.gif" alt="实例"></p>
-<h2 id="数据块"><a href="#数据块" class="headerlink" title="数据块"></a>数据块</h2><p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016112625364model.png" alt="model"><br>首次从服务器获取的数据，绑定到 <code>Model</code> 层，然后进行 <code>DOM</code> 编译，渲染到 <code>VIEW</code> 层。<br>每次用户的操作，产生的状态或者数据的变化，不管是 <code>Model</code> 层或者 <code>VIEW</code> 层，都会实时响应，更新视图和数据，保持视图与数据的一致。</p>
+<p><img src="https://ohv0hyr4v.qnssl.com/2016112688583_cart.png" alt="cart.png"><br><a id="more"></a></p>
+<h2 id="最终效果图："><a href="#最终效果图：" class="headerlink" title="最终效果图："></a>最终效果图：</h2><p><img src="https://ohv0hyr4v.qnssl.com/2016112621608cart.gif" alt="实例"></p>
+<h2 id="数据块"><a href="#数据块" class="headerlink" title="数据块"></a>数据块</h2><p><img src="https://ohv0hyr4v.qnssl.com/2016112625364model.png" alt="model"><br>首次从服务器获取的数据，绑定到 <code>Model</code> 层，然后进行 <code>DOM</code> 编译，渲染到 <code>VIEW</code> 层。<br>每次用户的操作，产生的状态或者数据的变化，不管是 <code>Model</code> 层或者 <code>VIEW</code> 层，都会实时响应，更新视图和数据，保持视图与数据的一致。</p>
 <p>这边考虑几点，哪些状态或者数据是唯一的，抽取出来放入 <code>DATA</code> 中。列如：<strong>全选按钮</strong> 、<strong>总金额</strong> 、<strong>总吨数</strong>；</p>
 <h2 id="功能块"><a href="#功能块" class="headerlink" title="功能块"></a>功能块</h2><h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><p>多选这栏，之前用的是 <strong>v-model</strong>，双向绑定，现在已被剔除。现在改用 <code>@click</code>事件。<br>考虑以后选择状态会保存在服务器上，与后端协调接口增加 <strong>default</strong> 字段，方便后面的过滤。</p>
 <blockquote>
@@ -55,7 +55,7 @@
       &lt;h2 id=&quot;购物车脑图&quot;&gt;&lt;a href=&quot;#购物车脑图&quot; class=&quot;headerlink&quot; title=&quot;购物车脑图&quot;&gt;&lt;/a&gt;购物车脑图&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;简单大致画了下，一些小细节没包含&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/2016112688583_cart.png&quot; alt=&quot;cart.png&quot;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;https://ohv0hyr4v.qnssl.com/2016112688583_cart.png&quot; alt=&quot;cart.png&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -281,22 +281,22 @@ gulp build:common：//公共文件输出发布目录
     <link href="https://likr.cn/2016/08/25/JS%E8%8E%B7%E5%8F%96URL%E4%B8%ADGET%E7%9A%84%E5%8F%82%E6%95%B0%E8%BD%AC%E6%8D%A2%E4%B8%BAJSON%E6%A0%BC%E5%BC%8F/"/>
     <id>https://likr.cn/2016/08/25/JS获取URL中GET的参数转换为JSON格式/</id>
     <published>2016-08-25T11:55:59.000Z</published>
-    <updated>2016-08-25T13:40:21.000Z</updated>
+    <updated>2016-12-08T09:47:26.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2016082523067mall.gif" alt="2016082523067mall.gif"></p>
+    <content type="html"><![CDATA[<p><img src="https://ohv0hyr4v.qnssl.com/2016082523067mall.gif" alt="2016082523067mall.gif"></p>
 <a id="more"></a>
 <h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>商城页的分页组件和顶部的TAG选项的筛选条件。</p>
-<p>当分页器默认点击所有商品页下一页的时候，<code>url</code>后会添加一个<code>page=2</code>翻页。然后点击 <strong>TAG</strong> 的时候，<code>url</code>也随应也加上参数<code>categories=1</code> </p>
+<p>当分页器默认点击所有商品页下一页的时候，<code>url</code>后会添加一个<code>page=2</code>翻页。然后点击 <strong>TAG</strong> 的时候，<code>url</code>也随应也加上参数<code>categories=1</code></p>
 <p>现在遇到的问题:</p>
 <blockquote>
 <p>1.如果当前<strong>TAG</strong>筛选的商品比较少，只够展示一页的数据，那么当前<code>page=2</code>，是不是应该只展示第一页的数据。<br>2.每次点击翻页，分页器都会<strong>JS</strong>重新获取 <code>window.location.search</code> <strong>URl ？</strong>号后面的<code>get</code>参数，但是分页器翻页的时候，下一页比如<code>page=3</code>，当前 <strong>URL</strong> 的也包含了上一次的<code>page=2</code>，这时候要过滤之前的参数。</p>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><code>window.location.search</code>获取当前<strong>URL</strong>后面的<code>get</code>参数，然后转换成<strong>JS对象</strong>，列如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	page:<span class="number">1</span>,</div><div class="line">	categories:[</div><div class="line">		<span class="string">"1"</span>,</div><div class="line">		<span class="string">"2"</span></div><div class="line">	], </div><div class="line">	producer:[</div><div class="line">		<span class="string">"2"</span>,</div><div class="line">		<span class="string">"3"</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	page:<span class="number">1</span>,</div><div class="line">	categories:[</div><div class="line">		<span class="string">"1"</span>,</div><div class="line">		<span class="string">"2"</span></div><div class="line">	],</div><div class="line">	producer:[</div><div class="line">		<span class="string">"2"</span>,</div><div class="line">		<span class="string">"3"</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>然后对这个<strong>对象</strong>进行参数修改<br>接着再把这个对象转换成<code>url</code>中的<code>get</code>字符串，成为一个新的链接地址</p>
 <h2 id="需要的知识点"><a href="#需要的知识点" class="headerlink" title="需要的知识点"></a>需要的知识点</h2><p>对象转JSON，JSON转对象：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;<span class="string">"name"</span>:<span class="string">"tom"</span>,<span class="string">"sex"</span>:<span class="string">"男"</span>,<span class="string">"age"</span>:<span class="string">"24"</span>&#125;; </div><div class="line"><span class="keyword">var</span> b=<span class="string">'&#123;"name":"Mike","sex":"女","age":"29"&#125;'</span>;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> aToStr=<span class="built_in">JSON</span>.stringify(a);</div><div class="line"><span class="keyword">var</span> bToObj=<span class="built_in">JSON</span>.parse(b);</div><div class="line"> </div><div class="line">alert(<span class="keyword">typeof</span>(aToStr));  <span class="comment">//string</span></div><div class="line">alert(<span class="keyword">typeof</span>(bToObj));<span class="comment">//object</span></div></pre></td></tr></table></figure>
-<p>分页取余：<br><code>Math.random()</code><br><strong>random()</strong><br>返回 0 ~ 1 之间的随机数。    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;<span class="string">"name"</span>:<span class="string">"tom"</span>,<span class="string">"sex"</span>:<span class="string">"男"</span>,<span class="string">"age"</span>:<span class="string">"24"</span>&#125;;</div><div class="line"><span class="keyword">var</span> b=<span class="string">'&#123;"name":"Mike","sex":"女","age":"29"&#125;'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> aToStr=<span class="built_in">JSON</span>.stringify(a);</div><div class="line"><span class="keyword">var</span> bToObj=<span class="built_in">JSON</span>.parse(b);</div><div class="line"></div><div class="line">alert(<span class="keyword">typeof</span>(aToStr));  <span class="comment">//string</span></div><div class="line">alert(<span class="keyword">typeof</span>(bToObj));<span class="comment">//object</span></div></pre></td></tr></table></figure>
+<p>分页取余：<br><code>Math.random()</code><br><strong>random()</strong><br>返回 0 ~ 1 之间的随机数。</p>
 <p><code>Math.ceil()</code><br><strong>ceil()</strong> 方法可对一个数进行上舍入。<br>参数必须是一个数值。返回值大于等于 x，并且与它最接近的整数。</p>
 <p><code>Math.floor()</code><br><strong>floor()</strong> 方法可对一个数进行下舍入。<br>参数可以是任意数值或表达式。返回值小于等于 x，且与 x 最接近的整数。</p>
 <p><code>Math.round()</code><br><strong>round()</strong> 方法可把一个数字舍入为最接近的整数</p>
@@ -305,7 +305,7 @@ gulp build:common：//公共文件输出发布目录
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/2016082523067mall.gif&quot; alt=&quot;2016082523067mall.gif&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;https://ohv0hyr4v.qnssl.com/2016082523067mall.gif&quot; alt=&quot;2016082523067mall.gif&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -381,9 +381,9 @@ gulp build:common：//公共文件输出发布目录
     <link href="https://likr.cn/2016/05/01/webpack%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%B8%A9%E5%9D%91/"/>
     <id>https://likr.cn/2016/05/01/webpack学习和踩坑/</id>
     <published>2016-05-01T08:15:36.000Z</published>
-    <updated>2016-05-19T15:13:39.000Z</updated>
+    <updated>2016-12-08T09:47:53.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img class="full-image" src="http://7xnjvz.com1.z0.glb.clouddn.com/webpack.png" alt=""></p>
+    <content type="html"><![CDATA[<p><img class="full-image" src="https://ohv0hyr4v.qnssl.com/webpack.png" alt=""></p>
 <p>迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。</p>
 <h2 id="webpack学习"><a href="#webpack学习" class="headerlink" title="webpack学习"></a>webpack学习</h2><p><code>构建流程</code></p>
 <ol>
@@ -429,7 +429,7 @@ gulp build:common：//公共文件输出发布目录
 </ul>
 <p><code>webpack.config.js 配置文件</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>); <span class="comment">//引入nodeJs的path模块</span></div><div class="line"><span class="keyword">var</span> HtmlwebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">//自动生成html的模块</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> ROOT_PATH = path.resolve(__dirname);<span class="comment">//</span></div><div class="line"><span class="keyword">var</span> INDEX_PATH = path.resolve(ROOT_PATH, <span class="string">'src'</span>);</div><div class="line"><span class="comment">//path.resolve()为nodeJS的方法，传递一个相对路径</span></div><div class="line"><span class="comment">// var _PATH = path.resolve('src');//1.传入一个src的文件目录</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;<span class="comment">//模块接口用于单独的定义，返回数据类型</span></div><div class="line">  <span class="comment">// entry: _PATH, //2.entry的值如果是文件名，那么会默认会找index.js (单入口文件)</span></div><div class="line">  entry: [<span class="string">'./src/index.js'</span>,<span class="string">'./src/main.js'</span>],<span class="comment">//多入口文件只打包一个文件</span></div><div class="line">  output: &#123;<span class="comment">//输出接口</span></div><div class="line">    path: <span class="string">'./build'</span>,<span class="comment">//输出路径</span></div><div class="line">    filename: <span class="string">'build.[hash].js'</span> <span class="comment">//合并后输出的文件名为build.js [hash]为生成Hash值防止缓存</span></div><div class="line">  &#125;,</div><div class="line">  plugins: [<span class="comment">//html-webpack-plugin 自定生成.html文件</span></div><div class="line">    <span class="keyword">new</span> HtmlwebpackPlugin(&#123;</div><div class="line">      title: <span class="string">'Hello World'</span></div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>在终端中输入<code>webpack</code>，如下图：</p>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/92B7DA54-E723-4D4A-B436-335BAB00F50D.png" alt=""></p>
+<p><img src="https://ohv0hyr4v.qnssl.com/92B7DA54-E723-4D4A-B436-335BAB00F50D.png" alt=""></p>
 <p>可以看到<code>npm install</code>安装的 <code>html-webpack-plugin</code>模块帮我们自动生成了<code>index.html</code>，并且页面自动引入了合并好的<code>build.js</code></p>
 <hr>
 <h3 id="插件：webpack-dev-server"><a href="#插件：webpack-dev-server" class="headerlink" title="插件：webpack-dev-server"></a>插件：webpack-dev-server</h3><p>这个插件就像<code>Browsersync</code>一样，你改动过的的内容，这插件能都让浏览器实时、快速响应您的文件；<br>免去<code>command + R</code> 反复刷新。</p>
@@ -459,19 +459,19 @@ gulp build:common：//公共文件输出发布目录
 <p><code>1.局部安装 安装 autoprefixer-loader</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install autoprefixer-loader --save-dev</div></pre></td></tr></table></figure></p>
 <p><code>2.配置 webpack.config.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">module: &#123;</div><div class="line">  loaders: [&#123;</div><div class="line">    <span class="comment">// test: /\.css$/,</span></div><div class="line">    <span class="comment">// loaders: ['style', 'css'],</span></div><div class="line"></div><div class="line">    test: <span class="regexp">/\.scss$/</span>,                    <span class="comment">//解析.scss文件</span></div><div class="line">    <span class="comment">// loaders: ['style', 'css', 'sass'],  // 从右往左 sass &gt; css &gt; style</span></div><div class="line">    <span class="comment">// loader: 'style!css?modules&amp;importLoaders=2&amp;sourceMap&amp;localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&amp;sourceMap'</span></div><div class="line">    loader: <span class="string">'style!css!autoprefixer?&#123;browsers:["Firefox &gt;= 20","&gt; 5%","last 2 versions"]&#125;'</span><span class="comment">//</span></div><div class="line">  &#125;],</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
 <p><code>3.修改 main.scss</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">    display:flex;</div><div class="line">    justify-content: center;</div><div class="line">    align-items: center;</div><div class="line">    box-shadow: 2px 2px 3px #f33;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><code>4. 效果如下图:</code><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/87A9845D-5961-4D72-93C2-83F3F5C68A05.png" alt=""></p>
+<p><code>4. 效果如下图:</code><br><img src="https://ohv0hyr4v.qnssl.com/87A9845D-5961-4D72-93C2-83F3F5C68A05.png" alt=""></p>
 <hr>
 <h3 id="插件-图片"><a href="#插件-图片" class="headerlink" title="插件: 图片"></a>插件: 图片</h3><p>根据项目的需求，定义的大小范围来判断是否使用<code>base64</code>编码的，减少网络请求<br><code>1. 局部安装 url-loader</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install url-loader --save-dev</div></pre></td></tr></table></figure></p>
 <p><code>2.配置 webpack.config.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">  loaders: [</div><div class="line">    ....</div><div class="line">    &#123;</div><div class="line">        test: <span class="regexp">/\.(png|jpg)$/</span>,</div><div class="line">        loader: <span class="string">'url?limit=40000'</span><span class="comment">//注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片</span></div><div class="line">    &#125;</div><div class="line">    ....</div><div class="line">  ],</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
 <p><code>开启 Base64 效果如下图:</code></p>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/a1.png" alt=""></p>
-<p><code>未开启 Base64 效果如下图:</code><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/a2.png" alt=""></p>
+<p><img src="https://ohv0hyr4v.qnssl.com/a1.png" alt=""></p>
+<p><code>未开启 Base64 效果如下图:</code><br><img src="https://ohv0hyr4v.qnssl.com/a2.png" alt=""></p>
 <hr>
 <h2 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h2><h3 id="打包多页面公共模块"><a href="#打包多页面公共模块" class="headerlink" title="打包多页面公共模块"></a>打包多页面公共模块</h3><p>有时候多个页面有公共可以抽取的模块，我们可以用<code>CommonsChunkPlugin</code>插件来打包这些页面公共模块</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CommonsChunkPlugin = <span class="built_in">require</span>(<span class="string">"webpack/lib/optimize/CommonsChunkPlugin"</span>);<span class="comment">//提取多个页面之间的公共模块</span></div><div class="line"><span class="built_in">module</span>.exports = &#123; <span class="comment">//模块接口用于单独的定义，返回数据类型</span></div><div class="line">    entry: &#123;</div><div class="line">        index: <span class="string">'./src/component/index'</span>,<span class="comment">//单入口 (默认会找index.js)</span></div><div class="line">        about: [<span class="string">'./src/component/about/a.js'</span>, <span class="string">'./src/component/about/b.js'</span>], <span class="comment">//多入口文件只打包一个文件（支持数组形式）</span></div><div class="line">        header: <span class="string">'./src/component/header'</span>,<span class="comment">//定义可复用的模块header</span></div><div class="line">        footer: <span class="string">'./src/component/footer'</span>,<span class="comment">//定义可复用的模块footer</span></div><div class="line">    &#125;,</div><div class="line">    output: &#123; <span class="comment">//输出接口</span></div><div class="line">        path: <span class="string">'./build'</span>, <span class="comment">//输出路径</span></div><div class="line">        filename: <span class="string">'[name].[hash].js'</span> <span class="comment">//合并后输出的文件名为build.js （[hash]为生成Hash值防止缓存）</span></div><div class="line">    &#125;,</div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        loaders: [</div><div class="line">            <span class="comment">// 样式动态插入html style标签里</span></div><div class="line">            <span class="comment">//.css 文件使用 style-loader 和 css-loader 来处理</span></div><div class="line">            &#123; test: <span class="regexp">/\.css$/</span>, loader: <span class="string">'style-loader!css-loader'</span> &#125;,</div><div class="line">            <span class="comment">//.scss 文件使用 style-loader、css-loader 和 sass-loader 和autoprefixer 兼容css后缀 来编译处理</span></div><div class="line">            &#123; test: <span class="regexp">/\.scss$/</span>, loader: <span class="string">'style!css!autoprefixer?&#123;browsers:["Firefox &gt;= 20","&gt; 5%","last 2 versions"]&#125;'</span>&#125;,</div><div class="line">            <span class="comment">//图片文件使用 url-loader 来处理，小于40kb的直接转为base64</span></div><div class="line">            &#123; test: <span class="regexp">/\.(png|jpg)$/</span>, loader: <span class="string">'url-loader?limit=40000'</span>&#125;,</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    plugins: [ <span class="comment">//plugins是个插件项</span></div><div class="line">        <span class="keyword">new</span> HtmlwebpackPlugin(&#123;<span class="comment">//html-webpack-plugin 自定生成.html文件</span></div><div class="line">            title: <span class="string">'Hello World'</span></div><div class="line">        &#125;),</div><div class="line">        <span class="keyword">new</span> CommonsChunkPlugin(<span class="string">"common.js"</span>, [<span class="string">"header"</span>, <span class="string">"footer"</span>]),<span class="comment">//自定义公共模块提取,并将该模块打包为 common.js</span></div><div class="line">    ],</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><code>效果如下图：</code><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/D1FEFD58-7B5B-49FF-A4D2-681AEB0F8AB9.png" alt=""></p>
+<p><code>效果如下图：</code><br><img src="https://ohv0hyr4v.qnssl.com/D1FEFD58-7B5B-49FF-A4D2-681AEB0F8AB9.png" alt=""></p>
 <hr>
-<h3 id="单独打包样式文件"><a href="#单独打包样式文件" class="headerlink" title="单独打包样式文件"></a>单独打包样式文件</h3><p>有时候可能希望项目的样式能不要被打包到<code>style</code>标签里，而是独立出来作为<code>.css</code>，然后在页面中以<code>&lt;link&gt;</code>标签引入。这时候我们需要 ! 来帮忙<a href="https://github.com/webpack/extract-text-webpack-plugin">extract-text-webpack-plugin</a></p>
+<h3 id="单独打包样式文件"><a href="#单独打包样式文件" class="headerlink" title="单独打包样式文件"></a>单独打包样式文件</h3><p>有时候可能希望项目的样式能不要被打包到<code>style</code>标签里，而是独立出来作为<code>.css</code>，然后在页面中以<code>&lt;link&gt;</code>标签引入。这时候我们需要 ! 来帮忙<a href="https://github.com/webpack/extract-text-webpack-plugin" target="_blank" rel="external">extract-text-webpack-plugin</a></p>
 <p><code>配置config文件</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);<span class="comment">//单独打包css模块</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">    loaders: [</div><div class="line">        <span class="comment">// ExtractTextPlugin.extract()动态输出Link标签</span></div><div class="line">        &#123; test: <span class="regexp">/\.css$/</span>, loader: ExtractTextPlugin.extract(<span class="string">"style-loader"</span>, <span class="string">"css-loader"</span>) &#125;</div><div class="line">        &#123; test: <span class="regexp">/\.scss$/</span>, loader: ExtractTextPlugin.extract(<span class="string">'css!sass!autoprefixer?&#123;browsers:["Firefox &gt;= 20","&gt; 5%","last 2 versions"]&#125;'</span>) &#125;</div><div class="line">    ]</div><div class="line">&#125;,</div><div class="line">plugins: [ <span class="comment">//plugins是个插件项</span></div><div class="line">    <span class="keyword">new</span> HtmlwebpackPlugin(&#123;<span class="comment">//html-webpack-plugin 自定生成.html文件</span></div><div class="line">        title: <span class="string">'Hello World'</span></div><div class="line">    &#125;),</div><div class="line">    <span class="keyword">new</span> CommonsChunkPlugin(<span class="string">"common.js"</span>, [<span class="string">"header"</span>, <span class="string">"footer"</span>]),<span class="comment">//自定义公共模块提取,并将该模块打包为 common.js</span></div><div class="line">    <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"[name].css"</span>)</div><div class="line">],</div></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="webpack踩坑"><a href="#webpack踩坑" class="headerlink" title="webpack踩坑"></a>webpack踩坑</h2><h3 id="webpack报错（环境变量）"><a href="#webpack报错（环境变量）" class="headerlink" title="webpack报错（环境变量）"></a>webpack报错（环境变量）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.js:<span class="number">340</span></div><div class="line"><span class="keyword">throw</span> err;</div><div class="line">canot find <span class="built_in">module</span> <span class="string">'webpack/lib/node/NodeTemplatePlugin'</span></div></pre></td></tr></table></figure>
@@ -479,18 +479,18 @@ gulp build:common：//公共文件输出发布目录
 <p><strong> 是因为我们没有设置环境变量 </strong></p>
 <p><code>vim ~/.zshrc 后加入下面这段话</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> NODE_PATH=<span class="string">"/usr/local/node_modules:/usr/local/lib/node_modules"</span></div></pre></td></tr></table></figure></p>
 <p>2.配置 <code>webpack.config.js</code></p>
-<h3 id="npm-install报错"><a href="#npm-install报错" class="headerlink" title="npm install报错"></a>npm install报错</h3><p><code>如图：</code><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/51821093-A30C-4EA6-A493-FA94A6047A6D.png" alt=""></p>
+<h3 id="npm-install报错"><a href="#npm-install报错" class="headerlink" title="npm install报错"></a>npm install报错</h3><p><code>如图：</code><br><img src="https://ohv0hyr4v.qnssl.com/51821093-A30C-4EA6-A493-FA94A6047A6D.png" alt=""></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm ERR! install Couldn<span class="string">'t read dependencies</span></div></pre></td></tr></table></figure>
 <p>不能读取依赖的 <code>package.json</code>文件，仔细查看配置文件是否哪里写错了！</p>
 <hr>
 <blockquote>
-<p>案例代码地址： <a href="https://github.com/VuePack/webpack_learn">webpack_learn</a></p>
+<p>案例代码地址： <a href="https://github.com/VuePack/webpack_learn" target="_blank" rel="external">webpack_learn</a></p>
 </blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img class=&quot;full-image&quot; src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/webpack.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img class=&quot;full-image&quot; src=&quot;https://ohv0hyr4v.qnssl.com/webpack.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;迫于前端技术的迭代速度快，为了快速的开发和新技术的研究，学习记录下。&lt;/p&gt;
 &lt;h2 id=&quot;webpack学习&quot;&gt;&lt;a href=&quot;#webpack学习&quot; class=&quot;headerlink&quot; title=&quot;webpack学习&quot;&gt;&lt;/a&gt;webpack学习&lt;/h2&gt;&lt;p&gt;&lt;code&gt;构建流程&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -581,9 +581,9 @@ gulp build:common：//公共文件输出发布目录
     <link href="https://likr.cn/2016/01/28/%E4%BA%91%E5%8D%97%E8%AE%B0/"/>
     <id>https://likr.cn/2016/01/28/云南记/</id>
     <published>2016-01-28T13:45:26.000Z</published>
-    <updated>2016-05-27T06:08:53.000Z</updated>
+    <updated>2016-12-08T09:43:47.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img class="full-image" src="http://7xnjvz.com1.z0.glb.clouddn.com/banner-yun.jpg"></p>
+    <content type="html"><![CDATA[<p><img class="full-image" src="https://ohv0hyr4v.qnssl.com/banner-yun.jpg"></p>
 <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><blockquote class="blockquote-center"><br>很久就一直想去云南<br>一场说走就走的旅行<br>会一直更新途中的新鲜事情<br></blockquote>
 
 
@@ -598,16 +598,16 @@ gulp build:common：//公共文件输出发布目录
 </ul>
 <a id="more"></a>
 <h2 id="第一天："><a href="#第一天：" class="headerlink" title="第一天："></a>第一天：</h2><p>7：30的飞机，大概中午12：30到。good day。<br>之前定好了客栈，本来想做大巴去丽江古镇，但好久没做车了晕车，中途要转2趟车，预计50分钟左右；<br>后来就打了黑车，用了45元，本先想去丽江古镇客栈的，妈蛋。这黑心师傅说要接个客人去拉市海，我本来就打算下午去<strong> 拉市海骑马 </strong>，师傅说顺便就带我过去吧，价钱一样。心里暗喜了下。<br>妈的，这家伙好样的，尽然和拉市海骑马景点估计一家子啊，看了下景点报价，分好几个档次，最贵的680，最便宜的148，我报了个中等的480元，坑啊~<br>这边要注意的是正宗的<strong> 茶马古道 </strong>旅游项目，只有3个。其他都是假冒的。<br>回到景点才知道，本地报个团只要80就可以玩遍所有项目了~~<br>他们所说的<strong> 茶马古道 </strong>其实是人工铺设修建，这边要注意哦。第一次骑马，超兴奋的说，虽然花了480元，但一上马我就不由自主的笑起来了，好久没这么开心了。走着羊肠小道</p>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0608.JPG" alt="拉市海骑马风景"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0607.JPG" alt="拉市海骑马我"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0610.JPG" alt="拉市海骑马吃鱼"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0609.JPG" alt="拉市海骑马湖"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0611.JPG" alt="拉市海骑马渔夫"></p>
+<p><img src="https://ohv0hyr4v.qnssl.com/IMG_0608.JPG" alt="拉市海骑马风景"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0607.JPG" alt="拉市海骑马我"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0610.JPG" alt="拉市海骑马吃鱼"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0609.JPG" alt="拉市海骑马湖"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0611.JPG" alt="拉市海骑马渔夫"></p>
 <h2 id="第二、三天"><a href="#第二、三天" class="headerlink" title="第二、三天"></a>第二、三天</h2><p>自从第一次去了 <strong> 丽江古镇 </strong>，就留了心去当地报了散团。货比三家，<strong> 香格里拉 </strong>200再加了<strong> 泸沽湖 </strong>250。<br>虽然这个季节不是最美的<strong> 香格里拉 </strong>，听导游说5月下旬~8月，是最美的季节。满山遍地都开满了花。话说第一次上高海拔，不过身体棒棒，也没怎么高原反应。沿途经过了<strong> 虎跳峡 </strong>，<strong> 独克宗月光古城 </strong>（那边的大金钟是迪尼斯记录的哦），下午去了<strong> 石卡雪山 </strong>（可惜石卡雪山峰顶在维修，上不了，到那边还是挺失望的，一大片的雪没什么可玩的，就和小伙伴人滚雪去了~）；<br>晚上的特色名族藏家风情 晚会，喝了本地最有特色的<code>玛卡酒</code>、<code>青稞酒</code>、<code>酥油茶</code>，还尝试做了<code>青稞粉</code>。看了他们的民族风情舞蹈。<br>总结<strong> 藏族人 </strong>给我的感觉就是特别好爽，直肠子，想说就说，一壶酒说干就干，挺热情好客的。藏族人吃的比较简单，比较朴实，海拔比较高，种植范围可选性比较局限性，那他们靠什么摄取维生素呢？他们靠的是<code>酥油茶</code>。<strong> 藏族人 </strong>认为水和阿爸阿妈的生命一样宝贵，尊敬。他们称男的叫 <strong> 扎西 </strong>，女的叫<strong> 卓玛 </strong>。如果一个藏族人对你说 <strong> 扎西德勒 </strong>，那你也应该回应说 <strong> 扎西德勒 too </strong>，代表欢迎，祝福吉祥的意思。</p>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0034.JPG" alt="青稞酒"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0033.JPG" alt="牛肉"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0030.JPG" alt="鸡翅"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0024.JPG" alt="虎跳崖"></p>
+<p><img src="https://ohv0hyr4v.qnssl.com/IMG_0034.JPG" alt="青稞酒"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0033.JPG" alt="牛肉"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0030.JPG" alt="鸡翅"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0024.JPG" alt="虎跳崖"></p>
 <video src="http://mvvideo2.meitudata.com/56ae033211e3c1066.mp4" width="100%" controls="controls"></video>
 
 
 
 <h2 id="第四、五天"><a href="#第四、五天" class="headerlink" title="第四、五天"></a>第四、五天</h2><p>早上5点半起的床，历时6个小时，翻山越岭，翻过五座大山，来到这个美丽的湖畔。做着小巴车，路过<strong>金沙江</strong> - <strong> 小凉山观景台 </strong> - <strong> 情人滩 </strong> - <strong> 里格半岛 </strong> - <strong> 尼塞 </strong> - <strong> 万亩草海 </strong> - <strong> 走婚桥 </strong>（说到走婚桥，这边的习俗一男一女只要牵着走过走婚桥晚上就可以啪啪啪😄）- <strong> 午大落水 </strong>。<br>下午到游船码头划船到泸沽湖游玩。<br>泸沽湖畔住着<strong> 摩梭人 </strong>，一个非常特色的名族。相比我们汉族，他们是女性主义社会，一个母系大社会。主要特产品有<code>酥理玛酒</code>、<code>猪膘肉</code>、<code>咣当酒</code>、<code>烤鱼干</code>。<code>猪膘肉</code>有点肥，没吃。</p>
 <p><strong> 泸沽湖 </strong>属于高山盆地，最低海拔2668米，最高海拔3300米。<br><strong> 摩梭人 </strong>当地人信奉<strong> 藏医文化 </strong>，从不去什么医院，当地有有名的阿妈就诊。她们以银器判断是否含有毒物质，喝的水也是当地的水质用银器来净化，<strong> 藏医文化 </strong> 感觉挺有趣耐人寻味的，回去会研究研究。<br>听着最新鲜的当然是<strong> 走婚习俗 </strong>，走婚是摩梭人的一种婚姻模式，分暗婚和明婚。如果你看中哪个<strong> 卓玛 </strong>，在她手心扣三下，她如果看中你，也会同样在你手心回扣三下。那么在约好女子后，会在半夜的时候爬到女子的“花楼”，天亮的时候必须离开。<br>摩梭人是母系社会，男性称女朋友为“阿夏”，女性称男朋友为“阿注”。老公可以叫<strong> 阿乖 </strong>，他们不叫 <strong> 老公 </strong>，因为<strong> 公 </strong>是公共的意思。在摩梭人最隆重、最热烈、最欢乐的<strong> 格母女神 </strong>的庆典——转山节中尽情地唱，尽情地跳，尽情地享受生活的甘甜。<br>其他了解的还不是很多，我想以后还会来的。</p>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0600.JPG" alt="泸沽湖日出"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0601.JPG" alt="泸沽湖鳄鱼岛"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0605.JPG" alt="泸沽湖碧波荡漾"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0604.JPG" alt="泸沽湖划船"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0606.JPG" alt="泸沽湖走婚桥"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0016.JPG" alt="走婚桥"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0017.JPG" alt="开心"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0035.JPG" alt="摩挲族"></p>
+<p><img src="https://ohv0hyr4v.qnssl.com/IMG_0600.JPG" alt="泸沽湖日出"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0601.JPG" alt="泸沽湖鳄鱼岛"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0605.JPG" alt="泸沽湖碧波荡漾"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0604.JPG" alt="泸沽湖划船"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0606.JPG" alt="泸沽湖走婚桥"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0016.JPG" alt="走婚桥"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0017.JPG" alt="开心"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0035.JPG" alt="摩挲族"></p>
 <video src="http://mvvideo2.meitudata.com/56b0b82074d7e1829.mp4" width="100%" controls="controls"></video>
 
 
@@ -615,14 +615,14 @@ gulp build:common：//公共文件输出发布目录
 
 <h2 id="第六、七八天"><a href="#第六、七八天" class="headerlink" title="第六、七八天"></a>第六、七八天</h2><p>早上9点半出发，出发路线从 <strong> 苍山 </strong>（报的团旅程时间比较少，就逛了会有点遗憾没到顶峰） - <strong> 双廊</strong>（这是个被炒作起来的地方，商业化气息非常严重，很多地方都在不断的扩展，给我的印象就是菜市场印象很差）  - <strong> 地热国</strong> （就去泡温泉没去泡嫌弃~~~） - <strong> 洱海豪华游轮</strong> （看了白族的 <code>三道茶</code>表演，去了风情岛，沿途看了洱海景色和海鸥） - <strong> 三塔 </strong>（一般般，地方比较大有些地方现在还不能进入）</p>
 <p>大理三分之一住着 <strong> 白族 </strong>，白族男的称为 <code>阿鹏</code>，女的称呼 <code>金花</code>；<br>比较有名的茶是 <code>普洱茶</code> ，<code>春夏秋冬</code>,当地比较有名的表演属 <code>三道茶</code>；</p>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0597.JPG" alt="洱海鸽子"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0598.JPG" alt="大理古镇"><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/IMG_0599.JPG" alt="情人沙滩"></p>
+<p><img src="https://ohv0hyr4v.qnssl.com/IMG_0597.JPG" alt="洱海鸽子"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0598.JPG" alt="大理古镇"><br><img src="https://ohv0hyr4v.qnssl.com/IMG_0599.JPG" alt="情人沙滩"></p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>此次旅游很完美，遇到一些走心的驴友一起疯狂一起嗨，去了摩梭族藏族白族体验了当地的民族文化。 之前打算玩半个月，后来水土不服实在有点吃不消了就玩了八天。<br>回来飞机路上还遇到一个云南做生意的朋友，感觉挺投缘聊的不错，下飞机还送了几包云南我不知道的特色小吃。</p>
 <p>下次再来，想去看看希望小学的学生~</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img class=&quot;full-image&quot; src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/banner-yun.jpg&quot; /&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img class=&quot;full-image&quot; src=&quot;https://ohv0hyr4v.qnssl.com/banner-yun.jpg&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; class=&quot;headerlink&quot; title=&quot;前言：&quot;&gt;&lt;/a&gt;前言：&lt;/h2&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;很久就一直想去云南&lt;br&gt;一场说走就走的旅行&lt;br&gt;会一直更新途中的新鲜事情&lt;br&gt;&lt;/blockquote&gt;
 
 
@@ -675,16 +675,17 @@ gulp build:common：//公共文件输出发布目录
     <link href="https://likr.cn/2016/01/07/git-%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
     <id>https://likr.cn/2016/01/07/git-速查表/</id>
     <published>2016-01-07T12:56:29.000Z</published>
-    <updated>2016-05-17T13:11:20.000Z</updated>
+    <updated>2016-12-08T09:46:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>记性不好，微博上看到不错的一张<code>Git</code>速查表图片。<br>忘记，有空翻翻。</p>
-<p><img src="http://7xnjvz.com1.z0.glb.clouddn.com/Git.jpg" class="full-image"></p>
+<p><img src="https://ohv0hyr4v.qnssl.com/Git.jpg" class="full-image"></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;记性不好，微博上看到不错的一张&lt;code&gt;Git&lt;/code&gt;速查表图片。&lt;br&gt;忘记，有空翻翻。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xnjvz.com1.z0.glb.clouddn.com/Git.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ohv0hyr4v.qnssl.com/Git.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+
     
     </summary>
     
@@ -698,7 +699,7 @@ gulp build:common：//公共文件输出发布目录
     <link href="https://likr.cn/2016/01/01/Markdown%E4%B8%BB%E8%A6%81%E8%AF%AD%E6%B3%95%E5%A4%87%E5%BF%98/"/>
     <id>https://likr.cn/2016/01/01/Markdown主要语法备忘/</id>
     <published>2016-01-01T07:36:27.000Z</published>
-    <updated>2016-05-25T07:27:49.000Z</updated>
+    <updated>2016-12-08T09:47:32.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#h1级标题</div><div class="line">##h2级标题</div><div class="line">###h3级标题</div></pre></td></tr></table></figure>
 <p><code>演示：</code></p>
@@ -712,8 +713,8 @@ gulp build:common：//公共文件输出发布目录
 <p>[Google][<a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>]</p>
 <p><a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a></p>
 <hr>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![这里不显示文字用来备注](http://7xnjvz.com1.z0.glb.clouddn.com/16560643.jpeg)</div></pre></td></tr></table></figure>
-<p><code>演示：</code><img src="http://7xnjvz.com1.z0.glb.clouddn.com/16560643.jpeg" alt="这里不显示文字用来备注"></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![这里不显示文字用来备注](https://ohv0hyr4v.qnssl.com/16560643.jpeg)</div></pre></td></tr></table></figure>
+<p><code>演示：</code><img src="https://ohv0hyr4v.qnssl.com/16560643.jpeg" alt="这里不显示文字用来备注"></p>
 <hr>
 <h2 id="字体优化"><a href="#字体优化" class="headerlink" title="字体优化"></a>字体优化</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`Leon`好帅哦~ //字体加重</div></pre></td></tr></table></figure>
 <p><code>演示：</code>  <code>Leon</code>好帅哦~</p>
@@ -800,8 +801,8 @@ gulp build:common：//公共文件输出发布目录
 <blockquote class="blockquote-center"><br>    <br>展示内容区<br><br></blockquote>
 
 <hr>
-<h2 id="图片相框模式-本博客专用"><a href="#图片相框模式-本博客专用" class="headerlink" title="图片相框模式(本博客专用)"></a>图片相框模式(本博客专用)</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"full-image"</span> <span class="attr">src</span>=<span class="string">"http://7xnjvz.com1.z0.glb.clouddn.com/banner-yun.jpg"</span> /&gt;</span></div></pre></td></tr></table></figure>
-<p><code>演示：</code><br><img class="full-image" src="http://7xnjvz.com1.z0.glb.clouddn.com/banner-yun.jpg"></p>
+<h2 id="图片相框模式-本博客专用"><a href="#图片相框模式-本博客专用" class="headerlink" title="图片相框模式(本博客专用)"></a>图片相框模式(本博客专用)</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"full-image"</span> <span class="attr">src</span>=<span class="string">"https://ohv0hyr4v.qnssl.com/banner-yun.jpg"</span> /&gt;</span></div></pre></td></tr></table></figure>
+<p><code>演示：</code><br><img class="full-image" src="https://ohv0hyr4v.qnssl.com/banner-yun.jpg"></p>
 ]]></content>
     
     <summary type="html">
@@ -940,7 +941,7 @@ gulp build:common：//公共文件输出发布目录
     <link href="https://likr.cn/2015/12/06/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
     <id>https://likr.cn/2015/12/06/前端工具/</id>
     <published>2015-12-06T07:40:09.000Z</published>
-    <updated>2016-05-17T13:10:18.000Z</updated>
+    <updated>2016-12-08T09:44:18.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="babel编译"><a href="#babel编译" class="headerlink" title="babel编译"></a>babel编译</h2><p><code>Babel</code> 是一个 JavaScript 的编译工具，它可以把一种形式的 JavaScript 转换成另一种形式的 JavaScript 。比如它可以把 <code>es6</code> 的 JavaScript 编译成现在主要浏览器使用的 <code>es5</code> 的 JavaScript 。这样我们就可以从现在开始，使用 es6 提供的一些新功能去创建应用了，然后用 <code>babel</code> 把它变成 <code>es5</code> 的样子。</p>
 <p>另外 <code>Babel</code> 还支持 <strong>JSX .. React</strong> 的团队决定使用 <code>Babel</code> 替代自己的 <strong>JSX</strong> 编译工具。</p>
@@ -960,7 +961,7 @@ gulp build:common：//公共文件输出发布目录
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">babel script.js</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><strong>终端编译结果：</strong><br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/es5.png" alt="babel"></p>
+<p><strong>终端编译结果：</strong><br><img src="https://ohv0hyr4v.qnssl.com/es5.png" alt="babel"></p>
 <h2 id="jspm"><a href="#jspm" class="headerlink" title="jspm"></a>jspm</h2><p>JavaScript 模块的写法有几种，比如 AMD，CommonJS .. 还有标准化的 ES6 的写法 .. jspm 支持加载所有的用这些方法写的 JavaScript 模块 ..</p>
 <p>在你的应用里，现在就可以使用 ES6 提供的标准写法 .. 至于怎么去载入模块可以交给 jspm 去处理 .. 也就是你只需要了解 ES6 的模块写法 ..</p>
 <p>jspm 还是一个为浏览器上用的东西准备的一个包管理 .. 比如它可以让你去从不同的源去安装不同的包 .. 默认的源有 npm ，还有 github .. 安装好你需要的包以后，在你的代码里，只需要一行代码，就可以使用这些包提供的功能 .. 不用担心其它的事情 . .</p>
@@ -995,7 +996,7 @@ gulp build:common：//公共文件输出发布目录
     <link href="https://likr.cn/2015/12/05/%E4%BD%BF%E7%94%A8%E6%89%8B%E6%B7%98-Flexible-%E5%AE%9E%E7%8E%B0h5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/"/>
     <id>https://likr.cn/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/</id>
     <published>2015-12-05T13:41:28.000Z</published>
-    <updated>2016-05-27T06:14:13.000Z</updated>
+    <updated>2016-12-08T09:44:07.000Z</updated>
     
     <content type="html"><![CDATA[<p>双11已过，手淘前端团队大漠老湿分享的一个基于手淘html5终端适配的移动端解决方案；<br>之前买过大漠老湿写的书<code>图解CSS3</code>，写的很用心，很棒 😄</p>
 <p>喜欢移动端，是因为可以大胆的尝试一些新的写法，搭配各种不一样的框架，不用在考虑为向下兼容ie8啊 为了这些操蛋的写多余的代码，而一直用不到一些便捷新奇的方法属性，但是坑是挺多的。</p>
@@ -1030,7 +1031,7 @@ gulp build:common：//公共文件输出发布目录
 <h2 id="5-文本字号不建议使用rem"><a href="#5-文本字号不建议使用rem" class="headerlink" title="5.文本字号不建议使用rem"></a>5.文本字号不建议使用rem</h2><p>前面大家都见证了如何使用rem来完成H5适配。那么文本又将如何处理适配。是不是也通过rem来做自动适配。</p>
 <p>显然，我们在iPhone3G和iPhone4的Retina屏下面，希望看到的文本字号是相同的。也就是说，我们不希望文本在Retina屏幕下变小，另外，我们希望在大屏手机上看到更多文本，以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是16px和24px，所以我们不希望出现13px和15px这样的奇葩尺寸。</p>
 <p>如此一来，就决定了在制作H5的页面中，rem并不适合用到段落文本上。所以在Flexible整个适配方案中，考虑文本还是使用px作为单位。只不过使用[data-dpr]属性来区分不同dpr下的文本字号大小。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">    width: 1rem;</div><div class="line">    height: 0.4rem;</div><div class="line">    font-size: 12px; // 默认写上dpr为1的fontSize</div><div class="line">&#125;</div><div class="line">[data-dpr="2"] div &#123;</div><div class="line">    font-size: 24px;</div><div class="line">&#125;</div><div class="line">[data-dpr="3"] div &#123;</div><div class="line">    font-size: 36px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>最终适配的效果图：<br><img src="http://7xnjvz.com1.z0.glb.clouddn.com/2.gif" alt="gif"></p>
+<p>最终适配的效果图：<br><img src="https://ohv0hyr4v.qnssl.com/2.gif" alt="gif"></p>
 ]]></content>
     
     <summary type="html">
