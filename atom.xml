@@ -71,7 +71,7 @@
     <link href="https://likr.cn/2016/09/23/VUE%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
     <id>https://likr.cn/2016/09/23/VUE学习工作笔记/</id>
     <published>2016-09-23T12:38:11.000Z</published>
-    <updated>2016-10-03T13:15:42.000Z</updated>
+    <updated>2016-12-08T09:47:49.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center">记录平时学习工作中VUE遇到的问题和总结</blockquote>
 
@@ -254,7 +254,7 @@ gulp build:common：//公共文件输出发布目录
 <li>暂时不支持scss的<strong>devtool</strong>调试</li>
 <li>.vue不是用webpack的热替换，会有些慢</li>
 </ul>
-<p><a href="https://github.com/lizhoukai/VUE-gulp-webpack">项目地址</a></p>
+<p><a href="https://github.com/lizhoukai/VUE-gulp-webpack" target="_blank" rel="external">项目地址</a></p>
 ]]></content>
     
     <summary type="html">

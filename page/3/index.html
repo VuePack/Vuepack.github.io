@@ -214,11 +214,6 @@
 
     
     
-      
-      
-
-      
-    
 
     
       
@@ -305,6 +300,211 @@
 <p>JS代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置cookie</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name, value</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> exp = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    exp.setTime(exp.getTime() + <span class="number">1</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>); <span class="comment">//有效期1小时</span></div><div class="line">    <span class="built_in">document</span>.cookie = name + <span class="string">"="</span> + <span class="built_in">escape</span>(value) + <span class="string">";expires="</span> + exp.toGMTString();</div><div class="line">&#125;</div><div class="line"><span class="comment">//取cookies函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = <span class="built_in">document</span>.cookie.match(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^| )"</span> + name + <span class="string">"=([^;]*)(;|$)"</span>));</div><div class="line">    <span class="keyword">if</span> (arr != <span class="literal">null</span>) <span class="keyword">return</span> <span class="built_in">unescape</span>(arr[<span class="number">2</span>]);</div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> checkbox = <span class="built_in">document</span>.getElementById(<span class="string">'result_checkbox'</span>);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (getCookie(<span class="string">"closepop"</span>) == <span class="number">0</span>) &#123;</div><div class="line">        $(<span class="string">"#create_result"</span>).hide();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        $(<span class="string">"#create_result"</span>).show();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    $(<span class="string">'#result_checkbox'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (checkbox.checked) &#123;</div><div class="line">            setCookie(<span class="string">"closepop"</span>,<span class="string">"0"</span>)</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'选中'</span>)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'没选中'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 
           
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/07/git-速查表/" itemprop="url">
+                  Git 速查表
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-07T20:56:29+08:00" content="2016-01-07 20:56:29">
+              2016-01-07 20:56:29
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;43</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/07/git-速查表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/git-速查表/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>记性不好，微博上看到不错的一张<code>Git</code>速查表图片。<br>忘记，有空翻翻。</p>
+<p><img src="https://ohv0hyr4v.qnssl.com/Git.jpg" class="full-image"></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/01/Markdown主要语法备忘/" itemprop="url">
+                  Markdown主要语法备忘
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-01T15:36:27+08:00" content="2016-01-01 15:36:27">
+              2016-01-01 15:36:27
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;2,095</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/01/Markdown主要语法备忘/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/01/Markdown主要语法备忘/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#h1级标题</div><div class="line">##h2级标题</div><div class="line">###h3级标题</div></pre></td></tr></table></figure>
+<p><code>演示：</code></p>
+<p>#h1级标题</p>
+<p>##h2级标题</p>
+<p>###h3级标题</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/01/Markdown主要语法备忘/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

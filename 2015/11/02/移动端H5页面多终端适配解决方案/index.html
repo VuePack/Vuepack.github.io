@@ -258,7 +258,7 @@
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,741</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,747</span>
 
           
             
@@ -312,7 +312,7 @@
 <h3 id="3-JS去动态计算根元素的font-size"><a href="#3-JS去动态计算根元素的font-size" class="headerlink" title="3.JS去动态计算根元素的font-size"></a>3.JS去动态计算根元素的font-size</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">doc, win</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> docEl = doc.documentElement,</div><div class="line">    resizeEvt = <span class="string">'orientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>,</div><div class="line">    recalc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> clientWidth = docEl.clientWidth;</div><div class="line">      <span class="keyword">if</span> (!clientWidth) <span class="keyword">return</span>;</div><div class="line">      docEl.style.fontSize = <span class="number">20</span> * (clientWidth / <span class="number">320</span>) + <span class="string">'px'</span>;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!doc.addEventListener) <span class="keyword">return</span>;</div><div class="line">  win.addEventListener(resizeEvt, recalc, <span class="literal">false</span>);</div><div class="line">  doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, recalc, <span class="literal">false</span>);</div><div class="line">&#125;)(<span class="built_in">document</span>, <span class="built_in">window</span>);</div></pre></td></tr></table></figure>
 <p>页面初始化的时候计算font-size，然后再绑定resize事件。这种效果就和百分比布局一样了。</p>
 <h2 id="其他解决方案"><a href="#其他解决方案" class="headerlink" title="其他解决方案"></a>其他解决方案</h2><p><code>github</code>上找到的一些解决方案分享下：</p>
-<p>1.使用transform:scale属性缩放页面，这个还真没想到。<br><a href="https://github.com/peunzhang/pageResponse">https://github.com/peunzhang/pageResponse</a><br><a href="https://github.com/ufologist/responsive-page">https://github.com/ufologist/responsive-page</a><br>2.阿里无线伸缩布局方案：<br><a href="https://github.com/amfe/lib-flexible">https://github.com/amfe/lib-flexible</a></p>
+<p>1.使用transform:scale属性缩放页面，这个还真没想到。<br><a href="https://github.com/peunzhang/pageResponse" target="_blank" rel="external">https://github.com/peunzhang/pageResponse</a><br><a href="https://github.com/ufologist/responsive-page" target="_blank" rel="external">https://github.com/ufologist/responsive-page</a><br>2.阿里无线伸缩布局方案：<br><a href="https://github.com/amfe/lib-flexible" target="_blank" rel="external">https://github.com/amfe/lib-flexible</a></p>
 
       
     </div>
