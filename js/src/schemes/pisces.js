@@ -35,7 +35,7 @@ $(document).ready(function () {
   var duoshuoQuery = {short_name:"vuepack"};
   var ds = document.createElement('script');
   ds.type = 'text/javascript';ds.async = true;
-  ds.src = 'https://ohv0hyr4v.qnssl.com/embed.js';
+  ds.src = 'https://ohv0hyr4v.qnssl.com/embedd.js';
   ds.charset = 'UTF-8';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
 });
