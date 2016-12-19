@@ -4,9 +4,9 @@
   <subtitle>爱折腾，爱旅游，热爱生活</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://likr.cn/"/>
+  <link href="http://likr.cn/"/>
   <updated>2016-12-08T09:47:44.000Z</updated>
-  <id>https://likr.cn/</id>
+  <id>http://likr.cn/</id>
   
   <author>
     <name>里昂</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>VUE在购物车的应用场景</title>
-    <link href="https://likr.cn/2016/11/26/VUE%E5%9C%A8%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
-    <id>https://likr.cn/2016/11/26/VUE在购物车的应用场景/</id>
+    <link href="http://likr.cn/2016/11/26/VUE%E5%9C%A8%E8%B4%AD%E7%89%A9%E8%BD%A6%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+    <id>http://likr.cn/2016/11/26/VUE在购物车的应用场景/</id>
     <published>2016-11-26T09:20:07.000Z</published>
     <updated>2016-12-08T09:47:44.000Z</updated>
     
@@ -60,16 +60,16 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="https://likr.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://likr.cn/tags/JavaScript/"/>
     
-      <category term="VUE" scheme="https://likr.cn/tags/VUE/"/>
+      <category term="VUE" scheme="http://likr.cn/tags/VUE/"/>
     
   </entry>
   
   <entry>
     <title>VUE学习工作笔记</title>
-    <link href="https://likr.cn/2016/09/23/VUE%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
-    <id>https://likr.cn/2016/09/23/VUE学习工作笔记/</id>
+    <link href="http://likr.cn/2016/09/23/VUE%E5%AD%A6%E4%B9%A0%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
+    <id>http://likr.cn/2016/09/23/VUE学习工作笔记/</id>
     <published>2016-09-23T12:38:11.000Z</published>
     <updated>2016-12-08T09:47:49.000Z</updated>
     
@@ -123,16 +123,16 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="https://likr.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://likr.cn/tags/JavaScript/"/>
     
-      <category term="VUE" scheme="https://likr.cn/tags/VUE/"/>
+      <category term="VUE" scheme="http://likr.cn/tags/VUE/"/>
     
   </entry>
   
   <entry>
     <title>《七月的安生》</title>
-    <link href="https://likr.cn/2016/09/18/%E3%80%8A%E4%B8%83%E6%9C%88%E7%9A%84%E5%AE%89%E7%94%9F%E3%80%8B/"/>
-    <id>https://likr.cn/2016/09/18/《七月的安生》/</id>
+    <link href="http://likr.cn/2016/09/18/%E3%80%8A%E4%B8%83%E6%9C%88%E7%9A%84%E5%AE%89%E7%94%9F%E3%80%8B/"/>
+    <id>http://likr.cn/2016/09/18/《七月的安生》/</id>
     <published>2016-09-18T13:06:57.000Z</published>
     <updated>2016-09-18T14:25:58.000Z</updated>
     
@@ -165,14 +165,14 @@
     </summary>
     
     
-      <category term="心情语录" scheme="https://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
+      <category term="心情语录" scheme="http://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>针对项目思考的前端脚手架</title>
-    <link href="https://likr.cn/2016/09/14/%E9%92%88%E5%AF%B9%E9%A1%B9%E7%9B%AE%E6%80%9D%E8%80%83%E7%9A%84%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
-    <id>https://likr.cn/2016/09/14/针对项目思考的前端脚手架/</id>
+    <link href="http://likr.cn/2016/09/14/%E9%92%88%E5%AF%B9%E9%A1%B9%E7%9B%AE%E6%80%9D%E8%80%83%E7%9A%84%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    <id>http://likr.cn/2016/09/14/针对项目思考的前端脚手架/</id>
     <published>2016-09-14T13:46:48.000Z</published>
     <updated>2016-09-14T13:50:07.000Z</updated>
     
@@ -272,14 +272,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="JavaScript" scheme="https://likr.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://likr.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JS获取URL中GET的参数转换为JSON格式</title>
-    <link href="https://likr.cn/2016/08/25/JS%E8%8E%B7%E5%8F%96URL%E4%B8%ADGET%E7%9A%84%E5%8F%82%E6%95%B0%E8%BD%AC%E6%8D%A2%E4%B8%BAJSON%E6%A0%BC%E5%BC%8F/"/>
-    <id>https://likr.cn/2016/08/25/JS获取URL中GET的参数转换为JSON格式/</id>
+    <link href="http://likr.cn/2016/08/25/JS%E8%8E%B7%E5%8F%96URL%E4%B8%ADGET%E7%9A%84%E5%8F%82%E6%95%B0%E8%BD%AC%E6%8D%A2%E4%B8%BAJSON%E6%A0%BC%E5%BC%8F/"/>
+    <id>http://likr.cn/2016/08/25/JS获取URL中GET的参数转换为JSON格式/</id>
     <published>2016-08-25T11:55:59.000Z</published>
     <updated>2016-12-08T09:47:26.000Z</updated>
     
@@ -310,14 +310,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="JavaScript" scheme="https://likr.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://likr.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>聊聊最近</title>
-    <link href="https://likr.cn/2016/08/20/%E8%81%8A%E8%81%8A%E6%9C%80%E8%BF%91/"/>
-    <id>https://likr.cn/2016/08/20/聊聊最近/</id>
+    <link href="http://likr.cn/2016/08/20/%E8%81%8A%E8%81%8A%E6%9C%80%E8%BF%91/"/>
+    <id>http://likr.cn/2016/08/20/聊聊最近/</id>
     <published>2016-08-20T12:59:03.000Z</published>
     <updated>2016-08-20T14:22:22.000Z</updated>
     
@@ -347,14 +347,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="心情语录" scheme="https://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
+      <category term="心情语录" scheme="http://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>Hexo npm 常见报错</title>
-    <link href="https://likr.cn/2016/05/22/hexo%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99/"/>
-    <id>https://likr.cn/2016/05/22/hexo常见报错/</id>
+    <link href="http://likr.cn/2016/05/22/hexo%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99/"/>
+    <id>http://likr.cn/2016/05/22/hexo常见报错/</id>
     <published>2016-05-22T02:22:43.000Z</published>
     <updated>2016-05-22T03:05:34.000Z</updated>
     
@@ -370,16 +370,16 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="Hexo" scheme="https://likr.cn/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://likr.cn/tags/Hexo/"/>
     
-      <category term="npm" scheme="https://likr.cn/tags/npm/"/>
+      <category term="npm" scheme="http://likr.cn/tags/npm/"/>
     
   </entry>
   
   <entry>
     <title>webpack学习和踩坑</title>
-    <link href="https://likr.cn/2016/05/01/webpack%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%B8%A9%E5%9D%91/"/>
-    <id>https://likr.cn/2016/05/01/webpack学习和踩坑/</id>
+    <link href="http://likr.cn/2016/05/01/webpack%E5%AD%A6%E4%B9%A0%E5%92%8C%E8%B8%A9%E5%9D%91/"/>
+    <id>http://likr.cn/2016/05/01/webpack学习和踩坑/</id>
     <published>2016-05-01T08:15:36.000Z</published>
     <updated>2016-12-08T09:47:53.000Z</updated>
     
@@ -504,14 +504,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="webpack" scheme="https://likr.cn/tags/webpack/"/>
+      <category term="webpack" scheme="http://likr.cn/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>JS查找数组中是否存在某个元素</title>
-    <link href="https://likr.cn/2016/04/12/JS%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0/"/>
-    <id>https://likr.cn/2016/04/12/JS查找数组中是否存在某个元素/</id>
+    <link href="http://likr.cn/2016/04/12/JS%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0/"/>
+    <id>http://likr.cn/2016/04/12/JS查找数组中是否存在某个元素/</id>
     <published>2016-04-12T13:54:27.000Z</published>
     <updated>2016-05-17T12:07:33.000Z</updated>
     
@@ -528,14 +528,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="JavaScript" scheme="https://likr.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://likr.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>理解jsonP的原理和优缺点</title>
-    <link href="https://likr.cn/2016/03/28/%E7%90%86%E8%A7%A3jsonP%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BC%98%E7%BC%BA%E7%82%B9/"/>
-    <id>https://likr.cn/2016/03/28/理解jsonP的原理和优缺点/</id>
+    <link href="http://likr.cn/2016/03/28/%E7%90%86%E8%A7%A3jsonP%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E4%BC%98%E7%BC%BA%E7%82%B9/"/>
+    <id>http://likr.cn/2016/03/28/理解jsonP的原理和优缺点/</id>
     <published>2016-03-28T13:11:00.000Z</published>
     <updated>2016-05-17T12:07:33.000Z</updated>
     
@@ -550,14 +550,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="jsonp" scheme="https://likr.cn/tags/jsonp/"/>
+      <category term="jsonp" scheme="http://likr.cn/tags/jsonp/"/>
     
   </entry>
   
   <entry>
     <title>凯锅的小梦想</title>
-    <link href="https://likr.cn/2016/02/22/%E5%87%AF%E9%94%85%E7%9A%84%E5%B0%8F%E6%A2%A6%E6%83%B3/"/>
-    <id>https://likr.cn/2016/02/22/凯锅的小梦想/</id>
+    <link href="http://likr.cn/2016/02/22/%E5%87%AF%E9%94%85%E7%9A%84%E5%B0%8F%E6%A2%A6%E6%83%B3/"/>
+    <id>http://likr.cn/2016/02/22/凯锅的小梦想/</id>
     <published>2016-02-22T12:59:03.000Z</published>
     <updated>2016-05-19T08:37:42.000Z</updated>
     
@@ -572,14 +572,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="心情语录" scheme="https://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
+      <category term="心情语录" scheme="http://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>云南记</title>
-    <link href="https://likr.cn/2016/01/28/%E4%BA%91%E5%8D%97%E8%AE%B0/"/>
-    <id>https://likr.cn/2016/01/28/云南记/</id>
+    <link href="http://likr.cn/2016/01/28/%E4%BA%91%E5%8D%97%E8%AE%B0/"/>
+    <id>http://likr.cn/2016/01/28/云南记/</id>
     <published>2016-01-28T13:45:26.000Z</published>
     <updated>2016-12-08T09:43:47.000Z</updated>
     
@@ -639,16 +639,16 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="心情语录" scheme="https://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
+      <category term="心情语录" scheme="http://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
     
-      <category term="旅游" scheme="https://likr.cn/tags/%E6%97%85%E6%B8%B8/"/>
+      <category term="旅游" scheme="http://likr.cn/tags/%E6%97%85%E6%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title>JS控制cookie，选中复选框下次不再提醒</title>
-    <link href="https://likr.cn/2016/01/08/JS%E6%8E%A7%E5%88%B6cookie%EF%BC%8C%E9%80%89%E4%B8%AD%E5%A4%8D%E9%80%89%E6%A1%86%E4%B8%8B%E6%AC%A1%E4%B8%8D%E5%86%8D%E6%8F%90%E9%86%92/"/>
-    <id>https://likr.cn/2016/01/08/JS控制cookie，选中复选框下次不再提醒/</id>
+    <link href="http://likr.cn/2016/01/08/JS%E6%8E%A7%E5%88%B6cookie%EF%BC%8C%E9%80%89%E4%B8%AD%E5%A4%8D%E9%80%89%E6%A1%86%E4%B8%8B%E6%AC%A1%E4%B8%8D%E5%86%8D%E6%8F%90%E9%86%92/"/>
+    <id>http://likr.cn/2016/01/08/JS控制cookie，选中复选框下次不再提醒/</id>
     <published>2016-01-08T14:27:15.000Z</published>
     <updated>2016-05-17T13:11:32.000Z</updated>
     
@@ -666,14 +666,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="JavaScript" scheme="https://likr.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://likr.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Git 速查表</title>
-    <link href="https://likr.cn/2016/01/07/git-%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
-    <id>https://likr.cn/2016/01/07/git-速查表/</id>
+    <link href="http://likr.cn/2016/01/07/git-%E9%80%9F%E6%9F%A5%E8%A1%A8/"/>
+    <id>http://likr.cn/2016/01/07/git-速查表/</id>
     <published>2016-01-07T12:56:29.000Z</published>
     <updated>2016-12-08T09:46:55.000Z</updated>
     
@@ -690,14 +690,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="Git" scheme="https://likr.cn/tags/Git/"/>
+      <category term="Git" scheme="http://likr.cn/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Markdown主要语法备忘</title>
-    <link href="https://likr.cn/2016/01/01/Markdown%E4%B8%BB%E8%A6%81%E8%AF%AD%E6%B3%95%E5%A4%87%E5%BF%98/"/>
-    <id>https://likr.cn/2016/01/01/Markdown主要语法备忘/</id>
+    <link href="http://likr.cn/2016/01/01/Markdown%E4%B8%BB%E8%A6%81%E8%AF%AD%E6%B3%95%E5%A4%87%E5%BF%98/"/>
+    <id>http://likr.cn/2016/01/01/Markdown主要语法备忘/</id>
     <published>2016-01-01T07:36:27.000Z</published>
     <updated>2016-12-08T09:47:32.000Z</updated>
     
@@ -816,14 +816,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="Markdown" scheme="https://likr.cn/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://likr.cn/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>凯锅2015年终总结</title>
-    <link href="https://likr.cn/2015/12/30/%E5%87%AF%E9%94%852015%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    <id>https://likr.cn/2015/12/30/凯锅2015年终总结/</id>
+    <link href="http://likr.cn/2015/12/30/%E5%87%AF%E9%94%852015%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <id>http://likr.cn/2015/12/30/凯锅2015年终总结/</id>
     <published>2015-12-30T12:00:22.000Z</published>
     <updated>2016-06-01T05:55:35.000Z</updated>
     
@@ -879,14 +879,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="心情语录" scheme="https://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
+      <category term="心情语录" scheme="http://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>强大的zsh</title>
-    <link href="https://likr.cn/2015/12/30/%E5%BC%BA%E5%A4%A7%E7%9A%84zsh/"/>
-    <id>https://likr.cn/2015/12/30/强大的zsh/</id>
+    <link href="http://likr.cn/2015/12/30/%E5%BC%BA%E5%A4%A7%E7%9A%84zsh/"/>
+    <id>http://likr.cn/2015/12/30/强大的zsh/</id>
     <published>2015-12-30T10:19:18.000Z</published>
     <updated>2016-06-01T05:54:36.000Z</updated>
     
@@ -903,14 +903,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="终端" scheme="https://likr.cn/tags/%E7%BB%88%E7%AB%AF/"/>
+      <category term="终端" scheme="http://likr.cn/tags/%E7%BB%88%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>flex新旧混合写法兼容安卓微信x5内核</title>
-    <link href="https://likr.cn/2015/12/25/flex%E6%96%B0%E6%97%A7%E6%B7%B7%E5%90%88%E5%86%99%E6%B3%95%E5%85%BC%E5%AE%B9%E5%AE%89%E5%8D%93%E5%BE%AE%E4%BF%A1x5%E5%86%85%E6%A0%B8/"/>
-    <id>https://likr.cn/2015/12/25/flex新旧混合写法兼容安卓微信x5内核/</id>
+    <link href="http://likr.cn/2015/12/25/flex%E6%96%B0%E6%97%A7%E6%B7%B7%E5%90%88%E5%86%99%E6%B3%95%E5%85%BC%E5%AE%B9%E5%AE%89%E5%8D%93%E5%BE%AE%E4%BF%A1x5%E5%86%85%E6%A0%B8/"/>
+    <id>http://likr.cn/2015/12/25/flex新旧混合写法兼容安卓微信x5内核/</id>
     <published>2015-12-25T01:53:27.000Z</published>
     <updated>2016-06-02T08:42:42.000Z</updated>
     
@@ -930,16 +930,16 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="微信开发" scheme="https://likr.cn/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
+      <category term="微信开发" scheme="http://likr.cn/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
     
-      <category term="CSS3" scheme="https://likr.cn/tags/CSS3/"/>
+      <category term="CSS3" scheme="http://likr.cn/tags/CSS3/"/>
     
   </entry>
   
   <entry>
     <title>前端工具</title>
-    <link href="https://likr.cn/2015/12/06/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
-    <id>https://likr.cn/2015/12/06/前端工具/</id>
+    <link href="http://likr.cn/2015/12/06/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    <id>http://likr.cn/2015/12/06/前端工具/</id>
     <published>2015-12-06T07:40:09.000Z</published>
     <updated>2016-12-08T09:44:18.000Z</updated>
     
@@ -987,14 +987,14 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="前端工具" scheme="https://likr.cn/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+      <category term="前端工具" scheme="http://likr.cn/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>使用手淘[Flexible]实现h5页面的终端适配</title>
-    <link href="https://likr.cn/2015/12/05/%E4%BD%BF%E7%94%A8%E6%89%8B%E6%B7%98-Flexible-%E5%AE%9E%E7%8E%B0h5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/"/>
-    <id>https://likr.cn/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/</id>
+    <link href="http://likr.cn/2015/12/05/%E4%BD%BF%E7%94%A8%E6%89%8B%E6%B7%98-Flexible-%E5%AE%9E%E7%8E%B0h5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/"/>
+    <id>http://likr.cn/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/</id>
     <published>2015-12-05T13:41:28.000Z</published>
     <updated>2016-12-08T09:44:07.000Z</updated>
     
@@ -1042,9 +1042,9 @@ gulp build:common：//公共文件输出发布目录
     </summary>
     
     
-      <category term="移动端" scheme="https://likr.cn/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+      <category term="移动端" scheme="http://likr.cn/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
-      <category term="适配解决方案" scheme="https://likr.cn/tags/%E9%80%82%E9%85%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="适配解决方案" scheme="http://likr.cn/tags/%E9%80%82%E9%85%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
   </entry>
   
