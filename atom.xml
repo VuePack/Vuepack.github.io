@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://likr.cn/"/>
-  <updated>2016-12-08T09:47:44.000Z</updated>
+  <updated>2016-12-24T14:46:45.000Z</updated>
   <id>http://likr.cn/</id>
   
   <author>
@@ -14,6 +14,124 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《2016年终总结》</title>
+    <link href="http://likr.cn/2016/12/21/%E3%80%8A2016%E5%B9%B4%E7%BB%88%E7%BB%88%E7%BB%93%E3%80%8B/"/>
+    <id>http://likr.cn/2016/12/21/《2016年终终结》/</id>
+    <published>2016-12-21T07:49:06.000Z</published>
+    <updated>2016-12-24T14:46:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img class="full-image" src="https://pic4.zhimg.com/v2-7c31cfc647aee3d736ea0896d6852b5b.jpg"></p>
+<h2 id="回顾下2015年给2016年定的计划："><a href="#回顾下2015年给2016年定的计划：" class="headerlink" title="回顾下2015年给2016年定的计划："></a>回顾下2015年给2016年定的计划：</h2><ul>
+<li>1.完成一款大型单页应用WebApp（<strong>未完成：</strong>不想找理由，懒！）</li>
+<li>2.一年一次的旅行（<strong>未完成：</strong>腰🙄）</li>
+<li>3.一周两次的健身（<strong>未完成：</strong>腰🙄）</li>
+<li>4.<del>驾驶证考出</del></li>
+<li>5.<del>尝试室内设计</del></li>
+</ul>
+<a id="more"></a>
+<h2 id="再来看看2016年做的"><a href="#再来看看2016年做的" class="headerlink" title="再来看看2016年做的"></a>再来看看2016年做的</h2><ul>
+<li>看的书<ul>
+<li><strong>《编写可维护的 JavaScript 》</strong>（还行，大部分再讲编码规范细节，有些知识已经过时）</li>
+<li><strong>《你不知道的 JavaScript 上卷》</strong>（非常棒的一本书，强烈推荐，包含很多基础的底层原理）</li>
+<li><strong>《CSS 揭秘》</strong>（很棒推荐）</li>
+<li><strong>《编写高质量代码-Web前端开发修炼之道》</strong>（看的 PDF ，还好，不过很多已经过时）</li>
+</ul>
+</li>
+<li>折腾的技术栈<ul>
+<li><code>vue1.0</code> + <code>vuex1.0</code> + <code>vue-router1.0</code> + <code>vue-cli</code>（自己博客简历已升级到 <code>vue2.0</code>）</li>
+<li><code>webpack + gulp</code> 脚手架（花了2天学习，折腾到凌晨4：30 ，还好没猝死😊）</li>
+<li><code>研究大型复杂单页应用</code> （下个移动端项目采用）</li>
+<li><code>微信小程序</code> （语法糖参考的是 <code>vue</code> 和 <code>react</code>，比较容易上手，有自己的一套编译文件，组件库，有局限性，不好玩！）</li>
+<li>学习<code>ES6</code> 和 <code>组件化</code></li>
+</ul>
+</li>
+<li>参与的知乎live<ul>
+<li><strong>《无需意志力的习惯养成方法论》</strong></li>
+<li><strong>《前端工程师如何不断自我提升》</strong></li>
+<li><strong>《前端开发者成长之路》</strong></li>
+<li><strong>《人人都能用英语》</strong></li>
+<li><strong>《前端们，贺老 Live 面试你了！》</strong></li>
+<li><strong>《好莱坞重量级巨星与你聊电影》</strong></li>
+<li><strong>《全栈工程师养成指南》</strong></li>
+<li><strong>《重新认识腰椎病》</strong></li>
+<li><strong>《前端工程化浅析》</strong></li>
+<li><strong>《Nodejs 开发有问必答》</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="2017计划"><a href="#2017计划" class="headerlink" title="2017计划"></a>2017计划</h2><ul>
+<li>想买的<ul>
+<li><strong>p1 ：</strong> 布置书房的一些 <code>插画</code>，<code>装饰品</code>，<code>灯具</code> 等等</li>
+<li><strong>p2 ：</strong> <code>运动版阿特兹</code>，<code>运动版阿特兹</code>，<code>运动版阿特兹</code> ！（<strong>p2任务不完成，p2以下不考虑！</strong>）</li>
+<li><strong>p3 ：</strong> <code>头戴式降噪耳机</code> 一直没想好买哪款</li>
+<li><strong>p4 ：</strong> <code>SONY ILCE-6000L</code></li>
+<li><strong>p5 ：</strong> <code>大疆无人机</code></li>
+</ul>
+</li>
+<li>想学习的<ul>
+<li>一直对模型、室内设计比较感兴趣，想学习下 <code>手绘</code></li>
+<li>开始耍起 <code>NODE.js</code>，进阶服务端</li>
+<li><code>ES6</code> 熟练运用</li>
+</ul>
+</li>
+<li><p>想做的</p>
+<ul>
+<li><strong>p1 ：</strong> 锻炼腰肌，早睡，更正不良习惯，希望能尽快好起来，旅行，健身</li>
+<li><p><strong>p2 ：</strong> 没学过后端语言，虽然现在博客用的是 <code>hexo</code> 托管在 <code>github</code> 。但有强迫症想自己搞一个博客系统。 技术栈也想好了。相信这个博客系统做完，能对所学的技术栈进行一个全面的巩固，当然也避免不了坑，和许多问题😊。<br>前端 ：</p>
+<ul>
+<li><code>vue2.0</code>（<strong>渐进式响应框架</strong>）</li>
+<li><code>vuex2.0</code>（<strong>集中式状态管理</strong>）</li>
+<li><code>vue-router2.0</code>（<strong>路由</strong>）</li>
+<li><code>vue-resource1.0</code>（<strong>xhr请求</strong>）</li>
+<li><code>marked</code> （<strong>Markdown语法解析</strong>）</li>
+<li><code>prismjs</code>（<strong>代码高亮</strong>）</li>
+</ul>
+<p>后端 ：</p>
+<ul>
+<li><code>node.js</code>（<strong>服务端</strong>）</li>
+<li><code>express</code>（<strong>Web应用框架</strong>）</li>
+<li><code>LeanCloud</code>（<strong>数据存储</strong>）</li>
+</ul>
+</li>
+<li><p><strong>p3 ：</strong> 为移动端项目构建 <code>前端公共组件库</code>，并<strong>开源</strong> 。（这会比较漫长，也是对自己知识的一个积累）</p>
+</li>
+<li><strong>p4 ：</strong> 2016年也尝试了 <code>室内设计</code> ，我还是挺期待完工之后的整体效果，后续完工后会写一篇 <strong>《从前端到室内设计》</strong> 哈哈哈 这逼装的🙄</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>上半年：</p>
+</blockquote>
+<p>2016年，算是最好的一年也是最差劲的一年，前半年整个人都是荒废的。由于长期坐姿不良的习惯，腰部肌肉两边受力不均匀，某次健身运动不当导致腰间盘突出，压迫神经。起初真的是痛不欲生，走几步，臀部的经脉伴随着小腿就疼痛，不能久坐，不能长期走路。之前刚离职，在家休息了3月，没想到那么严重。</p>
+<p>总之非常谢谢 <code>萱萱女神</code> 推荐的中医。之前去市医院，医生叫我做手术打针。想到要工作，就放弃了做手术，选择了疗养性治疗，针灸。还好现在好了很多，走路不疼了，也能久坐了。</p>
+<p>当时也在面试，面了几家公司，也拿到了挺多 <strong>offer</strong> ，本想加入一个成熟型的前端团队。但介于有些太远，或者管理制度比较严，不适合我疗养性治疗，所以也都放弃了，最终选择了宽松的创业公司。</p>
+<blockquote>
+<p>下半年：</p>
+</blockquote>
+<p>新公司相处下来，技术团队都很 <code>nice</code>，产品比较逗逼，同事也很棒，公司前端权重重，有成熟的线下资源，也不需要融资。<br>一直都是特立独行的人，讨厌反复劳动，崇尚新技术高效推动。<br>氛围挺融洽，挺符合我的磁场，主动推动团队之间新的技术栈，统一团队之间的开发流程规范，开发团队公共组件库。</p>
+<p>总之和一群靠谱的团队，做点有意义的事，公司的快速成长，给自己和别人带来显著增益，如果事成了，顺便也实现了一些小小的梦想，那他妈才是精彩的人生。</p>
+<p>做自己想做的，相信明年会更好！ ✌️✌️✌️</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img class=&quot;full-image&quot; src=&quot;https://pic4.zhimg.com/v2-7c31cfc647aee3d736ea0896d6852b5b.jpg&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;回顾下2015年给2016年定的计划：&quot;&gt;&lt;a href=&quot;#回顾下2015年给2016年定的计划：&quot; class=&quot;headerlink&quot; title=&quot;回顾下2015年给2016年定的计划：&quot;&gt;&lt;/a&gt;回顾下2015年给2016年定的计划：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;1.完成一款大型单页应用WebApp（&lt;strong&gt;未完成：&lt;/strong&gt;不想找理由，懒！）&lt;/li&gt;
+&lt;li&gt;2.一年一次的旅行（&lt;strong&gt;未完成：&lt;/strong&gt;腰🙄）&lt;/li&gt;
+&lt;li&gt;3.一周两次的健身（&lt;strong&gt;未完成：&lt;/strong&gt;腰🙄）&lt;/li&gt;
+&lt;li&gt;4.&lt;del&gt;驾驶证考出&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;5.&lt;del&gt;尝试室内设计&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="心情语录" scheme="http://likr.cn/tags/%E5%BF%83%E6%83%85%E8%AF%AD%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>VUE在购物车的应用场景</title>
@@ -988,63 +1106,6 @@ gulp build:common：//公共文件输出发布目录
     
     
       <category term="前端工具" scheme="http://likr.cn/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用手淘[Flexible]实现h5页面的终端适配</title>
-    <link href="http://likr.cn/2015/12/05/%E4%BD%BF%E7%94%A8%E6%89%8B%E6%B7%98-Flexible-%E5%AE%9E%E7%8E%B0h5%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%BB%88%E7%AB%AF%E9%80%82%E9%85%8D/"/>
-    <id>http://likr.cn/2015/12/05/使用手淘-Flexible-实现h5页面的终端适配/</id>
-    <published>2015-12-05T13:41:28.000Z</published>
-    <updated>2016-12-08T09:44:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>双11已过，手淘前端团队大漠老湿分享的一个基于手淘html5终端适配的移动端解决方案；<br>之前买过大漠老湿写的书<code>图解CSS3</code>，写的很用心，很棒 😄</p>
-<p>喜欢移动端，是因为可以大胆的尝试一些新的写法，搭配各种不一样的框架，不用在考虑为向下兼容ie8啊 为了这些操蛋的写多余的代码，而一直用不到一些便捷新奇的方法属性，但是坑是挺多的。</p>
-<a id="more"></a>
-<p><strong>先来看看移动需要适配的各种尺寸：</strong><br><img src="https://camo.githubusercontent.com/9598a107e7f7029717f52192c90dcaf7008e49c1/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d342e706e67" alt="适配图片参数"></p>
-<p>在来看看淘宝需要适配的终端设备数据：<br><img src="https://camo.githubusercontent.com/ab4450a21060ca291fc6b7ddc9592c94467d6bd6/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d372e706e67" alt="数据"></p>
-<ul>
-<li>-，-还好苹果垄断了大半江山，各种杂七杂八的机型，就不说，各种原生改过的系统，可想而知兼容性多差了~如为了适配全部手机，那得多累，大致适配一些主流，不冷门的手机，不过大多基于<code>webkit</code>内核的兼容性都还可以。</li>
-</ul>
-<h2 id="1-淘宝的适配协作流程"><a href="#1-淘宝的适配协作流程" class="headerlink" title="1.淘宝的适配协作流程"></a>1.淘宝的适配协作流程</h2><ul>
-<li>选择一种尺寸作为设计和开发基准</li>
-<li>定义一套适配规则，自动适配剩下的两种尺寸(其实不仅这两种，你懂的)</li>
-<li>特殊适配效果给出设计效果</li>
-</ul>
-<p><img src="https://camo.githubusercontent.com/8e69ed933a0eff873d4a2b3667461d1e3ec2d790/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f72656d2d362e6a7067" alt="流程"></p>
-<h2 id="2-基本概念"><a href="#2-基本概念" class="headerlink" title="2.基本概念"></a>2.基本概念</h2><h3 id="2-1视窗-viewport"><a href="#2-1视窗-viewport" class="headerlink" title="2.1视窗 viewport"></a>2.1视窗 viewport</h3><p>简单的理解，<strong>viewport</strong>是严格等于浏览器的窗口。在桌面浏览器中，<strong>viewport</strong>就是浏览器窗口的宽度高度。但在移动端设备上就有点复杂。</p>
-<p>移动端的<strong>viewport</strong>太窄，为了能更好为CSS布局服务，所以提供了两个<strong>viewport</strong>:虚拟的<code>viewportvisualviewport</code>和布局的<code>viewportlayoutviewport</code>。</p>
-<h3 id="2-2物理像素-physical-pixel"><a href="#2-2物理像素-physical-pixel" class="headerlink" title="2.2物理像素(physical pixel)"></a>2.2物理像素(physical pixel)</h3><p>物理像素又被称为设备像素，他是显示设备中一个最微小的物理部件。每个像素可以根据操作系统设置自己的颜色和亮度。正是这些设备像素的微小距离欺骗了我们肉眼看到的图像效果。</p>
-<h3 id="2-3设备独立像素-density-independent-pixel"><a href="#2-3设备独立像素-density-independent-pixel" class="headerlink" title="2.3设备独立像素(density-independent pixel)"></a>2.3设备独立像素(density-independent pixel)</h3><p>设备独立像素也称为密度无关像素，可以认为是计算机坐标系统中的一个点，这个点代表一个可以由程序使用的虚拟像素(比如说CSS像素)，然后由相关系统转换为物理像素。</p>
-<h3 id="2-4设备像素比-device-pixel-ratio"><a href="#2-4设备像素比-device-pixel-ratio" class="headerlink" title="2.4设备像素比(device pixel ratio)"></a>2.4设备像素比(device pixel ratio)</h3><p>设备像素比简称为dpr，其定义了物理像素和设备独立像素的对应关系。它的值可以按下面的公式计算得到：</p>
-<pre><code>设备像素比 ＝ 物理像素 / 设备独立像素
-</code></pre><p>在JavaScript中，可以通过<code>window.devicePixelRatio</code>获取到当前设备的<strong>dpr</strong>。而在CSS中，可以通过<code>-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio</code>和 <code>-webkit-max-device-pixel-ratio</code>进行媒体查询，对不同<strong>dpr</strong>的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。</p>
-<p>部分代码逻辑：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (!dpr &amp;&amp; !scale) &#123;</div><div class="line">    <span class="keyword">var</span> isAndroid = win.navigator.appVersion.match(<span class="regexp">/android/gi</span>);</div><div class="line">    <span class="keyword">var</span> isIPhone = win.navigator.appVersion.match(<span class="regexp">/iphone/gi</span>);</div><div class="line">    <span class="keyword">var</span> devicePixelRatio = win.devicePixelRatio;</div><div class="line">    <span class="keyword">if</span> (isIPhone) &#123;</div><div class="line">        <span class="comment">// iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案</span></div><div class="line">        <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">3</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">3</span>)) &#123;</div><div class="line">            dpr = <span class="number">3</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (devicePixelRatio &gt;= <span class="number">2</span> &amp;&amp; (!dpr || dpr &gt;= <span class="number">2</span>))&#123;</div><div class="line">            dpr = <span class="number">2</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            dpr = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// 其他设备下，仍旧使用1倍的方案</span></div><div class="line">        dpr = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    scale = <span class="number">1</span> / dpr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="3-flexible的原理"><a href="#3-flexible的原理" class="headerlink" title="3.flexible的原理"></a>3.flexible的原理</h2><p>flexible实际上就是能过JS来动态改写meta标签，代码类似这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> metaEl = doc.createElement(<span class="string">'meta'</span>);</div><div class="line"><span class="keyword">var</span> scale = isRetina ? <span class="number">0.5</span>:<span class="number">1</span>;</div><div class="line">metaEl.setAttribute(<span class="string">'name'</span>, <span class="string">'viewport'</span>);</div><div class="line">metaEl.setAttribute(<span class="string">'content'</span>, <span class="string">'initial-scale='</span> + scale + <span class="string">', maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale + <span class="string">', user-scalable=no'</span>);</div><div class="line"><span class="keyword">if</span> (docEl.firstElementChild) &#123;</div><div class="line">    <span class="built_in">document</span>.documentElement.firstElementChild.appendChild(metaEl);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">var</span> wrap = doc.createElement(<span class="string">'div'</span>);</div><div class="line">    wrap.appendChild(metaEl);</div><div class="line">    documen.write(wrap.innerHTML);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>原理流程：</strong></p>
-<ul>
-<li>动态改写<meta>标签</li>
-<li>给<html>元素添加<code>data-dpr</code>属性，并且动态改写<code>data-dpr</code>的值</html></li>
-<li>给<html>元素添加<code>font-size</code>属性，并且动态改写<code>font-size</code>的值</html></li>
-</ul>
-<h2 id="4-把视觉稿中的px转换成rem"><a href="#4-把视觉稿中的px转换成rem" class="headerlink" title="4.把视觉稿中的px转换成rem"></a>4.把视觉稿中的px转换成rem</h2><p><code>CSSREM</code>是一个CSS的px值转rem值的Sublime Text3自动完成插件<br><img src="https://camo.githubusercontent.com/7bc50fa37be4ada5d263152a107125a216a6936c/687474703a2f2f7777772e773363706c75732e636f6d2f73697465732f64656661756c742f66696c65732f626c6f67732f323031352f313531312f63737372656d2e676966" alt="cssrem"></p>
-<h2 id="5-文本字号不建议使用rem"><a href="#5-文本字号不建议使用rem" class="headerlink" title="5.文本字号不建议使用rem"></a>5.文本字号不建议使用rem</h2><p>前面大家都见证了如何使用rem来完成H5适配。那么文本又将如何处理适配。是不是也通过rem来做自动适配。</p>
-<p>显然，我们在iPhone3G和iPhone4的Retina屏下面，希望看到的文本字号是相同的。也就是说，我们不希望文本在Retina屏幕下变小，另外，我们希望在大屏手机上看到更多文本，以及，现在绝大多数的字体文件都自带一些点阵尺寸，通常是16px和24px，所以我们不希望出现13px和15px这样的奇葩尺寸。</p>
-<p>如此一来，就决定了在制作H5的页面中，rem并不适合用到段落文本上。所以在Flexible整个适配方案中，考虑文本还是使用px作为单位。只不过使用[data-dpr]属性来区分不同dpr下的文本字号大小。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">    width: 1rem;</div><div class="line">    height: 0.4rem;</div><div class="line">    font-size: 12px; // 默认写上dpr为1的fontSize</div><div class="line">&#125;</div><div class="line">[data-dpr="2"] div &#123;</div><div class="line">    font-size: 24px;</div><div class="line">&#125;</div><div class="line">[data-dpr="3"] div &#123;</div><div class="line">    font-size: 36px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>最终适配的效果图：<br><img src="https://ohv0hyr4v.qnssl.com/2.gif" alt="gif"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;双11已过，手淘前端团队大漠老湿分享的一个基于手淘html5终端适配的移动端解决方案；&lt;br&gt;之前买过大漠老湿写的书&lt;code&gt;图解CSS3&lt;/code&gt;，写的很用心，很棒 😄&lt;/p&gt;
-&lt;p&gt;喜欢移动端，是因为可以大胆的尝试一些新的写法，搭配各种不一样的框架，不用在考虑为向下兼容ie8啊 为了这些操蛋的写多余的代码，而一直用不到一些便捷新奇的方法属性，但是坑是挺多的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="移动端" scheme="http://likr.cn/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-      <category term="适配解决方案" scheme="http://likr.cn/tags/%E9%80%82%E9%85%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
   </entry>
   

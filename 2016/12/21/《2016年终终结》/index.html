@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=2.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="心情语录," />
 
 
 
@@ -55,25 +55,33 @@
 
 
 
-<meta name="description" content="return 返回值：函数名+括号（例如fn1())就相当于得到了该函数里面return后面的值
-所有函数默认返回值是：undefined
-可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义
-return 后面的任何代码都不执行了">
+<meta name="description" content="回顾下2015年给2016年定的计划：
+1.完成一款大型单页应用WebApp（未完成：不想找理由，懒！）
+2.一年一次的旅行（未完成：腰🙄）
+3.一周两次的健身（未完成：腰🙄）
+4.驾驶证考出
+5.尝试室内设计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解函数返回值-return详解及应用">
-<meta property="og:url" content="http://likr.cn/2015/11/01/理解函数返回值-return详解及应用/index.html">
+<meta property="og:title" content="《2016年终总结》">
+<meta property="og:url" content="http://likr.cn/2016/12/21/《2016年终终结》/index.html">
 <meta property="og:site_name" content="Leon's Daily">
-<meta property="og:description" content="return 返回值：函数名+括号（例如fn1())就相当于得到了该函数里面return后面的值
-所有函数默认返回值是：undefined
-可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义
-return 后面的任何代码都不执行了">
-<meta property="og:updated_time" content="2016-05-27T06:20:14.000Z">
+<meta property="og:description" content="回顾下2015年给2016年定的计划：
+1.完成一款大型单页应用WebApp（未完成：不想找理由，懒！）
+2.一年一次的旅行（未完成：腰🙄）
+3.一周两次的健身（未完成：腰🙄）
+4.驾驶证考出
+5.尝试室内设计">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-7c31cfc647aee3d736ea0896d6852b5b.jpg">
+<meta property="og:updated_time" content="2016-12-24T14:46:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解函数返回值-return详解及应用">
-<meta name="twitter:description" content="return 返回值：函数名+括号（例如fn1())就相当于得到了该函数里面return后面的值
-所有函数默认返回值是：undefined
-可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义
-return 后面的任何代码都不执行了">
+<meta name="twitter:title" content="《2016年终总结》">
+<meta name="twitter:description" content="回顾下2015年给2016年定的计划：
+1.完成一款大型单页应用WebApp（未完成：不想找理由，懒！）
+2.一年一次的旅行（未完成：腰🙄）
+3.一周两次的健身（未完成：腰🙄）
+4.驾驶证考出
+5.尝试室内设计">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-7c31cfc647aee3d736ea0896d6852b5b.jpg">
 
 
 
@@ -91,7 +99,7 @@ return 后面的任何代码都不执行了">
   };
 </script>
 
-  <title> 理解函数返回值-return详解及应用 | Leon's Daily </title>
+  <title> 《2016年终总结》 | Leon's Daily </title>
   <script src="https://cdn.bootcss.com/vue/1.0.14/vue.min.js"></script>
   <script type="text/javascript">
       // var host = "likr.cn";
@@ -238,7 +246,7 @@ return 后面的任何代码都不执行了">
             
             
               
-                理解函数返回值-return详解及应用
+                《2016年终总结》
               
             
           </h1>
@@ -253,22 +261,22 @@ return 后面的任何代码都不执行了">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-01T16:02:53+08:00" content="2015-11-01 16:02:53">
-              2015-11-01 16:02:53
+            <time itemprop="dateCreated" datetime="2016-12-21T15:49:06+08:00" content="2016-12-21 15:49:06">
+              2016-12-21 15:49:06
             </time>
           </span>
 
 
           
 
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,720</span>
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,661</span>
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/01/理解函数返回值-return详解及应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/01/理解函数返回值-return详解及应用/" itemprop="commentsCount"></span>
+                <a href="/2016/12/21/《2016年终终结》/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/《2016年终终结》/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -291,39 +299,97 @@ return 后面的任何代码都不执行了">
       
 
       
-        <ul>
-<li><code>return</code> 返回值：函数名+括号（例如fn1())就相当于得到了该函数里面return后面的值</li>
-<li>所有函数默认返回值是：undefined</li>
-<li>可返回：数字、字符串、布尔、函数、对象（元素、[]、{}、null）、未定义</li>
-<li><code>return</code> 后面的任何代码都不执行了</li>
+        <p><img class="full-image" src="https://pic4.zhimg.com/v2-7c31cfc647aee3d736ea0896d6852b5b.jpg"></p>
+<h2 id="回顾下2015年给2016年定的计划："><a href="#回顾下2015年给2016年定的计划：" class="headerlink" title="回顾下2015年给2016年定的计划："></a>回顾下2015年给2016年定的计划：</h2><ul>
+<li>1.完成一款大型单页应用WebApp（<strong>未完成：</strong>不想找理由，懒！）</li>
+<li>2.一年一次的旅行（<strong>未完成：</strong>腰🙄）</li>
+<li>3.一周两次的健身（<strong>未完成：</strong>腰🙄）</li>
+<li>4.<del>驾驶证考出</del></li>
+<li>5.<del>尝试室内设计</del></li>
 </ul>
 <a id="more"></a>
-<h2 id="return实例"><a href="#return实例" class="headerlink" title="return实例"></a>return实例</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">alert fn1();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//此时弹出的是：function()&#123;alert(1);&#125;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">alert fn1()();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//此时弹出的是1，也就是return的匿名函数执行的结果。</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">alert fn1()(<span class="number">10</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</div><div class="line">        alert(a);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//此时弹出的是10。</span></div></pre></td></tr></table></figure>
-<h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><p><code>fn1(1, 2, 3)</code> //实参——实际传递的参数</p>
-<p><code>function fn1(a, b, c)</code> //形参——形式上，a、b、c这些名代表1、2、3</p>
-<p>如果不写形参，1、2、3也能够传进来，都存在arguments的肚子里。</p>
-<p>function fn1(){<br>//arguments =&gt; [1, 2, 3] —— 实参的集合（不是数组，但是类似数组，有length，也可以用下标找到其中的数据）<br>}</p>
-<blockquote>
-<p>当函数参数个数无法确定的时候，用arguments：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">alert(sum(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>));</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> n=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="built_in">arguments</span>.length; i++)&#123;</div><div class="line">        n += <span class="built_in">arguments</span>[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> n;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">a</span>)</span>&#123; <span class="comment">//arguments的某个数值就相当于某个形参</span></div><div class="line">    <span class="built_in">arguments</span>[<span class="number">0</span>]=<span class="number">3</span>;</div><div class="line">    alert(a); <span class="comment">//弹出3</span></div><div class="line">    <span class="keyword">var</span> a=<span class="number">2</span>;</div><div class="line">    alert(<span class="built_in">arguments</span>[<span class="number">0</span>]); <span class="comment">//弹出2</span></div><div class="line">&#125;</div><div class="line">fn2(a);</div><div class="line">alert(a); <span class="comment">//弹出1</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">a</span>)</span>&#123; <span class="comment">//arguments的某个数值就相当于某个形参</span></div><div class="line">    <span class="built_in">arguments</span>[<span class="number">0</span>]=<span class="number">3</span>;</div><div class="line">    alert(a); <span class="comment">//弹出3</span></div><div class="line">    <span class="keyword">var</span> a=<span class="number">2</span>;</div><div class="line">    alert(<span class="built_in">arguments</span>[<span class="number">0</span>]); <span class="comment">//弹出2</span></div><div class="line">&#125;</div><div class="line">fn2(a);</div><div class="line">alert(a); <span class="comment">//弹出1</span></div></pre></td></tr></table></figure>
-<h2 id="currentStyle与getComputedStyle应用"><a href="#currentStyle与getComputedStyle应用" class="headerlink" title="currentStyle与getComputedStyle应用"></a>currentStyle与getComputedStyle应用</h2><ul>
-<li><code>getComputedStyle</code>获取的是计算机（浏览器）计算后的样式，但是不兼容IE6、7、8</li>
-<li><code>currentStyle</code>方法兼容IE6、7、8，但是不兼容标准浏览器</li>
+<h2 id="再来看看2016年做的"><a href="#再来看看2016年做的" class="headerlink" title="再来看看2016年做的"></a>再来看看2016年做的</h2><ul>
+<li>看的书<ul>
+<li><strong>《编写可维护的 JavaScript 》</strong>（还行，大部分再讲编码规范细节，有些知识已经过时）</li>
+<li><strong>《你不知道的 JavaScript 上卷》</strong>（非常棒的一本书，强烈推荐，包含很多基础的底层原理）</li>
+<li><strong>《CSS 揭秘》</strong>（很棒推荐）</li>
+<li><strong>《编写高质量代码-Web前端开发修炼之道》</strong>（看的 PDF ，还好，不过很多已经过时）</li>
 </ul>
-<p>属性判断法、版本检测法来解决浏览器间的兼容性问题</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStyle</span>(<span class="params"> obj, attr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> obj.currentStyle ? obj.currentStyle[attr]:getComputedStyle( obj )[attr];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>注意事项：</code></p>
+</li>
+<li>折腾的技术栈<ul>
+<li><code>vue1.0</code> + <code>vuex1.0</code> + <code>vue-router1.0</code> + <code>vue-cli</code>（自己博客简历已升级到 <code>vue2.0</code>）</li>
+<li><code>webpack + gulp</code> 脚手架（花了2天学习，折腾到凌晨4：30 ，还好没猝死😊）</li>
+<li><code>研究大型复杂单页应用</code> （下个移动端项目采用）</li>
+<li><code>微信小程序</code> （语法糖参考的是 <code>vue</code> 和 <code>react</code>，比较容易上手，有自己的一套编译文件，组件库，有局限性，不好玩！）</li>
+<li>学习<code>ES6</code> 和 <code>组件化</code></li>
+</ul>
+</li>
+<li>参与的知乎live<ul>
+<li><strong>《无需意志力的习惯养成方法论》</strong></li>
+<li><strong>《前端工程师如何不断自我提升》</strong></li>
+<li><strong>《前端开发者成长之路》</strong></li>
+<li><strong>《人人都能用英语》</strong></li>
+<li><strong>《前端们，贺老 Live 面试你了！》</strong></li>
+<li><strong>《好莱坞重量级巨星与你聊电影》</strong></li>
+<li><strong>《全栈工程师养成指南》</strong></li>
+<li><strong>《重新认识腰椎病》</strong></li>
+<li><strong>《前端工程化浅析》</strong></li>
+<li><strong>《Nodejs 开发有问必答》</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="2017计划"><a href="#2017计划" class="headerlink" title="2017计划"></a>2017计划</h2><ul>
+<li>想买的<ul>
+<li><strong>p1 ：</strong> 布置书房的一些 <code>插画</code>，<code>装饰品</code>，<code>灯具</code> 等等</li>
+<li><strong>p2 ：</strong> <code>运动版阿特兹</code>，<code>运动版阿特兹</code>，<code>运动版阿特兹</code> ！（<strong>p2任务不完成，p2以下不考虑！</strong>）</li>
+<li><strong>p3 ：</strong> <code>头戴式降噪耳机</code> 一直没想好买哪款</li>
+<li><strong>p4 ：</strong> <code>SONY ILCE-6000L</code></li>
+<li><strong>p5 ：</strong> <code>大疆无人机</code></li>
+</ul>
+</li>
+<li>想学习的<ul>
+<li>一直对模型、室内设计比较感兴趣，想学习下 <code>手绘</code></li>
+<li>开始耍起 <code>NODE.js</code>，进阶服务端</li>
+<li><code>ES6</code> 熟练运用</li>
+</ul>
+</li>
+<li><p>想做的</p>
 <ul>
-<li>如果用以上的方法获取某个元素的复合样式，例如<code>background</code>，那么就不要用上面那种方式获取，在不同浏览器间有兼容性问题。用上面的方法获得单一样式，而不要用来获取复合样式。</li>
-<li>使用以上方法，注意不要多按空格</li>
-<li>使用以上方法，不要获取未设置后的样式，因为浏览器间不兼容</li>
-<li>在火狐4.0之前，有个<code>bug</code>，如果<code>getComputedStyle</code>后面不跟参数，会出现问题，所以有些人写成<code>getComputedStyle(obj, false)</code>，那个<code>false</code>就是为了解决这个<code>bug</code>。这里的bug也可以写成0，或者其他任何参数都可以。不过目前火狐的浏览器都比较高，因此这个问题已经不是很常见了。</li>
+<li><strong>p1 ：</strong> 锻炼腰肌，早睡，更正不良习惯，希望能尽快好起来，旅行，健身</li>
+<li><p><strong>p2 ：</strong> 没学过后端语言，虽然现在博客用的是 <code>hexo</code> 托管在 <code>github</code> 。但有强迫症想自己搞一个博客系统。 技术栈也想好了。相信这个博客系统做完，能对所学的技术栈进行一个全面的巩固，当然也避免不了坑，和许多问题😊。<br>前端 ：</p>
+<ul>
+<li><code>vue2.0</code>（<strong>渐进式响应框架</strong>）</li>
+<li><code>vuex2.0</code>（<strong>集中式状态管理</strong>）</li>
+<li><code>vue-router2.0</code>（<strong>路由</strong>）</li>
+<li><code>vue-resource1.0</code>（<strong>xhr请求</strong>）</li>
+<li><code>marked</code> （<strong>Markdown语法解析</strong>）</li>
+<li><code>prismjs</code>（<strong>代码高亮</strong>）</li>
 </ul>
+<p>后端 ：</p>
+<ul>
+<li><code>node.js</code>（<strong>服务端</strong>）</li>
+<li><code>express</code>（<strong>Web应用框架</strong>）</li>
+<li><code>LeanCloud</code>（<strong>数据存储</strong>）</li>
+</ul>
+</li>
+<li><p><strong>p3 ：</strong> 为移动端项目构建 <code>前端公共组件库</code>，并<strong>开源</strong> 。（这会比较漫长，也是对自己知识的一个积累）</p>
+</li>
+<li><strong>p4 ：</strong> 2016年也尝试了 <code>室内设计</code> ，我还是挺期待完工之后的整体效果，后续完工后会写一篇 <strong>《从前端到室内设计》</strong> 哈哈哈 这逼装的🙄</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>上半年：</p>
+</blockquote>
+<p>2016年，算是最好的一年也是最差劲的一年，前半年整个人都是荒废的。由于长期坐姿不良的习惯，腰部肌肉两边受力不均匀，某次健身运动不当导致腰间盘突出，压迫神经。起初真的是痛不欲生，走几步，臀部的经脉伴随着小腿就疼痛，不能久坐，不能长期走路。之前刚离职，在家休息了3月，没想到那么严重。</p>
+<p>总之非常谢谢 <code>萱萱女神</code> 推荐的中医。之前去市医院，医生叫我做手术打针。想到要工作，就放弃了做手术，选择了疗养性治疗，针灸。还好现在好了很多，走路不疼了，也能久坐了。</p>
+<p>当时也在面试，面了几家公司，也拿到了挺多 <strong>offer</strong> ，本想加入一个成熟型的前端团队。但介于有些太远，或者管理制度比较严，不适合我疗养性治疗，所以也都放弃了，最终选择了宽松的创业公司。</p>
+<blockquote>
+<p>下半年：</p>
+</blockquote>
+<p>新公司相处下来，技术团队都很 <code>nice</code>，产品比较逗逼，同事也很棒，公司前端权重重，有成熟的线下资源，也不需要融资。<br>一直都是特立独行的人，讨厌反复劳动，崇尚新技术高效推动。<br>氛围挺融洽，挺符合我的磁场，主动推动团队之间新的技术栈，统一团队之间的开发流程规范，开发团队公共组件库。</p>
+<p>总之和一群靠谱的团队，做点有意义的事，公司的快速成长，给自己和别人带来显著增益，如果事成了，顺便也实现了一些小小的梦想，那他妈才是精彩的人生。</p>
+<p>做自己想做的，相信明年会更好！ ✌️✌️✌️</p>
 
       
     </div>
@@ -332,7 +398,7 @@ return 后面的任何代码都不执行了">
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/心情语录/" rel="tag">#心情语录</a>
           
         </div>
       
@@ -341,17 +407,13 @@ return 后面的任何代码都不执行了">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/01/理解this指向和this应用/" rel="next" title="理解this指向和this应用">
-                <i class="fa fa-chevron-left"></i> 理解this指向和this应用
+              <a href="/2016/11/26/VUE在购物车的应用场景/" rel="next" title="VUE在购物车的应用场景">
+                <i class="fa fa-chevron-left"></i> VUE在购物车的应用场景
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/01/理解自定义属性的运用/" rel="prev" title="理解自定义属性的运用">
-                理解自定义属性的运用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -377,8 +439,8 @@ return 后面的任何代码都不执行了">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/01/理解函数返回值-return详解及应用/"
-           data-title="理解函数返回值-return详解及应用" data-url="http://likr.cn/2015/11/01/理解函数返回值-return详解及应用/">
+      <div class="ds-thread" data-thread-key="2016/12/21/《2016年终终结》/"
+           data-title="《2016年终总结》" data-url="http://likr.cn/2016/12/21/《2016年终终结》/">
       </div>
     
   </div>
@@ -522,7 +584,7 @@ return 后面的任何代码都不执行了">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#return实例"><span class="nav-number">1.</span> <span class="nav-text">return实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments"><span class="nav-number">2.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#currentStyle与getComputedStyle应用"><span class="nav-number">3.</span> <span class="nav-text">currentStyle与getComputedStyle应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#回顾下2015年给2016年定的计划："><span class="nav-number">1.</span> <span class="nav-text">回顾下2015年给2016年定的计划：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再来看看2016年做的"><span class="nav-number">2.</span> <span class="nav-text">再来看看2016年做的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2017计划"><span class="nav-number">3.</span> <span class="nav-text">2017计划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
