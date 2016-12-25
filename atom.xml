@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://likr.cn/"/>
-  <updated>2016-12-24T14:53:31.000Z</updated>
+  <updated>2016-12-25T04:16:15.000Z</updated>
   <id>http://likr.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://likr.cn/2016/12/21/%E3%80%8A2016%E5%B9%B4%E7%BB%88%E7%BB%88%E7%BB%93%E3%80%8B/"/>
     <id>http://likr.cn/2016/12/21/《2016年终终结》/</id>
     <published>2016-12-21T07:49:06.000Z</published>
-    <updated>2016-12-24T14:53:31.000Z</updated>
+    <updated>2016-12-25T04:16:15.000Z</updated>
     
     <content type="html"><![CDATA[<p><img class="full-image" src="https://ohv0hyr4v.qnssl.com/coffeebg.jpg"></p>
 <h2 id="回顾下2015年给2016年定的计划："><a href="#回顾下2015年给2016年定的计划：" class="headerlink" title="回顾下2015年给2016年定的计划："></a>回顾下2015年给2016年定的计划：</h2><ul>
@@ -40,7 +40,7 @@
 </ul>
 </li>
 <li>折腾的技术栈<ul>
-<li><code>vue1.0</code> + <code>vuex1.0</code> + <code>vue-router1.0</code> + <code>vue-cli</code>（自己博客简历已升级到 <code>vue2.0</code>）</li>
+<li><code>vue1</code> + <code>vuex1</code> + <code>vue-router1</code> + <code>vue-cli</code>（自己博客简历已升级到 <code>vue2</code>）</li>
 <li><code>webpack + gulp</code> 脚手架（花了2天学习，折腾到凌晨4：30 ，还好没猝死😊）</li>
 <li><code>研究大型复杂单页应用</code> （下个移动端项目采用）</li>
 <li><code>微信小程序</code> （语法糖参考的是 <code>vue</code> 和 <code>react</code>，比较容易上手，有自己的一套编译文件，组件库，有局限性，不好玩！）</li>
@@ -81,10 +81,10 @@
 <li><strong>p1 ：</strong> 锻炼腰肌，早睡，更正不良习惯，希望能尽快好起来，旅行，健身</li>
 <li><p><strong>p2 ：</strong> 没学过后端语言，虽然现在博客用的是 <code>hexo</code> 托管在 <code>github</code> 。但有强迫症想自己搞一个博客系统。 技术栈也想好了。相信这个博客系统做完，能对所学的技术栈进行一个全面的巩固，当然也避免不了坑，和许多问题😊。<br>前端 ：</p>
 <ul>
-<li><code>vue2.0</code>（<strong>渐进式响应框架</strong>）</li>
-<li><code>vuex2.0</code>（<strong>集中式状态管理</strong>）</li>
-<li><code>vue-router2.0</code>（<strong>路由</strong>）</li>
-<li><code>vue-resource1.0</code>（<strong>xhr请求</strong>）</li>
+<li><code>vue2</code>（<strong>渐进式响应框架</strong>）</li>
+<li><code>vuex2</code>（<strong>集中式状态管理</strong>）</li>
+<li><code>vue-router2</code>（<strong>路由</strong>）</li>
+<li><code>vue-resource1</code>（<strong>xhr请求</strong>）</li>
 <li><code>marked</code> （<strong>Markdown语法解析</strong>）</li>
 <li><code>prismjs</code>（<strong>代码高亮</strong>）</li>
 </ul>

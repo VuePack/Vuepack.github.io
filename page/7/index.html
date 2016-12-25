@@ -322,6 +322,325 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/23/安卓非微信浏览器呼出高德地图App/" itemprop="url">
+                  安卓非微信浏览器呼出高德地图App，若没安装高德地图App，打开网页版高德地图解决方案
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-23T12:44:42+08:00" content="2015-10-23 12:44:42">
+              2015-10-23 12:44:42
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,141</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/23/安卓非微信浏览器呼出高德地图App/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/23/安卓非微信浏览器呼出高德地图App/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>大家都知道微信屏蔽了呼起App，除非App应用在腾讯的应用宝上架跳转貌似可以呼起，不过没尝试。<br>不过此方案劳身费神，所以否决</p>
+<hr>
+<h2 id="解决方案1："><a href="#解决方案1：" class="headerlink" title="解决方案1："></a>解决方案1：</h2><p>微信端打开h5页面点击地图按钮，根据微信UA判断是否为微信浏览器</p>
+<ol>
+<li>是的话调用web版高德地图  (<strong>注意：这边调用高德地图参数先是维度再是经度 坑~~</strong>)</li>
+<li>不是的话呼起高德地图App (<strong>这边我是创建iframe的方式把App打开协议服务地址赋值给src，通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为</strong>) 【这边a标签链接是Appstore下载高德地图的链接】</li>
+</ol>
+<h3 id="html代码：一个a链接-href为高德appstore下载链接"><a href="#html代码：一个a链接-href为高德appstore下载链接" class="headerlink" title="html代码：一个a链接 href为高德appstore下载链接"></a>html代码：一个a链接 href为高德appstore下载链接</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"oPenMap"</span> <span class="attr">class</span>=<span class="string">"location"</span> <span class="attr">href</span>=<span class="string">"https://itunes.apple.com/app/id461703208?spm=0.0.0.0.6cS3kh&amp;ls=1&amp;mt=8"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/23/安卓非微信浏览器呼出高德地图App/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/22/前端规范/" itemprop="url">
+                  前端规范
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-22T22:46:56+08:00" content="2015-10-22 22:46:56">
+              2015-10-22 22:46:56
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;3,207</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/22/前端规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/22/前端规范/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="前端CSS规范文档"><a href="#前端CSS规范文档" class="headerlink" title="前端CSS规范文档"></a>前端CSS规范文档</h1><p>初写，参考一些国内规范文档案例，有不足之处多提建议：</p>
+<hr>
+<h2 id="1-命名规则"><a href="#1-命名规则" class="headerlink" title="1.命名规则"></a>1.命名规则</h2><p>为了团队之间更好的协调配合，标签语义化，让别人看懂你写的代码。一套语义化的命名规范很重要。</p>
+<h2 id="1-1-CSS书写顺序"><a href="#1-1-CSS书写顺序" class="headerlink" title="1.1 CSS书写顺序"></a>1.1 CSS书写顺序</h2><pre><code>（1）.位置属性(position, top, right, z-index, display, float等)
+（2）.大小(width, height, padding, margin)
+（3）.文字系列(font, line-height, letter-spacing, color, text-align等)
+（4）.背景(background, border等)
+（5）.其他(animation, transition等)
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/22/前端规范/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/22/第一篇文章/" itemprop="url">
+                  第一篇文章
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-22T20:27:47+08:00" content="2015-10-22 20:27:47">
+              2015-10-22 20:27:47
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;457</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/22/第一篇文章/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/22/第一篇文章/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是博客的第一篇文章，我觉得也是最有价值意义的。<br>之前用<code>Wordpress</code>搭建过博客，记得是在2014年初的时候搭建的，当时前端也是刚学，折腾了很多，尝试用刚学的知识写了几套<code>wp</code>博客的主题。虽然折腾的有点累，不过结实了很多前端圈的朋友 赞~</p>
+<p>怎么说呢，前端这个职业。范围知识面很广，之前的博客也经常写和总结一些技术方面的知识。<br>后来，主机和域名过期了，就懒了，一直没弄。<br>直到面试的时候买了一个域名，写了一个静态页面，把之前写的项目都汇总了上去，托管在<code>Github</code>上。</p>
+<p>后来工作了，慢慢接触了<code>Git</code>,也看过一些<code>NodeJs</code>的知识。<br>突然感觉程序代码的优雅性，用<code>hexo</code>搭建的<code>Node</code>静态博客，用<code>Sublime</code>编译器书写<code>markdown</code>，并用<code>BrowserSync</code>检测文件。感觉太棒了~<br>技术是需要慢慢积累，我发现这半年来，人特别浮躁，静不下心来。可能家里事情比较多吧，年纪不小了，大大小小的事情都需要自己把握分寸，周末基本没什么空，要么出去学车，要么出去办事情，一大堆的事情。</p>
+<p>总之，希望自己后面调整好状态，蓄势待发。<br>这个博客，我会写些一些工作方面技术总结和心情语录。<br>我希望不管工作还是生活有多忙多累，能坚持下来，到几年以后会发现会收获不少和一些比较精彩有趣的地方。</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
