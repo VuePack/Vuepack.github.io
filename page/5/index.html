@@ -242,6 +242,109 @@
             
               
                 
+                <a class="post-title-link" href="/2015/11/25/pc网站微信登录开发/" itemprop="url">
+                  pc网站微信登录开发
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-avatar">
+            <a class="avatar site-author-image"/></a>
+          </span>
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-25T15:46:27+08:00" content="2015-11-25 15:46:27">
+              2015-11-25 15:46:27
+            </time>
+          </span>
+
+
+          
+
+          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;955</span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/25/pc网站微信登录开发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/25/pc网站微信登录开发/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>网站需要接入一个微信登录的功能。于是知乎了下，了解了下原理</p>
+<p>（1）每打开一次微信网页版页面的时候会随机生成一个含有唯一<code>uuid</code>的二维码，每次刷新页面都会不一样（这个可以保证一个 <code>uuid</code>只可以绑定一个账号和密码，如果一个<code>uuid</code>可以绑定多个账号和密码，那么很可能你的电脑会登陆别人的微信）；</p>
+<p>确实返回了唯一 id，但目的是为了识别用户身份，而且实际上打开这个页面的时候浏览器已经和 Server 创建了一个长连接等待确认信息。查看 <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx4b58644b2d59e8c9&amp;redirect_uri=http%3A%2F%2Fapi.date.tm&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect">https://open.weixin.qq.com/connect/qrconnect?appid=wx4b58644b2d59e8c9&amp;redirect_uri=http%3A%2F%2Fapi.date.tm&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE#wechat_redirect</a> 的源码可以看到，这个页面在加载完毕时，也已经把很多登录后才需要的相关资源都预先加载进来了，所以长连接等待登录用户得到确认后展示用户信息的速度很快，因为无需刷页面和加载头像外的其他资源。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/25/pc网站微信登录开发/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/11/24/日期正则表达式验证/" itemprop="url">
                   日期正则表达式验证
                 </a>
@@ -770,111 +873,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/11/01/理解自定义属性的运用/" itemprop="url">
-                  理解自定义属性的运用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-avatar">
-            <a class="avatar site-author-image"/></a>
-          </span>
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-01T19:02:02+08:00" content="2015-11-01 19:02:02">
-              2015-11-01 19:02:02
-            </time>
-          </span>
-
-
-          
-
-          <span class="post-count">&nbsp; | &nbsp;字数 &nbsp;1,850</span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/11/01/理解自定义属性的运用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/01/理解自定义属性的运用/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="自定义属性的读写操作"><a href="#自定义属性的读写操作" class="headerlink" title="自定义属性的读写操作"></a>自定义属性的读写操作</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  oBtn = <span class="built_in">document</span>.getElementByTagName(<span class="string">'input'</span>);</div><div class="line"></div><div class="line">oBtn[<span class="number">0</span>].abc = <span class="number">123</span>;</div><div class="line"><span class="built_in">console</span>.log(oBtn[<span class="number">0</span>].abc);<span class="comment">// 自定义属性的读</span></div><div class="line"></div><div class="line">oBtn[<span class="number">0</span>].abc = <span class="number">456</span>;<span class="comment">// 自定义属性的写</span></div><div class="line"><span class="comment">//JS可以为任何HTML元素添加任意个自定义属性</span></div></pre></td></tr></table></figure>
-<h2 id="自定义属性应用"><a href="#自定义属性应用" class="headerlink" title="自定义属性应用"></a>自定义属性应用</h2><blockquote>
-<p>用自定义属性可以元素添加开关属性，作为控制开关。如下面这个例子：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aLi = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</div><div class="line"><span class="comment">// var onOff = true; 一个onOff只能控制一个开关。要为多个元素设置各自的开关，就要给每个元素加个onOff开关。</span></div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;aLi.length; i++) &#123;</div><div class="line">    aLi[i].onOff = <span class="literal">true</span>;</div><div class="line">    aLi[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.onOff)&#123;</div><div class="line">        <span class="keyword">this</span>.style.background = <span class="string">'url(img/active.png)'</span>;</div><div class="line">        <span class="keyword">this</span>.onOff = <span class="literal">false</span>;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">this</span>.style.background = <span class="string">'url(img/normal.png)'</span>;</div><div class="line">        <span class="keyword">this</span>.onOff = <span class="literal">true</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/01/理解自定义属性的运用/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -922,14 +920,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">100.8k</span>
+              <span class="site-state-item-count">104.7k</span>
               <span class="site-state-item-name">字数</span>
               
           </div>
