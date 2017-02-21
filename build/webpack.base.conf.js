@@ -139,9 +139,9 @@ module.exports = {
         // remPrecision: 6, // rem precision (default: 6)
         // remUnit: 75 // rem unit value (default: 75)
       // }),
-      // require('autoprefixer')({
-      //   browsers: ['Firefox >= 20', '> 5%', 'last 2 versions']
-      // })
+      require('autoprefixer')({
+        browsers: ['Firefox >= 20', '> 5%', 'last 2 versions']
+      })
     ]
   }
 }
