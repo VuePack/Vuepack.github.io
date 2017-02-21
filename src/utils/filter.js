@@ -1,3 +1,10 @@
+/*
+ * @Author: Leon
+ * @Date: 2017-02-21 22:01:56
+ * @Last Modified by:   Leon
+ * @Last Modified time: 2017-02-21 22:01:56
+ */
+
 import Timeago from 'timeago.js'
 
 const timeago = new Timeago(null, 'zh_CN')
