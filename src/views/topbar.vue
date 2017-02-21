@@ -135,16 +135,31 @@ export default {
       height: 50px;
     }
     li {
+      position: relative;
       padding: 0 20px 0 0;
     }
-    a:hover {
-      color: @green;
-      border-bottom: 3px solid @green;
-      transition: all .2s linear;
+    a {
+      position: relative;
+      &:hover:after{
+        visibility: visible;
+        transform: scaleX(1);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: -3px;
+        left: 0;
+        background-color: @green;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: .3s ease-in-out;
+      }
     }
-    .active {
-      color: @green;
-      border-bottom: 3px solid @green;
+    .active:after{
+      visibility: visible;
+      transform: scaleX(1);
     }
   }
   .bar-tags {
