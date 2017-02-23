@@ -2,15 +2,10 @@
  * @Author: Leon
  * @Date: 2017-02-19 10:40:28
  * @Last Modified by: Leon
- * @Last Modified time: 2017-02-20 21:29:20
+ * @Last Modified time: 2017-02-23 17:37:54
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-import ListView from 'views/list.vue'
-import PostView from 'views/post.vue'
-import LabView from 'views/lab.vue'
-import AboutView from 'views/about.vue'
 
 Vue.use(VueRouter)
 
@@ -23,22 +18,30 @@ const routes = [
   {
     path: '/notes',
     name: '笔记',
-    component: ListView
+    component(resolve) {
+      require(['../../../views/List.vue'], resolve)
+    }
   },
   {
     path: '/post/:hash',
     name: 'post',
-    component: PostView
+    component(resolve) {
+      require(['../../../views/Post.vue'], resolve)
+    }
   },
   {
     path: '/labs',
     name: '实验室',
-    component: LabView
+    component(resolve) {
+      require(['../../../views/lab.vue'], resolve)
+    }
   },
   {
     path: '/about',
     name: '关于',
-    component: AboutView
+    component(resolve) {
+      require(['../../../views/about.vue'], resolve)
+    }
   },
   {
     path: '*',
