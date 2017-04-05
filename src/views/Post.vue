@@ -108,13 +108,13 @@
     b, strong{
       color: #333;
     }
-    h2,h3,h4{
+    h1,h2,h3,h4{
       position: relative;
       margin: 1em 0;
       font-weight: bold;
-    }
-    h2{
       font-size: 18px;
+    }
+    h1{
       &:before{
         content: "#";
         color: #42b983;
@@ -125,25 +125,33 @@
         font-weight: bold;
       }
     }
-
-    h3{
-      font-size: 17px;
-      padding-left: 15px;
+    h2{
       &:before{
         content: "##";
-        color: #42b983;
+        color: #FF5722;
         position: absolute;
-        left: -0.8em;
+        left: -1.5em;
         top: -4px;
         font-size: 1.2em;
         font-weight: bold;
       }
     }
-    h4{
-      font-size: 17px;
-      padding-left: 30px;
+    h3{
       &:before{
         content: "###";
+        color: #FF9800;
+        position: absolute;
+        left: -2.2em;
+        top: -4px;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+
+    h4{
+      padding-left: 30px;
+      &:before{
+        content: "####";
         color: #42b983;
         position: absolute;
         left: -0.8em;
