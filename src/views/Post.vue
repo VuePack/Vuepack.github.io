@@ -70,7 +70,6 @@
         })
       }
     },
-
     watch: {
       'htmlFromMarkdown': 'newTab'
     }
@@ -79,6 +78,50 @@
 </script>
 <style lang="less">
   @import '../assets/style/_vars.less';
+  .posts-content {
+    position: absolute;
+    padding-top: 100px;
+    left: 420px;
+    right: 0;
+    .item-title {
+      color: @title;
+      font-weight: bold;
+      transition: padding .2s ease-out;
+      &:hover{
+        padding-left: 10px;
+      }
+    }
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      margin-right: 20px;
+    }
+    .item-date {
+      color: @subTitle;
+    }
+    .list-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px dotted @border;
+      padding: 20px 0;
+    }
+  }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .posts-content{
+      position: absolute;
+      top: 100px;
+      padding: 0 30px;
+      left: 0;
+      right: 0;
+      .list-item{
+        font-size: 13px;
+        padding: 10px 0;
+        margin:0;
+      }
+    }
+  }
   .post-view {
     padding: 30px 45px;
   }
