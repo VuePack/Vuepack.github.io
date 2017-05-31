@@ -2,10 +2,12 @@
   <section class="posts-content">
     <div v-if="!content">loading..</div>
     <article class="post-view">
-      <h1 class="post-title">
-        {{ title }}
-        <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="post-date">{{ this.date | timeago }}</time>
-      </h1>
+      <div class="post-head">
+        <h1 class="post-title">
+          {{ title }}
+        </h1>
+        <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="post-date">/ {{ this.date | timeago }} by leon</time>
+      </div>
       <div class="post-main" v-if="content" v-html="htmlFromMarkdown"></div>
     </article>
   </section>
@@ -48,8 +50,9 @@
             this.content = content.body
             this.title = content.attributes.title
             this.date = content.attributes.date
-            // window.document.title = `${conf.author} - ${this.title}`
-            window.document.title = `${conf.title}`
+            window.document.title = `${conf.author} - ${this.title}`
+            console.log(content)
+            // window.document.title = `${this.title}`
           })
           .catch(err => {
             console.error(err)
@@ -122,6 +125,36 @@
       }
     }
   }
+  .post-head{
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px dotted rgba(0,0,0,.1);
+  }
+  .post-title{
+    display: inline-block;
+    position: relative;
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    &:before{
+      position: absolute;
+      left: -42px;
+      top: -6px;
+      content: '『';
+      color: @green;
+    }
+    &:after{
+      position: absolute;
+      right: -42px;
+      bottom: -6px;
+      content: '』';
+      color: @green;
+    }
+  }
+  .post-date {
+    font-size: 12px;
+    padding-left: 30px;
+  }
   .post-view {
     padding: 30px 45px;
   }
@@ -129,6 +162,8 @@
     color: #34495e;
     img{
       max-width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.2);
     }
     table {
       margin: 30px 0;
