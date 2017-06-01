@@ -1,5 +1,5 @@
 <template>
-  <section class="posts-content">
+  <section class="view view-lab">
     实验室还在开发哦
   </section>
 </template>
@@ -24,5 +24,7 @@
   }
 </script>
 <style lang='less' scoped>
-
+.view-lab{
+  padding-top: 70px;
+}
 </style>

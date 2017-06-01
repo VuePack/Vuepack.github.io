@@ -1,24 +1,27 @@
 <template>
-  <section class="posts-detail">
-    <div v-if="!content">loading..</div>
-    <article v-else class="post-view">
-      <div class="post-head">
+  <section class="article-detail">
+    <Loader v-if="!content" class="article-loader" ></Loader>
+    <article v-else class="article-view">
+      <div class="article-head">
         <div class="pull-left">
           <div style="text-align:left;">
-            <h1 class="post-title">
+            <h1 class="article-title">
               {{ title }}
             </h1>
           </div>
-          <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="post-date">{{ this.date | timeago }} by leon</time>
+          <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="article-date">{{ this.date | timeago }} by leon</time>
         </div>
         <router-link class="iconfont icon-close" to="/notes"></router-link>
       </div>
-      <div class="post-main" v-if="content" v-html="htmlFromMarkdown"></div>
+      <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
+      <Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>
     </article>
   </section>
 </template>
 <script>
   import Vue from 'vue'
+  import Loader from 'components/loader'
+  import Copyright from 'components/copyright'
   import api from 'config'
   import conf from 'config/conf.json'
   import fm from 'front-matter'
@@ -32,13 +35,22 @@
       return {
         title: '',
         date: null,
-        content: ''
+        content: '',
+        article: {
+          author: 'leon',
+          tag: '',
+          link: location.href
+        }
       }
     },
     computed: {
       htmlFromMarkdown() {
         return marked(this.content)
       }
+    },
+    components: {
+      Loader,
+      Copyright
     },
     created() {
       this.loadPost()
@@ -56,6 +68,7 @@
             this.content = content.body
             this.title = content.attributes.title
             this.date = content.attributes.date
+            this.article.tag = content.attributes.tags
             window.document.title = `${this.title}`
           })
           .catch(err => {
@@ -85,11 +98,15 @@
 </script>
 <style lang="less">
   @import '../assets/style/_vars.less';
-  .posts-detail {
+  .article-detail {
     position: absolute;
     top: 0;
     left: 400px;
     right: 0;
+    .article-loader{
+      margin-top: 40%;
+      text-align: center;
+    }
     .pull-left{
       position: relative;
       display: flex;
@@ -105,6 +122,7 @@
       position: absolute;
       right: -20px;
       font-size: 26px;
+      color: @orange;
     }
     .item-title {
       color: @title;
@@ -131,14 +149,25 @@
       padding: 20px 0;
     }
   }
-  .post-head{
+  .article-head{
     position: relative;
     display: flex;
     padding: 0 0 30px 0;
     text-align: center;
-    border-bottom: 1px dotted rgba(0,0,0,.1);
+    &:after{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      height: 2px;
+      width: 100%;
+      border: none;
+      background-color: #ddd;
+      background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+    }
   }
-  .post-title{
+  .article-title{
     display: inline-block;
     position: relative;
     font-size: 36px;
@@ -159,18 +188,18 @@
       color: @green;
     }
   }
-  .post-date {
+  .article-date {
     font-size: 12px;
     text-align: left;
   }
-  .post-view {
-    padding: 30px 45px;
+  .article-view {
+    padding: 25px 50px;
   }
-  .post-main{
+  .article-main{
     color: #34495e;
     img{
       max-width: 100%;
-      border-radius: 5px;
+      margin: 10px 0;
       box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.2);
     }
     table {
@@ -188,7 +217,7 @@
       }
     }
     p{
-      padding-bottom: 15px;
+      padding: 15px 0;
       line-height: 1.8;
     }
     b, strong{
@@ -205,7 +234,7 @@
         content: "#";
         color: #42b983;
         position: absolute;
-        left: -0.8em;
+        left: -0.7em;
         top: -4px;
         font-size: 1.2em;
         font-weight: bold;
@@ -216,7 +245,7 @@
         content: "##";
         color: #FF5722;
         position: absolute;
-        left: -1.5em;
+        left: -1.4em;
         top: -4px;
         font-size: 1.2em;
         font-weight: bold;
@@ -227,7 +256,7 @@
         content: "###";
         color: #FF9800;
         position: absolute;
-        left: -2.2em;
+        left: -2.1em;
         top: -4px;
         font-size: 1.2em;
         font-weight: bold;
@@ -240,7 +269,7 @@
         content: "####";
         color: #42b983;
         position: absolute;
-        left: -0.8em;
+        left: -0.7em;
         top: -4px;
         font-size: 1.2em;
         font-weight: bold;
@@ -262,7 +291,7 @@
     }
   }
   @media only screen and (min-width: 320px) and (max-width: 767px) {
-    .posts-detail{
+    .article-detail{
       position: absolute;
       top: 0;
       padding: 0 30px;
@@ -274,16 +303,16 @@
         margin:0;
       }
     }
-    .post-head{
+    .article-head{
       padding: 0 0 20px 0;
     }
-    .post-view{
+    .article-view{
       padding: 20px 0 0 0;
     }
-    .post-main {
+    .article-main {
       font-size: 13px;
     }
-    .post-title{
+    .article-title{
       font-size: 22px;
       &:before{
         left: -30px;

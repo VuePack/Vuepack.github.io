@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-02-19 10:40:28
  * @Last Modified by: Leon
- * @Last Modified time: 2017-06-01 10:58:03
+ * @Last Modified time: 2017-06-01 15:17:26
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -19,14 +19,14 @@ const routes = [
     path: '/notes',
     name: '笔记',
     component(resolve) {
-      require(['../../../views/List.vue'], resolve)
+      require(['../../../views/notes.vue'], resolve)
     }
   },
   {
     path: '/post/:hash',
     name: '笔记详情',
     component(resolve) {
-      require(['../../../views/Post.vue'], resolve)
+      require(['../../../views/article.vue'], resolve)
     }
   },
   {

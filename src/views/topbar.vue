@@ -6,14 +6,14 @@
           <router-link :to="item.path" :class="{'active' : item.default === 1}">{{item.name}}</router-link>
         </li>
       </ul>
-      <div class="item-search">
+      <div class="item-search" v-if="this.$route.path === '/notes'">
         <form v-on:submit.prevent="searchResult">
-          <input type="text" name="" placeholder="search" v-model="searchVal" @keyup.esc="resetSearch">
+          <input type="text" name="" v-model="searchVal" @keyup.esc="resetSearch">
           <i class="iconfont icon-search"></i>
         </form>
       </div>
     </div>
-    <div class="bar-tags">
+    <div class="bar-tags" v-if="this.$route.path === '/notes'">
       <a :class="{'active' : item.default === 1}" v-for="(item, index) in this.$store.state.tag" @click="checkTag(item.name,index)">{{item.name}}</a>
     </div>
   </nav>
@@ -104,10 +104,10 @@ export default {
         height: 25px;
         padding: 10px;
         border: 0;
-        border-bottom: 1px solid @e3;
         border-radius: 0;
         transition: all 0.3s ease-out;
         font-size: 13px;
+        background-color: transparent;
         &:focus{
           border-bottom: 1px solid @33;
         }
@@ -228,6 +228,23 @@ export default {
       padding: 14px 20px 12px;
       &::-webkit-scrollbar {
           display: none;
+      }
+    }
+    .item-search{
+      input{
+        color: white;
+        &:focus{
+          border-bottom: 1px solid white !important;
+        }
+        &:focus + .iconfont{
+          color: white !important;
+        }
+        &:hover{
+          border-bottom: 1px solid white !important;
+        }
+        &:hover + .iconfont{
+          color: white !important;
+        }
       }
     }
   }

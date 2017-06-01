@@ -1,5 +1,5 @@
 <template>
-  <section class="posts-content">
+  <section class="view view-about">
     关于我，还在开发哦
   </section>
 </template>

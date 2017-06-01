@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-01-19 16:59:17
  * @Last Modified by: Leon
- * @Last Modified time: 2017-02-21 20:55:10
+ * @Last Modified time: 2017-06-01 16:40:52
  */
 
 @import 'reset.less';
@@ -50,4 +50,22 @@ body {
 
 .icon-jianli {
   color: @orange;
+}
+
+.view{
+  position: absolute;
+  padding-top: 100px;
+  padding: 100px 0 0 30px;
+  left: 400px;
+  right: 0;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .view{
+    position: absolute;
+    top: 0;
+    padding: 70px  30px 0;
+    left: 0;
+    right: 0;
+  }
+
 }

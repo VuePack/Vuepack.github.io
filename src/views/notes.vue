@@ -1,8 +1,9 @@
 <template>
-  <section class="posts-content">
-    <div v-if="!this.$store.state.list">loading..</div>
+  <section class="view view-notes">
+    <Loader v-if="!this.$store.state.list"></Loader>
     <div v-else="this.$store.state.list" class="posts-list">
-      <article v-for="{ title, sha, date } in filteredList" :key="sha" class="list-item">
+      <div class="posts-tips" v-if="this.$store.state.list == ''"> <span class="iconfont icon-wuziliao"><i>没有相关文章</i></span></div>
+      <article v-else v-for="{ title, sha, date } in filteredList" :key="sha" class="list-item">
         <div class="posts-main">
           <router-link :to="'/post/' + sha" class="item-title">
             {{ title }}
@@ -16,7 +17,7 @@
 <script>
   import { mapState, mapActions } from 'vuex'
   import { POSTS_LIST } from '../module/Index/manage/store.js'
-  import api from 'config'
+  import Loader from 'components/loader'
   import conf from 'config/conf.json'
 
   export default {
@@ -27,6 +28,9 @@
       }
     },
     mounted() {
+    },
+    components: {
+      Loader: Loader
     },
     computed: {
       filteredList() {
@@ -54,12 +58,15 @@
 </script>
 <style lang="less">
   @import '../assets/style/_vars.less';
-  .posts-content {
-    position: absolute;
+  .posts-tips{
+    display: flex;
+    justify-content: center;
+    i{
+      font-size: 15px;
+    }
+  }
+  .view-notes {
     padding-top: 100px;
-    padding: 100px 0 0 30px;
-    left: 400px;
-    right: 0;
     .item-title {
       color: @title;
       font-weight: bold;
@@ -86,7 +93,7 @@
     }
   }
   @media only screen and (min-width: 320px) and (max-width: 767px) {
-    .posts-content{
+    .view-notes{
       position: absolute;
       top: 100px;
       padding: 0 20px;
