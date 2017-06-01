@@ -1,7 +1,7 @@
 <template>
   <section class="view view-notes">
     <Loader v-if="this.$store.state.list == '' && isLoading"></Loader>
-    <div v-else="this.$store.state.list && !isLoading" class="posts-list">
+    <div v-else class="posts-list">
       <div class="posts-tips" v-if="this.$store.state.list == ''"> <span class="iconfont icon-wuziliao"><i>没有相关文章</i></span></div>
       <article v-for="{ title, sha, date } in filteredList" :key="sha" class="list-item">
         <div class="posts-main">
