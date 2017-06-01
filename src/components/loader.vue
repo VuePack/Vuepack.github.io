@@ -26,6 +26,8 @@ export default {
 </script>
 <style lang='less' scoped>
 .loader {
+  margin-top: 35%;
+  text-align: center;
   z-index: 999;
 }
 .dot {

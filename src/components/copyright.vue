@@ -45,9 +45,8 @@ hr {
   p{
     color: #000;
     font-size: 15px;
-    overflow: hidden;
-    white-space: normal;
-    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: normal;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {

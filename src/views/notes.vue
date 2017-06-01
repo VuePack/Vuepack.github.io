@@ -1,9 +1,9 @@
 <template>
   <section class="view view-notes">
-    <Loader v-if="!this.$store.state.list"></Loader>
-    <div v-else="this.$store.state.list" class="posts-list">
+    <Loader v-if="this.$store.state.list == '' && isLoading"></Loader>
+    <div v-else="this.$store.state.list && !isLoading" class="posts-list">
       <div class="posts-tips" v-if="this.$store.state.list == ''"> <span class="iconfont icon-wuziliao"><i>没有相关文章</i></span></div>
-      <article v-else v-for="{ title, sha, date } in filteredList" :key="sha" class="list-item">
+      <article v-for="{ title, sha, date } in filteredList" :key="sha" class="list-item">
         <div class="posts-main">
           <router-link :to="'/post/' + sha" class="item-title">
             {{ title }}
@@ -24,7 +24,8 @@
     name: 'listView',
     data() {
       return {
-        site: conf
+        site: conf,
+        isLoading: true
       }
     },
     mounted() {
@@ -35,6 +36,7 @@
     computed: {
       filteredList() {
         let keyword = (this.$route.query.keyword || '').toLowerCase()
+        this.isLoading = false
         return this.$store.state.list
           .filter(item => (item.title.toLowerCase().indexOf(keyword) !== -1))
           .sort((itemA, itemB) => (new Date(itemB.date) - new Date(itemA.date)))

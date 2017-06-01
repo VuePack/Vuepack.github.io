@@ -1,6 +1,6 @@
 <template>
   <section class="article-detail">
-    <Loader v-if="!content" class="article-loader" ></Loader>
+    <Loader v-if="!content"></Loader>
     <article v-else class="article-view">
       <div class="article-head">
         <div class="pull-left">
@@ -103,10 +103,6 @@
     top: 0;
     left: 400px;
     right: 0;
-    .article-loader{
-      margin-top: 40%;
-      text-align: center;
-    }
     .pull-left{
       position: relative;
       display: flex;
@@ -197,6 +193,8 @@
   }
   .article-main{
     color: #34495e;
+    word-wrap: break-word;
+    word-break: normal;
     img{
       max-width: 100%;
       margin: 10px 0;
