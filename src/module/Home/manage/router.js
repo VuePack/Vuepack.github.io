@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-02-19 10:40:28
  * @Last Modified by: Leon
- * @Last Modified time: 2017-02-23 17:37:54
+ * @Last Modified time: 2017-06-01 10:58:03
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: '/post/:hash',
-    name: 'post',
+    name: '笔记详情',
     component(resolve) {
       require(['../../../views/Post.vue'], resolve)
     }

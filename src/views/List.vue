@@ -3,9 +3,6 @@
     <div v-if="!this.$store.state.list">loading..</div>
     <div v-else="this.$store.state.list" class="posts-list">
       <article v-for="{ title, sha, date } in filteredList" :key="sha" class="list-item">
-        <!--<div class="posts-header">
-          <img class="avatar" :src="site.avatar" alt="">
-        </div>-->
         <div class="posts-main">
           <router-link :to="'/post/' + sha" class="item-title">
             {{ title }}
@@ -47,6 +44,7 @@
       loadList() {
         window.document.title = conf.title
         this.POSTS_LIST()
+        this.$parent.isDetail = false
       }
     },
     watch: {
@@ -59,7 +57,8 @@
   .posts-content {
     position: absolute;
     padding-top: 100px;
-    left: 420px;
+    padding: 100px 0 0 30px;
+    left: 400px;
     right: 0;
     .item-title {
       color: @title;
@@ -90,7 +89,7 @@
     .posts-content{
       position: absolute;
       top: 100px;
-      padding: 0 30px;
+      padding: 0 20px;
       left: 0;
       right: 0;
       .list-item{

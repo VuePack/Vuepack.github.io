@@ -94,7 +94,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 6px 5px @border;
-    padding: 0 45px;
+    padding: 0 30px;
     z-index:9;
     .item-search{
       position: relative;
@@ -163,7 +163,7 @@ export default {
     }
   }
   .bar-tags {
-    padding: 14px 45px 12px;
+    padding: 14px 30px 12px;
     background-color: @white;
     border-bottom: 1px solid @border;
     a {
@@ -213,14 +213,19 @@ export default {
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .topbar{
     padding: 0;
+    background-color: @green;
     .bar-item{
-      padding: 0 30px;
+      color: white;
+      padding: 0 20px;
+      a:after{
+        background-color: white;
+      }
     }
     .bar-tags{
       white-space: nowrap;
       overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
-      padding: 14px 30px 12px;
+      padding: 14px 20px 12px;
       &::-webkit-scrollbar {
           display: none;
       }

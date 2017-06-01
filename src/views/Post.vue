@@ -1,12 +1,17 @@
 <template>
-  <section class="posts-content">
+  <section class="posts-detail">
     <div v-if="!content">loading..</div>
-    <article class="post-view">
+    <article v-else class="post-view">
       <div class="post-head">
-        <h1 class="post-title">
-          {{ title }}
-        </h1>
-        <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="post-date">/ {{ this.date | timeago }} by leon</time>
+        <div class="pull-left">
+          <div style="text-align:left;">
+            <h1 class="post-title">
+              {{ title }}
+            </h1>
+          </div>
+          <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="post-date">{{ this.date | timeago }} by leon</time>
+        </div>
+        <router-link class="iconfont icon-close" to="/notes"></router-link>
       </div>
       <div class="post-main" v-if="content" v-html="htmlFromMarkdown"></div>
     </article>
@@ -41,6 +46,7 @@
     methods: {
       ...mapActions([POSTS_LIST]),
       loadPost() {
+        this.$parent.isDetail = true
         this.POSTS_LIST()
         api.getDetail(this.$route.params.hash)
           .then(text => {
@@ -50,9 +56,7 @@
             this.content = content.body
             this.title = content.attributes.title
             this.date = content.attributes.date
-            window.document.title = `${conf.author} - ${this.title}`
-            console.log(content)
-            // window.document.title = `${this.title}`
+            window.document.title = `${this.title}`
           })
           .catch(err => {
             console.error(err)
@@ -81,11 +85,27 @@
 </script>
 <style lang="less">
   @import '../assets/style/_vars.less';
-  .posts-content {
+  .posts-detail {
     position: absolute;
-    padding-top: 100px;
-    left: 420px;
+    top: 0;
+    left: 400px;
     right: 0;
+    .pull-left{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .pull-right{
+      display: flex;
+      position: relative;
+      align-items: center;
+      width: 50px;
+    }
+    .icon-close{
+      position: absolute;
+      right: -20px;
+      font-size: 26px;
+    }
     .item-title {
       color: @title;
       font-weight: bold;
@@ -111,22 +131,10 @@
       padding: 20px 0;
     }
   }
-  @media only screen and (min-width: 320px) and (max-width: 767px) {
-    .posts-content{
-      position: absolute;
-      top: 100px;
-      padding: 0 30px;
-      left: 0;
-      right: 0;
-      .list-item{
-        font-size: 13px;
-        padding: 10px 0;
-        margin:0;
-      }
-    }
-  }
   .post-head{
-    padding-bottom: 10px;
+    position: relative;
+    display: flex;
+    padding: 0 0 30px 0;
     text-align: center;
     border-bottom: 1px dotted rgba(0,0,0,.1);
   }
@@ -153,7 +161,7 @@
   }
   .post-date {
     font-size: 12px;
-    padding-left: 30px;
+    text-align: left;
   }
   .post-view {
     padding: 30px 45px;
@@ -180,7 +188,7 @@
       }
     }
     p{
-      padding: 15px 0;
+      padding-bottom: 15px;
       line-height: 1.8;
     }
     b, strong{
@@ -254,9 +262,35 @@
     }
   }
   @media only screen and (min-width: 320px) and (max-width: 767px) {
-    .post-view {
-      padding: 0;
+    .posts-detail{
+      position: absolute;
+      top: 0;
+      padding: 0 30px;
+      left: 0;
+      right: 0;
+      .list-item{
+        font-size: 13px;
+        padding: 10px 0;
+        margin:0;
+      }
+    }
+    .post-head{
+      padding: 0 0 20px 0;
+    }
+    .post-view{
+      padding: 20px 0 0 0;
+    }
+    .post-main {
       font-size: 13px;
+    }
+    .post-title{
+      font-size: 22px;
+      &:before{
+        left: -30px;
+      }
+      &:after{
+        right: -30px;
+      }
     }
   }
 </style>

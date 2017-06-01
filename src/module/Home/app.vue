@@ -1,9 +1,12 @@
 <template>
   <div id='app'>
     <main>
-      <topbar></topbar>
+      <topbar v-if="!isDetail"></topbar>
       <sidenav></sidenav>
-      <router-view></router-view>
+      <!-- 子路由渲染 -->
+      <transition name="slid" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </main>
   </div>
 </template>
@@ -18,7 +21,8 @@
     data() {
       return {
         title: conf.blogTitle,
-        keyword: ''
+        keyword: '',
+        isDetail: false
       }
     },
     components: {
