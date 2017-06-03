@@ -10,7 +10,6 @@ import router from './manage/router'
 import App from './app.vue'
 import filter from 'utils/filter'
 import store from './manage/store'
-
 import FastClick from 'fastclick'
 import 'loaders.css'
 
