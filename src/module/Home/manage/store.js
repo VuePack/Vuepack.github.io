@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-02-18 15:09:04
  * @Last Modified by: Leon
- * @Last Modified time: 2017-02-20 22:13:17
+ * @Last Modified time: 2017-06-05 16:50:43
  */
 import API from 'config'
 import Vue from 'vue'
@@ -23,15 +23,20 @@ export default new Vuex.Store({
         path: '/notes'
       },
       {
+        name: '时间轴',
+        default: 0,
+        path: '/timeline'
+      },
+      {
         name: '实验室',
         default: 0,
         path: '/labs'
       },
-      {
-        name: '关于',
-        default: 0,
-        path: '/about'
-      }
+      // {
+      //   name: '关于',
+      //   default: 0,
+      //   path: '/about'
+      // }
     ]
   },
   mutations: {

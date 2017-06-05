@@ -219,7 +219,7 @@
       line-height: 1.8;
     }
     b, strong{
-      color: #333;
+      color: #9e4e23;
     }
     h1,h2,h3,h4{
       position: relative;
