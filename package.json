@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "1.5",
+  "version": "1.1.5",
   "description": "Leon's Daily",
   "engines": {
     "node": ">=4",
