@@ -14,9 +14,11 @@
         <router-link class="iconfont icon-close" to="/notes"></router-link>
       </div>
       <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
-      <Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>
+      <!--<Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>-->
     </article>
-    <div id="container"></div>
+    <div id="gitment">
+      <hr>
+    </div>
   </section>
 </template>
 <script>
@@ -31,17 +33,6 @@
   import { POSTS_LIST } from '../module/Index/manage/store.js'
   import 'gitment/style/default.css'
   import Gitment from 'gitment'
-
-  var gitment = new Gitment({
-    id: 'location.href', // 可选。默认为 location.href
-    owner: 'lizhoukai',
-    repo: 'lizhoukai.github.io',
-    oauth: {
-      client_id: '2a8c582742b60a3c21dd',
-      client_secret: '00818f3ff2a8e84576968fc5912b606b8c4e64e3',
-    },
-  })
-  gitment.render('container')
 
   export default {
     name: 'postView',
@@ -68,6 +59,18 @@
     },
     created() {
       this.loadPost()
+    },
+    mounted() {
+      const gitment = new Gitment({
+        id: 'location.href',
+        owner: 'lizhoukai',
+        repo: 'lizhoukai.github.io',
+        oauth: {
+          client_id: '2a8c582742b60a3c21dd',
+          client_secret: '00818f3ff2a8e84576968fc5912b606b8c4e64e3',
+        },
+      })
+      gitment.render('gitment')
     },
     methods: {
       ...mapActions([POSTS_LIST]),
@@ -112,6 +115,9 @@
 </script>
 <style lang="less">
   @import '../assets/style/_vars.less';
+  #gitment{
+    padding: 25px 50px;
+  }
   .article-detail {
     position: absolute;
     top: 0;
