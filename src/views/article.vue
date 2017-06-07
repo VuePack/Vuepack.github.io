@@ -64,7 +64,7 @@
       const gitment = new Gitment({
         id: 'location.href',
         owner: 'lizhoukai',
-        repo: 'lizhoukai.github.io',
+        repo: 'comment-repo',
         oauth: {
           client_id: '2a8c582742b60a3c21dd',
           client_secret: '00818f3ff2a8e84576968fc5912b606b8c4e64e3',
