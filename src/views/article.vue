@@ -16,6 +16,7 @@
       <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
       <Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>
     </article>
+    <div id="container"></div>
   </section>
 </template>
 <script>
@@ -28,6 +29,19 @@
   import marked from 'utils/render.js'
   import { mapState, mapActions } from 'vuex'
   import { POSTS_LIST } from '../module/Index/manage/store.js'
+  import 'gitment/style/default.css'
+  import Gitment from 'gitment'
+
+  var gitment = new Gitment({
+    id: 'location.href', // 可选。默认为 location.href
+    owner: 'lizhoukai',
+    repo: 'lizhoukai.github.io',
+    oauth: {
+      client_id: '2a8c582742b60a3c21dd',
+      client_secret: '00818f3ff2a8e84576968fc5912b606b8c4e64e3',
+    },
+  })
+  gitment.render('container')
 
   export default {
     name: 'postView',
@@ -119,6 +133,9 @@
       right: -20px;
       font-size: 26px;
       color: @orange;
+      &:hover{
+        color: @red;
+      }
     }
     .item-title {
       color: @title;
