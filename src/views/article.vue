@@ -10,12 +10,15 @@
                 {{ title }}
               </h1>
             </div>
-            <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="article-date">{{ this.date | timeago }} by leon <a class="tag">#{{article.tag}}</a></time>
+            <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="article-date">{{ this.date | timeago }} by leon</time>
           </div>
           <router-link class="iconfont icon-close" to="/notes"></router-link>
         </div>
         <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
         <!--<Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>-->
+        <div class="tag-group">
+          <a class="tag">#{{article.tag}}</a>
+        </div>
       </article>
       <hr>
     </template>
@@ -32,7 +35,6 @@
   import marked from 'utils/render.js'
   import { mapState, mapActions } from 'vuex'
   import { POSTS_LIST } from '../module/Index/manage/store.js'
-  import 'gitment/style/default.css'
   import Gitment from 'gitment'
 
   export default {
@@ -116,6 +118,8 @@
 </script>
 <style lang="less">
   @import '../assets/style/_vars.less';
+  @import '../assets/style/gitment.less';
+
   .article-detail {
     position: absolute;
     top: 0;
@@ -150,10 +154,16 @@
         padding-left: 10px;
       }
     }
+    .tag-group{
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
     .tag{
-      font-size: 12px;
+      font-size: 14px;
+      color: #7f93a7;
       padding: 2px 5px;
-      background-color: rgba(183, 183, 183, 0.1);
+      background-color: rgba(183, 185, 182, 0.2);
     }
     .avatar {
       width: 30px;
@@ -187,7 +197,7 @@
       width: 100%;
       border: none;
       background-color: #ddd;
-      background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+      background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 6px);
     }
   }
   .article-title{
@@ -196,20 +206,20 @@
     font-size: 36px;
     color: rgba(0, 0, 0, 0.7);
     font-weight: bold;
-    &:before{
-      position: absolute;
-      left: -42px;
-      top: -6px;
-      content: '『';
-      color: @green;
-    }
-    &:after{
-      position: absolute;
-      right: -42px;
-      bottom: -6px;
-      content: '』';
-      color: @green;
-    }
+    // &:before{
+    //   position: absolute;
+    //   left: -42px;
+    //   top: -6px;
+    //   content: '『';
+    //   color: @green;
+    // }
+    // &:after{
+    //   position: absolute;
+    //   right: -42px;
+    //   bottom: -6px;
+    //   content: '』';
+    //   color: @green;
+    // }
   }
   .article-date {
     font-size: 12px;
