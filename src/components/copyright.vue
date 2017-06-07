@@ -34,13 +34,6 @@ export default {
 }
 </script>
 <style lang='less' scoped>
-hr {
-  margin: 30px 0;
-  height: 2px;
-  border: none;
-  background-color: #ddd;
-  background-image: repeating-linear-gradient(-45deg, white, white 4px, transparent 4px, transparent 8px);
-}
 .article-copyright{
   p{
     color: #000;

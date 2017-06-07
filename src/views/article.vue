@@ -1,24 +1,25 @@
 <template>
   <section class="article-detail">
     <Loader v-if="!content"></Loader>
-    <article v-else class="article-view">
-      <div class="article-head">
-        <div class="pull-left">
-          <div style="text-align:left;">
-            <h1 class="article-title">
-              {{ title }}
-            </h1>
+    <template v-else>
+      <article  class="article-view">
+        <div class="article-head">
+          <div class="pull-left">
+            <div style="text-align:left;">
+              <h1 class="article-title">
+                {{ title }}
+              </h1>
+            </div>
+            <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="article-date">{{ this.date | timeago }} by leon <a class="tag">#{{article.tag}}</a></time>
           </div>
-          <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="article-date">{{ this.date | timeago }} by leon</time>
+          <router-link class="iconfont icon-close" to="/notes"></router-link>
         </div>
-        <router-link class="iconfont icon-close" to="/notes"></router-link>
-      </div>
-      <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
-      <!--<Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>-->
-    </article>
-    <div id="gitment">
+        <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
+        <!--<Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>-->
+      </article>
       <hr>
-    </div>
+    </template>
+    <div id="gitment" v-show="content"></div>
   </section>
 </template>
 <script>
@@ -62,12 +63,12 @@
     },
     mounted() {
       const gitment = new Gitment({
-        id: 'location.href',
+        id: location.href,
         owner: 'lizhoukai',
         repo: 'comment-repo',
         oauth: {
-          client_id: '2a8c582742b60a3c21dd',
-          client_secret: '00818f3ff2a8e84576968fc5912b606b8c4e64e3',
+          client_id: conf.client_id,
+          client_secret: conf.client_secret,
         },
       })
       gitment.render('gitment')
@@ -115,14 +116,12 @@
 </script>
 <style lang="less">
   @import '../assets/style/_vars.less';
-  #gitment{
-    padding: 25px 50px;
-  }
   .article-detail {
     position: absolute;
     top: 0;
     left: 400px;
     right: 0;
+    padding: 22px 50px;
     .pull-left{
       position: relative;
       display: flex;
@@ -151,6 +150,11 @@
         padding-left: 10px;
       }
     }
+    .tag{
+      font-size: 12px;
+      padding: 2px 5px;
+      background-color: rgba(183, 183, 183, 0.1);
+    }
     .avatar {
       width: 30px;
       height: 30px;
@@ -171,7 +175,7 @@
   .article-head{
     position: relative;
     display: flex;
-    padding: 0 0 30px 0;
+    padding: 0 0 27px 0;
     text-align: center;
     &:after{
       position: absolute;
@@ -210,9 +214,7 @@
   .article-date {
     font-size: 12px;
     text-align: left;
-  }
-  .article-view {
-    padding: 25px 50px;
+    margin-top: 6px;
   }
   .article-main{
     color: #34495e;
