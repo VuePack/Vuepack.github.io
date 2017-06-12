@@ -17,7 +17,7 @@
         <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
         <!--<Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>-->
         <div class="tag-group">
-          <a class="tag">#{{article.tag}}</a>
+          <router-link class="tag" :to="{path: '/notes', query: {tag: article.tag}}">#{{article.tag}}</router-link>
         </div>
       </article>
       <hr>
@@ -161,9 +161,13 @@
     }
     .tag{
       font-size: 14px;
-      color: #7f93a7;
+      color: rgba(127, 147, 167, .6);
       padding: 2px 5px;
       background-color: rgba(183, 185, 182, 0.2);
+      &:hover{
+        color: rgba(127, 147, 167, .8);
+        background-color: rgba(183, 185, 182, 0.4);
+      }
     }
     .avatar {
       width: 30px;
