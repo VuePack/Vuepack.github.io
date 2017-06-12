@@ -12,7 +12,7 @@
             </div>
             <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="article-date">{{ this.date | timeago }} by leon</time>
           </div>
-          <router-link class="iconfont icon-close" to="/notes"></router-link>
+          <router-link class="iconfont icon-back" to="/notes"></router-link>
         </div>
         <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
         <!--<Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>-->
@@ -34,7 +34,6 @@
   import fm from 'front-matter'
   import marked from 'utils/render.js'
   import { mapState, mapActions } from 'vuex'
-  import { POSTS_LIST } from '../module/Index/manage/store.js'
   import Gitment from 'gitment'
 
   export default {
@@ -64,22 +63,22 @@
       this.loadPost()
     },
     mounted() {
-      const gitment = new Gitment({
-        id: location.href,
-        owner: 'lizhoukai',
-        repo: 'comment-repo',
-        oauth: {
-          client_id: conf.client_id,
-          client_secret: conf.client_secret,
-        },
+      this.$nextTick(function () {
+        const gitment = new Gitment({
+          id: this.title,
+          owner: conf.name,
+          repo: conf.comment_repo,
+          oauth: {
+            client_id: conf.client_id,
+            client_secret: conf.client_secret,
+          },
+        })
+        gitment.render('gitment')
       })
-      gitment.render('gitment')
     },
     methods: {
-      ...mapActions([POSTS_LIST]),
       loadPost() {
         this.$parent.isDetail = true
-        this.POSTS_LIST()
         api.getDetail(this.$route.params.hash)
           .then(text => {
             // Parse front-matter
@@ -125,7 +124,7 @@
     top: 0;
     left: 400px;
     right: 0;
-    padding: 22px 50px;
+    padding: 15px 50px 20px;
     .pull-left{
       position: relative;
       display: flex;
@@ -137,11 +136,12 @@
       align-items: center;
       width: 50px;
     }
-    .icon-close{
+    .icon-back{
       position: absolute;
-      right: -20px;
+      top: 7px;
+      left: -32px;
       font-size: 26px;
-      color: @orange;
+      color: @warm;
       &:hover{
         color: @red;
       }
@@ -185,7 +185,7 @@
   .article-head{
     position: relative;
     display: flex;
-    padding: 0 0 27px 0;
+    padding: 0 0 20px 0;
     text-align: center;
     &:after{
       position: absolute;
@@ -203,7 +203,7 @@
   .article-title{
     display: inline-block;
     position: relative;
-    font-size: 36px;
+    font-size: 32px;
     color: rgba(0, 0, 0, 0.7);
     font-weight: bold;
     // &:before{
@@ -224,7 +224,6 @@
   .article-date {
     font-size: 12px;
     text-align: left;
-    margin-top: 6px;
   }
   .article-main{
     color: #34495e;
@@ -335,6 +334,11 @@
         padding: 10px 0;
         margin:0;
       }
+      .icon-back{
+        top: 3px;
+        left: -26px;
+        font-size: 22px;
+      }
     }
     .article-head{
       padding: 0 0 20px 0;
@@ -354,5 +358,6 @@
         right: -30px;
       }
     }
+
   }
 </style>

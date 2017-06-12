@@ -1,11 +1,11 @@
 <template>
   <div class="sitenav">
-    <div class="site-index nav-section">
+    <div class="site-index">
       <router-link to="/">
-          <i class="iconfont icon-l1"></i>
-          <i class="iconfont icon-i1"></i>
-          <i class="iconfont icon-k1"></i>
-          <i class="iconfont icon-r1"></i>
+          <i class="iconfont icon-l"></i>
+          <i class="iconfont icon-i"></i>
+          <i class="iconfont icon-k"></i>
+          <i class="iconfont icon-r"></i>
       </router-link>
     </div>
     <div class="site-title">
@@ -106,7 +106,7 @@
     max-width: 400px;
     height: 100%;
     box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    z-index: 2;
+    z-index: 3;
   }
   .nav-section{
     padding: 20px 15px;
@@ -115,6 +115,10 @@
   .site-index{
     display: flex;
     justify-content: center;
+    line-height: 1.6;
+    a {
+      padding: 15px 0 0px;
+    }
   }
 
   .site-title {

@@ -4,9 +4,6 @@
   </section>
 </template>
 <script>
-  import { mapState, mapActions } from 'vuex'
-  import { POSTS_LIST } from '../module/Index/manage/store.js'
-
   export default {
     name: '',
     data() {
@@ -15,13 +12,9 @@
     mounted() {},
     components: {},
     props: {},
-    created() {
-      this.POSTS_LIST()
-    },
+    created() {},
     computed: {},
-    methods: {
-      ...mapActions([POSTS_LIST])
-    }
+    methods: {}
   }
 </script>
 <style lang='less' scoped>

@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-02-19 10:40:28
  * @Last Modified by: Leon
- * @Last Modified time: 2017-06-07 14:16:54
+ * @Last Modified time: 2017-06-12 14:43:39
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -72,6 +72,8 @@ const router = new VueRouter({
  * 在每次路由切换成功进入激活阶段时被调用
  */
 router.afterEach((to, from, next) => {
+  // console.log(to)
+  // console.log(router)
   document.body.scrollTop = 0
   router.app.$store.state.menu.forEach(e => {
     e.default = e.name === to.name ? 1 : 0

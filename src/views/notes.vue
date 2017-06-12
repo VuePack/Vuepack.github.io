@@ -1,21 +1,23 @@
 <template>
   <section class="view view-notes">
-    <Loader v-if="this.$store.state.list == '' && isLoading"></Loader>
-    <div v-else class="posts-list">
-      <div class="posts-tips" v-if="this.$store.state.list == ''">
-        <span class="iconfont icon-wuziliao">
-          <i>没有相关文章</i>
-        </span>
-      </div>
-      <article v-for="{ title, sha, date } in filteredList" :key="sha" class="list-item">
-        <div class="posts-main">
-          <router-link :to="'/post/' + sha" class="item-title">
-            {{ title }}
-          </router-link>
-          <time pubdate="pubdate" :datetime="date | formatDate" :title="date | formatDate" class="item-date">{{ date | timeago }}</time>
-        </div>
-      </article>
+    <Loader v-if="loading"></Loader>
+    <div class="note-tips" v-else-if="filteredList.length === 0">
+      <span class="iconfont icon-wuziliao">
+        <i>没有相关文章</i>
+      </span>
     </div>
+    <template v-else class="notes-wrap">
+      <div class="notes-list">
+        <article v-for="{ title, sha, date } in filteredList" :key="sha" class="list-item">
+          <div class="note-main">
+            <router-link :to="'/post/' + sha" class="item-title">
+              {{ title }}
+            </router-link>
+            <time pubdate="pubdate" :datetime="date | formatDate" :title="date | formatDate" class="item-date">{{ date | timeago }}</time>
+          </div>
+        </article>
+      </div>
+    </template>
     <button class="btn btn-material" type="button" @click="showAbout">
       <i class="iconfont icon-guanyu"></i>
     </button>
@@ -23,48 +25,67 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import { POSTS_LIST } from '../module/Index/manage/store.js'
 import Loader from 'components/loader'
+import API from 'config'
 import conf from 'config/conf.json'
+import { instance } from 'config/instanceShared'
 
 export default {
   name: 'listView',
   data() {
     return {
       site: conf,
-      isLoading: true
+      loading: true,
+      list: []
     }
-  },
-  mounted() {
   },
   components: {
     Loader: Loader
   },
   computed: {
     filteredList() {
-      let keyword = (this.$route.query.keyword || '').toLowerCase()
-      this.isLoading = false
-      return this.$store.state.list
+      let keyword = ''
+      if (this.$route) {
+        keyword = (this.$route.query.q || '').toLowerCase()
+      }
+      // Filter by title, Order by publish date, desc
+      return this.list
         .filter(item => (item.title.toLowerCase().indexOf(keyword) !== -1))
         .sort((itemA, itemB) => (new Date(itemB.date) - new Date(itemA.date)))
     }
   },
   created() {
     this.loadList()
+    instance.$on('checkedTag', () => {
+      API.getList().then((res) => {
+        this.filterByList(res[0])
+      })
+    })
   },
   methods: {
-    ...mapActions([POSTS_LIST]),
     loadList() {
       window.document.title = conf.title
-      this.POSTS_LIST()
+      API.getList().then((res) => {
+        this.filterByList(res[0])
+        this.loading = false
+      })
       this.$parent.isDetail = false
     },
     showAbout() {
       alert('就让你看看 - 。-')
+    },
+    filterByList(list) {
+      let sessionList = list, filterItems, route = this.$route
+      if (route.query && route.query.hasOwnProperty('tag')) {
+        this.list = sessionList.filter(v => {
+          return v.tag.toLowerCase().indexOf(route.query.tag.toLowerCase()) !== -1
+        })
+      } else {
+        this.list = filterItems = sessionList
+      }
     }
   },
-  watch: {
-    '$route': 'loadList'
+  $route(route) {
   }
 }
 </script>
@@ -78,12 +99,17 @@ export default {
   background-color: #ff5722;
 }
 
+.icon-wuziliao{
+  font-size: 50px;
+  padding: 30px;
+}
+
 .icon-guanyu {
   color: white;
   font-size: 20px;
 }
 
-.posts-tips {
+.note-tips {
   display: flex;
   justify-content: center;
   i {
@@ -92,7 +118,7 @@ export default {
 }
 
 .view-notes {
-  padding-top: 100px;
+  padding: 94px 0 0 0;
   .item-title {
     color: @title;
     font-weight: bold;
@@ -101,6 +127,7 @@ export default {
       padding-left: 10px;
     }
   }
+
   .avatar {
     width: 30px;
     height: 30px;
@@ -115,22 +142,27 @@ export default {
     display: flex;
     align-items: center;
     border-bottom: 1px dotted @border;
-    padding: 20px 0;
+    padding: 15px 0;
   }
+}
+.notes-list {
+  padding: 0 30px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .view-notes {
     position: absolute;
-    top: 100px;
-    padding: 0 20px;
-    left: 0;
-    right: 0;
+    top: 55px;
+    width: 100%;
+    padding: 40px 0 0 0;
     .list-item {
       font-size: 13px;
       padding: 10px 0;
       margin: 0;
     }
+  }
+  .notes-list {
+    padding: 0 20px;
   }
   .btn-material {
     display: block;

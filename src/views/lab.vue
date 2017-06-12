@@ -35,7 +35,6 @@
 </template>
 <script>
   import { mapState, mapActions } from 'vuex'
-  import { POSTS_LIST } from '../module/Index/manage/store.js'
   export default {
     name: '',
     data() {
@@ -45,12 +44,8 @@
     components: {},
     props: {},
     computed: {},
-    created() {
-      this.POSTS_LIST()
-    },
-    methods: {
-      ...mapActions([POSTS_LIST])
-    }
+    created() {},
+    methods: {}
   }
 </script>
 <style lang='less' scoped>
@@ -66,15 +61,15 @@
     box-shadow: 0 0 4px rgba(0,0,0,.5);
     transition: .2s;
     &:before{
-      content: '';
-      display: block;
-      position: absolute;
-      width: 0;
-      height: 0;
-      top: -10px;
-      border-style: solid;
-      border-width: 0 30px 10px;
-      border-color: transparent transparent #f70;
+      // content: '';
+      // display: block;
+      // position: absolute;
+      // width: 0;
+      // height: 0;
+      // top: -10px;
+      // border-style: solid;
+      // border-width: 0 30px 10px;
+      // border-color: transparent transparent #f70;
     }
   }
   .btn-group{

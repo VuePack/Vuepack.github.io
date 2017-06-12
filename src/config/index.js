@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-02-19 10:22:40
  * @Last Modified by: Leon
- * @Last Modified time: 2017-02-23 17:32:30
+ * @Last Modified time: 2017-06-12 15:52:22
  */
 
 import axios from 'axios'
@@ -35,9 +35,6 @@ function getPostUrl (hash) {
 }
 
 export default {
-  filterByJSON(arr) {
-
-  },
   getList () {
     /**
      * 获取sessionStorage

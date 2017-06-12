@@ -34,42 +34,6 @@ export default {
       timeline: [
         {
           'year': '2017',
-          'month': 'June',
-          'items': [
-            {
-              'day': '06/01',
-              'content': 'Blog1.1.3版本添加视图切换交互动画，文章详情页模块更改'
-            },
-            {
-              'day': '06/02',
-              'content': 'Blog1.1.4版本增加 copyright，区块区分，loading 动画更改'
-            },
-            {
-              'day': '06/05',
-              'content': 'Blog1.1.5版本增加 timeline 模块'
-            },
-            // {
-            //   'day': '06/06',
-            //   'content': 'Blog1.1.6版本增加 实验室 模块，timeline 模块结构更改'
-            // }
-          ]
-        },
-        {
-          'year': '2017',
-          'month': 'May',
-          'items': [
-            {
-              'day': '05/24',
-              'content': 'Blog1.1.1版本增加首页介绍页'
-            },
-            {
-              'day': '05/31',
-              'content': 'Blog1.1.2版本增加文章详情页 title，日期，搜索模块调整'
-            }
-          ]
-        },
-        {
-          'year': '2017',
           'month': 'February',
           'items': [
             {

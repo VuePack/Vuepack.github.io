@@ -8,73 +8,61 @@
       </ul>
       <div class="item-search" v-if="this.$route.path === '/notes'">
         <form v-on:submit.prevent="searchResult">
-          <input type="text" name="" v-model="searchVal" @keyup.esc="resetSearch">
+          <input type="text" name="" v-model="keyword" @keyup.esc="resetSearch">
           <i class="iconfont icon-search"></i>
         </form>
       </div>
     </div>
     <div class="bar-tags" v-if="this.$route.path === '/notes'">
-      <a :class="{'active' : item.default === 1}" v-for="(item, index) in this.$store.state.tag" @click="checkTag(item.name,index)">{{item.name}}</a>
+      <a :class="{'active' : $route.query.hasOwnProperty('tag') === false}" @click="$router.push({path: '/notes'})">全部标签</a>
+      <a :class="{'active' : item === $route.query.tag}" v-for="(item, index) in this.$store.state.tag" @click="$router.push({path: '/notes', query: {tag: item}})">{{item}}</a>
     </div>
   </nav>
 </template>
 <script>
+import { instance } from 'config/instanceShared'
+
 export default {
   name: 'topbar',
   data() {
     return {
-      searchVal: ''
+      keyword: ''
     }
   },
   watch:{
-    searchVal(v) {
-      if (v.length === 0) {
-        this.resetSearch()
-      }
-    }
+    $route(route) {
+      instance.$emit('checkedTag', this.$route.query.tag)
+    },
+    'keyword': 'updateQuery'
   },
-  props: {},
+  props: {
+    tags: []
+  },
   computed: {},
   methods: {
-    checkTag(type, index) {
-      let sessionList = JSON.parse(sessionStorage.list), filterItems
-
-      if (this.$route.name === 'post' || this.$route.name === '实验室' || this.$route.name === '关于') {
-        this.$router.replace('/notes')
-      }
-
-      this.$store.state.tag.forEach(e => {
-        e.default = 0
-      })
-
-      if (type === '全部标签') {
-        filterItems = sessionList
-      } else {
-        filterItems = sessionList.filter(v => {
-          return v.tag.toLowerCase().indexOf(type.toLowerCase()) !== -1
-        })
-      }
-
-      this.$store.state.tag[index].default = 1
-      this.$store.state.list = filterItems
-    },
     searchResult() {
       let sessionList = JSON.parse(sessionStorage.list), filterItems
 
       filterItems = sessionList.filter(v => {
-        return v.title.toLowerCase().indexOf(this.searchVal.toLowerCase()) !== -1
+        return v.title.toLowerCase().indexOf(this.keyword.toLowerCase()) !== -1
       })
 
       this.$store.state.list = filterItems
     },
     resetSearch() {
       let sessionList = JSON.parse(sessionStorage.list), filterItems
-      this.searchVal = ''
+      this.keyword = ''
       this.$store.state.list = sessionList
+    },
+    updateQuery() {
+      if (this.keyword) {
+        this.$router.push({path: '/notes', query: { q: this.keyword }})
+      } else {
+        this.$router.push({path: '/notes', query: null})
+      }
     }
   },
-  mounted() {
-  }
+  mounted() {}
 }
 </script>
 <style lang='less' scoped>
@@ -87,13 +75,13 @@ export default {
   left: 0;
   right: 0;
   background-color: @white;
-  z-index: 1;
+  z-index: 2;
   .bar-item {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 6px 5px @border;
+    box-shadow: 0 4px 8px @border;
     padding: 0 30px;
     z-index:9;
     .item-search{
@@ -163,52 +151,54 @@ export default {
       transform: scaleX(1);
     }
   }
-  .bar-tags {
-    padding: 14px 30px 12px;
-    background-color: @white;
-    border-bottom: 1px solid @border;
-    a {
-      display: inline-block;
-      position: relative;
-      font-size: 12px;
-      height: 20px;
-      line-height: 20px;
-      padding: 0 10px 0 20px;
-      margin-right: 10px;
-      border-radius: 0 4px 4px 0;
-      transition: all .2s linear;
-      cursor: pointer;
-      background: #eee;
-      &:hover {
-        color: @white;
-        background: @orange;
-      }
-      &:after {
-        position: absolute;
-        content: "";
-        width: 4px;
-        height: 4px;
-        top: 8px;
-        left: 12px;
-        border-radius: 100%;
-        background: #fff;
-      }
-      &:before {
-        position: absolute;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-width: 8px 12px 12px 0;
-        border-color: #fff transparent;
-        border-style: solid;
-      }
-    }
-    .active {
+}
+.bar-tags {
+  height: 44px;
+  padding: 10px 30px;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  a {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px 0 20px;
+    margin-right: 10px;
+    border-radius: 0 4px 4px 0;
+    transition: all .2s linear;
+    cursor: pointer;
+    background: #eee;
+    &:hover {
       color: @white;
-      background-color: @orange;
+      background: @orange;
     }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 4px;
+      height: 4px;
+      top: 8px;
+      left: 12px;
+      border-radius: 100%;
+      background: #fff;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-width: 8px 12px 12px 0;
+      border-color: #fff transparent;
+      border-style: solid;
+    }
+  }
+  .active {
+    color: @white;
+    background-color: @orange;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -220,15 +210,6 @@ export default {
       padding: 0 20px;
       a:after{
         background-color: white;
-      }
-    }
-    .bar-tags{
-      white-space: nowrap;
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
-      padding: 14px 20px 12px;
-      &::-webkit-scrollbar {
-          display: none;
       }
     }
     .item-search{
@@ -247,6 +228,15 @@ export default {
           color: white !important;
         }
       }
+    }
+  }
+  .bar-tags{
+    padding: 10px 20px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        display: none;
     }
   }
 }

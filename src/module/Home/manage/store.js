@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-02-18 15:09:04
  * @Last Modified by: Leon
- * @Last Modified time: 2017-06-05 16:50:43
+ * @Last Modified time: 2017-06-12 15:42:50
  */
 import API from 'config'
 import Vue from 'vue'
@@ -14,8 +14,6 @@ export const POSTS_LIST = 'POSTS_LIST' // 文章列表
 
 export default new Vuex.Store({
   state: {
-    list: [],
-    tag: [],
     menu: [
       {
         name: '笔记',
@@ -37,21 +35,13 @@ export default new Vuex.Store({
       //   default: 0,
       //   path: '/about'
       // }
-    ]
+    ],
+    tag: ['JavaScript', 'vue', '移动端', '折腾系列', '前端规范', '云心情', '备忘录']
   },
-  mutations: {
-    [POSTS_LIST](state) {
-      API.getList().then((res) => {
-        state.list = res[0]
-        state.tag = res[1]
-      })
-    }
-  },
-  actions: {
-    [POSTS_LIST]({
-      commit
-    }) {
-      commit(POSTS_LIST)
-    }
-  }
+  // 组件获取 state
+  getter: {},
+  // 修改 state
+  mutations: {},
+  // 组件触发动
+  actions: {}
 })
