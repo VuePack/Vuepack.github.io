@@ -18,9 +18,9 @@
         </article>
       </div>
     </template>
-    <button class="btn btn-material" type="button" @click="showAbout">
+    <!--<button class="btn btn-material" type="button" @click="showAbout">
       <i class="iconfont icon-guanyu"></i>
-    </button>
+    </button>-->
   </section>
 </template>
 <script>

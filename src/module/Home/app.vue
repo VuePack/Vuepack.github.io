@@ -1,8 +1,9 @@
 <template>
-  <div id='app'>
+  <div id="app">
     <main>
       <topbar v-if="!isDetail"></topbar>
       <sidenav></sidenav>
+      <toolbar v-if="!isTop" v-on:backtop="getTimer"></toolbar>
       <!-- 子路由渲染 -->
       <transition name="slid" mode="out-in">
         <router-view></router-view>
@@ -15,6 +16,7 @@
   import conf from 'config/conf.json'
   import Sidenav from 'views/sideNav.vue'
   import Topbar from 'views/topbar.vue'
+  import Toolbar from 'components/toolbar.vue'
 
   export default {
     name: 'app',
@@ -22,20 +24,21 @@
       return {
         title: conf.blogTitle,
         keyword: '',
-        isDetail: false
+        isDetail: false,
+        isTop: true
       }
     },
     components: {
       Sidenav,
-      Topbar
+      Topbar,
+      Toolbar
     },
     methods: {
       resetSearch() {
         this.keyword = ''
-        this.$refs.searchBar.blur()
       },
-      selectSearchText() {
-        this.$refs.searchBar.select()
+      getTimer() {
+        // this.timer = obj
       }
     },
     watch: {
@@ -51,6 +54,19 @@
           this.$router.push({
             name: 'list'
           })
+        }
+      },
+      'topH' (v) {
+      }
+    },
+    mounted() {
+      let winH = document.documentElement.clientHeight, topH = 0
+      window.onscroll = () => {
+        topH = document.body.scrollTop || document.documentElement.scrollTop
+        if (topH >= winH) {
+          this.isTop = false
+        } else {
+          this.isTop = true
         }
       }
     }

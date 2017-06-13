@@ -63,7 +63,7 @@
       this.loadPost()
     },
     mounted() {
-      this.$nextTick(function () {
+      this.$nextTick(() => {
         const gitment = new Gitment({
           id: this.title,
           owner: conf.name,

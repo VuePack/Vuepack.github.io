@@ -61,6 +61,10 @@ export default {
               'content': '折腾到凌晨4点完成的脚手架 Webpack + Gulp'
             },
             {
+              'day': '05/24',
+              'content': '于5月24日个人简历模板上线'
+            },
+            {
               'day': '05/30',
               'content': '入住知乎，来的有点晚'
             }
