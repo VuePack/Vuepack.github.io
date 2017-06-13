@@ -156,7 +156,7 @@ export default {
   }
   .list-pic{
     img{
-      width: 120px;
+      width: 110px;
     }
   }
 }

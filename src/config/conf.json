@@ -31,8 +31,8 @@
           "items": [
             {
               "day": "02/19",
-              "content": "于2月19日Blog1.1.0上线。用自己写的脚手架构建前端页面，后端使用 Github Api 来获取数据，markdown 编写，基于vue + vue-router + vuex + es6 + less 完成",
-              "pic": ["https://ohv0hyr4v.qnssl.com/showtime1.png", "https://ohv0hyr4v.qnssl.com/showtime22.png"]
+              "content": "于2月19日Blog1.1.0上线。用多页脚手架构建前端页面打包编译，后端使用 Github API 来获取数据，MarkDown 写作，基于vue + vue-router + vuex + es6 + less",
+              "pic": ["https://ohv0hyr4v.qnssl.com/ts1_1.png", "https://ohv0hyr4v.qnssl.com/ts1_2.png", "https://ohv0hyr4v.qnssl.com/ts1_3.png"]
             }
           ]
         },
@@ -53,17 +53,17 @@
           "items": [
             {
               "day": "05/23",
-              "content": "折腾到凌晨4点完成的首个脚手架基于 Webpack + Gulp",
+              "content": "折腾到凌晨4点的首个脚手架，基于 Webpack + Gulp",
               "pic": []
             },
             {
               "day": "05/24",
               "content": "于5月24日个人简历模板上线",
-              "pic": ["https://ohv0hyr4v.qnssl.com/showtime3.png"]
+              "pic": ["https://ohv0hyr4v.qnssl.com/ts2_1.png", "https://ohv0hyr4v.qnssl.com/ts2_2.png", "https://ohv0hyr4v.qnssl.com/ts2_3.png"]
             },
             {
               "day": "05/30",
-              "content": "入住知乎，来的有点晚",
+              "content": "入驻知乎，来晚了",
               "pic": []
             }
           ]
@@ -73,13 +73,19 @@
           "month": "May",
           "items": [
             {
-              "day": "05/01",
-              "content": "公司学习了 git，了解了 Github，发现 Github Pages 和 Hexo 能搭建一个独立博客，用了 NexT.Pisces 主题",
-              "pic": []
-            },
-            {
               "day": "05/22",
-              "content": "购入 “likr.cn” 域名，含义: 名字缩写，锂 + 氪 = ？",
+              "content": "购入 “likr.cn” 域名，义: 名字缩写，锂 + 氪 = ?",
+              "pic": []
+            }
+          ]
+        },
+        {
+          "year": "2015",
+          "month": "Mar",
+          "items": [
+            {
+              "day": "03/26",
+              "content": "入驻 GitHub",
               "pic": []
             }
           ]
@@ -101,7 +107,7 @@
           "items": [
             {
               "day": "10/28",
-              "content": "阿里云搞活动，买了一年的 “ilsns.com” 域名， “sns” 意为社交",
+              "content": "购入 “ilsns.com” 域名， “sns” 意为社交",
               "pic": []
             }
           ]
