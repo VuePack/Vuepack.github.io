@@ -9,6 +9,7 @@
           <div class="list-content" v-for="item in line.items">
             <div class="list-day">{{item.day}}</div>
             <div class="list-text">{{item.content}}</div>
+            <div class="list-pic" v-if="item.pic"><img :src="url" v-for="url in item.pic"></div>
           </div>
         </div>
       </div>
@@ -27,94 +28,12 @@
   </div>
 </template>
 <script>
+import conf from 'config/conf.json'
 export default {
   name: '',
   data() {
     return {
-      timeline: [
-        {
-          'year': '2017',
-          'month': 'February',
-          'items': [
-            {
-              'day': '02/19',
-              'content': '于2月19日Blog1.1.0上线。用自己写的脚手架构建前端页面，后端使用 Github Api 来获取数据，markdown 编写，基于vue + vue-router + vuex + es6 + less 完成'
-            }
-          ]
-        },
-        {
-          'year': '2016',
-          'month': 'August',
-          'items': [
-            {
-              'day': '08/15',
-              'content': '写了一个基于 vue 多页脚手架'
-            }
-          ]
-        },
-        {
-          'year': '2016',
-          'month': 'May',
-          'items': [
-            {
-              'day': '05/23',
-              'content': '折腾到凌晨4点完成的脚手架 Webpack + Gulp'
-            },
-            {
-              'day': '05/24',
-              'content': '于5月24日个人简历模板上线'
-            },
-            {
-              'day': '05/30',
-              'content': '入住知乎，来的有点晚'
-            }
-          ]
-        },
-        {
-          'year': '2015',
-          'month': 'May',
-          'items': [
-            {
-              'day': '05/01',
-              'content': '公司学习了 git，了解了 Github，发现 Github Pages 和 Hexo 能搭建一个独立博客，用了 NexT.Pisces 主题'
-            },
-            {
-              'day': '05/22',
-              'content': '购入 “likr.cn” 域名， 含义：名字缩写，锂 + 氪 = ？'
-            }
-          ]
-        },
-        {
-          'year': '2015',
-          'month': 'January',
-          'items': [
-            {
-              'day': '01/08',
-              'content': '1月8日域名正式上线，混迹各种论坛，自己设计写了几套 WordPress 主题，初期没钱买服务器托管在安全性和稳定性极差的第三方平台上，，隔几天就挂掉%>_<%'
-            }
-          ]
-        },
-        {
-          'year': '2014',
-          'month': 'October',
-          'items': [
-            {
-              'day': '10/28',
-              'content': '阿里云搞活动，买了一年的 “ilsns.com” 域名， “sns” 意为社交'
-            }
-          ]
-        },
-        {
-          'year': '2014',
-          'month': 'April',
-          'items': [
-            {
-              'day': '04/03',
-              'content': '某天，逛网站发现一个非常酷炫的网站，好奇并百度才知道有美工职业（那时候前端没那么高大上 - -），然后就入坑自学了 ~'
-            }
-          ]
-        }
-      ]
+      timeline: conf.timeline
     }
   },
   mounted() {
@@ -234,6 +153,11 @@ export default {
   }
   .list-text {
     color: #666;
+  }
+  .list-pic{
+    img{
+      width: 120px;
+    }
   }
 }
 

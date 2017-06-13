@@ -2,12 +2,15 @@
   <div class="toolbar">
     <ul>
       <li>
-        <a>
+        <a class="tool-qr">
           <i class="iconfont icon-xinxi"></i>
         </a>
+        <div class="qrcode">
+          <img :src="qrcodeUrl" alt="扫一扫二维码">
+        </div>
       </li>
       <li>
-        <a @click="backtop">
+        <a @click="backtop" class="tool-backtop">
           <i class="iconfont icon-dingbu"></i>
         </a>
       </li>
@@ -15,10 +18,12 @@
   </div>
 </template>
 <script>
+import conf from 'config/conf.json'
 export default {
   name: '',
   data() {
     return {
+      qrcodeUrl: conf.qrcode
     }
   },
   mounted() {},
@@ -41,6 +46,9 @@ export default {
   width: 50px;
   margin-left: 640px;
   z-index: 99;
+  ul li{
+    position: relative;
+  }
   a {
     display: block;
     width: 50px;
@@ -49,16 +57,37 @@ export default {
     border-radius: 100%;
     text-align: center;
     margin-bottom: 10px;
-    background: rgba(204, 204, 204, .5);
+    box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
     &:hover {
       cursor: pointer;
-      background: rgba(204, 204, 204, 1);
+      box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px rgba(0,0,0,.14), 0 1px 14px rgba(0,0,0,.12);
+      + .qrcode{
+        display: block;
+        transition: all .2s linear;
+      }
     }
   }
   .iconfont {
-    color: white;
+    color: rgba(255, 255, 255, .87);
     font-size: 26px;
   }
+  .qrcode{
+    display: none;
+    position: absolute;
+    top: -50px;
+    left: -170px;
+    width: 150px;
+    z-index: 99;
+    img{
+      width: 100%;
+    }
+  }
+}
+.tool-qr{
+  background-color: #2196f3;
+}
+.tool-backtop{
+  background-color: #f4511e;
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .toolbar {

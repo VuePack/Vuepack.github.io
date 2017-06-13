@@ -1,5 +1,6 @@
 <template>
   <section class="view view-lab">
+    实验室正在开发中
     <!--<div class="btn-group">
       <div>
         <a class="btn-lab btn-active">折腾案例</a>
@@ -7,30 +8,26 @@
         <a class="btn-lab">摄影</a>
       </div>
     </div>-->
-    <div class="lab-item">
+    <!--<div class="lab-item">
       <img src="http://img95.699pic.com/photo/50012/0118.jpg_wh300.jpg">
       <div class="intro">
-        <!--test-->
       </div>
     </div>
     <div class="lab-item">
       <img src="http://img95.699pic.com/photo/50012/0118.jpg_wh300.jpg">
       <div class="intro">
-        <!--test-->
       </div>
     </div>
     <div class="lab-item">
       <img src="http://img95.699pic.com/photo/50012/0118.jpg_wh300.jpg">
       <div class="intro">
-        <!--test-->
       </div>
     </div>
     <div class="lab-item">
       <img src="http://img95.699pic.com/photo/50012/0118.jpg_wh300.jpg">
       <div class="intro">
-        <!--test-->
       </div>
-    </div>
+    </div>-->
   </section>
 </template>
 <script>
