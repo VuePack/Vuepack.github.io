@@ -33,24 +33,24 @@ export default {
   computed: {},
   methods: {
     backtop() {
-      // let top = document.body.scrollTop || document.documentElement.scrollTop
-      // let ax = 0
-      // if (top > 0) {
-      //   setInterval(function() {
-      //     if (top <= 0) {
-      //       clearInterval(scrollTop.timer)
-      //     } else {
-      //       ax += 20
-      //       top -= ax
-      //       window.scrollTo(0, top)
-      //     }
-      //   },
-      //   100)
-      // }
-      scrollIntoView(document.getElementById('app'), {
-        time: 500,
-        align: {top: 0.2}
-      })
+      let top = document.body.scrollTop || document.documentElement.scrollTop
+      let ax = 0
+      if (top > 0) {
+        setInterval(function() {
+          if (top <= 0) {
+            clearInterval()
+          } else {
+            ax += 20
+            top -= ax
+            window.scrollTo(0, top)
+          }
+        },
+        100)
+      }
+      // scrollIntoView(document.getElementById('app'), {
+      //   time: 500,
+      //   align: {top: 1}
+      // })
     }
   }
 }
