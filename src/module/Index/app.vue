@@ -1,7 +1,5 @@
 <template>
   <div id='showtime'>
-    <!--<section class="index-cover">
-      </section>-->
     <section class="index-section">
       <div class="panel-banner">
         <a class="print" href="/home.html" title="点击进入博客">Leon's Daily</a>

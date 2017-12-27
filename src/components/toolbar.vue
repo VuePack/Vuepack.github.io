@@ -19,6 +19,7 @@
 </template>
 <script>
 import conf from 'config/conf.json'
+import scrollIntoView from 'scroll-into-view'
 export default {
   name: '',
   data() {
@@ -32,8 +33,24 @@ export default {
   computed: {},
   methods: {
     backtop() {
-      document.body.scrollTop = 0
-      this.$emit('backtop')
+      // let top = document.body.scrollTop || document.documentElement.scrollTop
+      // let ax = 0
+      // if (top > 0) {
+      //   setInterval(function() {
+      //     if (top <= 0) {
+      //       clearInterval(scrollTop.timer)
+      //     } else {
+      //       ax += 20
+      //       top -= ax
+      //       window.scrollTo(0, top)
+      //     }
+      //   },
+      //   100)
+      // }
+      scrollIntoView(document.getElementById('app'), {
+        time: 500,
+        align: {top: 0.2}
+      })
     }
   }
 }
@@ -41,7 +58,7 @@ export default {
 <style lang='less' scoped>
 .toolbar {
   position: fixed;
-  top: 350px;
+  top: 70%;
   left: 50%;
   width: 50px;
   margin-left: 640px;

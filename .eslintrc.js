@@ -70,6 +70,8 @@ module.exports = {
     "no-redeclare": 0,
     "block-spacing": 0,
     "no-array-constructor": 0,
+    // 表达式可以使用布尔值
+    "no-unneeded-ternary": 0,
 
     /**
      * 警告

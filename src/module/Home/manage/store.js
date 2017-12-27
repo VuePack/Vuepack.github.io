@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-02-18 15:09:04
  * @Last Modified by: Leon
- * @Last Modified time: 2017-06-12 15:42:50
+ * @Last Modified time: 2017-12-27 23:36:55
  */
 import API from 'config'
 import Vue from 'vue'
@@ -29,12 +29,7 @@ export default new Vuex.Store({
         name: '实验室',
         default: 0,
         path: '/labs'
-      },
-      // {
-      //   name: '关于',
-      //   default: 0,
-      //   path: '/about'
-      // }
+      }
     ],
     tag: ['JavaScript', 'vue', '移动端', '折腾系列', '前端规范', '云心情', '备忘录']
   },

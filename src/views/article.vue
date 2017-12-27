@@ -1,367 +1,408 @@
 <template>
   <section class="article-detail">
-    <Loader v-if="!content"></Loader>
-    <template v-else>
-      <article  class="article-view">
-        <div class="article-head">
-          <div class="pull-left">
-            <div style="text-align:left;">
-              <h1 class="article-title">
-                {{ title }}
-              </h1>
-            </div>
-            <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="article-date">{{ this.date | timeago }} by leon</time>
+    <article  class="article-view" v-if="content">
+      <div class="article-head">
+        <div class="pull-left">
+          <div style="text-align:left;">
+            <h1 class="article-title">
+              {{ title }}
+            </h1>
           </div>
-          <router-link class="iconfont icon-back" to="/notes"></router-link>
+          <time pubdate="pubdate" :datetime="this.date | formatDate" :title="this.date | formatDate" class="article-date">{{ this.date | formatDate}} by leon</time>
         </div>
-        <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
-        <!--<Copyright :author="article.author" :tag="article.tag" :link="article.link"></Copyright>-->
-        <div class="tag-group">
-          <router-link class="tag" :to="{path: '/notes', query: {tag: article.tag}}">#{{article.tag}}</router-link>
-        </div>
-      </article>
-      <hr>
-    </template>
-    <div id="gitment" v-show="content"></div>
+        <router-link class="iconfont icon-back" to="/notes"></router-link>
+      </div>
+      <div class="article-main" v-if="content" v-html="htmlFromMarkdown"></div>
+      <div class="tag-group">
+        <router-link class="tag" :to="{path: '/notes', query: {tag: article.tag}}">#{{article.tag}}</router-link>
+      </div>
+      <toc :lists='toc' v-if="shoToc"></toc>
+    </article>
   </section>
 </template>
 <script>
-  import Vue from 'vue'
-  import Loader from 'components/loader'
-  import Copyright from 'components/copyright'
-  import api from 'config'
-  import conf from 'config/conf.json'
-  import fm from 'front-matter'
-  import marked from 'utils/render.js'
-  import { mapState, mapActions } from 'vuex'
-  import Gitment from 'gitment'
+import Vue from 'vue'
+import Copyright from 'components/copyright'
+import Toc from '../components/toc.vue'
+import api from 'config'
+import conf from 'config/conf.json'
+import fm from 'front-matter'
+import marked from 'utils/render.js'
+import { mapState, mapActions } from 'vuex'
 
-  export default {
-    name: 'postView',
-    data() {
-      return {
-        title: '',
-        date: null,
-        content: '',
-        article: {
-          author: 'leon',
-          tag: '',
-          link: location.href
+export default {
+  name: 'postView',
+  data() {
+    return {
+      shoToc: true,
+      title: '',
+      date: null,
+      content: '',
+      toc: null,
+      indexes: 0,
+      article: {
+        author: 'leon',
+        tag: '',
+        link: location.href
+      }
+    }
+  },
+  computed: {
+    htmlFromMarkdown() {
+      return marked(this.content)
+    }
+  },
+  components: {
+    Copyright,
+    Toc
+  },
+  created() {
+    this.loadPost()
+  },
+  mounted() {
+    var browser = {
+      versions() {
+        var u = navigator.userAgent, app = navigator.appVersion
+        return {
+          trident: u.indexOf('Trident') > -1,
+          presto: u.indexOf('Presto') > -1,
+          webKit: u.indexOf('AppleWebKit') > -1,
+          gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,
+          mobile: !!u.match(/AppleWebKit.*Mobile.*/),
+          ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+          android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+          iPhone: u.indexOf('iPhone') > -1,
+          iPad: u.indexOf('iPad') > -1,
+          webApp: u.indexOf('Safari') == -1,
+          weixin: u.indexOf('MicroMessenger') > -1,
+          qq: u.match(/\sQQ/i) == 'qq'
         }
-      }
-    },
-    computed: {
-      htmlFromMarkdown() {
-        return marked(this.content)
-      }
-    },
-    components: {
-      Loader,
-      Copyright
-    },
-    created() {
-      this.loadPost()
-    },
-    mounted() {
-      this.$nextTick(() => {
-        const gitment = new Gitment({
-          id: this.title,
-          owner: conf.name,
-          repo: conf.comment_repo,
-          oauth: {
-            client_id: conf.client_id,
-            client_secret: conf.client_secret,
-          },
-        })
-        gitment.render('gitment')
-      })
-    },
-    methods: {
-      loadPost() {
-        this.$parent.isDetail = true
-        api.getDetail(this.$route.params.hash)
-          .then(text => {
-            // Parse front-matter
-            // https://github.com/jxson/front-matter#fmstring
-            const content = fm(text)
-            this.content = content.body
-            this.title = content.attributes.title
-            this.date = content.attributes.date
-            this.article.tag = content.attributes.tags
-            window.document.title = `${this.title}`
-          })
-          .catch(err => {
-            console.error(err)
-          })
       },
-      newTab() {
-        Vue.nextTick(function () {
-          // Load the external link into new tab
-          const linksArray = Array.from(document.querySelectorAll('a'))
-          const currentHost = window.location.host
-          linksArray.forEach(el => {
-            if (el.href && el.host !== currentHost) {
-              el.target = '_blank'
-              // https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/
-              el.rel = 'noopener noreferrer'
+      language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    }
+
+    if (browser.versions().mobile || browser.versions().ios || browser.versions().android ||
+      browser.versions().iPhone || browser.versions().iPad) {
+      this.touch()
+    } else {
+      this.scroll(e => { this.shoToc = e == 'up' ? true : false })
+    }
+  },
+  methods: {
+    loadPost() {
+      this.$parent.isDetail = true
+      api.getDetail(this.$route.params.hash)
+        .then(text => {
+          // Parse front-matter
+          // https://github.com/jxson/front-matter#fmstring
+          const content = fm(text)
+          const re = /^#{1,4}\s(.+)$/mg
+          let arrToc = []
+
+          while (true) {
+            let match = re.exec(content.body)
+            if (!match) {
+              break
+            }
+            arrToc.push(match[0])
+          }
+          arrToc = arrToc.map(header => {
+            /(#+)\s(.+)/.test(header)
+            return {
+              zIndex: RegExp.$1.length,
+              text: RegExp.$2
             }
           })
+
+          this.content = content.body
+          this.toc = arrToc
+          this.title = content.attributes.title
+          this.date = content.attributes.date
+          this.article.tag = content.attributes.tags
+          window.document.title = `${this.title}`
         })
+        .catch(err => {
+          console.error(err)
+        })
+    },
+    touch() {
+      var scrollAction = { x: 'undefined', y: 'undefined' }, scrollDirection
+
+      window.onscroll = () => {
+        scrollFunc()
+        this.shoToc = scrollDirection === 'up' ? true : false
+      }
+
+      function scrollFunc() {
+        if (typeof scrollAction.x == 'undefined') {
+          scrollAction.x = window.pageXOffset
+          scrollAction.y = window.pageYOffset
+        }
+        var diffX = scrollAction.x - window.pageXOffset
+        var diffY = scrollAction.y - window.pageYOffset
+        if (diffX < 0) {
+          scrollDirection = 'right'
+        } else if (diffX > 0) {
+          scrollDirection = 'left'
+        } else if (diffY < 0) {
+          scrollDirection = 'down'
+        } else if (diffY > 0) {
+          scrollDirection = 'up'
+        } else {
+          // First scroll event
+        }
+        scrollAction.x = window.pageXOffset
+        scrollAction.y = window.pageYOffset
       }
     },
-    watch: {
-      'htmlFromMarkdown': 'newTab'
+    scroll(fn) {
+      var beforeScrollTop = document.documentElement.scrollTop,
+        fn = fn || function () {}
+      window.addEventListener('scroll', function () {
+        var afterScrollTop = document.documentElement.scrollTop,
+          delta = afterScrollTop - beforeScrollTop
+        if (delta === 0) return
+        fn(delta > 0 ? 'down' : 'up')
+        beforeScrollTop = afterScrollTop
+      }, false)
     }
   }
+}
 
 </script>
 <style lang="less">
-  @import '../assets/style/_vars.less';
-  @import '../assets/style/gitment.less';
-
-  .article-detail {
+@import "../assets/style/_vars.less";
+.article-detail {
+  position: absolute;
+  top: 0;
+  left: 400px;
+  right: 0;
+  padding: 15px 50px 20px;
+  .pull-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .pull-right {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 50px;
+  }
+  .icon-back {
     position: absolute;
-    top: 0;
-    left: 400px;
-    right: 0;
-    padding: 15px 50px 20px;
-    .pull-left{
-      position: relative;
-      display: flex;
-      flex-direction: column;
+    top: 7px;
+    left: -32px;
+    font-size: 26px;
+    color: @warm;
+    &:hover {
+      color: @red;
     }
-    .pull-right{
-      display: flex;
-      position: relative;
-      align-items: center;
-      width: 50px;
+  }
+  .item-title {
+    color: @title;
+    font-weight: bold;
+    transition: padding 0.2s ease-out;
+    &:hover {
+      padding-left: 10px;
     }
-    .icon-back{
-      position: absolute;
-      top: 7px;
-      left: -32px;
-      font-size: 26px;
-      color: @warm;
-      &:hover{
-        color: @red;
-      }
-    }
-    .item-title {
-      color: @title;
-      font-weight: bold;
-      transition: padding .2s ease-out;
-      &:hover{
-        padding-left: 10px;
-      }
-    }
-    .tag-group{
-      display: flex;
-      justify-content: center;
-      padding-top: 30px;
-    }
-    .tag{
+  }
+  .tag-group {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    .tag {
       font-size: 14px;
-      color: rgba(127, 147, 167, .6);
+      color: rgba(127, 147, 167, 0.6);
       padding: 2px 5px;
       background-color: rgba(183, 185, 182, 0.2);
-      &:hover{
-        color: rgba(127, 147, 167, .8);
+      &:hover {
+        color: rgba(127, 147, 167, 0.8);
         background-color: rgba(183, 185, 182, 0.4);
       }
     }
-    .avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 5px;
-      margin-right: 20px;
-    }
-    .item-date {
-      color: @subTitle;
-    }
-    .list-item {
-      position: relative;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px dotted @border;
-      padding: 20px 0;
-    }
   }
-  .article-head{
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  .item-date {
+    color: @subTitle;
+  }
+  .list-item {
     position: relative;
     display: flex;
-    padding: 0 0 20px 0;
-    text-align: center;
-    &:after{
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      content: '';
-      height: 2px;
-      width: 100%;
-      border: none;
-      background-color: #ddd;
-      background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 6px);
+    align-items: center;
+    border-bottom: 1px dotted @border;
+    padding: 20px 0;
+  }
+}
+.article-head {
+  position: relative;
+  display: flex;
+  padding: 0 0 20px 0;
+  text-align: center;
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    width: 100%;
+    border: none;
+    background-color: #ddd;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #fff,
+      #fff 4px,
+      transparent 4px,
+      transparent 6px
+    );
+  }
+}
+.article-title {
+  display: inline-block;
+  position: relative;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+.article-date {
+  font-size: 12px;
+  text-align: left;
+}
+.article-main {
+  color: #34495e;
+  word-wrap: break-word;
+  word-break: normal;
+  img {
+    max-width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.2);
+  }
+  table {
+    margin: 30px 0;
+    tr {
+      th {
+        font-weight: bold;
+        border: 1px solid #e3e3e3;
+        padding: 4px;
+      }
+      td {
+        border: 1px solid #e3e3e3;
+        padding: 4px;
+      }
     }
   }
-  .article-title{
-    display: inline-block;
+  p {
+    padding: 15px 0;
+    line-height: 1.8;
+  }
+  b,
+  strong {
+    color: #9e4e23;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
     position: relative;
-    font-size: 32px;
-    color: rgba(0, 0, 0, 0.7);
+    margin: 1em 0;
     font-weight: bold;
-    // &:before{
-    //   position: absolute;
-    //   left: -42px;
-    //   top: -6px;
-    //   content: '『';
-    //   color: @green;
-    // }
-    // &:after{
-    //   position: absolute;
-    //   right: -42px;
-    //   bottom: -6px;
-    //   content: '』';
-    //   color: @green;
-    // }
+    font-size: 18px;
   }
-  .article-date {
-    font-size: 12px;
-    text-align: left;
-  }
-  .article-main{
-    color: #34495e;
-    word-wrap: break-word;
-    word-break: normal;
-    img{
-      max-width: 100%;
-      margin: 10px 0;
-      box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.2);
-    }
-    table {
-      margin: 30px 0;
-      tr {
-        th{
-          font-weight: bold;
-           border: 1px solid #e3e3e3;
-          padding: 4px;
-        }
-        td{
-           border: 1px solid #e3e3e3;
-          padding: 4px;
-        }
-      }
-    }
-    p{
-      padding: 15px 0;
-      line-height: 1.8;
-    }
-    b, strong{
-      color: #9e4e23;
-    }
-    h1,h2,h3,h4{
-      position: relative;
-      margin: 1em 0;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    h1{
-      &:before{
-        content: "#";
-        color: #42b983;
-        position: absolute;
-        left: -0.7em;
-        top: -4px;
-        font-size: 1.2em;
-        font-weight: bold;
-      }
-    }
-    h2{
-      &:before{
-        content: "##";
-        color: #FF5722;
-        position: absolute;
-        left: -1.4em;
-        top: -4px;
-        font-size: 1.2em;
-        font-weight: bold;
-      }
-    }
-    h3{
-      &:before{
-        content: "###";
-        color: #FF9800;
-        position: absolute;
-        left: -2.1em;
-        top: -4px;
-        font-size: 1.2em;
-        font-weight: bold;
-      }
-    }
-
-    h4{
-      padding-left: 30px;
-      &:before{
-        content: "####";
-        color: #42b983;
-        position: absolute;
-        left: -0.7em;
-        top: -4px;
-        font-size: 1.2em;
-        font-weight: bold;
-      }
-    }
-    a{
-      color: @green;
-    }
-    ul{
-      list-style-type: circle;
-      line-height: 30px;
-      ul{
-        list-style-type: disc;
-        padding-left: 20px;
-        ul{
-          list-style-type: square;
-        }
-      }
-    }
-  }
-  @media only screen and (min-width: 320px) and (max-width: 767px) {
-    .article-detail{
+  h1 {
+    &:before {
+      content: "#";
+      color: #42b983;
       position: absolute;
-      top: 0;
-      padding: 0 30px;
-      left: 0;
-      right: 0;
-      .list-item{
-        font-size: 13px;
-        padding: 10px 0;
-        margin:0;
-      }
-      .icon-back{
-        top: 3px;
-        left: -26px;
-        font-size: 22px;
-      }
+      left: -0.7em;
+      top: -4px;
+      font-size: 1.2em;
     }
-    .article-head{
-      padding: 0 0 20px 0;
-    }
-    .article-view{
-      padding: 20px 0 0 0;
-    }
-    .article-main {
-      font-size: 13px;
-    }
-    .article-title{
-      font-size: 22px;
-      &:before{
-        left: -30px;
-      }
-      &:after{
-        right: -30px;
-      }
-    }
-
   }
+  h2 {
+    &:before {
+      content: "##";
+      color: #ff5722;
+      position: absolute;
+      left: -1.4em;
+      top: -4px;
+      font-size: 1.2em;
+    }
+  }
+  h3 {
+    &:before {
+      content: "###";
+      color: #ff9800;
+      position: absolute;
+      left: -2.1em;
+      top: -4px;
+      font-size: 1.2em;
+    }
+  }
+
+  h4 {
+    padding-left: 30px;
+    &:before {
+      content: "####";
+      color: #42b983;
+      position: absolute;
+      left: -0.7em;
+      top: -4px;
+      font-size: 1.2em;
+    }
+  }
+  a {
+    color: @green;
+  }
+  ul {
+    list-style-type: circle;
+    line-height: 30px;
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .article-detail {
+    position: absolute;
+    top: 0;
+    padding: 20px 30px;
+    left: 0;
+    right: 0;
+    .list-item {
+      font-size: 13px;
+      padding: 10px 0;
+      margin: 0;
+    }
+    .icon-back {
+      top: 3px;
+      left: -26px;
+      font-size: 22px;
+    }
+  }
+  .article-head {
+    padding: 0 0 20px 0;
+  }
+  .article-main {
+    font-size: 13px;
+  }
+  .article-title {
+    font-size: 22px;
+    &:before {
+      left: -30px;
+    }
+    &:after {
+      right: -30px;
+    }
+  }
+}
 </style>

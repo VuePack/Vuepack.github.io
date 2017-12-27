@@ -1,5 +1,12 @@
+/*
+ * @Author: Leon
+ * @Date: 2017-02-19  13:49:45
+ * @Last Modified by: Leon
+ * @Last Modified time: 2017-12-27 23:33:37
+ */
+
 /**
- * get title from file name
+ * 获取markdown title
  *
  * @export
  * @param {string} title
@@ -12,7 +19,7 @@ export function onlyTitle (title) {
 }
 
 /**
- * get publish date from file name
+ * 获取markdown 日期
  *
  * @export
  * @param {string} title
@@ -23,7 +30,7 @@ export function onlyDate (title) {
 }
 
 /**
- * get publish date from file name
+ * 获取markdown 分类
  *
  * @export
  * @param {string} title

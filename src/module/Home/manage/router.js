@@ -2,7 +2,7 @@
  * @Author: Leon
  * @Date: 2017-02-19 10:40:28
  * @Last Modified by: Leon
- * @Last Modified time: 2017-06-12 14:43:39
+ * @Last Modified time: 2017-12-27 23:12:41
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -51,9 +51,16 @@ const routes = [
     }
   },
   {
+    path: '/404',
+    name: '404',
+    component(resolve) {
+      require(['../../../views/404.vue'], resolve)
+    }
+  },
+  {
     path: '*',
     name: 'other',
-    redirect: '/notes'
+    redirect: '/404'
   },
 ]
 
@@ -72,9 +79,7 @@ const router = new VueRouter({
  * 在每次路由切换成功进入激活阶段时被调用
  */
 router.afterEach((to, from, next) => {
-  // console.log(to)
-  // console.log(router)
-  document.body.scrollTop = 0
+  window.scrollTo(0, 0)
   router.app.$store.state.menu.forEach(e => {
     e.default = e.name === to.name ? 1 : 0
   })

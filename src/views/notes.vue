@@ -1,7 +1,6 @@
 <template>
   <section class="view view-notes">
-    <Loader v-if="loading"></Loader>
-    <div class="note-tips" v-else-if="filteredList.length === 0">
+    <div class="note-tips" v-if="filteredList.length === 0">
       <span class="iconfont icon-wuziliao">
         <i>没有相关文章</i>
       </span>
@@ -13,19 +12,15 @@
             <router-link :to="'/post/' + sha" class="item-title">
               {{ title }}
             </router-link>
-            <time pubdate="pubdate" :datetime="date | formatDate" :title="date | formatDate" class="item-date">{{ date | timeago }}</time>
+            <time pubdate="pubdate" :datetime="date | formatDate" :title="date | formatDate" class="item-date">{{ date | dtime }}</time>
           </div>
         </article>
       </div>
     </template>
-    <!--<button class="btn btn-material" type="button" @click="showAbout">
-      <i class="iconfont icon-guanyu"></i>
-    </button>-->
   </section>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import Loader from 'components/loader'
 import API from 'config'
 import conf from 'config/conf.json'
 import { instance } from 'config/instanceShared'
@@ -40,7 +35,6 @@ export default {
     }
   },
   components: {
-    Loader: Loader
   },
   computed: {
     filteredList() {
@@ -48,9 +42,8 @@ export default {
       if (this.$route) {
         keyword = (this.$route.query.q || '').toLowerCase()
       }
-      // Filter by title, Order by publish date, desc
       return this.list
-        .filter(item => (item.title.toLowerCase().indexOf(keyword) !== -1))
+        .filter(item => (item.title.toLowerCase().indexOf(keyword) > -1))
         .sort((itemA, itemB) => (new Date(itemB.date) - new Date(itemA.date)))
     }
   },
@@ -71,14 +64,11 @@ export default {
       })
       this.$parent.isDetail = false
     },
-    showAbout() {
-      alert('就让你看看 - 。-')
-    },
     filterByList(list) {
       let sessionList = list, filterItems, route = this.$route
       if (route.query && route.query.hasOwnProperty('tag')) {
         this.list = sessionList.filter(v => {
-          return v.tag.toLowerCase().indexOf(route.query.tag.toLowerCase()) !== -1
+          return v.tag.toLowerCase().indexOf(route.query.tag.toLowerCase()) > -1
         })
       } else {
         this.list = filterItems = sessionList
