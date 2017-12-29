@@ -126,6 +126,7 @@ export default {
   }
   .item-date {
     color: @subTitle;
+    font-size: 13px;
   }
   .list-item {
     position: relative;
