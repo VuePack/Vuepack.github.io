@@ -157,7 +157,13 @@ export default {
   padding: 10px 30px;
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   z-index: 1;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   a {
     display: inline-block;
     position: relative;
@@ -232,12 +238,6 @@ export default {
   }
   .bar-tags{
     padding: 10px 20px;
-    white-space: nowrap;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    &::-webkit-scrollbar {
-        display: none;
-    }
   }
 }
 </style>
