@@ -1,0 +1,46 @@
+@import '../../assets/style/theme.less';
+@content: content;
+.@{content}-wrapper {
+  width: 100%;
+  height: 100vh;
+  border-color: #666;
+  position: relative;
+  background: rgba(24, 26, 36, 0.7);
+  .@{content} {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.content-half-wrapper {
+  height: 50vh;
+}
+
+@media screen and (max-width: 767px) {
+  .@{content}-wrapper {
+    .@{content} {
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #nav_0_0 {
+    position: fixed;
+  }
+  #content_0_0-title {
+    left: 0px;
+  }
+  #content_0_0:before {
+    background-blend-mode: color-dodge;
+  }
+  #content_0_0-wrapper {
+    top: 40%;
+  }
+}

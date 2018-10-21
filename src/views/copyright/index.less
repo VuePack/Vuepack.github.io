@@ -1,0 +1,26 @@
+@import '../../assets/style/theme.less';
+
+@footer: footer;
+.@{footer} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: @template-bg-color;
+  text-align: center;
+  height: 80px;
+  color: @template-footer-text-color;
+  overflow: hidden;
+  position: relative;
+  span {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{footer} {
+    > div {
+      width: 90%;
+      margin: auto;
+    }
+  }
+}
